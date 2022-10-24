@@ -4459,10 +4459,31 @@
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\guider_fonts.mk</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Alatsi_Regular_26.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Amiko_Regular_18.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_12.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_120.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_15.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_19.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_20.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_21.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_simsun_12.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_simsun_16.c</name>
@@ -4486,7 +4507,25 @@
       <name>$PROJ_DIR$\..\..\generated\images\_aircon_bg_1280x720.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_aircon_cool_1_92x102.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_aircon_fan_1_98x98.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_aircon_swing_1_632x113.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_arrow_down_28x14.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_arrow_up_28x14.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_cool_27x31.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_fan_low_31x27.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_title_bg_799x130.c</name>
@@ -4498,6 +4537,9 @@
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-1041561948.png</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-1062060990.png</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-1322065197.png</name>
     </file>
     <file>
@@ -4507,13 +4549,34 @@
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-1835167986.png</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-1871569157.png</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-2003175965.png</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-360451180.png</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-430806071.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-532662711.png</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-593050720.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-673211321.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-705518972.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-729390869.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-813759931.png</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-873553969.png</name>
@@ -4522,13 +4585,46 @@
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1049674065.png</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1073890122.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1104909929.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1135929736.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1166949543.png</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1189627177.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1197969350.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1228989157.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1260856760.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1263449412.png</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1330177314.png</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1403998022.png</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1498185293.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1544546632.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp197672255.png</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp2011288082.png</name>
@@ -4537,13 +4633,22 @@
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp368563297.png</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp388186255.png</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp573311232.png</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp601162837.png</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp691787330.png</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp88060048.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp898788451.png</name>
     </file>
   </group>
   <file>

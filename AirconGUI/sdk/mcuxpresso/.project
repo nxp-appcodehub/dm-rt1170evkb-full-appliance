@@ -165,7 +165,7 @@
 	<variableList>
 		<variable>
 			<name>GUIDER_PROJECT_LOC</name>
-			<value>file:/C:/Users/nxf46725/Documents/MCUXpresso_Workspace/MCUXpressoIDE_11.6.0_8187/RT1170_Training/evkmimxrt1170_lvgl_guider_cm7/AirconGUI/sdk/mcuxpresso</value>
+			<value>file:/C:/Repos/Future_training/AirconGUI/sdk/mcuxpresso</value>
 		</variable>
 	</variableList>
 </projectDescription>

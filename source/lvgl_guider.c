@@ -56,7 +56,6 @@ static void AppTask(void *param)
     events_init(&guider_ui);
     custom_init(&guider_ui);
 
-
     for (;;)
     {
         lv_task_handler();

@@ -7,9 +7,6 @@
 
 #include <ui_Aircon.h>
 
-
-
-
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -18,6 +15,8 @@
  * Prototypes
  ******************************************************************************/
 void ui_aircon_swing_anim_start(uint32_t delay);
+void ui_aircon_set_fan_speed(uint32_t frame_time);
+
 void ui_aircon_swing_anim_close(void);
 lv_anim_t * _ui_start_img_seq_anim(lv_obj_t * obj, const lv_img_dsc_t * imgs[], uint32_t img_cnt, uint32_t period_time, bool backward);
 static void img_seq_anim_cb(void * var, int32_t v);
@@ -26,6 +25,7 @@ static void img_seq_anim_cb(void * var, int32_t v);
  ******************************************************************************/
 uint32_t AirconTemp = 25;
 
+/*Declare Image for swing animation*/
 LV_IMG_DECLARE(_aircon_swing_1_632x113);
 LV_IMG_DECLARE(_aircon_swing_2_632x113);
 LV_IMG_DECLARE(_aircon_swing_3_632x113);
@@ -47,6 +47,37 @@ static const lv_img_dsc_t * aircon_swing[] = {&_aircon_swing_1_632x113, &_aircon
 		&_aircon_swing_7_632x113, &_aircon_swing_8_632x113, &_aircon_swing_9_632x113,
 		&_aircon_swing_10_632x113, &_aircon_swing_11_632x113, &_aircon_swing_12_632x113,
 		&_aircon_swing_13_632x113, &_aircon_swing_14_632x113, &_aircon_swing_15_632x113};
+
+/*Declare images for cool animation*/
+LV_IMG_DECLARE(_aircon_cool_1_92x102);
+LV_IMG_DECLARE(_aircon_cool_2_92x102);
+LV_IMG_DECLARE(_aircon_cool_3_92x102);
+LV_IMG_DECLARE(_aircon_cool_4_92x102);
+LV_IMG_DECLARE(_aircon_cool_5_92x102);
+LV_IMG_DECLARE(_aircon_cool_6_92x102);
+
+static const lv_img_dsc_t * aircon_cool[] = {&_aircon_cool_1_92x102, &_aircon_cool_2_92x102, &_aircon_cool_3_92x102,
+		&_aircon_cool_4_92x102, &_aircon_cool_5_92x102, &_aircon_cool_6_92x102};
+
+/*Declare images for fan animation*/
+LV_IMG_DECLARE(_aircon_fan_1_98x98);
+LV_IMG_DECLARE(_aircon_fan_2_98x98);
+LV_IMG_DECLARE(_aircon_fan_3_98x98);
+LV_IMG_DECLARE(_aircon_fan_4_98x98);
+LV_IMG_DECLARE(_aircon_fan_5_98x98);
+LV_IMG_DECLARE(_aircon_fan_6_98x98);
+
+static const lv_img_dsc_t * aircon_fan[] = {&_aircon_fan_1_98x98, &_aircon_fan_2_98x98, &_aircon_fan_3_98x98,
+		&_aircon_fan_4_98x98, &_aircon_fan_5_98x98, &_aircon_fan_6_98x98};
+
+/*Declare images for Fan state*/
+LV_IMG_DECLARE(_icn_fan_low_31x27);
+LV_IMG_DECLARE(_icn_fan_high_31x27);
+
+/*Declare images for compresor*/
+LV_IMG_DECLARE(_icn_cool_27x31);
+LV_IMG_DECLARE(_icn_dry_27x31);
+LV_IMG_DECLARE(_icn_fan_27x31);
 
 /*******************************************************************************
  * Function
@@ -85,6 +116,62 @@ void ui_aircon_swing (bool state)
 	}
 }
 
+void ui_aricon_set_fan_speed (AIRCON_Fan_Speed_T speed)
+{
+	uint32_t frame_time;
+
+	switch(speed)
+	{
+	case kAIRCON_FanLow:
+		frame_time = 125;
+		lv_label_set_text(guider_ui.ui_Aircon_Label_FanState, "LOW");
+		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_low_31x27);
+		break;
+	case kAIRCON_FanMedium:
+		frame_time = 100;
+		lv_label_set_text(guider_ui.ui_Aircon_Label_FanState, "MEDIUM");
+		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_low_31x27);
+		break;
+	case kAIRCON_FanHigh:
+		frame_time = 75;
+		lv_label_set_text(guider_ui.ui_Aircon_Label_FanState, "HIGH");
+		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_high_31x27);
+		break;
+	}
+
+	lv_anim_t * a;
+	ui_aircon_set_fan_speed(frame_time);
+}
+
+void ui_aircon_set_mode (AIRCON_Mode_T mode)
+{
+	switch(mode)
+	{
+	case kAIRCON_ModeCool:
+		lv_label_set_text(guider_ui.ui_Aircon_Label_On, "ON");
+		lv_img_set_src(guider_ui.ui_Aircon_Img_Comp, &_icn_cool_27x31);
+		lv_obj_fade_in(guider_ui.ui_Aircon_Img_Cool, FADE_ANIM_TIME, 0);
+		break;
+	case kAIRCON_ModeDry:
+		lv_label_set_text(guider_ui.ui_Aircon_Label_On, "ON");
+		lv_img_set_src(guider_ui.ui_Aircon_Img_Comp, &_icn_dry_27x31);
+		lv_obj_fade_in(guider_ui.ui_Aircon_Img_Cool, FADE_ANIM_TIME, 0);
+		break;
+	case kAIRCON_ModeFan:
+		lv_label_set_text(guider_ui.ui_Aircon_Label_On, "OFF");
+		lv_img_set_src(guider_ui.ui_Aircon_Img_Comp, &_icn_fan_27x31);
+		lv_obj_fade_out(guider_ui.ui_Aircon_Img_Cool, FADE_ANIM_TIME, 0);
+		break;
+	}
+
+}
+
+void ui_aircon_star_cool(void)
+{
+	lv_anim_t * a;
+	a = _ui_start_img_seq_anim(guider_ui.ui_Aircon_Img_Cool, aircon_cool, sizeof(aircon_cool) / sizeof(aircon_cool[0]), 100, false);
+	a->repeat_cnt = LV_ANIM_REPEAT_INFINITE;
+}
 
 /*******************************************************************************
  * Static function
@@ -117,6 +204,13 @@ void ui_aircon_swing_anim_start(uint32_t delay)
 	}
 
 	a->playback_time = a->time;
+	a->repeat_cnt = LV_ANIM_REPEAT_INFINITE;
+}
+
+void ui_aircon_set_fan_speed(uint32_t frame_time)
+{
+	lv_anim_t * a;
+	a = _ui_start_img_seq_anim(guider_ui.ui_Aircon_Img_Fan, aircon_fan, sizeof(aircon_fan) / sizeof(aircon_fan[0]), frame_time, false);
 	a->repeat_cnt = LV_ANIM_REPEAT_INFINITE;
 }
 

@@ -46,7 +46,7 @@
 
 /* Default display refresh period.
  * Can be changed in the display driver (`lv_disp_drv_t`).*/
-#define LV_DISP_DEF_REFR_PERIOD      30      /*[ms]*/
+#define LV_DISP_DEF_REFR_PERIOD      15      /*[ms]*/
 
 /*=========================
    Memory manager settings
@@ -87,7 +87,7 @@
 #endif /* LV_ENABLE_GC */
 
 /* Input device read period in milliseconds */
-#define LV_INDEV_DEF_READ_PERIOD          30
+#define LV_INDEV_DEF_READ_PERIOD          5
 
 /*==================
  * Feature usage
@@ -126,7 +126,7 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h" */
 #define LV_USE_GPU_NXP_PXP_AUTO_INIT 1
 
 /*1: Use VG-Lite for CPU offload on NXP RTxxx platforms */
-#define LV_USE_GPU_NXP_VG_LITE   1
+#define LV_USE_GPU_NXP_VG_LITE   0
 
 
 /*Use SDL renderer API. Requires LV_USE_EXTERNAL_RENDERER*/
