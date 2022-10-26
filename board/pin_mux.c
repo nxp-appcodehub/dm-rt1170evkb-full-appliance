@@ -171,6 +171,51 @@ void BOARD_InitMipiPanelPins(void) {
                                                  Domain write protection lock: Neither of DWP bits is locked */
 }
 
+/*
+ * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
+BOARD_InitMicPins:
+- options: {callFromInitBoot: 'true', coreID: cm7, enableClock: 'true'}
+- pin_list:
+  - {pin_num: U8, peripheral: MIC, signal: CLK, pin_signal: GPIO_LPSR_08, slew_rate: Fast}
+  - {pin_num: P5, peripheral: MIC, signal: 'mic_bitstream, 00', pin_signal: GPIO_LPSR_09, slew_rate: Fast}
+ * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
+ */
+
+/* FUNCTION ************************************************************************************************************
+ *
+ * Function Name : BOARD_InitMicPins, assigned for the Cortex-M7F core.
+ * Description   : Configures pin routing and optionally pin electrical features.
+ *
+ * END ****************************************************************************************************************/
+void BOARD_InitMicPins(void) {
+	CLOCK_EnableClock(kCLOCK_Iomuxc_Lpsr);      /* LPCG on: LPCG is ON. */
+
+	IOMUXC_SetPinMux(
+			IOMUXC_GPIO_LPSR_08_MIC_CLK,            /* GPIO_LPSR_08 is configured as MIC_CLK */
+			0U);                                    /* Software Input On Field: Input Path is determined by functionality */
+	IOMUXC_SetPinMux(
+			IOMUXC_GPIO_LPSR_09_MIC_BITSTREAM0,     /* GPIO_LPSR_09 is configured as MIC_BITSTREAM0 */
+			0U);                                    /* Software Input On Field: Input Path is determined by functionality */
+	IOMUXC_SetPinConfig(
+			IOMUXC_GPIO_LPSR_08_MIC_CLK,            /* GPIO_LPSR_08 PAD functional properties : */
+			0x03U);                                 /* Slew Rate Field: Fast Slew Rate
+                                                 Drive Strength Field: high driver
+                                                 Pull / Keep Select Field: Pull Disable
+                                                 Pull Up / Down Config. Field: Weak pull down
+                                                 Open Drain LPSR Field: Disabled
+                                                 Domain write protection: Both cores are allowed
+                                                 Domain write protection lock: Neither of DWP bits is locked */
+	IOMUXC_SetPinConfig(
+			IOMUXC_GPIO_LPSR_09_MIC_BITSTREAM0,     /* GPIO_LPSR_09 PAD functional properties : */
+			0x03U);                                 /* Slew Rate Field: Fast Slew Rate
+                                                 Drive Strength Field: high driver
+                                                 Pull / Keep Select Field: Pull Disable
+                                                 Pull Up / Down Config. Field: Weak pull down
+                                                 Open Drain LPSR Field: Disabled
+                                                 Domain write protection: Both cores are allowed
+                                                 Domain write protection lock: Neither of DWP bits is locked */
+}
+
 /***********************************************************************************************************************
  * EOF
  **********************************************************************************************************************/

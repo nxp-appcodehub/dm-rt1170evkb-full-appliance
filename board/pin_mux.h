@@ -44,6 +44,18 @@ void BOARD_InitLpuartPins(void);              /* Function assigned for the Corte
  */
 void BOARD_InitMipiPanelPins(void);           /* Function assigned for the Cortex-M7F */
 
+/*!
+ * @brief Configures pin routing and optionally pin electrical features.
+ *
+ */
+void BOARD_InitMicPins(void);                 /* Function assigned for the Cortex-M7F */
+
+/* GPIO_EMC_B2_19 (coord U2), ENET_RGMII_MDC */
+/* Routed pin properties */
+#define BOARD_INITMQSPINS_ENET_RGMII_MDC_PERIPHERAL                        GPIO2   /*!< Peripheral name */
+#define BOARD_INITMQSPINS_ENET_RGMII_MDC_SIGNAL                      gpio_mux_io   /*!< Signal name */
+#define BOARD_INITMQSPINS_ENET_RGMII_MDC_CHANNEL                             29U   /*!< Signal channel */
+
 #if defined(__cplusplus)
 }
 #endif
