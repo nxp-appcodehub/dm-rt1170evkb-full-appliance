@@ -8,7 +8,7 @@
 #ifndef MIC_PROC_H_
 #define MIC_PROC_H_
 
-#define DEMO_CHANNEL_NUM        2
+#define DEMO_CHANNEL_NUM        1
 #define PDM_BYTE_DEPTH          4
 
 void MIC_Init(void);

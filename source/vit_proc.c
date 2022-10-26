@@ -24,7 +24,7 @@
 
 #define VIT_CMD_TIME_SPAN   3
 
-#define NUMBER_OF_CHANNELS  2
+#define NUMBER_OF_CHANNELS  DEMO_CHANNEL_NUM
 #define BYTE_DEPTH          PDM_BYTE_DEPTH
 
 #define DEVICE_ID           VIT_IMXRT1170
@@ -42,7 +42,6 @@ static PL_INT8 *pMemory[PL_NR_MEMORY_REGIONS];
 static PL_INT16 DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS];
 
 //extern EventGroupHandle_t GPH_Process;
-bool sw3Pressed;
 
 #if DEBUG_MIC
 #include <cr_section_macros.h>
@@ -139,9 +138,34 @@ VIT_ReturnStatus_en VIT_ModelInfo(void)
     return VIT_SUCCESS;
 }
 
+static void enableCpuCycleCounter(void)
+{
+    /* Make sure the DWT trace fucntion is enabled. */
+    if (CoreDebug_DEMCR_TRCENA_Msk != (CoreDebug_DEMCR_TRCENA_Msk & CoreDebug->DEMCR))
+    {
+        CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+    }
+
+    /* CYCCNT not supported on this device. */
+    assert(DWT_CTRL_NOCYCCNT_Msk != (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk));
+
+    /* Read CYCCNT directly if CYCCENT has already been enabled, otherwise enable CYCCENT first. */
+    if (DWT_CTRL_CYCCNTENA_Msk != (DWT_CTRL_CYCCNTENA_Msk & DWT->CTRL))
+    {
+        DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+    }
+}
+
+static uint32_t getCpuCycleCount(void)
+{
+    return DWT->CYCCNT;
+}
+
 int VIT_Initialize()
 {
     VIT_ReturnStatus_en VIT_Status;
+
+    enableCpuCycleCounter();
 
     VIT_Status = VIT_SetModel(VIT_Model_en, VIT_MODEL_IN_ROM);
 
@@ -254,12 +278,12 @@ int VIT_Execute(void *inputBuffer, int size)
 
     VIT_DetectionStatus_en VIT_DetectionResults = VIT_NO_DETECTION; // VIT detection result
 
-    if (size != VIT_SAMPLES_PER_FRAME * 2 * BYTE_DEPTH)
+    if (size != VIT_SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS * BYTE_DEPTH)
     {
         PRINTF("Input buffer format issue\r\n");
         return VIT_INVALID_FRAME_SIZE;
     }
-    DeInterleave(inputBuffer, DeInterleavedBuffer, VIT_SAMPLES_PER_FRAME, 2);
+    DeInterleave(inputBuffer, DeInterleavedBuffer, VIT_SAMPLES_PER_FRAME, NUMBER_OF_CHANNELS);
 
 #if DEBUG_MIC
      // Copy float vector to debug_buffer
@@ -301,9 +325,13 @@ int VIT_Execute(void *inputBuffer, int size)
         VIT_InputBuffers.pBuffer_Chan2 = &DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * 1];
         VIT_InputBuffers.pBuffer_Chan3 = &DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * 2];
     }
+
+    uint32_t tic = getCpuCycleCount();
     VIT_Status = VIT_Process(VITHandle,
                              &VIT_InputBuffers, // temporal audio input data
                              &VIT_DetectionResults);
+    uint32_t toc = getCpuCycleCount();
+
 
     if (VIT_Status != VIT_SUCCESS)
     {
@@ -367,55 +395,27 @@ int VIT_Execute(void *inputBuffer, int size)
         }
     }
 
-    if (sw3Pressed)
-    {
-        static int32_t count = 0;
-        int32_t i = 0;
-        int32_t frames_per_window = 10;
-        int8_t ch = 0;
-        float sum[3] = {0};
-        static float rms[3][10] = {0};
-        float avg_rms[3] = {0};
-        float value_dBov[3] = {0};
-        float value_dBFS[3] = {0};
-        float f_input = 0.0f;
-        int16_t *pIn = NULL;
+	static int32_t count = 0;
+	int32_t i = 0;
+	int32_t frames_per_window = 10;
+	uint32_t sum_cycles = 0;
+	static uint32_t cycles[10] = { 0 };
 
-        for (ch = 0; ch < NUMBER_OF_CHANNELS; ch++)
-        {
-            pIn = &DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * ch];
+	/* Get RMS value */
+	cycles[count % 10] = toc - tic;
 
-            /* Iterate through each sample*/
-            for (i = 0; i < VIT_SAMPLES_PER_FRAME; i++)
-            {
-                /* Convert 16-bit int to float and scale to [-1,1] */
-                f_input = (float) *pIn++ / 32768.0f;
-                /* Sum of the squared values */
-                sum[ch] = sum[ch] + f_input * f_input;
-            }
+	/* Calculate average values for the selected window */
+	if ((count + 1) % frames_per_window == 0) {
+		for (i = 0; i < frames_per_window; i++) {
+			sum_cycles += cycles[i];
+		}
+		sum_cycles = sum_cycles * 10; // Multiply by 10 to get 1s
 
-            /* Get RMS value */
-            rms[ch][count % frames_per_window] = sqrtf((float) sum[ch] / VIT_SAMPLES_PER_FRAME);
 
-            /* Calculate average values for the selected window */
-            if ((count + 1) % frames_per_window == 0)
-            {
-                for (i = 0; i < frames_per_window; i++)
-                {
-                    avg_rms[ch] += rms[ch][i];
-                }
-                avg_rms[ch] = avg_rms[ch] / frames_per_window;
-
-                /* Convert to dB and dBFS */
-                value_dBov[ch] = 20 * log10f(avg_rms[ch]);
-                value_dBFS[ch] = 20 * log10f(avg_rms[ch]) + 3.0103f;
-
-                PRINTF(" ch%d %.1f dB ", ch, value_dBov[ch]);
-            }
-        }
-        PRINTF("\r");
-        count++;
-    }
+		PRINTF(" Cycles: %d MHz ", sum_cycles / 1000000);
+	}
+	PRINTF("\r");
+	count++;
 
     return VIT_Status;
 }
@@ -469,16 +469,6 @@ void DeInterleave(const PL_INT16 *pDataInput, PL_INT16 *pDataOutput, PL_UINT16 F
 void VIT_Task(void *pvParameters)
 {
     uint8_t buff[VIT_SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS * BYTE_DEPTH];
-
-    /* Define the init structure for the input switch pin */
-    gpio_pin_config_t sw_config = {kGPIO_DigitalInput, 0, kGPIO_IntRisingEdge};
-
-    GPIO_PinInit(BOARD_USER_BUTTON_GPIO, BOARD_USER_BUTTON_GPIO_PIN, &sw_config);
-    /* Read SW7 state to enable debug mode */
-    if (0 == GPIO_PinRead(BOARD_USER_BUTTON_GPIO , BOARD_USER_BUTTON_GPIO_PIN))
-    {
-        sw3Pressed = true;
-    }
 
     MIC_Init();
     VIT_Initialize();
