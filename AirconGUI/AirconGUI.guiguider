@@ -165,6 +165,7 @@
 			"list": [
 				{
 					"name": "Img_Cool",
+					"id": "x7s0a6ge",
 					"type": "img",
 					"left": 559,
 					"top": 213,
@@ -193,11 +194,11 @@
 							"image_recolor_opa": 0,
 							"image_opa": 255
 						}
-					],
-					"id": "x7s0a6ge"
+					]
 				},
 				{
 					"name": "Img_Fan",
+					"id": "nfssxtag",
 					"type": "img",
 					"left": 646,
 					"top": 218,
@@ -226,8 +227,7 @@
 							"image_recolor_opa": 0,
 							"image_opa": 255
 						}
-					],
-					"id": "nfssxtag"
+					]
 				},
 				{
 					"name": "cont_1",
@@ -246,7 +246,224 @@
 					"scrollbar_mode": "OFF",
 					"child": [
 						{
+							"name": "Label_TimerMin",
+							"type": "label",
+							"left": 118,
+							"top": 234,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 76,
+							"height": 103,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"text": "15",
+							"long_mode": "LV_LABEL_LONG_WRAP",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 80,
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"font_family": "Antonio_Regular",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 0,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								},
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DISABLED",
+									"disable": true,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"font_family": "simsun",
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 255,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								}
+							],
+							"id": "sdnsuyuc"
+						},
+						{
+							"name": "Label_TimerPoints",
+							"type": "label",
+							"left": 93,
+							"top": 229,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 23,
+							"height": 103,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"text": ":",
+							"long_mode": "LV_LABEL_LONG_WRAP",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 80,
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"font_family": "Antonio_Regular",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 0,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								},
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DISABLED",
+									"disable": true,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"font_family": "simsun",
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 255,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								}
+							],
+							"id": "hv47cnei"
+						},
+						{
+							"name": "Label_TimerHour",
+							"type": "label",
+							"left": 19,
+							"top": 234,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 76,
+							"height": 103,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"text": "01",
+							"long_mode": "LV_LABEL_LONG_WRAP",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 80,
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"font_family": "Antonio_Regular",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 0,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								},
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DISABLED",
+									"disable": true,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"font_family": "simsun",
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 255,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								}
+							],
+							"id": "74rxpt0o"
+						},
+						{
 							"name": "Img_TimerDown",
+							"id": "0a5ofy4h",
 							"type": "img",
 							"left": 319,
 							"top": 281,
@@ -275,8 +492,7 @@
 									"image_recolor_opa": 0,
 									"image_opa": 255
 								}
-							],
-							"id": "0a5ofy4h"
+							]
 						},
 						{
 							"name": "Btn_TimerDown",
@@ -408,10 +624,72 @@
 									"text_color": "#000000"
 								}
 							],
-							"event": []
+							"event": [
+								{
+									"trigger": "released",
+									"dst": "",
+									"action": {
+										"bg_color": {
+											"ische": false,
+											"value": "#000000"
+										},
+										"grad_color": {
+											"ische": false,
+											"value": "#000000"
+										},
+										"bg_opa": {
+											"ische": false,
+											"value": 255
+										},
+										"width": {
+											"ische": false,
+											"value": 50
+										},
+										"height": {
+											"ische": false,
+											"value": 50
+										},
+										"set_text": {
+											"ische": false,
+											"value": "default",
+											"font": 12,
+											"font_family": "simsun"
+										},
+										"position": {
+											"ische": false,
+											"value_x": 0,
+											"value_y": 0
+										},
+										"hidden": {
+											"ische": false
+										},
+										"customer_code": {
+											"ische": true,
+											"code_type": "excute_c_code",
+											"include": "#include \"ui_Aircon.h\"\n",
+											"code": "ui_aircon_update_timer(0,kAIRCON_TimerDown);"
+										},
+										"move": {
+											"ische": false,
+											"value_x": 0,
+											"value_y": 0,
+											"duration": 1000,
+											"path_type": "linear"
+										},
+										"load_screen": {
+											"ische": false,
+											"duration": 100,
+											"delay": 100,
+											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
+											"is_clean": true
+										}
+									}
+								}
+							]
 						},
 						{
 							"name": "Img_TimerUp",
+							"id": "tfipu591",
 							"type": "img",
 							"left": 222,
 							"top": 281,
@@ -440,8 +718,7 @@
 									"image_recolor_opa": 0,
 									"image_opa": 255
 								}
-							],
-							"id": "tfipu591"
+							]
 						},
 						{
 							"name": "Btn_TimerUp",
@@ -573,10 +850,72 @@
 									"text_color": "#000000"
 								}
 							],
-							"event": []
+							"event": [
+								{
+									"trigger": "released",
+									"dst": "",
+									"action": {
+										"bg_color": {
+											"ische": false,
+											"value": "#000000"
+										},
+										"grad_color": {
+											"ische": false,
+											"value": "#000000"
+										},
+										"bg_opa": {
+											"ische": false,
+											"value": 255
+										},
+										"width": {
+											"ische": false,
+											"value": 50
+										},
+										"height": {
+											"ische": false,
+											"value": 50
+										},
+										"set_text": {
+											"ische": false,
+											"value": "default",
+											"font": 12,
+											"font_family": "simsun"
+										},
+										"position": {
+											"ische": false,
+											"value_x": 0,
+											"value_y": 0
+										},
+										"hidden": {
+											"ische": false
+										},
+										"customer_code": {
+											"ische": true,
+											"code_type": "excute_c_code",
+											"include": "#include \"ui_Aircon.h\"\n",
+											"code": "ui_aircon_update_timer(0,kAIRCON_TimerUp);"
+										},
+										"move": {
+											"ische": false,
+											"value_x": 0,
+											"value_y": 0,
+											"duration": 1000,
+											"path_type": "linear"
+										},
+										"load_screen": {
+											"ische": false,
+											"duration": 100,
+											"delay": 100,
+											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
+											"is_clean": true
+										}
+									}
+								}
+							]
 						},
 						{
 							"name": "Img_FanSt",
+							"id": "lgapdhpv",
 							"type": "img",
 							"left": 272,
 							"top": 474,
@@ -605,11 +944,11 @@
 									"image_recolor_opa": 0,
 									"image_opa": 255
 								}
-							],
-							"id": "lgapdhpv"
+							]
 						},
 						{
 							"name": "Label_FanState",
+							"id": "1w88g1eq",
 							"type": "label",
 							"left": 303,
 							"top": 485,
@@ -677,11 +1016,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "1w88g1eq"
+							]
 						},
 						{
 							"name": "Label_FanSt",
+							"id": "qusopws7",
 							"type": "label",
 							"left": 303,
 							"top": 462,
@@ -749,11 +1088,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "qusopws7"
+							]
 						},
 						{
 							"name": "Img_Comp",
+							"id": "eagbqj9u",
 							"type": "img",
 							"left": 272,
 							"top": 413,
@@ -782,11 +1121,11 @@
 									"image_recolor_opa": 0,
 									"image_opa": 255
 								}
-							],
-							"id": "eagbqj9u"
+							]
 						},
 						{
 							"name": "Label_On",
+							"id": "79u3fjqk",
 							"type": "label",
 							"left": 302,
 							"top": 424,
@@ -854,11 +1193,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "79u3fjqk"
+							]
 						},
 						{
 							"name": "Label_Comp",
+							"id": "ct62gxe8",
 							"type": "label",
 							"left": 302,
 							"top": 402,
@@ -926,11 +1265,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "ct62gxe8"
+							]
 						},
 						{
 							"name": "Label_High",
+							"id": "8l36eghj",
 							"type": "label",
 							"left": 363,
 							"top": 592,
@@ -998,11 +1337,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "8l36eghj"
+							]
 						},
 						{
 							"name": "Label_Medium",
+							"id": "551jo35m",
 							"type": "label",
 							"left": 295,
 							"top": 592,
@@ -1070,11 +1409,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "551jo35m"
+							]
 						},
 						{
 							"name": "Label_Low",
+							"id": "u23jyh01",
 							"type": "label",
 							"left": 249,
 							"top": 592,
@@ -1142,11 +1481,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "u23jyh01"
+							]
 						},
 						{
 							"name": "Slider_Fan",
+							"id": "3fe29xvk",
 							"type": "slider",
 							"left": 257,
 							"top": 579,
@@ -1270,7 +1609,6 @@
 									"radius": 50
 								}
 							],
-							"id": "3fe29xvk",
 							"event": [
 								{
 									"trigger": "value_changed",
@@ -1336,6 +1674,7 @@
 						},
 						{
 							"name": "Label_Fan",
+							"id": "qee5rlct",
 							"type": "label",
 							"left": 204,
 							"top": 571,
@@ -1403,11 +1742,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "qee5rlct"
+							]
 						},
 						{
 							"name": "Label_Mode",
+							"id": "vwzcyus8",
 							"type": "label",
 							"left": 123,
 							"top": 364,
@@ -1475,11 +1814,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "vwzcyus8"
+							]
 						},
 						{
 							"name": "Label_Timer",
+							"id": "noi3s63s",
 							"type": "label",
 							"left": 105,
 							"top": 202,
@@ -1547,11 +1886,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "noi3s63s"
+							]
 						},
 						{
 							"name": "line_5",
+							"id": "ijz7soi6",
 							"type": "line",
 							"left": 192,
 							"top": 568,
@@ -1583,11 +1922,11 @@
 									"line_width": 3,
 									"line_rounded": false
 								}
-							],
-							"id": "ijz7soi6"
+							]
 						},
 						{
 							"name": "line_4",
+							"id": "4djpvqj8",
 							"type": "line",
 							"left": 242,
 							"top": 410,
@@ -1619,11 +1958,11 @@
 									"line_width": 3,
 									"line_rounded": false
 								}
-							],
-							"id": "4djpvqj8"
+							]
 						},
 						{
 							"name": "line_3",
+							"id": "gwywebkk",
 							"type": "line",
 							"left": 23,
 							"top": 540,
@@ -1655,11 +1994,11 @@
 									"line_width": 3,
 									"line_rounded": false
 								}
-							],
-							"id": "gwywebkk"
+							]
 						},
 						{
 							"name": "line_2",
+							"id": "mkzneub5",
 							"type": "line",
 							"left": 23,
 							"top": 359,
@@ -1691,11 +2030,11 @@
 									"line_width": 3,
 									"line_rounded": false
 								}
-							],
-							"id": "mkzneub5"
+							]
 						},
 						{
 							"name": "line_1",
+							"id": "87awo1qs",
 							"type": "line",
 							"left": 23,
 							"top": 199,
@@ -1727,11 +2066,11 @@
 									"line_width": 3,
 									"line_rounded": false
 								}
-							],
-							"id": "87awo1qs"
+							]
 						},
 						{
 							"name": "Label_Swing",
+							"id": "g4nyrfkl",
 							"type": "label",
 							"left": 30,
 							"top": 576,
@@ -1799,11 +2138,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "g4nyrfkl"
+							]
 						},
 						{
 							"name": "Btn_Swing",
+							"id": "mzgaudyv",
 							"type": "btn",
 							"left": 99,
 							"top": 572,
@@ -1931,7 +2270,6 @@
 									"text_color": "#000000"
 								}
 							],
-							"id": "mzgaudyv",
 							"event": [
 								{
 									"trigger": "released",
@@ -1997,6 +2335,7 @@
 						},
 						{
 							"name": "Roller_Mode",
+							"id": "v5kzax3t",
 							"type": "roller",
 							"left": 40,
 							"top": 404,
@@ -2124,7 +2463,6 @@
 									"font_family": "simsun"
 								}
 							],
-							"id": "v5kzax3t",
 							"event": [
 								{
 									"trigger": "value_changed",
@@ -2190,6 +2528,7 @@
 						},
 						{
 							"name": "Img_TempDown",
+							"id": "bmjarejr",
 							"type": "img",
 							"left": 319,
 							"top": 122,
@@ -2218,11 +2557,11 @@
 									"image_recolor_opa": 0,
 									"image_opa": 255
 								}
-							],
-							"id": "bmjarejr"
+							]
 						},
 						{
 							"name": "Img_TemUp",
+							"id": "jl5rshse",
 							"type": "img",
 							"left": 222,
 							"top": 122,
@@ -2251,8 +2590,7 @@
 									"image_recolor_opa": 0,
 									"image_opa": 255
 								}
-							],
-							"id": "jl5rshse"
+							]
 						},
 						{
 							"name": "Btn_TempDown",
@@ -2449,6 +2787,7 @@
 						},
 						{
 							"name": "Label_Cen",
+							"id": "ezdzxaax",
 							"type": "label",
 							"left": 121,
 							"top": 61,
@@ -2516,11 +2855,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "ezdzxaax"
+							]
 						},
 						{
 							"name": "Label_SetTemp",
+							"id": "5hy73noh",
 							"type": "label",
 							"left": 110,
 							"top": 22,
@@ -2588,8 +2927,7 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "5hy73noh"
+							]
 						},
 						{
 							"name": "Btn_TempUp",
@@ -3996,7 +4334,7 @@
 								"type": "roller",
 								"scrollbar_mode": "OFF",
 								"pos": [
-									35,
+									40,
 									404
 								],
 								"size": [
@@ -5925,6 +6263,246 @@
 										"image_opa": 255
 									}
 								]
+							},
+							{
+								"name": "ui_Aircon_Label_TimerHour",
+								"id": "74rxpt0o",
+								"type": "label",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									19,
+									234
+								],
+								"size": [
+									76,
+									103
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"text": "01",
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 80,
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"font_family": "Antonio_Regular",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 0,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									},
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DISABLED",
+										"disable": true,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
+										"font_family": "simsun",
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 255,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									}
+								]
+							},
+							{
+								"name": "ui_Aircon_Label_TimerPoints",
+								"id": "hv47cnei",
+								"type": "label",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									93,
+									229
+								],
+								"size": [
+									23,
+									103
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"text": ":",
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 80,
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"font_family": "Antonio_Regular",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 0,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									},
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DISABLED",
+										"disable": true,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
+										"font_family": "simsun",
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 255,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									}
+								]
+							},
+							{
+								"name": "ui_Aircon_Label_TimerMin",
+								"id": "sdnsuyuc",
+								"type": "label",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									118,
+									234
+								],
+								"size": [
+									76,
+									103
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"text": "15",
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 80,
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"font_family": "Antonio_Regular",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 0,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									},
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DISABLED",
+										"disable": true,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
+										"font_family": "simsun",
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 255,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									}
+								]
 							}
 						],
 						"style": [
@@ -6081,6 +6659,24 @@
 				"code_type": "excute_c_code",
 				"include": "",
 				"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_aricon_set_fan_speed(lv_slider_get_value(obj));"
+			},
+			{
+				"src": "ui_Aircon_Btn_TimerUp",
+				"trigger": "released",
+				"dst": "",
+				"action": "customer_code",
+				"code_type": "excute_c_code",
+				"include": "#include \"ui_Aircon.h\"\n",
+				"code": "ui_aircon_update_timer(0,kAIRCON_TimerUp);"
+			},
+			{
+				"src": "ui_Aircon_Btn_TimerDown",
+				"trigger": "released",
+				"dst": "",
+				"action": "customer_code",
+				"code_type": "excute_c_code",
+				"include": "#include \"ui_Aircon.h\"\n",
+				"code": "ui_aircon_update_timer(0,kAIRCON_TimerDown);"
 			}
 		]
 	}

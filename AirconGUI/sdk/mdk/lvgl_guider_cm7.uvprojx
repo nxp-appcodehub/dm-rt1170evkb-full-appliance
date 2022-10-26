@@ -1476,6 +1476,11 @@
       <FilePath>..\..\generated\guider_fonts\lv_font_Antonio_Regular_21.c</FilePath>
     </File>
     <File>
+      <FileName>lv_font_Antonio_Regular_80.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\guider_fonts\lv_font_Antonio_Regular_80.c</FilePath>
+    </File>
+    <File>
       <FileName>lv_font_simsun_12.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\guider_fonts\lv_font_simsun_12.c</FilePath>
@@ -5632,6 +5637,11 @@
       <FileName>lv_font_Antonio_Regular_21.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\guider_fonts\lv_font_Antonio_Regular_21.c</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_80.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\guider_fonts\lv_font_Antonio_Regular_80.c</FilePath>
     </File>
     <File>
       <FileName>lv_font_simsun_12.c</FileName>

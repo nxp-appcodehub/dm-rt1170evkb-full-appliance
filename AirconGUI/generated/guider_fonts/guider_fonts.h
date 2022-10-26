@@ -24,6 +24,7 @@ LV_FONT_DECLARE(lv_font_simsun_12)
 LV_FONT_DECLARE(lv_font_Antonio_Regular_20)
 LV_FONT_DECLARE(lv_font_Antonio_Regular_12)
 LV_FONT_DECLARE(lv_font_Antonio_Regular_19)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_80)
 
 
 #ifdef __cplusplus

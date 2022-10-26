@@ -24,6 +24,8 @@ static void img_seq_anim_cb(void * var, int32_t v);
  * Variables
  ******************************************************************************/
 uint32_t AirconTemp = 25;
+uint32_t TimerHour = 1;
+int32_t TimerMin = 15;
 
 /*Declare Image for swing animation*/
 LV_IMG_DECLARE(_aircon_swing_1_632x113);
@@ -85,24 +87,68 @@ LV_IMG_DECLARE(_icn_fan_27x31);
 
 void ui_aircon_update_temp (uint32_t temp, AIRCON_Temp_T state)
 {
-	if(temp != 0)
+	if(temp)
 	{
 		AirconTemp = temp;
 	}
 	else
 	{
-		if(state == kAIRCON_TempDown)
+		switch (state)
 		{
+		case kAIRCON_TempDown:
 			AirconTemp--;
-		}
-		else if(state == kAIRCON_TempUp)
-		{
+			break;
+		case kAIRCON_TempUp:
 			AirconTemp++;
+			break;
 		}
 	}
 	lv_label_set_text_fmt(guider_ui.ui_Aircon_Label_Temp, "%02d",AirconTemp);
 
 }
+
+void ui_aircon_update_timer (uint32_t hour,  AIRCON_Timer_T state)
+{
+	if(hour)
+	{
+		switch (state)
+		{
+		case kAIRCON_TimerDown:
+			TimerHour--;
+			break;
+		case kAIRCON_TimerUp:
+			TimerHour++;
+			break;
+		}
+	}
+	else
+	{
+		switch (state)
+		{
+		case kAIRCON_TimerDown:
+			TimerMin-=15;
+			break;
+		case kAIRCON_TimerUp:
+			TimerMin+=15;
+			break;
+		}
+	}
+
+	if(TimerMin < 0)
+	{
+		TimerMin = 45;
+		TimerHour--;
+	}
+	else if (TimerMin == 60)
+	{
+		TimerMin = 0;
+		TimerHour++;
+	}
+
+	lv_label_set_text_fmt(guider_ui.ui_Aircon_Label_TimerHour, "%02d",TimerHour);
+	lv_label_set_text_fmt(guider_ui.ui_Aircon_Label_TimerMin, "%02d",TimerMin);
+}
+
 
 void ui_aircon_swing (bool state)
 {

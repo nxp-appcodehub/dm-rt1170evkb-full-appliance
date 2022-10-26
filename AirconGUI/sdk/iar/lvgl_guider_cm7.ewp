@@ -4483,6 +4483,9 @@
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_21.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_80.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_simsun_12.c</name>
     </file>
     <file>

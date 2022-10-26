@@ -60,6 +60,9 @@ typedef struct
 	lv_obj_t *ui_Aircon_Btn_TimerDown;
 	lv_obj_t *ui_Aircon_Btn_TimerDown_label;
 	lv_obj_t *ui_Aircon_Img_TimerDown;
+	lv_obj_t *ui_Aircon_Label_TimerHour;
+	lv_obj_t *ui_Aircon_Label_TimerPoints;
+	lv_obj_t *ui_Aircon_Label_TimerMin;
 	lv_obj_t *ui_Aircon_Img_Fan;
 	lv_obj_t *ui_Aircon_Img_Cool;
 }lv_ui;

@@ -389,7 +389,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 
 	//Write codes ui_Aircon_Roller_Mode
 	ui->ui_Aircon_Roller_Mode = lv_roller_create(ui->ui_Aircon_cont_1);
-	lv_obj_set_pos(ui->ui_Aircon_Roller_Mode, 35, 404);
+	lv_obj_set_pos(ui->ui_Aircon_Roller_Mode, 40, 404);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Roller_Mode, LV_SCROLLBAR_MODE_OFF);
 
 	//Write style state: LV_STATE_DEFAULT for style_ui_aircon_roller_mode_main_main_default
@@ -1140,6 +1140,96 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_img_set_src(ui->ui_Aircon_Img_TimerDown,&_arrow_down_28x14);
 	lv_img_set_pivot(ui->ui_Aircon_Img_TimerDown, 50,50);
 	lv_img_set_angle(ui->ui_Aircon_Img_TimerDown, 0);
+
+	//Write codes ui_Aircon_Label_TimerHour
+	ui->ui_Aircon_Label_TimerHour = lv_label_create(ui->ui_Aircon_cont_1);
+	lv_obj_set_pos(ui->ui_Aircon_Label_TimerHour, 19, 234);
+	lv_obj_set_size(ui->ui_Aircon_Label_TimerHour, 76, 103);
+	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_TimerHour, LV_SCROLLBAR_MODE_OFF);
+	lv_label_set_text(ui->ui_Aircon_Label_TimerHour, "01");
+	lv_label_set_long_mode(ui->ui_Aircon_Label_TimerHour, LV_LABEL_LONG_WRAP);
+
+	//Write style state: LV_STATE_DEFAULT for style_ui_aircon_label_timerhour_main_main_default
+	static lv_style_t style_ui_aircon_label_timerhour_main_main_default;
+	if (style_ui_aircon_label_timerhour_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_aircon_label_timerhour_main_main_default);
+	else
+		lv_style_init(&style_ui_aircon_label_timerhour_main_main_default);
+	lv_style_set_radius(&style_ui_aircon_label_timerhour_main_main_default, 0);
+	lv_style_set_bg_color(&style_ui_aircon_label_timerhour_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_color(&style_ui_aircon_label_timerhour_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_dir(&style_ui_aircon_label_timerhour_main_main_default, LV_GRAD_DIR_NONE);
+	lv_style_set_bg_opa(&style_ui_aircon_label_timerhour_main_main_default, 0);
+	lv_style_set_text_color(&style_ui_aircon_label_timerhour_main_main_default, lv_color_make(0xff, 0xff, 0xff));
+	lv_style_set_text_font(&style_ui_aircon_label_timerhour_main_main_default, &lv_font_Antonio_Regular_80);
+	lv_style_set_text_letter_space(&style_ui_aircon_label_timerhour_main_main_default, 2);
+	lv_style_set_text_line_space(&style_ui_aircon_label_timerhour_main_main_default, 0);
+	lv_style_set_text_align(&style_ui_aircon_label_timerhour_main_main_default, LV_TEXT_ALIGN_CENTER);
+	lv_style_set_pad_left(&style_ui_aircon_label_timerhour_main_main_default, 0);
+	lv_style_set_pad_right(&style_ui_aircon_label_timerhour_main_main_default, 0);
+	lv_style_set_pad_top(&style_ui_aircon_label_timerhour_main_main_default, 8);
+	lv_style_set_pad_bottom(&style_ui_aircon_label_timerhour_main_main_default, 0);
+	lv_obj_add_style(ui->ui_Aircon_Label_TimerHour, &style_ui_aircon_label_timerhour_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes ui_Aircon_Label_TimerPoints
+	ui->ui_Aircon_Label_TimerPoints = lv_label_create(ui->ui_Aircon_cont_1);
+	lv_obj_set_pos(ui->ui_Aircon_Label_TimerPoints, 93, 229);
+	lv_obj_set_size(ui->ui_Aircon_Label_TimerPoints, 23, 103);
+	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_TimerPoints, LV_SCROLLBAR_MODE_OFF);
+	lv_label_set_text(ui->ui_Aircon_Label_TimerPoints, ":");
+	lv_label_set_long_mode(ui->ui_Aircon_Label_TimerPoints, LV_LABEL_LONG_WRAP);
+
+	//Write style state: LV_STATE_DEFAULT for style_ui_aircon_label_timerpoints_main_main_default
+	static lv_style_t style_ui_aircon_label_timerpoints_main_main_default;
+	if (style_ui_aircon_label_timerpoints_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_aircon_label_timerpoints_main_main_default);
+	else
+		lv_style_init(&style_ui_aircon_label_timerpoints_main_main_default);
+	lv_style_set_radius(&style_ui_aircon_label_timerpoints_main_main_default, 0);
+	lv_style_set_bg_color(&style_ui_aircon_label_timerpoints_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_color(&style_ui_aircon_label_timerpoints_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_dir(&style_ui_aircon_label_timerpoints_main_main_default, LV_GRAD_DIR_NONE);
+	lv_style_set_bg_opa(&style_ui_aircon_label_timerpoints_main_main_default, 0);
+	lv_style_set_text_color(&style_ui_aircon_label_timerpoints_main_main_default, lv_color_make(0xff, 0xff, 0xff));
+	lv_style_set_text_font(&style_ui_aircon_label_timerpoints_main_main_default, &lv_font_Antonio_Regular_80);
+	lv_style_set_text_letter_space(&style_ui_aircon_label_timerpoints_main_main_default, 2);
+	lv_style_set_text_line_space(&style_ui_aircon_label_timerpoints_main_main_default, 0);
+	lv_style_set_text_align(&style_ui_aircon_label_timerpoints_main_main_default, LV_TEXT_ALIGN_CENTER);
+	lv_style_set_pad_left(&style_ui_aircon_label_timerpoints_main_main_default, 0);
+	lv_style_set_pad_right(&style_ui_aircon_label_timerpoints_main_main_default, 0);
+	lv_style_set_pad_top(&style_ui_aircon_label_timerpoints_main_main_default, 8);
+	lv_style_set_pad_bottom(&style_ui_aircon_label_timerpoints_main_main_default, 0);
+	lv_obj_add_style(ui->ui_Aircon_Label_TimerPoints, &style_ui_aircon_label_timerpoints_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes ui_Aircon_Label_TimerMin
+	ui->ui_Aircon_Label_TimerMin = lv_label_create(ui->ui_Aircon_cont_1);
+	lv_obj_set_pos(ui->ui_Aircon_Label_TimerMin, 118, 234);
+	lv_obj_set_size(ui->ui_Aircon_Label_TimerMin, 76, 103);
+	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_TimerMin, LV_SCROLLBAR_MODE_OFF);
+	lv_label_set_text(ui->ui_Aircon_Label_TimerMin, "15");
+	lv_label_set_long_mode(ui->ui_Aircon_Label_TimerMin, LV_LABEL_LONG_WRAP);
+
+	//Write style state: LV_STATE_DEFAULT for style_ui_aircon_label_timermin_main_main_default
+	static lv_style_t style_ui_aircon_label_timermin_main_main_default;
+	if (style_ui_aircon_label_timermin_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_aircon_label_timermin_main_main_default);
+	else
+		lv_style_init(&style_ui_aircon_label_timermin_main_main_default);
+	lv_style_set_radius(&style_ui_aircon_label_timermin_main_main_default, 0);
+	lv_style_set_bg_color(&style_ui_aircon_label_timermin_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_color(&style_ui_aircon_label_timermin_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_dir(&style_ui_aircon_label_timermin_main_main_default, LV_GRAD_DIR_NONE);
+	lv_style_set_bg_opa(&style_ui_aircon_label_timermin_main_main_default, 0);
+	lv_style_set_text_color(&style_ui_aircon_label_timermin_main_main_default, lv_color_make(0xff, 0xff, 0xff));
+	lv_style_set_text_font(&style_ui_aircon_label_timermin_main_main_default, &lv_font_Antonio_Regular_80);
+	lv_style_set_text_letter_space(&style_ui_aircon_label_timermin_main_main_default, 2);
+	lv_style_set_text_line_space(&style_ui_aircon_label_timermin_main_main_default, 0);
+	lv_style_set_text_align(&style_ui_aircon_label_timermin_main_main_default, LV_TEXT_ALIGN_CENTER);
+	lv_style_set_pad_left(&style_ui_aircon_label_timermin_main_main_default, 0);
+	lv_style_set_pad_right(&style_ui_aircon_label_timermin_main_main_default, 0);
+	lv_style_set_pad_top(&style_ui_aircon_label_timermin_main_main_default, 8);
+	lv_style_set_pad_bottom(&style_ui_aircon_label_timermin_main_main_default, 0);
+	lv_obj_add_style(ui->ui_Aircon_Label_TimerMin, &style_ui_aircon_label_timermin_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Img_Fan
 	ui->ui_Aircon_Img_Fan = lv_img_create(ui->ui_Aircon);

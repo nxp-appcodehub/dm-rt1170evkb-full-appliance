@@ -25,6 +25,12 @@ typedef enum
 
 typedef enum
 {
+	kAIRCON_TimerDown,
+	kAIRCON_TimerUp,
+} AIRCON_Timer_T;
+
+typedef enum
+{
 	kAIRCON_SwingOff,
 	kAIRCON_SwingOn,
 } AIRCON_Swing_State_T;
@@ -47,6 +53,8 @@ typedef enum
  ******************************************************************************/
 
 void ui_aircon_update_temp (uint32_t temp, AIRCON_Temp_T state);
+
+void ui_aircon_update_timer (uint32_t hour, AIRCON_Timer_T state);
 
 void ui_aircon_swing (bool state);
 

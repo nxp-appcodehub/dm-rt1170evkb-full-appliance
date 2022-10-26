@@ -557,7 +557,7 @@ style_ui_aircon_img_tempdown_main_main_default.set_img_opa(255)
 ui_Aircon_Img_TempDown.add_style(style_ui_aircon_img_tempdown_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 ui_Aircon_Roller_Mode = lv.roller(ui_Aircon_cont_1)
-ui_Aircon_Roller_Mode.set_pos(int(35),int(404))
+ui_Aircon_Roller_Mode.set_pos(int(40),int(404))
 ui_Aircon_Roller_Mode.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 ui_Aircon_Roller_Mode.set_options("COOL\nDRY\nFAN", lv.roller.MODE.INFINITE)
 ui_Aircon_Roller_Mode.set_visible_row_count(3)
@@ -1412,6 +1412,105 @@ style_ui_aircon_img_timerdown_main_main_default.set_img_opa(255)
 # add style for ui_Aircon_Img_TimerDown
 ui_Aircon_Img_TimerDown.add_style(style_ui_aircon_img_timerdown_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
+ui_Aircon_Label_TimerHour = lv.label(ui_Aircon_cont_1)
+ui_Aircon_Label_TimerHour.set_pos(int(19),int(234))
+ui_Aircon_Label_TimerHour.set_size(76,103)
+ui_Aircon_Label_TimerHour.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Aircon_Label_TimerHour.set_text("01")
+ui_Aircon_Label_TimerHour.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_aircon_label_timerhour_main_main_default
+style_ui_aircon_label_timerhour_main_main_default = lv.style_t()
+style_ui_aircon_label_timerhour_main_main_default.init()
+style_ui_aircon_label_timerhour_main_main_default.set_radius(0)
+style_ui_aircon_label_timerhour_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_aircon_label_timerhour_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_aircon_label_timerhour_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_aircon_label_timerhour_main_main_default.set_bg_opa(0)
+style_ui_aircon_label_timerhour_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_aircon_label_timerhour_main_main_default.set_text_font(lv.font_Antonio_Regular_80)
+except AttributeError:
+    try:
+        style_ui_aircon_label_timerhour_main_main_default.set_text_font(lv.font_montserrat_80)
+    except AttributeError:
+        style_ui_aircon_label_timerhour_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_aircon_label_timerhour_main_main_default.set_text_letter_space(2)
+style_ui_aircon_label_timerhour_main_main_default.set_text_line_space(0)
+style_ui_aircon_label_timerhour_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_aircon_label_timerhour_main_main_default.set_pad_left(0)
+style_ui_aircon_label_timerhour_main_main_default.set_pad_right(0)
+style_ui_aircon_label_timerhour_main_main_default.set_pad_top(8)
+style_ui_aircon_label_timerhour_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Aircon_Label_TimerHour
+ui_Aircon_Label_TimerHour.add_style(style_ui_aircon_label_timerhour_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+ui_Aircon_Label_TimerPoints = lv.label(ui_Aircon_cont_1)
+ui_Aircon_Label_TimerPoints.set_pos(int(93),int(229))
+ui_Aircon_Label_TimerPoints.set_size(23,103)
+ui_Aircon_Label_TimerPoints.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Aircon_Label_TimerPoints.set_text(":")
+ui_Aircon_Label_TimerPoints.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_aircon_label_timerpoints_main_main_default
+style_ui_aircon_label_timerpoints_main_main_default = lv.style_t()
+style_ui_aircon_label_timerpoints_main_main_default.init()
+style_ui_aircon_label_timerpoints_main_main_default.set_radius(0)
+style_ui_aircon_label_timerpoints_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_aircon_label_timerpoints_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_aircon_label_timerpoints_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_aircon_label_timerpoints_main_main_default.set_bg_opa(0)
+style_ui_aircon_label_timerpoints_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_aircon_label_timerpoints_main_main_default.set_text_font(lv.font_Antonio_Regular_80)
+except AttributeError:
+    try:
+        style_ui_aircon_label_timerpoints_main_main_default.set_text_font(lv.font_montserrat_80)
+    except AttributeError:
+        style_ui_aircon_label_timerpoints_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_aircon_label_timerpoints_main_main_default.set_text_letter_space(2)
+style_ui_aircon_label_timerpoints_main_main_default.set_text_line_space(0)
+style_ui_aircon_label_timerpoints_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_aircon_label_timerpoints_main_main_default.set_pad_left(0)
+style_ui_aircon_label_timerpoints_main_main_default.set_pad_right(0)
+style_ui_aircon_label_timerpoints_main_main_default.set_pad_top(8)
+style_ui_aircon_label_timerpoints_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Aircon_Label_TimerPoints
+ui_Aircon_Label_TimerPoints.add_style(style_ui_aircon_label_timerpoints_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+ui_Aircon_Label_TimerMin = lv.label(ui_Aircon_cont_1)
+ui_Aircon_Label_TimerMin.set_pos(int(118),int(234))
+ui_Aircon_Label_TimerMin.set_size(76,103)
+ui_Aircon_Label_TimerMin.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Aircon_Label_TimerMin.set_text("15")
+ui_Aircon_Label_TimerMin.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_aircon_label_timermin_main_main_default
+style_ui_aircon_label_timermin_main_main_default = lv.style_t()
+style_ui_aircon_label_timermin_main_main_default.init()
+style_ui_aircon_label_timermin_main_main_default.set_radius(0)
+style_ui_aircon_label_timermin_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_aircon_label_timermin_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_aircon_label_timermin_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_aircon_label_timermin_main_main_default.set_bg_opa(0)
+style_ui_aircon_label_timermin_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_aircon_label_timermin_main_main_default.set_text_font(lv.font_Antonio_Regular_80)
+except AttributeError:
+    try:
+        style_ui_aircon_label_timermin_main_main_default.set_text_font(lv.font_montserrat_80)
+    except AttributeError:
+        style_ui_aircon_label_timermin_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_aircon_label_timermin_main_main_default.set_text_letter_space(2)
+style_ui_aircon_label_timermin_main_main_default.set_text_line_space(0)
+style_ui_aircon_label_timermin_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_aircon_label_timermin_main_main_default.set_pad_left(0)
+style_ui_aircon_label_timermin_main_main_default.set_pad_right(0)
+style_ui_aircon_label_timermin_main_main_default.set_pad_top(8)
+style_ui_aircon_label_timermin_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Aircon_Label_TimerMin
+ui_Aircon_Label_TimerMin.add_style(style_ui_aircon_label_timermin_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
 # create style style_ui_aircon_cont_1_main_main_default
 style_ui_aircon_cont_1_main_main_default = lv.style_t()
 style_ui_aircon_cont_1_main_main_default.init()
@@ -1492,6 +1591,8 @@ style_ui_aircon_img_cool_main_main_default.set_img_opa(255)
 
 # add style for ui_Aircon_Img_Cool
 ui_Aircon_Img_Cool.add_style(style_ui_aircon_img_cool_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
 
 
 

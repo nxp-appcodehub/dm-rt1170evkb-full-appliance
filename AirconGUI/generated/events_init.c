@@ -93,6 +93,36 @@ static void ui_Aircon_Slider_Fan_event_handler(lv_event_t *e)
 	}
 }
 
+static void ui_Aircon_Btn_TimerUp_event_handler(lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+	switch (code)
+	{
+	case LV_EVENT_RELEASED:
+	{
+		ui_aircon_update_timer(0,kAIRCON_TimerUp);
+	}
+		break;
+	default:
+		break;
+	}
+}
+
+static void ui_Aircon_Btn_TimerDown_event_handler(lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+	switch (code)
+	{
+	case LV_EVENT_RELEASED:
+	{
+		ui_aircon_update_timer(0,kAIRCON_TimerDown);
+	}
+		break;
+	default:
+		break;
+	}
+}
+
 void events_init_ui_Aircon(lv_ui *ui)
 {
 	lv_obj_add_event_cb(ui->ui_Aircon_Btn_TempUp, ui_Aircon_Btn_TempUp_event_handler, LV_EVENT_ALL, NULL);
@@ -100,4 +130,6 @@ void events_init_ui_Aircon(lv_ui *ui)
 	lv_obj_add_event_cb(ui->ui_Aircon_Roller_Mode, ui_Aircon_Roller_Mode_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->ui_Aircon_Btn_Swing, ui_Aircon_Btn_Swing_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->ui_Aircon_Slider_Fan, ui_Aircon_Slider_Fan_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->ui_Aircon_Btn_TimerUp, ui_Aircon_Btn_TimerUp_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->ui_Aircon_Btn_TimerDown, ui_Aircon_Btn_TimerDown_event_handler, LV_EVENT_ALL, NULL);
 }
