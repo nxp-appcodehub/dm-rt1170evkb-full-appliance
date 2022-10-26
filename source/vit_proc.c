@@ -138,34 +138,9 @@ VIT_ReturnStatus_en VIT_ModelInfo(void)
     return VIT_SUCCESS;
 }
 
-static void enableCpuCycleCounter(void)
-{
-    /* Make sure the DWT trace fucntion is enabled. */
-    if (CoreDebug_DEMCR_TRCENA_Msk != (CoreDebug_DEMCR_TRCENA_Msk & CoreDebug->DEMCR))
-    {
-        CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
-    }
-
-    /* CYCCNT not supported on this device. */
-    assert(DWT_CTRL_NOCYCCNT_Msk != (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk));
-
-    /* Read CYCCNT directly if CYCCENT has already been enabled, otherwise enable CYCCENT first. */
-    if (DWT_CTRL_CYCCNTENA_Msk != (DWT_CTRL_CYCCNTENA_Msk & DWT->CTRL))
-    {
-        DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
-    }
-}
-
-static uint32_t getCpuCycleCount(void)
-{
-    return DWT->CYCCNT;
-}
-
 int VIT_Initialize()
 {
     VIT_ReturnStatus_en VIT_Status;
-
-    enableCpuCycleCounter();
 
     VIT_Status = VIT_SetModel(VIT_Model_en, VIT_MODEL_IN_ROM);
 
@@ -326,12 +301,9 @@ int VIT_Execute(void *inputBuffer, int size)
         VIT_InputBuffers.pBuffer_Chan3 = &DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * 2];
     }
 
-    uint32_t tic = getCpuCycleCount();
     VIT_Status = VIT_Process(VITHandle,
                              &VIT_InputBuffers, // temporal audio input data
                              &VIT_DetectionResults);
-    uint32_t toc = getCpuCycleCount();
-
 
     if (VIT_Status != VIT_SUCCESS)
     {
@@ -394,29 +366,6 @@ int VIT_Execute(void *inputBuffer, int size)
             }
         }
     }
-
-	static int32_t count = 0;
-	int32_t i = 0;
-	int32_t frames_per_window = 10;
-	uint32_t sum_cycles = 0;
-	static uint32_t cycles[10] = { 0 };
-
-	/* Get RMS value */
-	cycles[count % 10] = toc - tic;
-
-	/* Calculate average values for the selected window */
-	if ((count + 1) % frames_per_window == 0) {
-		for (i = 0; i < frames_per_window; i++) {
-			sum_cycles += cycles[i];
-		}
-		sum_cycles = sum_cycles * 10; // Multiply by 10 to get 1s
-
-
-		PRINTF(" Cycles: %d MHz ", sum_cycles / 1000000);
-	}
-	PRINTF("\r");
-	count++;
-
     return VIT_Status;
 }
 
