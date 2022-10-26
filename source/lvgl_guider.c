@@ -89,7 +89,7 @@ int main(void)
     BOARD_MIPIPanelTouch_I2C_Init();
     BOARD_InitDebugConsole();
 
-    stat = xTaskCreate(AppTask, "lvgl", configMINIMAL_STACK_SIZE + 800, NULL, tskIDLE_PRIORITY + 2, NULL);
+    stat = xTaskCreate(AppTask, "lvgl", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 5, NULL);
 
     if (pdPASS != stat)
     {
