@@ -11,6 +11,9 @@
 #include "PL_platformTypes_CortexM.h"
 #include "VIT.h"
 
+
+#define VIT_CMD_DETECT (1 << 0)
+
 void DeInterleave(const PL_INT16 *pDataInput, PL_INT16 *pDataOutput, PL_UINT16 FrameSize, PL_UINT16 ChannelNumber);
 void VIT_Task(void *pvParameters);
 

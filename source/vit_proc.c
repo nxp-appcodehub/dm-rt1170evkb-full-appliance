@@ -41,7 +41,8 @@ static VIT_DataIn_st VIT_InputBuffers = {PL_NULL, PL_NULL,
 static PL_INT8 *pMemory[PL_NR_MEMORY_REGIONS];
 static PL_INT16 DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS];
 
-//extern EventGroupHandle_t GPH_Process;
+extern EventGroupHandle_t GPH_Process;
+PL_UINT16 cmd_id = 0;
 
 #if DEBUG_MIC
 #include <cr_section_macros.h>
@@ -352,7 +353,9 @@ int VIT_Execute(void *inputBuffer, int size)
             PRINTF("\033[2K"); // VT100 code to erase line
             PRINTF(" - CMD %d: ", VoiceCommand.Cmd_Id);
             /*Set Event CMD detect*/
-//            xEventGroupSetBits(GPH_Process, VIT_CMD_DETECT);
+            xEventGroupSetBits(GPH_Process, VIT_CMD_DETECT);
+
+            cmd_id = VoiceCommand.Cmd_Id;
 
             // Retrieve CMD Name: OPTIONAL
             // Check first if CMD string is present
