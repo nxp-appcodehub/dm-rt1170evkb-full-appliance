@@ -26,6 +26,9 @@
 #define BOARD_DEBUG_UART_TYPE     kSerialPort_Uart
 #define BOARD_DEBUG_UART_CLK_FREQ 24000000
 
+/* Used when setting clock frequency for usb apps like MSC dev in bootloader */
+#define BOARD_USB_CLOCK_FREQ (24000000)
+
 #if DEBUG_CONSOLE_UART_INDEX == 1
 #define BOARD_DEBUG_UART_BASEADDR (uint32_t) LPUART1
 #define BOARD_DEBUG_UART_INSTANCE 1U
