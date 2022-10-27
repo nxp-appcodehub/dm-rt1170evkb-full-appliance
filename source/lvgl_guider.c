@@ -72,7 +72,6 @@ static void AppTask(void *param)
 	for (;;)
 	{
 		lv_task_handler();
-		vTaskDelay(5);
 	}
 }
 
