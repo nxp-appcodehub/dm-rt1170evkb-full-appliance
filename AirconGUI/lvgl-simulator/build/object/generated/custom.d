@@ -115,11 +115,14 @@ build/object/generated/custom.o: \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_table.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_checkbox.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_bar.h \
+ c:\repos\future_training\aircongui\lvgl\src\misc\lv_anim.h \
+ c:\repos\future_training\aircongui\lvgl\src/widgets/lv_btn.h \
+ c:\repos\future_training\aircongui\lvgl\src/widgets/lv_label.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_slider.h \
+ c:\repos\future_training\aircongui\lvgl\src/widgets/lv_bar.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_btnmatrix.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_dropdown.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_roller.h \
- c:\repos\future_training\aircongui\lvgl\src/widgets/lv_label.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_textarea.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_canvas.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_switch.h \
@@ -219,7 +222,8 @@ build/object/generated/custom.o: \
  c:\repos\future_training\aircongui\custom\custom.h \
  c:\repos\future_training\aircongui\generated\gui_guider.h \
  c:\repos\future_training\aircongui\generated\guider_fonts\guider_fonts.h \
- c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h
+ c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h \
+ c:\repos\future_training\aircongui\custom\ui_Aircon.h
 
 c:\repos\future_training\aircongui\lvgl\lvgl.h:
 
@@ -451,15 +455,21 @@ c:\repos\future_training\aircongui\lvgl\src/widgets/lv_checkbox.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_bar.h:
 
+c:\repos\future_training\aircongui\lvgl\src\misc\lv_anim.h:
+
+c:\repos\future_training\aircongui\lvgl\src/widgets/lv_btn.h:
+
+c:\repos\future_training\aircongui\lvgl\src/widgets/lv_label.h:
+
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_slider.h:
+
+c:\repos\future_training\aircongui\lvgl\src/widgets/lv_bar.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_btnmatrix.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_dropdown.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_roller.h:
-
-c:\repos\future_training\aircongui\lvgl\src/widgets/lv_label.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_textarea.h:
 
@@ -660,3 +670,5 @@ c:\repos\future_training\aircongui\generated\gui_guider.h:
 c:\repos\future_training\aircongui\generated\guider_fonts\guider_fonts.h:
 
 c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h:
+
+c:\repos\future_training\aircongui\custom\ui_Aircon.h:

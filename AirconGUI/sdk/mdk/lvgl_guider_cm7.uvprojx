@@ -975,6 +975,16 @@
       <FileType>5</FileType>
       <FilePath>..\..\custom\custom.mk</FilePath>
     </File>
+    <File>
+      <FileName>ui_Aircon.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\custom\ui_Aircon.c</FilePath>
+    </File>
+    <File>
+      <FileName>ui_Aircon.h</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\custom\ui_Aircon.h</FilePath>
+    </File>
   </Files>
 </Group>
         <Group>
@@ -5137,6 +5147,16 @@
       <FileName>custom.mk</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\custom\custom.mk</FilePath>
+    </File>
+    <File>
+      <FileName>ui_Aircon.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\custom\ui_Aircon.c</FilePath>
+    </File>
+    <File>
+      <FileName>ui_Aircon.h</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\custom\ui_Aircon.h</FilePath>
     </File>
   </Files>
 </Group>

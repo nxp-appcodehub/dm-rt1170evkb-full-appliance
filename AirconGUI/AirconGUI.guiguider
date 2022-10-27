@@ -247,6 +247,7 @@
 					"child": [
 						{
 							"name": "Label_TimerMin",
+							"id": "sdnsuyuc",
 							"type": "label",
 							"left": 118,
 							"top": 234,
@@ -314,11 +315,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "sdnsuyuc"
+							]
 						},
 						{
 							"name": "Label_TimerPoints",
+							"id": "hv47cnei",
 							"type": "label",
 							"left": 93,
 							"top": 229,
@@ -386,11 +387,11 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "hv47cnei"
+							]
 						},
 						{
 							"name": "Label_TimerHour",
+							"id": "74rxpt0o",
 							"type": "label",
 							"left": 19,
 							"top": 234,
@@ -458,8 +459,7 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "74rxpt0o"
+							]
 						},
 						{
 							"name": "Img_TimerDown",

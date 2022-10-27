@@ -4180,6 +4180,12 @@
   <file>
     <name>$PROJ_DIR$\..\..\custom\custom.mk</name>
   </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\custom\ui_Aircon.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\custom\ui_Aircon.h</name>
+  </file>
 </group>
   <group>
     <name>device</name>

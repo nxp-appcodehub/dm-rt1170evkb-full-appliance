@@ -118,11 +118,14 @@ build/object/keyboard.o: \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_table.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_checkbox.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_bar.h \
+ c:\repos\future_training\aircongui\lvgl\src\misc\lv_anim.h \
+ c:\repos\future_training\aircongui\lvgl\src/widgets/lv_btn.h \
+ c:\repos\future_training\aircongui\lvgl\src/widgets/lv_label.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_slider.h \
+ c:\repos\future_training\aircongui\lvgl\src/widgets/lv_bar.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_btnmatrix.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_dropdown.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_roller.h \
- c:\repos\future_training\aircongui\lvgl\src/widgets/lv_label.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_textarea.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_canvas.h \
  c:\repos\future_training\aircongui\lvgl\src/widgets/lv_switch.h \
@@ -502,15 +505,21 @@ c:\repos\future_training\aircongui\lvgl\src/widgets/lv_checkbox.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_bar.h:
 
+c:\repos\future_training\aircongui\lvgl\src\misc\lv_anim.h:
+
+c:\repos\future_training\aircongui\lvgl\src/widgets/lv_btn.h:
+
+c:\repos\future_training\aircongui\lvgl\src/widgets/lv_label.h:
+
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_slider.h:
+
+c:\repos\future_training\aircongui\lvgl\src/widgets/lv_bar.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_btnmatrix.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_dropdown.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_roller.h:
-
-c:\repos\future_training\aircongui\lvgl\src/widgets/lv_label.h:
 
 c:\repos\future_training\aircongui\lvgl\src/widgets/lv_textarea.h:
 
