@@ -111,15 +111,7 @@ void ui_aircon_update_timer (uint32_t hour,  AIRCON_Timer_T state)
 {
 	if(hour)
 	{
-		switch (state)
-		{
-		case kAIRCON_TimerDown:
-			TimerHour--;
-			break;
-		case kAIRCON_TimerUp:
-			TimerHour++;
-			break;
-		}
+		TimerHour = hour;
 	}
 	else
 	{
@@ -217,6 +209,57 @@ void ui_aircon_star_cool(void)
 	lv_anim_t * a;
 	a = _ui_start_img_seq_anim(guider_ui.ui_Aircon_Img_Cool, aircon_cool, sizeof(aircon_cool) / sizeof(aircon_cool[0]), 100, false);
 	a->repeat_cnt = LV_ANIM_REPEAT_INFINITE;
+}
+
+void ui_aircon_process_command (unsigned short cmd_id)
+{
+	switch (cmd_id)
+	{
+	case kVIT_IncreaseTemp:
+		ui_aircon_update_temp(0, kAIRCON_TempUp);
+		break;
+	case kVIT_DecreaseTemp:
+		ui_aircon_update_temp(0, kAIRCON_TempDown);
+		break;
+	case kVIT_SetTemp19:
+		ui_aircon_update_temp(19, 0);
+		break;
+	case kVIT_SetFanToHigh:
+		ui_aricon_set_fan_speed(kAIRCON_FanHigh);
+		lv_slider_set_value(guider_ui.ui_Aircon_Slider_Fan,kAIRCON_FanHigh, 0);
+		break;
+	case kVIT_SetFanToMedium:
+		ui_aricon_set_fan_speed(kAIRCON_FanMedium);
+		lv_slider_set_value(guider_ui.ui_Aircon_Slider_Fan,kAIRCON_FanMedium, 0);
+		break;
+	case kVIT_SetFanToLow:
+		ui_aricon_set_fan_speed(kAIRCON_FanLow);
+		lv_slider_set_value(guider_ui.ui_Aircon_Slider_Fan,kAIRCON_FanLow, 0);
+		break;
+	case kVIT_SwingOn:
+		ui_aircon_swing(kAIRCON_SwingOn);
+		lv_obj_add_state(guider_ui.ui_Aircon_Btn_Swing,LV_STATE_CHECKED);
+		break;
+	case kVIT_SwingOff:
+		ui_aircon_swing(kAIRCON_SwingOff);
+		lv_obj_clear_state(guider_ui.ui_Aircon_Btn_Swing,LV_STATE_CHECKED);
+		break;
+	case kVIT_SetModeCool:
+		ui_aircon_set_mode(kAIRCON_ModeCool);
+		lv_roller_set_selected(guider_ui.ui_Aircon_Roller_Mode, kAIRCON_ModeCool, 0);
+		break;
+	case kVIT_SetModeDry:
+		ui_aircon_set_mode(kAIRCON_ModeDry);
+		lv_roller_set_selected(guider_ui.ui_Aircon_Roller_Mode, kAIRCON_ModeDry, 0);
+		break;
+	case kVIT_SetModeFan:
+		ui_aircon_set_mode(kAIRCON_ModeFan);
+		lv_roller_set_selected(guider_ui.ui_Aircon_Roller_Mode, kAIRCON_ModeFan, 0);
+		break;
+	case kVIT_SetTimer4:
+		ui_aircon_update_timer(4, 0);
+		break;
+	}
 }
 
 /*******************************************************************************

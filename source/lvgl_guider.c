@@ -7,6 +7,7 @@
 
 #include "FreeRTOS.h"
 #include "task.h"
+#include "event_groups.h"
 
 #include "fsl_debug_console.h"
 #include "lvgl_support.h"
@@ -19,6 +20,7 @@
 
 #include "vit_proc.h"
 #include "fsl_soc_src.h"
+#include "ui_Aircon.h"
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -40,6 +42,9 @@ const clock_audio_pll_config_t audioPllConfig = {
 		.numerator   = 77,  /* 30 bit numerator of fractional loop divider. */
 		.denominator = 100, /* 30 bit denominator of fractional loop divider */
 };
+
+EventGroupHandle_t GPH_Process = NULL;
+extern PL_UINT16 cmd_id;
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -52,6 +57,21 @@ static void print_cb(const char *buf)
 }
 #endif
 
+static void Graphics_Process (void *pvParameters)
+{
+
+	EventBits_t event_bits;
+
+	for(;;)
+	{
+		event_bits = xEventGroupWaitBits(GPH_Process,  VIT_CMD_DETECT, pdTRUE, pdFALSE, portMAX_DELAY);
+
+		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
+		{
+			ui_aircon_process_command(cmd_id);
+		}
+	}
+}
 static void AppTask(void *param)
 {
 #if LV_USE_LOG
@@ -146,7 +166,7 @@ int main(void)
 	BOARD_InitMicPins();
 	BOARD_InitMipiPanelPins();
 	BOARD_MIPIPanelTouch_I2C_Init();
-    BOARD_InitDebugConsole();
+	BOARD_InitDebugConsole();
 
 	CLOCK_InitAudioPll(&audioPllConfig);
 
@@ -156,6 +176,8 @@ int main(void)
 
 	PRINTF("\r\n Coffee Machine Demo\r\n");
 
+	GPH_Process = xEventGroupCreate();
+
 	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
 			pdPASS)
 	{
@@ -164,7 +186,15 @@ int main(void)
 			;
 	}
 
-	if (xTaskCreate(AppTask, "lvgl", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 5, NULL) !=
+	if (xTaskCreate(Graphics_Process, "Graphics_Process", configMINIMAL_STACK_SIZE + 400, NULL, configMAX_PRIORITIES - 5, NULL) !=
+			pdPASS)
+	{
+		PRINTF("\r\nFailed to create application task\r\n");
+		while (1)
+			;
+	}
+
+	if (xTaskCreate(AppTask, "lvgl", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 6, NULL) !=
 			pdPASS)
 	{
 		PRINTF("\r\nFailed to create VIT task\r\n");

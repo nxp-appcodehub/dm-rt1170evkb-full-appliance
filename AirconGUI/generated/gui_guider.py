@@ -609,7 +609,7 @@ ui_Aircon_Btn_Swing.set_size(78,45)
 ui_Aircon_Btn_Swing.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 ui_Aircon_Btn_Swing.add_flag(lv.obj.FLAG.CHECKABLE)
 ui_Aircon_Btn_Swing_label = lv.label(ui_Aircon_Btn_Swing)
-ui_Aircon_Btn_Swing_label.set_text("OFF")
+ui_Aircon_Btn_Swing_label.set_text("ON")
 ui_Aircon_Btn_Swing.set_style_pad_all(0, lv.STATE.DEFAULT)
 ui_Aircon_Btn_Swing_label.align(lv.ALIGN.CENTER,0,0)
 # create style style_ui_aircon_btn_swing_main_main_default

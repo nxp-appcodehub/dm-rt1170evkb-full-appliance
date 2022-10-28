@@ -488,7 +488,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Btn_Swing, &style_ui_aircon_btn_swing_main_main_checked, LV_PART_MAIN|LV_STATE_CHECKED);
 	lv_obj_add_flag(ui->ui_Aircon_Btn_Swing, LV_OBJ_FLAG_CHECKABLE);
 	ui->ui_Aircon_Btn_Swing_label = lv_label_create(ui->ui_Aircon_Btn_Swing);
-	lv_label_set_text(ui->ui_Aircon_Btn_Swing_label, "OFF");
+	lv_label_set_text(ui->ui_Aircon_Btn_Swing_label, "ON");
 	lv_obj_set_style_pad_all(ui->ui_Aircon_Btn_Swing, 0, LV_STATE_DEFAULT);
 	lv_obj_align(ui->ui_Aircon_Btn_Swing_label, LV_ALIGN_CENTER, 0, 0);
 

@@ -12,4 +12,4 @@ Coffee machine demo based on the **[RT170-EVK](https://www.nxp.com/design/develo
 
 ### SW requirements
 - MCUXpresso IDE v11.6.0
-- SLN-VIZN3D-IOT SDK (SDK_2_9_1_SLN-VIZN3D-IOT)
+- RT1170-EVK SDK (SDK_2_12_1_MIMXRT1170-EVK)
