@@ -48,6 +48,22 @@ typedef enum
 	kAIRCON_ModeDry,
 	kAIRCON_ModeFan
 } AIRCON_Mode_T;
+
+typedef enum
+{
+    kVIT_IncreaseTemp = 1,
+	kVIT_DecreaseTemp,
+	kVIT_SetTemp19,
+	kVIT_SetFanToHigh,
+	kVIT_SetFanToMedium,
+	kVIT_SetFanToLow,
+	kVIT_SwingOn,
+	kVIT_SwingOff,
+	kVIT_SetModeCool,
+	kVIT_SetModeDry,
+	kVIT_SetModeFan,
+	kVIT_SetTimer4
+} VIT_Aircon_Commands_T;
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -63,5 +79,7 @@ void ui_aricon_set_fan_speed (AIRCON_Fan_Speed_T speed);
 void ui_aircon_set_mode (AIRCON_Mode_T mode);
 
 void ui_aircon_star_cool(void);
+
+void ui_aircon_process_command ( unsigned short cmd_id);
 
 #endif /* UI_AIRCON_H_ */

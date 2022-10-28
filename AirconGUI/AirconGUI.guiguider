@@ -2155,7 +2155,7 @@
 							"height": 45,
 							"default_style": false,
 							"scrollbar_mode": "OFF",
-							"text": "OFF",
+							"text": "ON",
 							"toggle": true,
 							"style": [
 								{
@@ -4600,7 +4600,7 @@
 										"text_color": "#000000"
 									}
 								],
-								"text": "OFF",
+								"text": "ON",
 								"toggle": true
 							},
 							{

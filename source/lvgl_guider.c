@@ -44,6 +44,7 @@ const clock_audio_pll_config_t audioPllConfig = {
 };
 
 EventGroupHandle_t GPH_Process = NULL;
+extern PL_UINT16 cmd_id;
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -67,7 +68,7 @@ static void Graphics_Process (void *pvParameters)
 
 		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
 		{
-			//ui_aircon_process_command();
+			ui_aircon_process_command(cmd_id);
 		}
 	}
 }
@@ -174,6 +175,8 @@ int main(void)
 	CLOCK_SetRootClockDiv(kCLOCK_Root_Mic, 16);
 
 	PRINTF("\r\n Coffee Machine Demo\r\n");
+
+	GPH_Process = xEventGroupCreate();
 
 	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
 			pdPASS)
