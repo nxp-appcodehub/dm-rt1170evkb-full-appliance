@@ -719,6 +719,8 @@
 									<listOptionValue builtIn="false" value="isd=*(NonCacheable.init);region=NCACHE_REGION;type=.data"/>
 									<listOptionValue builtIn="false" value="isd=*(NonCacheable);region=NCACHE_REGION;type=.bss"/>
 									<listOptionValue builtIn="false" value="isd=KEEP(*(DataQuickAccess));region=SRAM_DTC_cm7;type=.data"/>
+									<listOptionValue builtIn="false" value="isd=*heap_4.o(.bss .bss*);region=SRAM_OC1;type=.bss"/>
+									<listOptionValue builtIn="false" value="isd=*lv_mem.o(.bss .bss*);region=SRAM_OC2;type=.bss"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.crt.advproject.link.gcc.multicore.master.userobjs.591370612" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.gcc.multicore.master.userobjs" useByScannerDiscovery="false" valueType="userObjs"/>
 								<option id="com.crt.advproject.link.gcc.multicore.slave.782565146" name="Multicore configuration" superClass="com.crt.advproject.link.gcc.multicore.slave" useByScannerDiscovery="false"/>

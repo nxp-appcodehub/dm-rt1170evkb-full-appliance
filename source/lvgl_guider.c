@@ -178,6 +178,7 @@ int main(void)
 
 	GPH_Process = xEventGroupCreate();
 
+
 	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
 			pdPASS)
 	{
@@ -185,6 +186,7 @@ int main(void)
 		while (1)
 			;
 	}
+
 
 	if (xTaskCreate(Graphics_Process, "Graphics_Process", configMINIMAL_STACK_SIZE + 400, NULL, configMAX_PRIORITIES - 5, NULL) !=
 			pdPASS)
