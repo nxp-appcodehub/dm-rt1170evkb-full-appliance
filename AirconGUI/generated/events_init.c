@@ -7,12 +7,49 @@
 #include "events_init.h"
 #include <stdio.h>
 #include "lvgl.h"
-#include "ui_Aircon.h"
+#include "ui_Oven.h"
 
+#include "ui_Aircon.h"
 
 
 void events_init(lv_ui *ui)
 {
+}
+
+static void ui_Oven_Btn_ModeLeft_event_handler(lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+	switch (code)
+	{
+	case LV_EVENT_RELEASED:
+	{
+		ui_oven_change_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);
+	}
+		break;
+	default:
+		break;
+	}
+}
+
+static void ui_Oven_Btn_ModeRigth_event_handler(lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+	switch (code)
+	{
+	case LV_EVENT_RELEASED:
+	{
+		ui_oven_change_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);
+	}
+		break;
+	default:
+		break;
+	}
+}
+
+void events_init_ui_Oven(lv_ui *ui)
+{
+	lv_obj_add_event_cb(ui->ui_Oven_Btn_ModeLeft, ui_Oven_Btn_ModeLeft_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->ui_Oven_Btn_ModeRigth, ui_Oven_Btn_ModeRigth_event_handler, LV_EVENT_ALL, NULL);
 }
 
 static void ui_Aircon_Btn_TempUp_event_handler(lv_event_t *e)

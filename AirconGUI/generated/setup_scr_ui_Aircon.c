@@ -89,7 +89,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_style_set_bg_grad_dir(&style_ui_aircon_label_air_main_main_default, LV_GRAD_DIR_NONE);
 	lv_style_set_bg_opa(&style_ui_aircon_label_air_main_main_default, 0);
 	lv_style_set_text_color(&style_ui_aircon_label_air_main_main_default, lv_color_make(0xff, 0xff, 0xff));
-	lv_style_set_text_font(&style_ui_aircon_label_air_main_main_default, &lv_font_Amiko_Regular_18);
+	lv_style_set_text_font(&style_ui_aircon_label_air_main_main_default, &lv_font_Antonio_Regular_22);
 	lv_style_set_text_letter_space(&style_ui_aircon_label_air_main_main_default, 2);
 	lv_style_set_text_line_space(&style_ui_aircon_label_air_main_main_default, 0);
 	lv_style_set_text_align(&style_ui_aircon_label_air_main_main_default, LV_TEXT_ALIGN_CENTER);
@@ -120,34 +120,34 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_img_set_pivot(ui->ui_Aircon_Img_Swing, 50,50);
 	lv_img_set_angle(ui->ui_Aircon_Img_Swing, 0);
 
-	//Write codes ui_Aircon_cont_1
-	ui->ui_Aircon_cont_1 = lv_obj_create(ui->ui_Aircon);
-	lv_obj_set_pos(ui->ui_Aircon_cont_1, 826, 30);
-	lv_obj_set_size(ui->ui_Aircon_cont_1, 409, 657);
-	lv_obj_set_scrollbar_mode(ui->ui_Aircon_cont_1, LV_SCROLLBAR_MODE_OFF);
+	//Write codes ui_Aircon_Cont
+	ui->ui_Aircon_Cont = lv_obj_create(ui->ui_Aircon);
+	lv_obj_set_pos(ui->ui_Aircon_Cont, 826, 30);
+	lv_obj_set_size(ui->ui_Aircon_Cont, 409, 657);
+	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Cont, LV_SCROLLBAR_MODE_OFF);
 
-	//Write style state: LV_STATE_DEFAULT for style_ui_aircon_cont_1_main_main_default
-	static lv_style_t style_ui_aircon_cont_1_main_main_default;
-	if (style_ui_aircon_cont_1_main_main_default.prop_cnt > 1)
-		lv_style_reset(&style_ui_aircon_cont_1_main_main_default);
+	//Write style state: LV_STATE_DEFAULT for style_ui_aircon_cont_main_main_default
+	static lv_style_t style_ui_aircon_cont_main_main_default;
+	if (style_ui_aircon_cont_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_aircon_cont_main_main_default);
 	else
-		lv_style_init(&style_ui_aircon_cont_1_main_main_default);
-	lv_style_set_radius(&style_ui_aircon_cont_1_main_main_default, 20);
-	lv_style_set_bg_color(&style_ui_aircon_cont_1_main_main_default, lv_color_make(0x24, 0x24, 0x24));
-	lv_style_set_bg_grad_color(&style_ui_aircon_cont_1_main_main_default, lv_color_make(0xff, 0xff, 0xff));
-	lv_style_set_bg_grad_dir(&style_ui_aircon_cont_1_main_main_default, LV_GRAD_DIR_NONE);
-	lv_style_set_bg_opa(&style_ui_aircon_cont_1_main_main_default, 250);
-	lv_style_set_border_color(&style_ui_aircon_cont_1_main_main_default, lv_color_make(0x4A, 0x4C, 0x4A));
-	lv_style_set_border_width(&style_ui_aircon_cont_1_main_main_default, 1);
-	lv_style_set_border_opa(&style_ui_aircon_cont_1_main_main_default, 255);
-	lv_style_set_pad_left(&style_ui_aircon_cont_1_main_main_default, 0);
-	lv_style_set_pad_right(&style_ui_aircon_cont_1_main_main_default, 0);
-	lv_style_set_pad_top(&style_ui_aircon_cont_1_main_main_default, 0);
-	lv_style_set_pad_bottom(&style_ui_aircon_cont_1_main_main_default, 0);
-	lv_obj_add_style(ui->ui_Aircon_cont_1, &style_ui_aircon_cont_1_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+		lv_style_init(&style_ui_aircon_cont_main_main_default);
+	lv_style_set_radius(&style_ui_aircon_cont_main_main_default, 20);
+	lv_style_set_bg_color(&style_ui_aircon_cont_main_main_default, lv_color_make(0x24, 0x24, 0x24));
+	lv_style_set_bg_grad_color(&style_ui_aircon_cont_main_main_default, lv_color_make(0xff, 0xff, 0xff));
+	lv_style_set_bg_grad_dir(&style_ui_aircon_cont_main_main_default, LV_GRAD_DIR_NONE);
+	lv_style_set_bg_opa(&style_ui_aircon_cont_main_main_default, 250);
+	lv_style_set_border_color(&style_ui_aircon_cont_main_main_default, lv_color_make(0x4A, 0x4C, 0x4A));
+	lv_style_set_border_width(&style_ui_aircon_cont_main_main_default, 1);
+	lv_style_set_border_opa(&style_ui_aircon_cont_main_main_default, 255);
+	lv_style_set_pad_left(&style_ui_aircon_cont_main_main_default, 0);
+	lv_style_set_pad_right(&style_ui_aircon_cont_main_main_default, 0);
+	lv_style_set_pad_top(&style_ui_aircon_cont_main_main_default, 0);
+	lv_style_set_pad_bottom(&style_ui_aircon_cont_main_main_default, 0);
+	lv_obj_add_style(ui->ui_Aircon_Cont, &style_ui_aircon_cont_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_line
-	ui->ui_Aircon_line = lv_line_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_line = lv_line_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_line, 7, 7);
 	lv_obj_set_size(ui->ui_Aircon_line, 405, 24);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_line, LV_SCROLLBAR_MODE_OFF);
@@ -166,7 +166,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_line_set_points(ui->ui_Aircon_line,ui_Aircon_line,2);
 
 	//Write codes ui_Aircon_Label_Temp
-	ui->ui_Aircon_Label_Temp = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Temp = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Temp, 12, 58);
 	lv_obj_set_size(ui->ui_Aircon_Label_Temp, 151, 123);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Temp, LV_SCROLLBAR_MODE_OFF);
@@ -196,7 +196,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Temp, &style_ui_aircon_label_temp_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Btn_TempUp
-	ui->ui_Aircon_Btn_TempUp = lv_btn_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Btn_TempUp = lv_btn_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Btn_TempUp, 198, 100);
 	lv_obj_set_size(ui->ui_Aircon_Btn_TempUp, 74, 58);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Btn_TempUp, LV_SCROLLBAR_MODE_OFF);
@@ -241,7 +241,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_align(ui->ui_Aircon_Btn_TempUp_label, LV_ALIGN_CENTER, 0, 0);
 
 	//Write codes ui_Aircon_Label_SetTemp
-	ui->ui_Aircon_Label_SetTemp = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_SetTemp = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_SetTemp, 110, 22);
 	lv_obj_set_size(ui->ui_Aircon_Label_SetTemp, 203, 32);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_SetTemp, LV_SCROLLBAR_MODE_OFF);
@@ -271,7 +271,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_SetTemp, &style_ui_aircon_label_settemp_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_Cen
-	ui->ui_Aircon_Label_Cen = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Cen = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Cen, 121, 61);
 	lv_obj_set_size(ui->ui_Aircon_Label_Cen, 72, 53);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Cen, LV_SCROLLBAR_MODE_OFF);
@@ -301,7 +301,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Cen, &style_ui_aircon_label_cen_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Btn_TempDown
-	ui->ui_Aircon_Btn_TempDown = lv_btn_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Btn_TempDown = lv_btn_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Btn_TempDown, 295, 100);
 	lv_obj_set_size(ui->ui_Aircon_Btn_TempDown, 74, 58);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Btn_TempDown, LV_SCROLLBAR_MODE_OFF);
@@ -346,7 +346,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_align(ui->ui_Aircon_Btn_TempDown_label, LV_ALIGN_CENTER, 0, 0);
 
 	//Write codes ui_Aircon_Img_TemUp
-	ui->ui_Aircon_Img_TemUp = lv_img_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Img_TemUp = lv_img_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Img_TemUp, 222, 122);
 	lv_obj_set_size(ui->ui_Aircon_Img_TemUp, 28, 14);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Img_TemUp, LV_SCROLLBAR_MODE_OFF);
@@ -367,7 +367,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_img_set_angle(ui->ui_Aircon_Img_TemUp, 0);
 
 	//Write codes ui_Aircon_Img_TempDown
-	ui->ui_Aircon_Img_TempDown = lv_img_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Img_TempDown = lv_img_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Img_TempDown, 319, 122);
 	lv_obj_set_size(ui->ui_Aircon_Img_TempDown, 28, 14);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Img_TempDown, LV_SCROLLBAR_MODE_OFF);
@@ -388,7 +388,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_img_set_angle(ui->ui_Aircon_Img_TempDown, 0);
 
 	//Write codes ui_Aircon_Roller_Mode
-	ui->ui_Aircon_Roller_Mode = lv_roller_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Roller_Mode = lv_roller_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Roller_Mode, 40, 404);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Roller_Mode, LV_SCROLLBAR_MODE_OFF);
 
@@ -427,7 +427,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_roller_set_visible_row_count(ui->ui_Aircon_Roller_Mode,3);
 
 	//Write codes ui_Aircon_Btn_Swing
-	ui->ui_Aircon_Btn_Swing = lv_btn_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Btn_Swing = lv_btn_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Btn_Swing, 99, 572);
 	lv_obj_set_size(ui->ui_Aircon_Btn_Swing, 78, 45);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Btn_Swing, LV_SCROLLBAR_MODE_OFF);
@@ -493,7 +493,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_align(ui->ui_Aircon_Btn_Swing_label, LV_ALIGN_CENTER, 0, 0);
 
 	//Write codes ui_Aircon_Label_Swing
-	ui->ui_Aircon_Label_Swing = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Swing = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Swing, 30, 576);
 	lv_obj_set_size(ui->ui_Aircon_Label_Swing, 73, 38);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Swing, LV_SCROLLBAR_MODE_OFF);
@@ -523,7 +523,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Swing, &style_ui_aircon_label_swing_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_line_1
-	ui->ui_Aircon_line_1 = lv_line_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_line_1 = lv_line_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_line_1, 23, 199);
 	lv_obj_set_size(ui->ui_Aircon_line_1, 371, 13);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_line_1, LV_SCROLLBAR_MODE_OFF);
@@ -542,7 +542,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_line_set_points(ui->ui_Aircon_line_1,ui_Aircon_line_1,2);
 
 	//Write codes ui_Aircon_line_2
-	ui->ui_Aircon_line_2 = lv_line_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_line_2 = lv_line_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_line_2, 23, 359);
 	lv_obj_set_size(ui->ui_Aircon_line_2, 371, 13);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_line_2, LV_SCROLLBAR_MODE_OFF);
@@ -561,7 +561,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_line_set_points(ui->ui_Aircon_line_2,ui_Aircon_line_2,2);
 
 	//Write codes ui_Aircon_line_3
-	ui->ui_Aircon_line_3 = lv_line_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_line_3 = lv_line_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_line_3, 23, 540);
 	lv_obj_set_size(ui->ui_Aircon_line_3, 371, 7);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_line_3, LV_SCROLLBAR_MODE_OFF);
@@ -580,7 +580,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_line_set_points(ui->ui_Aircon_line_3,ui_Aircon_line_3,2);
 
 	//Write codes ui_Aircon_line_4
-	ui->ui_Aircon_line_4 = lv_line_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_line_4 = lv_line_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_line_4, 242, 410);
 	lv_obj_set_size(ui->ui_Aircon_line_4, 29, 119);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_line_4, LV_SCROLLBAR_MODE_OFF);
@@ -599,7 +599,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_line_set_points(ui->ui_Aircon_line_4,ui_Aircon_line_4,2);
 
 	//Write codes ui_Aircon_line_5
-	ui->ui_Aircon_line_5 = lv_line_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_line_5 = lv_line_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_line_5, 192, 568);
 	lv_obj_set_size(ui->ui_Aircon_line_5, 17, 67);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_line_5, LV_SCROLLBAR_MODE_OFF);
@@ -618,7 +618,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_line_set_points(ui->ui_Aircon_line_5,ui_Aircon_line_5,2);
 
 	//Write codes ui_Aircon_Label_Timer
-	ui->ui_Aircon_Label_Timer = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Timer = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Timer, 105, 202);
 	lv_obj_set_size(ui->ui_Aircon_Label_Timer, 203, 32);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Timer, LV_SCROLLBAR_MODE_OFF);
@@ -648,7 +648,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Timer, &style_ui_aircon_label_timer_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_Mode
-	ui->ui_Aircon_Label_Mode = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Mode = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Mode, 123, 364);
 	lv_obj_set_size(ui->ui_Aircon_Label_Mode, 178, 34);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Mode, LV_SCROLLBAR_MODE_OFF);
@@ -678,7 +678,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Mode, &style_ui_aircon_label_mode_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_Fan
-	ui->ui_Aircon_Label_Fan = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Fan = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Fan, 204, 571);
 	lv_obj_set_size(ui->ui_Aircon_Label_Fan, 45, 38);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Fan, LV_SCROLLBAR_MODE_OFF);
@@ -708,7 +708,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Fan, &style_ui_aircon_label_fan_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Slider_Fan
-	ui->ui_Aircon_Slider_Fan = lv_slider_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Slider_Fan = lv_slider_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Slider_Fan, 257, 579);
 	lv_obj_set_size(ui->ui_Aircon_Slider_Fan, 127, 16);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Slider_Fan, LV_SCROLLBAR_MODE_OFF);
@@ -758,7 +758,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_slider_set_value(ui->ui_Aircon_Slider_Fan,1,false);
 
 	//Write codes ui_Aircon_Label_Low
-	ui->ui_Aircon_Label_Low = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Low = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Low, 249, 592);
 	lv_obj_set_size(ui->ui_Aircon_Label_Low, 29, 34);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Low, LV_SCROLLBAR_MODE_OFF);
@@ -788,7 +788,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Low, &style_ui_aircon_label_low_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_Medium
-	ui->ui_Aircon_Label_Medium = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Medium = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Medium, 295, 592);
 	lv_obj_set_size(ui->ui_Aircon_Label_Medium, 53, 34);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Medium, LV_SCROLLBAR_MODE_OFF);
@@ -818,7 +818,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Medium, &style_ui_aircon_label_medium_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_High
-	ui->ui_Aircon_Label_High = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_High = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_High, 363, 592);
 	lv_obj_set_size(ui->ui_Aircon_Label_High, 29, 34);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_High, LV_SCROLLBAR_MODE_OFF);
@@ -848,7 +848,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_High, &style_ui_aircon_label_high_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_Comp
-	ui->ui_Aircon_Label_Comp = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_Comp = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_Comp, 302, 402);
 	lv_obj_set_size(ui->ui_Aircon_Label_Comp, 65, 30);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_Comp, LV_SCROLLBAR_MODE_OFF);
@@ -878,7 +878,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_Comp, &style_ui_aircon_label_comp_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_On
-	ui->ui_Aircon_Label_On = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_On = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_On, 302, 424);
 	lv_obj_set_size(ui->ui_Aircon_Label_On, 65, 30);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_On, LV_SCROLLBAR_MODE_OFF);
@@ -908,7 +908,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_On, &style_ui_aircon_label_on_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Img_Comp
-	ui->ui_Aircon_Img_Comp = lv_img_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Img_Comp = lv_img_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Img_Comp, 272, 413);
 	lv_obj_set_size(ui->ui_Aircon_Img_Comp, 27, 31);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Img_Comp, LV_SCROLLBAR_MODE_OFF);
@@ -929,7 +929,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_img_set_angle(ui->ui_Aircon_Img_Comp, 0);
 
 	//Write codes ui_Aircon_Label_FanSt
-	ui->ui_Aircon_Label_FanSt = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_FanSt = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_FanSt, 303, 462);
 	lv_obj_set_size(ui->ui_Aircon_Label_FanSt, 65, 30);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_FanSt, LV_SCROLLBAR_MODE_OFF);
@@ -959,7 +959,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_FanSt, &style_ui_aircon_label_fanst_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_FanState
-	ui->ui_Aircon_Label_FanState = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_FanState = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_FanState, 303, 485);
 	lv_obj_set_size(ui->ui_Aircon_Label_FanState, 65, 30);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_FanState, LV_SCROLLBAR_MODE_OFF);
@@ -989,7 +989,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_FanState, &style_ui_aircon_label_fanstate_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Img_FanSt
-	ui->ui_Aircon_Img_FanSt = lv_img_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Img_FanSt = lv_img_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Img_FanSt, 272, 474);
 	lv_obj_set_size(ui->ui_Aircon_Img_FanSt, 31, 27);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Img_FanSt, LV_SCROLLBAR_MODE_OFF);
@@ -1010,7 +1010,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_img_set_angle(ui->ui_Aircon_Img_FanSt, 0);
 
 	//Write codes ui_Aircon_Btn_TimerUp
-	ui->ui_Aircon_Btn_TimerUp = lv_btn_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Btn_TimerUp = lv_btn_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Btn_TimerUp, 198, 260);
 	lv_obj_set_size(ui->ui_Aircon_Btn_TimerUp, 74, 58);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Btn_TimerUp, LV_SCROLLBAR_MODE_OFF);
@@ -1055,7 +1055,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_align(ui->ui_Aircon_Btn_TimerUp_label, LV_ALIGN_CENTER, 0, 0);
 
 	//Write codes ui_Aircon_Img_TimerUp
-	ui->ui_Aircon_Img_TimerUp = lv_img_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Img_TimerUp = lv_img_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Img_TimerUp, 222, 281);
 	lv_obj_set_size(ui->ui_Aircon_Img_TimerUp, 28, 14);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Img_TimerUp, LV_SCROLLBAR_MODE_OFF);
@@ -1076,7 +1076,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_img_set_angle(ui->ui_Aircon_Img_TimerUp, 0);
 
 	//Write codes ui_Aircon_Btn_TimerDown
-	ui->ui_Aircon_Btn_TimerDown = lv_btn_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Btn_TimerDown = lv_btn_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Btn_TimerDown, 295, 260);
 	lv_obj_set_size(ui->ui_Aircon_Btn_TimerDown, 74, 58);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Btn_TimerDown, LV_SCROLLBAR_MODE_OFF);
@@ -1121,7 +1121,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_align(ui->ui_Aircon_Btn_TimerDown_label, LV_ALIGN_CENTER, 0, 0);
 
 	//Write codes ui_Aircon_Img_TimerDown
-	ui->ui_Aircon_Img_TimerDown = lv_img_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Img_TimerDown = lv_img_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Img_TimerDown, 319, 281);
 	lv_obj_set_size(ui->ui_Aircon_Img_TimerDown, 28, 14);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Img_TimerDown, LV_SCROLLBAR_MODE_OFF);
@@ -1142,7 +1142,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_img_set_angle(ui->ui_Aircon_Img_TimerDown, 0);
 
 	//Write codes ui_Aircon_Label_TimerHour
-	ui->ui_Aircon_Label_TimerHour = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_TimerHour = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_TimerHour, 19, 234);
 	lv_obj_set_size(ui->ui_Aircon_Label_TimerHour, 76, 103);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_TimerHour, LV_SCROLLBAR_MODE_OFF);
@@ -1172,7 +1172,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_TimerHour, &style_ui_aircon_label_timerhour_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_TimerPoints
-	ui->ui_Aircon_Label_TimerPoints = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_TimerPoints = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_TimerPoints, 93, 229);
 	lv_obj_set_size(ui->ui_Aircon_Label_TimerPoints, 23, 103);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_TimerPoints, LV_SCROLLBAR_MODE_OFF);
@@ -1202,7 +1202,7 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_add_style(ui->ui_Aircon_Label_TimerPoints, &style_ui_aircon_label_timerpoints_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Aircon_Label_TimerMin
-	ui->ui_Aircon_Label_TimerMin = lv_label_create(ui->ui_Aircon_cont_1);
+	ui->ui_Aircon_Label_TimerMin = lv_label_create(ui->ui_Aircon_Cont);
 	lv_obj_set_pos(ui->ui_Aircon_Label_TimerMin, 118, 234);
 	lv_obj_set_size(ui->ui_Aircon_Label_TimerMin, 76, 103);
 	lv_obj_set_scrollbar_mode(ui->ui_Aircon_Label_TimerMin, LV_SCROLLBAR_MODE_OFF);
