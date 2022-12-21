@@ -1746,10 +1746,10 @@
 							]
 						},
 						{
-							"name": "imgbtn_1",
+							"name": "Btn_State",
 							"id": "l4xt58ea",
 							"type": "imgbtn",
-							"left": 203,
+							"left": 208,
 							"top": 607,
 							"is_move_animation": false,
 							"desX": 0,
@@ -1823,6 +1823,68 @@
 									"shadow_spread": 0,
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
+								}
+							],
+							"event": [
+								{
+									"trigger": "released",
+									"dst": "",
+									"action": {
+										"bg_color": {
+											"ische": false,
+											"value": "#000000"
+										},
+										"grad_color": {
+											"ische": false,
+											"value": "#000000"
+										},
+										"bg_opa": {
+											"ische": false,
+											"value": 255
+										},
+										"width": {
+											"ische": false,
+											"value": 50
+										},
+										"height": {
+											"ische": false,
+											"value": 50
+										},
+										"set_text": {
+											"ische": false,
+											"value": "default",
+											"font": 12,
+											"font_family": "simsun"
+										},
+										"position": {
+											"ische": false,
+											"value_x": 0,
+											"value_y": 0
+										},
+										"hidden": {
+											"ische": false
+										},
+										"customer_code": {
+											"ische": true,
+											"code_type": "excute_c_code",
+											"include": "",
+											"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_oven_set_state(lv_obj_has_state(obj, LV_STATE_CHECKED));"
+										},
+										"move": {
+											"ische": false,
+											"value_x": 0,
+											"value_y": 0,
+											"duration": 1000,
+											"path_type": "linear"
+										},
+										"load_screen": {
+											"ische": false,
+											"duration": 100,
+											"delay": 100,
+											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
+											"is_clean": true
+										}
+									}
 								}
 							]
 						},
@@ -3016,7 +3078,7 @@
 					"name": "Img_Door",
 					"type": "img",
 					"left": 5,
-					"top": 0,
+					"top": -1,
 					"is_move_animation": false,
 					"desX": 0,
 					"desY": 0,
@@ -6445,7 +6507,7 @@
 						"scrollbar_mode": "OFF",
 						"pos": [
 							5,
-							0
+							-1
 						],
 						"size": [
 							704,
@@ -7669,12 +7731,12 @@
 								]
 							},
 							{
-								"name": "ui_Oven_imgbtn_1",
+								"name": "ui_Oven_Btn_State",
 								"id": "l4xt58ea",
 								"type": "imgbtn",
 								"scrollbar_mode": "OFF",
 								"pos": [
-									203,
+									208,
 									607
 								],
 								"size": [
@@ -12759,6 +12821,15 @@
 				"code_type": "excute_c_code",
 				"include": "",
 				"code": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);"
+			},
+			{
+				"src": "ui_Oven_Btn_State",
+				"trigger": "released",
+				"dst": "",
+				"action": "customer_code",
+				"code_type": "excute_c_code",
+				"include": "",
+				"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_oven_set_state(lv_obj_has_state(obj, LV_STATE_CHECKED));"
 			},
 			{
 				"src": "ui_Aircon_Btn_TempUp",

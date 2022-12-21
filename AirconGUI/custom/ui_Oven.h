@@ -49,11 +49,23 @@ typedef enum
 	kOVEN_LightOn,
 } OVEN_Light_T;
 
+typedef enum
+{
+	kOVEN_Start,
+	kOVEN_Stop,
+} OVEN_State_T;
+
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
 void ui_oven_init (void);
 
 void ui_oven_set_mode(OVEN_MODE_T mode, OVEN_MODE_Dir_T dir);
+
+void ui_oven_door(OVEN_Door_T state);
+
+void ui_oven_set_light(OVEN_Light_T state);
+
+void ui_oven_set_state(OVEN_State_T state);
 
 #endif /* UI_OVEN_H_ */

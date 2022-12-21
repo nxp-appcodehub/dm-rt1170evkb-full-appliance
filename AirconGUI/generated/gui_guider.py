@@ -176,7 +176,7 @@ style_ui_oven_img_bg_main_main_default.set_img_opa(255)
 ui_Oven_Img_Bg.add_style(style_ui_oven_img_bg_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 ui_Oven_Img_Door = lv.img(ui_Oven)
-ui_Oven_Img_Door.set_pos(int(5),int(0))
+ui_Oven_Img_Door.set_pos(int(5),int(-1))
 ui_Oven_Img_Door.set_size(704,720)
 ui_Oven_Img_Door.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 ui_Oven_Img_Door.add_flag(lv.obj.FLAG.CLICKABLE)
@@ -850,109 +850,109 @@ style_ui_oven_btn_moderigth_main_main_default.set_img_opa(255)
 # add style for ui_Oven_Btn_ModeRigth
 ui_Oven_Btn_ModeRigth.add_style(style_ui_oven_btn_moderigth_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_imgbtn_1 = lv.imgbtn(ui_Oven_Group_Oven)
-ui_Oven_imgbtn_1.set_pos(int(203),int(607))
-ui_Oven_imgbtn_1.set_size(134,51)
-ui_Oven_imgbtn_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Btn_State = lv.imgbtn(ui_Oven_Group_Oven)
+ui_Oven_Btn_State.set_pos(int(203),int(607))
+ui_Oven_Btn_State.set_size(134,51)
+ui_Oven_Btn_State.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 try:
     with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png','rb') as f:
-        ui_Oven_imgbtn_1_imgReleased_data = f.read()
+        ui_Oven_Btn_State_imgReleased_data = f.read()
 except:
     print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png')
     sys.exit()
 
-ui_Oven_imgbtn_1_imgReleased = lv.img_dsc_t({
-  'data_size': len(ui_Oven_imgbtn_1_imgReleased_data),
+ui_Oven_Btn_State_imgReleased = lv.img_dsc_t({
+  'data_size': len(ui_Oven_Btn_State_imgReleased_data),
   'header': {'always_zero': 0, 'w': 134, 'h': 51, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
-  'data': ui_Oven_imgbtn_1_imgReleased_data
+  'data': ui_Oven_Btn_State_imgReleased_data
 })
-ui_Oven_imgbtn_1.set_src(lv.imgbtn.STATE.RELEASED, None, ui_Oven_imgbtn_1_imgReleased, None)
+ui_Oven_Btn_State.set_src(lv.imgbtn.STATE.RELEASED, None, ui_Oven_Btn_State_imgReleased, None)
 
 try:
     with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png','rb') as f:
-        ui_Oven_imgbtn_1_imgPressed_data = f.read()
+        ui_Oven_Btn_State_imgPressed_data = f.read()
 except:
     print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png')
     sys.exit()
 
-ui_Oven_imgbtn_1_imgPressed = lv.img_dsc_t({
-  'data_size': len(ui_Oven_imgbtn_1_imgPressed_data),
+ui_Oven_Btn_State_imgPressed = lv.img_dsc_t({
+  'data_size': len(ui_Oven_Btn_State_imgPressed_data),
   'header': {'always_zero': 0, 'w': 134, 'h': 51, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
-  'data': ui_Oven_imgbtn_1_imgPressed_data
+  'data': ui_Oven_Btn_State_imgPressed_data
 })
-ui_Oven_imgbtn_1.set_src(lv.imgbtn.STATE.PRESSED, None, ui_Oven_imgbtn_1_imgPressed, None)
+ui_Oven_Btn_State.set_src(lv.imgbtn.STATE.PRESSED, None, ui_Oven_Btn_State_imgPressed, None)
 
 
 try:
     with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png','rb') as f:
-        ui_Oven_imgbtn_1_imgCheckedReleased_data = f.read()
+        ui_Oven_Btn_State_imgCheckedReleased_data = f.read()
 except:
     print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png')
     sys.exit()
 
-ui_Oven_imgbtn_1_imgCheckedReleased = lv.img_dsc_t({
-  'data_size': len(ui_Oven_imgbtn_1_imgCheckedReleased_data),
+ui_Oven_Btn_State_imgCheckedReleased = lv.img_dsc_t({
+  'data_size': len(ui_Oven_Btn_State_imgCheckedReleased_data),
   'header': {'always_zero': 0, 'w': 134, 'h': 51, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
-  'data': ui_Oven_imgbtn_1_imgCheckedReleased_data
+  'data': ui_Oven_Btn_State_imgCheckedReleased_data
 })
-ui_Oven_imgbtn_1.set_src(lv.imgbtn.STATE.CHECKED_RELEASED, None, ui_Oven_imgbtn_1_imgCheckedReleased, None)
+ui_Oven_Btn_State.set_src(lv.imgbtn.STATE.CHECKED_RELEASED, None, ui_Oven_Btn_State_imgCheckedReleased, None)
 
 try:
     with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png','rb') as f:
-        ui_Oven_imgbtn_1_imgCheckedPressed_data = f.read()
+        ui_Oven_Btn_State_imgCheckedPressed_data = f.read()
 except:
     print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png')
     sys.exit()
 
-ui_Oven_imgbtn_1_imgCheckedPressed = lv.img_dsc_t({
-  'data_size': len(ui_Oven_imgbtn_1_imgCheckedPressed_data),
+ui_Oven_Btn_State_imgCheckedPressed = lv.img_dsc_t({
+  'data_size': len(ui_Oven_Btn_State_imgCheckedPressed_data),
   'header': {'always_zero': 0, 'w': 134, 'h': 51, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
-  'data': ui_Oven_imgbtn_1_imgCheckedPressed_data
+  'data': ui_Oven_Btn_State_imgCheckedPressed_data
 })
-ui_Oven_imgbtn_1.set_src(lv.imgbtn.STATE.CHECKED_PRESSED, None, ui_Oven_imgbtn_1_imgCheckedPressed, None)
+ui_Oven_Btn_State.set_src(lv.imgbtn.STATE.CHECKED_PRESSED, None, ui_Oven_Btn_State_imgCheckedPressed, None)
 
-ui_Oven_imgbtn_1.add_flag(lv.obj.FLAG.CHECKABLE)
-ui_Oven_imgbtn_1_label = lv.label(ui_Oven_imgbtn_1)
-ui_Oven_imgbtn_1_label.set_text("START")
-ui_Oven_imgbtn_1.set_style_pad_all(0, lv.STATE.ANY)
-ui_Oven_imgbtn_1_label.align(lv.ALIGN.CENTER,0,0)
-# create style style_ui_oven_imgbtn_1_main_main_default
-style_ui_oven_imgbtn_1_main_main_default = lv.style_t()
-style_ui_oven_imgbtn_1_main_main_default.init()
-style_ui_oven_imgbtn_1_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+ui_Oven_Btn_State.add_flag(lv.obj.FLAG.CHECKABLE)
+ui_Oven_Btn_State_label = lv.label(ui_Oven_Btn_State)
+ui_Oven_Btn_State_label.set_text("START")
+ui_Oven_Btn_State.set_style_pad_all(0, lv.STATE.ANY)
+ui_Oven_Btn_State_label.align(lv.ALIGN.CENTER,0,0)
+# create style style_ui_oven_btn_state_main_main_default
+style_ui_oven_btn_state_main_main_default = lv.style_t()
+style_ui_oven_btn_state_main_main_default.init()
+style_ui_oven_btn_state_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
 try:
-    style_ui_oven_imgbtn_1_main_main_default.set_text_font(lv.font_Antonio_Regular_26)
+    style_ui_oven_btn_state_main_main_default.set_text_font(lv.font_Antonio_Regular_26)
 except AttributeError:
     try:
-        style_ui_oven_imgbtn_1_main_main_default.set_text_font(lv.font_montserrat_26)
+        style_ui_oven_btn_state_main_main_default.set_text_font(lv.font_montserrat_26)
     except AttributeError:
-        style_ui_oven_imgbtn_1_main_main_default.set_text_font(lv.font_montserrat_16)
-style_ui_oven_imgbtn_1_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
-style_ui_oven_imgbtn_1_main_main_default.set_img_recolor(lv.color_make(0xFF,0x91,0x10))
-style_ui_oven_imgbtn_1_main_main_default.set_img_recolor_opa(255)
-style_ui_oven_imgbtn_1_main_main_default.set_img_opa(255)
+        style_ui_oven_btn_state_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_oven_btn_state_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_btn_state_main_main_default.set_img_recolor(lv.color_make(0xFF,0x91,0x10))
+style_ui_oven_btn_state_main_main_default.set_img_recolor_opa(255)
+style_ui_oven_btn_state_main_main_default.set_img_opa(255)
 
-# add style for ui_Oven_imgbtn_1
-ui_Oven_imgbtn_1.add_style(style_ui_oven_imgbtn_1_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+# add style for ui_Oven_Btn_State
+ui_Oven_Btn_State.add_style(style_ui_oven_btn_state_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-# create style style_ui_oven_imgbtn_1_main_main_checked
-style_ui_oven_imgbtn_1_main_main_checked = lv.style_t()
-style_ui_oven_imgbtn_1_main_main_checked.init()
-style_ui_oven_imgbtn_1_main_main_checked.set_text_color(lv.color_make(0xff,0xff,0xff))
+# create style style_ui_oven_btn_state_main_main_checked
+style_ui_oven_btn_state_main_main_checked = lv.style_t()
+style_ui_oven_btn_state_main_main_checked.init()
+style_ui_oven_btn_state_main_main_checked.set_text_color(lv.color_make(0xff,0xff,0xff))
 try:
-    style_ui_oven_imgbtn_1_main_main_checked.set_text_font(lv.font_Antonio_Regular_26)
+    style_ui_oven_btn_state_main_main_checked.set_text_font(lv.font_Antonio_Regular_26)
 except AttributeError:
     try:
-        style_ui_oven_imgbtn_1_main_main_checked.set_text_font(lv.font_montserrat_26)
+        style_ui_oven_btn_state_main_main_checked.set_text_font(lv.font_montserrat_26)
     except AttributeError:
-        style_ui_oven_imgbtn_1_main_main_checked.set_text_font(lv.font_montserrat_16)
-style_ui_oven_imgbtn_1_main_main_checked.set_text_align(lv.TEXT_ALIGN.CENTER)
-style_ui_oven_imgbtn_1_main_main_checked.set_img_recolor(lv.color_make(0x35,0xC9,0x15))
-style_ui_oven_imgbtn_1_main_main_checked.set_img_recolor_opa(255)
-style_ui_oven_imgbtn_1_main_main_checked.set_img_opa(255)
+        style_ui_oven_btn_state_main_main_checked.set_text_font(lv.font_montserrat_16)
+style_ui_oven_btn_state_main_main_checked.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_btn_state_main_main_checked.set_img_recolor(lv.color_make(0x35,0xC9,0x15))
+style_ui_oven_btn_state_main_main_checked.set_img_recolor_opa(255)
+style_ui_oven_btn_state_main_main_checked.set_img_opa(255)
 
-# add style for ui_Oven_imgbtn_1
-ui_Oven_imgbtn_1.add_style(style_ui_oven_imgbtn_1_main_main_checked, lv.PART.MAIN|lv.STATE.CHECKED)
+# add style for ui_Oven_Btn_State
+ui_Oven_Btn_State.add_style(style_ui_oven_btn_state_main_main_checked, lv.PART.MAIN|lv.STATE.CHECKED)
 
 ui_Oven_Label_Settings = lv.label(ui_Oven_Group_Oven)
 ui_Oven_Label_Settings.set_pos(int(206),int(395))
@@ -3315,6 +3315,7 @@ style_ui_aircon_img_cool_main_main_default.set_img_opa(255)
 
 # add style for ui_Aircon_Img_Cool
 ui_Aircon_Img_Cool.add_style(style_ui_aircon_img_cool_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
 
 
 

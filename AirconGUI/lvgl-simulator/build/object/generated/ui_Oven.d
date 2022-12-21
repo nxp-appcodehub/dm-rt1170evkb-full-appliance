@@ -222,7 +222,8 @@ build/object/generated/ui_Oven.o: \
  c:\repos\future_training\aircongui\lvgl\src/extra/libs/ffmpeg/lv_ffmpeg.h \
  c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
  c:\repos\future_training\aircongui\generated\guider_fonts\guider_fonts.h \
- c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h
+ c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h \
+ c:\repos\future_training\aircongui\custom\ui_Animations.h
 
 c:\repos\future_training\aircongui\custom\ui_oven.h:
 
@@ -669,3 +670,5 @@ c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
 c:\repos\future_training\aircongui\generated\guider_fonts\guider_fonts.h:
 
 c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h:
+
+c:\repos\future_training\aircongui\custom\ui_Animations.h:

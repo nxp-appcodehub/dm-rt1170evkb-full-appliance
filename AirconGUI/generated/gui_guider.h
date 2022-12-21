@@ -40,8 +40,8 @@ typedef struct
 	lv_obj_t *ui_Oven_Btn_ModeLeft_label;
 	lv_obj_t *ui_Oven_Btn_ModeRigth;
 	lv_obj_t *ui_Oven_Btn_ModeRigth_label;
-	lv_obj_t *ui_Oven_imgbtn_1;
-	lv_obj_t *ui_Oven_imgbtn_1_label;
+	lv_obj_t *ui_Oven_Btn_State;
+	lv_obj_t *ui_Oven_Btn_State_label;
 	lv_obj_t *ui_Oven_Label_Settings;
 	lv_obj_t *ui_Oven_Tile_Mode;
 	lv_obj_t *ui_Oven_Tile_Mode_Mode_9;

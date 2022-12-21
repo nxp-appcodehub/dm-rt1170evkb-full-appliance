@@ -792,6 +792,7 @@
 						</toolChain>
 					</folderInfo>
 					<fileInfo id="com.crt.advproject.config.exe.release.1196933317.966420589" name="AirconGUI.guiguider" rcbsApplicability="disable" resourcePath="AirconGUI/AirconGUI.guiguider" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.release.1196933317.1845432958" name="ui_Aircon.h" rcbsApplicability="disable" resourcePath="AirconGUI/custom/ui_Aircon.h" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry excluding="lvgl|lvgl-simulator|sdk|temp|AirconGUI.guiguider|lib|import" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="AirconGUI"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="CMSIS"/>
