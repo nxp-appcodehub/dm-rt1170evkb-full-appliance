@@ -13,6 +13,7 @@
 #include "lvgl.h"
 #include "custom.h"
 #include "ui_Aircon.h"
+#include "ui_Oven.h"
 
 /*********************
  *      DEFINES
@@ -54,5 +55,7 @@ void custom_init(lv_ui *ui)
 //    lv_obj_clear_flag(ui->ui_Aircon_Img_TempDown, LV_OBJ_FLAG_CLICKABLE);
 //    lv_obj_clear_flag(ui->ui_Aircon_Img_TimerUp, LV_OBJ_FLAG_CLICKABLE);
 //    lv_obj_clear_flag(ui->ui_Aircon_Img_TimerDown, LV_OBJ_FLAG_CLICKABLE);
+
+	ui_oven_init();
 }
 

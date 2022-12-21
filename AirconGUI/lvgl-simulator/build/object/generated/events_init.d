@@ -223,8 +223,9 @@ build/object/generated/events_init.o: \
  c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
  c:\repos\future_training\aircongui\generated\guider_fonts\guider_fonts.h \
  c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h \
- c:\repos\future_training\aircongui\custom\ui_aircon.h \
- c:\repos\future_training\aircongui\generated\gui_guider.h
+ c:\repos\future_training\aircongui\custom\ui_oven.h \
+ c:\repos\future_training\aircongui\generated\gui_guider.h \
+ c:\repos\future_training\aircongui\custom\ui_aircon.h
 
 c:\repos\future_training\aircongui\generated\events_init.h:
 
@@ -672,6 +673,8 @@ c:\repos\future_training\aircongui\generated\guider_fonts\guider_fonts.h:
 
 c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h:
 
-c:\repos\future_training\aircongui\custom\ui_aircon.h:
+c:\repos\future_training\aircongui\custom\ui_oven.h:
 
 c:\repos\future_training\aircongui\generated\gui_guider.h:
+
+c:\repos\future_training\aircongui\custom\ui_aircon.h:

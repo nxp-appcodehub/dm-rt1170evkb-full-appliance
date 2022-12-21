@@ -175,6 +175,37 @@ style_ui_oven_img_bg_main_main_default.set_img_opa(255)
 # add style for ui_Oven_Img_Bg
 ui_Oven_Img_Bg.add_style(style_ui_oven_img_bg_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
+ui_Oven_Img_Door = lv.img(ui_Oven)
+ui_Oven_Img_Door.set_pos(int(5),int(0))
+ui_Oven_Img_Door.set_size(704,720)
+ui_Oven_Img_Door.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Img_Door.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1534861193.png','rb') as f:
+        ui_Oven_Img_Door_img_data = f.read()
+except:
+    print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1534861193.png')
+    sys.exit()
+
+ui_Oven_Img_Door_img = lv.img_dsc_t({
+  'data_size': len(ui_Oven_Img_Door_img_data),
+  'header': {'always_zero': 0, 'w': 704, 'h': 720, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Oven_Img_Door_img_data
+})
+
+ui_Oven_Img_Door.set_src(ui_Oven_Img_Door_img)
+ui_Oven_Img_Door.set_pivot(50,50)
+ui_Oven_Img_Door.set_angle(0)
+# create style style_ui_oven_img_door_main_main_default
+style_ui_oven_img_door_main_main_default = lv.style_t()
+style_ui_oven_img_door_main_main_default.init()
+style_ui_oven_img_door_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_oven_img_door_main_main_default.set_img_recolor_opa(0)
+style_ui_oven_img_door_main_main_default.set_img_opa(255)
+
+# add style for ui_Oven_Img_Door
+ui_Oven_Img_Door.add_style(style_ui_oven_img_door_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
 ui_Oven_Img_Lable_Bg = lv.img(ui_Oven)
 ui_Oven_Img_Lable_Bg.set_pos(int(0),int(590))
 ui_Oven_Img_Lable_Bg.set_size(654,130)
@@ -239,11 +270,11 @@ style_ui_oven_label_oven_main_main_default.set_pad_bottom(0)
 # add style for ui_Oven_Label_Oven
 ui_Oven_Label_Oven.add_style(style_ui_oven_label_oven_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Cont = lv.obj(ui_Oven)
-ui_Oven_Cont.set_pos(int(677),int(17))
-ui_Oven_Cont.set_size(534,686)
-ui_Oven_Cont.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
-ui_Oven_line = lv.line(ui_Oven_Cont)
+ui_Oven_Group_Oven = lv.obj(ui_Oven)
+ui_Oven_Group_Oven.set_pos(int(677),int(17))
+ui_Oven_Group_Oven.set_size(534,686)
+ui_Oven_Group_Oven.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_line = lv.line(ui_Oven_Group_Oven)
 ui_Oven_line.set_pos(int(7),int(7))
 ui_Oven_line.set_size(530,24)
 ui_Oven_line.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -262,7 +293,7 @@ style_ui_oven_line_main_main_default.set_line_rounded(True)
 # add style for ui_Oven_line
 ui_Oven_line.add_style(style_ui_oven_line_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Label_CurrTemp = lv.label(ui_Oven_Cont)
+ui_Oven_Label_CurrTemp = lv.label(ui_Oven_Group_Oven)
 ui_Oven_Label_CurrTemp.set_pos(int(34),int(49))
 ui_Oven_Label_CurrTemp.set_size(203,32)
 ui_Oven_Label_CurrTemp.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -295,7 +326,7 @@ style_ui_oven_label_currtemp_main_main_default.set_pad_bottom(0)
 # add style for ui_Oven_Label_CurrTemp
 ui_Oven_Label_CurrTemp.add_style(style_ui_oven_label_currtemp_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_line_5 = lv.line(ui_Oven_Cont)
+ui_Oven_line_5 = lv.line(ui_Oven_Group_Oven)
 ui_Oven_line_5.set_pos(int(23),int(234))
 ui_Oven_line_5.set_size(495,13)
 ui_Oven_line_5.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -314,7 +345,7 @@ style_ui_oven_line_5_main_main_default.set_line_rounded(False)
 # add style for ui_Oven_line_5
 ui_Oven_line_5.add_style(style_ui_oven_line_5_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_line_4 = lv.line(ui_Oven_Cont)
+ui_Oven_line_4 = lv.line(ui_Oven_Group_Oven)
 ui_Oven_line_4.set_pos(int(23),int(379))
 ui_Oven_line_4.set_size(495,13)
 ui_Oven_line_4.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -333,7 +364,7 @@ style_ui_oven_line_4_main_main_default.set_line_rounded(False)
 # add style for ui_Oven_line_4
 ui_Oven_line_4.add_style(style_ui_oven_line_4_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_line_3 = lv.line(ui_Oven_Cont)
+ui_Oven_line_3 = lv.line(ui_Oven_Group_Oven)
 ui_Oven_line_3.set_pos(int(269),int(117))
 ui_Oven_line_3.set_size(240,7)
 ui_Oven_line_3.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -352,7 +383,7 @@ style_ui_oven_line_3_main_main_default.set_line_rounded(False)
 # add style for ui_Oven_line_3
 ui_Oven_line_3.add_style(style_ui_oven_line_3_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_line_2 = lv.line(ui_Oven_Cont)
+ui_Oven_line_2 = lv.line(ui_Oven_Group_Oven)
 ui_Oven_line_2.set_pos(int(252),int(52))
 ui_Oven_line_2.set_size(29,169)
 ui_Oven_line_2.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -371,13 +402,13 @@ style_ui_oven_line_2_main_main_default.set_line_rounded(False)
 # add style for ui_Oven_line_2
 ui_Oven_line_2.add_style(style_ui_oven_line_2_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_line_1 = lv.line(ui_Oven_Cont)
-ui_Oven_line_1.set_pos(int(267),int(401))
-ui_Oven_line_1.set_size(17,177)
+ui_Oven_line_1 = lv.line(ui_Oven_Group_Oven)
+ui_Oven_line_1.set_pos(int(267),int(441))
+ui_Oven_line_1.set_size(17,146)
 ui_Oven_line_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 line_points = [
                    {"x":0, "y":0}, 
-                   {"x":0, "y":50}, 
+                   {"x":0, "y":300}, 
 			  ]
 ui_Oven_line_1.set_points(line_points, 2)
 # create style style_ui_oven_line_1_main_main_default
@@ -390,7 +421,7 @@ style_ui_oven_line_1_main_main_default.set_line_rounded(False)
 # add style for ui_Oven_line_1
 ui_Oven_line_1.add_style(style_ui_oven_line_1_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Label_Temp = lv.label(ui_Oven_Cont)
+ui_Oven_Label_Temp = lv.label(ui_Oven_Group_Oven)
 ui_Oven_Label_Temp.set_pos(int(7),int(89))
 ui_Oven_Label_Temp.set_size(214,125)
 ui_Oven_Label_Temp.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -423,7 +454,7 @@ style_ui_oven_label_temp_main_main_default.set_pad_bottom(0)
 # add style for ui_Oven_Label_Temp
 ui_Oven_Label_Temp.add_style(style_ui_oven_label_temp_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Label_Cen = lv.label(ui_Oven_Cont)
+ui_Oven_Label_Cen = lv.label(ui_Oven_Group_Oven)
 ui_Oven_Label_Cen.set_pos(int(175),int(88))
 ui_Oven_Label_Cen.set_size(72,53)
 ui_Oven_Label_Cen.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -456,7 +487,7 @@ style_ui_oven_label_cen_main_main_default.set_pad_bottom(0)
 # add style for ui_Oven_Label_Cen
 ui_Oven_Label_Cen.add_style(style_ui_oven_label_cen_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Label_Status = lv.label(ui_Oven_Cont)
+ui_Oven_Label_Status = lv.label(ui_Oven_Group_Oven)
 ui_Oven_Label_Status.set_pos(int(287),int(34))
 ui_Oven_Label_Status.set_size(203,32)
 ui_Oven_Label_Status.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -489,7 +520,7 @@ style_ui_oven_label_status_main_main_default.set_pad_bottom(0)
 # add style for ui_Oven_Label_Status
 ui_Oven_Label_Status.add_style(style_ui_oven_label_status_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Label_CurrStat = lv.label(ui_Oven_Cont)
+ui_Oven_Label_CurrStat = lv.label(ui_Oven_Group_Oven)
 ui_Oven_Label_CurrStat.set_pos(int(329),int(67))
 ui_Oven_Label_CurrStat.set_size(118,53)
 ui_Oven_Label_CurrStat.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -522,7 +553,7 @@ style_ui_oven_label_currstat_main_main_default.set_pad_bottom(0)
 # add style for ui_Oven_Label_CurrStat
 ui_Oven_Label_CurrStat.add_style(style_ui_oven_label_currstat_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Label_Time = lv.label(ui_Oven_Cont)
+ui_Oven_Label_Time = lv.label(ui_Oven_Group_Oven)
 ui_Oven_Label_Time.set_pos(int(236),int(132))
 ui_Oven_Label_Time.set_size(118,57)
 ui_Oven_Label_Time.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -555,7 +586,7 @@ style_ui_oven_label_time_main_main_default.set_pad_bottom(0)
 # add style for ui_Oven_Label_Time
 ui_Oven_Label_Time.add_style(style_ui_oven_label_time_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Bar_Time = lv.bar(ui_Oven_Cont)
+ui_Oven_Bar_Time = lv.bar(ui_Oven_Group_Oven)
 ui_Oven_Bar_Time.set_pos(int(274),int(195))
 ui_Oven_Bar_Time.set_size(225,13)
 ui_Oven_Bar_Time.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -586,7 +617,7 @@ style_ui_oven_bar_time_main_indicator_default.set_bg_opa(255)
 # add style for ui_Oven_Bar_Time
 ui_Oven_Bar_Time.add_style(style_ui_oven_bar_time_main_indicator_default, lv.PART.INDICATOR|lv.STATE.DEFAULT)
 
-ui_Oven_Label_Mode = lv.label(ui_Oven_Cont)
+ui_Oven_Label_Mode = lv.label(ui_Oven_Group_Oven)
 ui_Oven_Label_Mode.set_pos(int(208),int(240))
 ui_Oven_Label_Mode.set_size(118,57)
 ui_Oven_Label_Mode.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -619,8 +650,8 @@ style_ui_oven_label_mode_main_main_default.set_pad_bottom(0)
 # add style for ui_Oven_Label_Mode
 ui_Oven_Label_Mode.add_style(style_ui_oven_label_mode_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-ui_Oven_Btn_ModeLeft = lv.imgbtn(ui_Oven_Cont)
-ui_Oven_Btn_ModeLeft.set_pos(int(32),int(291))
+ui_Oven_Btn_ModeLeft = lv.imgbtn(ui_Oven_Group_Oven)
+ui_Oven_Btn_ModeLeft.set_pos(int(27),int(291))
 ui_Oven_Btn_ModeLeft.set_size(18,35)
 ui_Oven_Btn_ModeLeft.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 try:
@@ -738,8 +769,8 @@ style_ui_oven_btn_modeleft_main_main_checked.set_img_opa(255)
 # add style for ui_Oven_Btn_ModeLeft
 ui_Oven_Btn_ModeLeft.add_style(style_ui_oven_btn_modeleft_main_main_checked, lv.PART.MAIN|lv.STATE.CHECKED)
 
-ui_Oven_Btn_ModeRigth = lv.imgbtn(ui_Oven_Cont)
-ui_Oven_Btn_ModeRigth.set_pos(int(471),int(291))
+ui_Oven_Btn_ModeRigth = lv.imgbtn(ui_Oven_Group_Oven)
+ui_Oven_Btn_ModeRigth.set_pos(int(486),int(291))
 ui_Oven_Btn_ModeRigth.set_size(18,35)
 ui_Oven_Btn_ModeRigth.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 try:
@@ -819,28 +850,165 @@ style_ui_oven_btn_moderigth_main_main_default.set_img_opa(255)
 # add style for ui_Oven_Btn_ModeRigth
 ui_Oven_Btn_ModeRigth.add_style(style_ui_oven_btn_moderigth_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-# create style style_ui_oven_cont_main_main_default
-style_ui_oven_cont_main_main_default = lv.style_t()
-style_ui_oven_cont_main_main_default.init()
-style_ui_oven_cont_main_main_default.set_radius(20)
-style_ui_oven_cont_main_main_default.set_bg_color(lv.color_make(0x24,0x24,0x24))
-style_ui_oven_cont_main_main_default.set_bg_grad_color(lv.color_make(0xff,0xff,0xff))
-style_ui_oven_cont_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
-style_ui_oven_cont_main_main_default.set_bg_opa(250)
-style_ui_oven_cont_main_main_default.set_border_color(lv.color_make(0x4A,0x4C,0x4A))
-style_ui_oven_cont_main_main_default.set_border_width(1)
-style_ui_oven_cont_main_main_default.set_border_opa(255)
-style_ui_oven_cont_main_main_default.set_pad_left(0)
-style_ui_oven_cont_main_main_default.set_pad_right(0)
-style_ui_oven_cont_main_main_default.set_pad_top(0)
-style_ui_oven_cont_main_main_default.set_pad_bottom(0)
+ui_Oven_imgbtn_1 = lv.imgbtn(ui_Oven_Group_Oven)
+ui_Oven_imgbtn_1.set_pos(int(203),int(607))
+ui_Oven_imgbtn_1.set_size(134,51)
+ui_Oven_imgbtn_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+try:
+    with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png','rb') as f:
+        ui_Oven_imgbtn_1_imgReleased_data = f.read()
+except:
+    print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png')
+    sys.exit()
 
-# add style for ui_Oven_Cont
-ui_Oven_Cont.add_style(style_ui_oven_cont_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+ui_Oven_imgbtn_1_imgReleased = lv.img_dsc_t({
+  'data_size': len(ui_Oven_imgbtn_1_imgReleased_data),
+  'header': {'always_zero': 0, 'w': 134, 'h': 51, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Oven_imgbtn_1_imgReleased_data
+})
+ui_Oven_imgbtn_1.set_src(lv.imgbtn.STATE.RELEASED, None, ui_Oven_imgbtn_1_imgReleased, None)
+
+try:
+    with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png','rb') as f:
+        ui_Oven_imgbtn_1_imgPressed_data = f.read()
+except:
+    print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png')
+    sys.exit()
+
+ui_Oven_imgbtn_1_imgPressed = lv.img_dsc_t({
+  'data_size': len(ui_Oven_imgbtn_1_imgPressed_data),
+  'header': {'always_zero': 0, 'w': 134, 'h': 51, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Oven_imgbtn_1_imgPressed_data
+})
+ui_Oven_imgbtn_1.set_src(lv.imgbtn.STATE.PRESSED, None, ui_Oven_imgbtn_1_imgPressed, None)
+
+
+try:
+    with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png','rb') as f:
+        ui_Oven_imgbtn_1_imgCheckedReleased_data = f.read()
+except:
+    print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png')
+    sys.exit()
+
+ui_Oven_imgbtn_1_imgCheckedReleased = lv.img_dsc_t({
+  'data_size': len(ui_Oven_imgbtn_1_imgCheckedReleased_data),
+  'header': {'always_zero': 0, 'w': 134, 'h': 51, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Oven_imgbtn_1_imgCheckedReleased_data
+})
+ui_Oven_imgbtn_1.set_src(lv.imgbtn.STATE.CHECKED_RELEASED, None, ui_Oven_imgbtn_1_imgCheckedReleased, None)
+
+try:
+    with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png','rb') as f:
+        ui_Oven_imgbtn_1_imgCheckedPressed_data = f.read()
+except:
+    print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp1154903261.png')
+    sys.exit()
+
+ui_Oven_imgbtn_1_imgCheckedPressed = lv.img_dsc_t({
+  'data_size': len(ui_Oven_imgbtn_1_imgCheckedPressed_data),
+  'header': {'always_zero': 0, 'w': 134, 'h': 51, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Oven_imgbtn_1_imgCheckedPressed_data
+})
+ui_Oven_imgbtn_1.set_src(lv.imgbtn.STATE.CHECKED_PRESSED, None, ui_Oven_imgbtn_1_imgCheckedPressed, None)
+
+ui_Oven_imgbtn_1.add_flag(lv.obj.FLAG.CHECKABLE)
+ui_Oven_imgbtn_1_label = lv.label(ui_Oven_imgbtn_1)
+ui_Oven_imgbtn_1_label.set_text("START")
+ui_Oven_imgbtn_1.set_style_pad_all(0, lv.STATE.ANY)
+ui_Oven_imgbtn_1_label.align(lv.ALIGN.CENTER,0,0)
+# create style style_ui_oven_imgbtn_1_main_main_default
+style_ui_oven_imgbtn_1_main_main_default = lv.style_t()
+style_ui_oven_imgbtn_1_main_main_default.init()
+style_ui_oven_imgbtn_1_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_oven_imgbtn_1_main_main_default.set_text_font(lv.font_Antonio_Regular_26)
+except AttributeError:
+    try:
+        style_ui_oven_imgbtn_1_main_main_default.set_text_font(lv.font_montserrat_26)
+    except AttributeError:
+        style_ui_oven_imgbtn_1_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_oven_imgbtn_1_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_imgbtn_1_main_main_default.set_img_recolor(lv.color_make(0xFF,0x91,0x10))
+style_ui_oven_imgbtn_1_main_main_default.set_img_recolor_opa(255)
+style_ui_oven_imgbtn_1_main_main_default.set_img_opa(255)
+
+# add style for ui_Oven_imgbtn_1
+ui_Oven_imgbtn_1.add_style(style_ui_oven_imgbtn_1_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# create style style_ui_oven_imgbtn_1_main_main_checked
+style_ui_oven_imgbtn_1_main_main_checked = lv.style_t()
+style_ui_oven_imgbtn_1_main_main_checked.init()
+style_ui_oven_imgbtn_1_main_main_checked.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_oven_imgbtn_1_main_main_checked.set_text_font(lv.font_Antonio_Regular_26)
+except AttributeError:
+    try:
+        style_ui_oven_imgbtn_1_main_main_checked.set_text_font(lv.font_montserrat_26)
+    except AttributeError:
+        style_ui_oven_imgbtn_1_main_main_checked.set_text_font(lv.font_montserrat_16)
+style_ui_oven_imgbtn_1_main_main_checked.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_imgbtn_1_main_main_checked.set_img_recolor(lv.color_make(0x35,0xC9,0x15))
+style_ui_oven_imgbtn_1_main_main_checked.set_img_recolor_opa(255)
+style_ui_oven_imgbtn_1_main_main_checked.set_img_opa(255)
+
+# add style for ui_Oven_imgbtn_1
+ui_Oven_imgbtn_1.add_style(style_ui_oven_imgbtn_1_main_main_checked, lv.PART.MAIN|lv.STATE.CHECKED)
+
+ui_Oven_Label_Settings = lv.label(ui_Oven_Group_Oven)
+ui_Oven_Label_Settings.set_pos(int(206),int(395))
+ui_Oven_Label_Settings.set_size(118,46)
+ui_Oven_Label_Settings.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Label_Settings.set_text("SETTINGS")
+ui_Oven_Label_Settings.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_oven_label_settings_main_main_default
+style_ui_oven_label_settings_main_main_default = lv.style_t()
+style_ui_oven_label_settings_main_main_default.init()
+style_ui_oven_label_settings_main_main_default.set_radius(0)
+style_ui_oven_label_settings_main_main_default.set_bg_color(lv.color_make(0xFF,0x91,0x10))
+style_ui_oven_label_settings_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_label_settings_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_oven_label_settings_main_main_default.set_bg_opa(0)
+style_ui_oven_label_settings_main_main_default.set_text_color(lv.color_make(0xFF,0x91,0x10))
+try:
+    style_ui_oven_label_settings_main_main_default.set_text_font(lv.font_Antonio_Regular_21)
+except AttributeError:
+    try:
+        style_ui_oven_label_settings_main_main_default.set_text_font(lv.font_montserrat_21)
+    except AttributeError:
+        style_ui_oven_label_settings_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_oven_label_settings_main_main_default.set_text_letter_space(2)
+style_ui_oven_label_settings_main_main_default.set_text_line_space(0)
+style_ui_oven_label_settings_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_label_settings_main_main_default.set_pad_left(0)
+style_ui_oven_label_settings_main_main_default.set_pad_right(0)
+style_ui_oven_label_settings_main_main_default.set_pad_top(8)
+style_ui_oven_label_settings_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Oven_Label_Settings
+ui_Oven_Label_Settings.add_style(style_ui_oven_label_settings_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# create style style_ui_oven_group_oven_main_main_default
+style_ui_oven_group_oven_main_main_default = lv.style_t()
+style_ui_oven_group_oven_main_main_default.init()
+style_ui_oven_group_oven_main_main_default.set_radius(20)
+style_ui_oven_group_oven_main_main_default.set_bg_color(lv.color_make(0x18,0x18,0x18))
+style_ui_oven_group_oven_main_main_default.set_bg_grad_color(lv.color_make(0xff,0xff,0xff))
+style_ui_oven_group_oven_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_oven_group_oven_main_main_default.set_bg_opa(255)
+style_ui_oven_group_oven_main_main_default.set_border_color(lv.color_make(0x4A,0x48,0x4A))
+style_ui_oven_group_oven_main_main_default.set_border_width(2)
+style_ui_oven_group_oven_main_main_default.set_border_opa(0)
+style_ui_oven_group_oven_main_main_default.set_pad_left(0)
+style_ui_oven_group_oven_main_main_default.set_pad_right(0)
+style_ui_oven_group_oven_main_main_default.set_pad_top(0)
+style_ui_oven_group_oven_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Oven_Group_Oven
+ui_Oven_Group_Oven.add_style(style_ui_oven_group_oven_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 ui_Oven_Tile_Mode = lv.tileview(ui_Oven)
-ui_Oven_Tile_Mode.set_pos(int(713),int(294))
-ui_Oven_Tile_Mode.set_size(466,86)
+ui_Oven_Tile_Mode.set_pos(int(728),int(294))
+ui_Oven_Tile_Mode.set_size(430,86)
 ui_Oven_Tile_Mode.set_scrollbar_mode(lv.SCROLLBAR_MODE.ON)
 ui_Oven_Tile_Mode_Mode_9 = ui_Oven_Tile_Mode.add_tile(8 , 0, lv.DIR.LEFT)
 ui_Oven_Img_Mode9 = lv.img(ui_Oven_Tile_Mode_Mode_9)
@@ -1448,6 +1616,246 @@ style_ui_oven_tile_mode_main_scrollbar_default.set_bg_opa(0)
 
 # add style for ui_Oven_Tile_Mode
 ui_Oven_Tile_Mode.add_style(style_ui_oven_tile_mode_main_scrollbar_default, lv.PART.SCROLLBAR|lv.STATE.DEFAULT)
+
+ui_Oven_Group_TarTemp = lv.obj(ui_Oven)
+ui_Oven_Group_TarTemp.set_pos(int(697),int(427))
+ui_Oven_Group_TarTemp.set_size(235,240)
+ui_Oven_Group_TarTemp.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Img_TempWheel = lv.img(ui_Oven_Group_TarTemp)
+ui_Oven_Img_TempWheel.set_pos(int(51),int(-11))
+ui_Oven_Img_TempWheel.set_size(151,259)
+ui_Oven_Img_TempWheel.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Img_TempWheel.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp466056730.png','rb') as f:
+        ui_Oven_Img_TempWheel_img_data = f.read()
+except:
+    print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp466056730.png')
+    sys.exit()
+
+ui_Oven_Img_TempWheel_img = lv.img_dsc_t({
+  'data_size': len(ui_Oven_Img_TempWheel_img_data),
+  'header': {'always_zero': 0, 'w': 151, 'h': 259, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Oven_Img_TempWheel_img_data
+})
+
+ui_Oven_Img_TempWheel.set_src(ui_Oven_Img_TempWheel_img)
+ui_Oven_Img_TempWheel.set_pivot(50,50)
+ui_Oven_Img_TempWheel.set_angle(0)
+# create style style_ui_oven_img_tempwheel_main_main_default
+style_ui_oven_img_tempwheel_main_main_default = lv.style_t()
+style_ui_oven_img_tempwheel_main_main_default.init()
+style_ui_oven_img_tempwheel_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_oven_img_tempwheel_main_main_default.set_img_recolor_opa(0)
+style_ui_oven_img_tempwheel_main_main_default.set_img_opa(255)
+
+# add style for ui_Oven_Img_TempWheel
+ui_Oven_Img_TempWheel.add_style(style_ui_oven_img_tempwheel_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+ui_Oven_Label_SelTemp = lv.label(ui_Oven_Group_TarTemp)
+ui_Oven_Label_SelTemp.set_pos(int(-11),int(91))
+ui_Oven_Label_SelTemp.set_size(118,53)
+ui_Oven_Label_SelTemp.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Label_SelTemp.set_text("TARGET\nTEMP.")
+ui_Oven_Label_SelTemp.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_oven_label_seltemp_main_main_default
+style_ui_oven_label_seltemp_main_main_default = lv.style_t()
+style_ui_oven_label_seltemp_main_main_default.init()
+style_ui_oven_label_seltemp_main_main_default.set_radius(0)
+style_ui_oven_label_seltemp_main_main_default.set_bg_color(lv.color_make(0xFF,0x91,0x10))
+style_ui_oven_label_seltemp_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_label_seltemp_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_oven_label_seltemp_main_main_default.set_bg_opa(0)
+style_ui_oven_label_seltemp_main_main_default.set_text_color(lv.color_make(0xFF,0x91,0x10))
+try:
+    style_ui_oven_label_seltemp_main_main_default.set_text_font(lv.font_Antonio_Regular_21)
+except AttributeError:
+    try:
+        style_ui_oven_label_seltemp_main_main_default.set_text_font(lv.font_montserrat_21)
+    except AttributeError:
+        style_ui_oven_label_seltemp_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_oven_label_seltemp_main_main_default.set_text_letter_space(2)
+style_ui_oven_label_seltemp_main_main_default.set_text_line_space(0)
+style_ui_oven_label_seltemp_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_label_seltemp_main_main_default.set_pad_left(0)
+style_ui_oven_label_seltemp_main_main_default.set_pad_right(0)
+style_ui_oven_label_seltemp_main_main_default.set_pad_top(8)
+style_ui_oven_label_seltemp_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Oven_Label_SelTemp
+ui_Oven_Label_SelTemp.add_style(style_ui_oven_label_seltemp_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+ui_Oven_Label_TarCen = lv.label(ui_Oven_Group_TarTemp)
+ui_Oven_Label_TarCen.set_pos(int(68),int(111))
+ui_Oven_Label_TarCen.set_size(55,32)
+ui_Oven_Label_TarCen.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Label_TarCen.set_text("ºC")
+ui_Oven_Label_TarCen.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_oven_label_tarcen_main_main_default
+style_ui_oven_label_tarcen_main_main_default = lv.style_t()
+style_ui_oven_label_tarcen_main_main_default.init()
+style_ui_oven_label_tarcen_main_main_default.set_radius(0)
+style_ui_oven_label_tarcen_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_label_tarcen_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_label_tarcen_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_oven_label_tarcen_main_main_default.set_bg_opa(0)
+style_ui_oven_label_tarcen_main_main_default.set_text_color(lv.color_make(0xc9,0xc5,0xc5))
+try:
+    style_ui_oven_label_tarcen_main_main_default.set_text_font(lv.font_Alatsi_Regular_23)
+except AttributeError:
+    try:
+        style_ui_oven_label_tarcen_main_main_default.set_text_font(lv.font_montserrat_23)
+    except AttributeError:
+        style_ui_oven_label_tarcen_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_oven_label_tarcen_main_main_default.set_text_letter_space(2)
+style_ui_oven_label_tarcen_main_main_default.set_text_line_space(0)
+style_ui_oven_label_tarcen_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_label_tarcen_main_main_default.set_pad_left(0)
+style_ui_oven_label_tarcen_main_main_default.set_pad_right(0)
+style_ui_oven_label_tarcen_main_main_default.set_pad_top(8)
+style_ui_oven_label_tarcen_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Oven_Label_TarCen
+ui_Oven_Label_TarCen.add_style(style_ui_oven_label_tarcen_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# create style style_ui_oven_group_tartemp_main_main_default
+style_ui_oven_group_tartemp_main_main_default = lv.style_t()
+style_ui_oven_group_tartemp_main_main_default.init()
+style_ui_oven_group_tartemp_main_main_default.set_radius(0)
+style_ui_oven_group_tartemp_main_main_default.set_bg_color(lv.color_make(0xff,0xff,0xff))
+style_ui_oven_group_tartemp_main_main_default.set_bg_grad_color(lv.color_make(0xff,0xff,0xff))
+style_ui_oven_group_tartemp_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_oven_group_tartemp_main_main_default.set_bg_opa(0)
+style_ui_oven_group_tartemp_main_main_default.set_border_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_group_tartemp_main_main_default.set_border_width(2)
+style_ui_oven_group_tartemp_main_main_default.set_border_opa(0)
+style_ui_oven_group_tartemp_main_main_default.set_pad_left(0)
+style_ui_oven_group_tartemp_main_main_default.set_pad_right(0)
+style_ui_oven_group_tartemp_main_main_default.set_pad_top(0)
+style_ui_oven_group_tartemp_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Oven_Group_TarTemp
+ui_Oven_Group_TarTemp.add_style(style_ui_oven_group_tartemp_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+ui_Oven_Group_Timer = lv.obj(ui_Oven)
+ui_Oven_Group_Timer.set_pos(int(957),int(427))
+ui_Oven_Group_Timer.set_size(235,240)
+ui_Oven_Group_Timer.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Img_TimerWheel = lv.img(ui_Oven_Group_Timer)
+ui_Oven_Img_TimerWheel.set_pos(int(39),int(-11))
+ui_Oven_Img_TimerWheel.set_size(151,259)
+ui_Oven_Img_TimerWheel.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Img_TimerWheel.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp150866893.png','rb') as f:
+        ui_Oven_Img_TimerWheel_img_data = f.read()
+except:
+    print('Could not open C:\\Repos\\Future_training\\AirconGUI\\generated\\mPythonImages\\mp150866893.png')
+    sys.exit()
+
+ui_Oven_Img_TimerWheel_img = lv.img_dsc_t({
+  'data_size': len(ui_Oven_Img_TimerWheel_img_data),
+  'header': {'always_zero': 0, 'w': 151, 'h': 259, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Oven_Img_TimerWheel_img_data
+})
+
+ui_Oven_Img_TimerWheel.set_src(ui_Oven_Img_TimerWheel_img)
+ui_Oven_Img_TimerWheel.set_pivot(50,50)
+ui_Oven_Img_TimerWheel.set_angle(0)
+# create style style_ui_oven_img_timerwheel_main_main_default
+style_ui_oven_img_timerwheel_main_main_default = lv.style_t()
+style_ui_oven_img_timerwheel_main_main_default.init()
+style_ui_oven_img_timerwheel_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_oven_img_timerwheel_main_main_default.set_img_recolor_opa(0)
+style_ui_oven_img_timerwheel_main_main_default.set_img_opa(255)
+
+# add style for ui_Oven_Img_TimerWheel
+ui_Oven_Img_TimerWheel.add_style(style_ui_oven_img_timerwheel_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+ui_Oven_Label_SelTimer = lv.label(ui_Oven_Group_Timer)
+ui_Oven_Label_SelTimer.set_pos(int(148),int(91))
+ui_Oven_Label_SelTimer.set_size(104,53)
+ui_Oven_Label_SelTimer.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Label_SelTimer.set_text("SETUP\nTIMER")
+ui_Oven_Label_SelTimer.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_oven_label_seltimer_main_main_default
+style_ui_oven_label_seltimer_main_main_default = lv.style_t()
+style_ui_oven_label_seltimer_main_main_default.init()
+style_ui_oven_label_seltimer_main_main_default.set_radius(0)
+style_ui_oven_label_seltimer_main_main_default.set_bg_color(lv.color_make(0xFF,0x91,0x10))
+style_ui_oven_label_seltimer_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_label_seltimer_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_oven_label_seltimer_main_main_default.set_bg_opa(0)
+style_ui_oven_label_seltimer_main_main_default.set_text_color(lv.color_make(0xFF,0x91,0x10))
+try:
+    style_ui_oven_label_seltimer_main_main_default.set_text_font(lv.font_Antonio_Regular_21)
+except AttributeError:
+    try:
+        style_ui_oven_label_seltimer_main_main_default.set_text_font(lv.font_montserrat_21)
+    except AttributeError:
+        style_ui_oven_label_seltimer_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_oven_label_seltimer_main_main_default.set_text_letter_space(2)
+style_ui_oven_label_seltimer_main_main_default.set_text_line_space(0)
+style_ui_oven_label_seltimer_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_label_seltimer_main_main_default.set_pad_left(0)
+style_ui_oven_label_seltimer_main_main_default.set_pad_right(0)
+style_ui_oven_label_seltimer_main_main_default.set_pad_top(8)
+style_ui_oven_label_seltimer_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Oven_Label_SelTimer
+ui_Oven_Label_SelTimer.add_style(style_ui_oven_label_seltimer_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+ui_Oven_Label_TimerSel = lv.label(ui_Oven_Group_Timer)
+ui_Oven_Label_TimerSel.set_pos(int(114),int(108))
+ui_Oven_Label_TimerSel.set_size(63,32)
+ui_Oven_Label_TimerSel.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Oven_Label_TimerSel.set_text("mins")
+ui_Oven_Label_TimerSel.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_oven_label_timersel_main_main_default
+style_ui_oven_label_timersel_main_main_default = lv.style_t()
+style_ui_oven_label_timersel_main_main_default.init()
+style_ui_oven_label_timersel_main_main_default.set_radius(0)
+style_ui_oven_label_timersel_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_label_timersel_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_label_timersel_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_oven_label_timersel_main_main_default.set_bg_opa(0)
+style_ui_oven_label_timersel_main_main_default.set_text_color(lv.color_make(0xc9,0xc5,0xc5))
+try:
+    style_ui_oven_label_timersel_main_main_default.set_text_font(lv.font_Alatsi_Regular_23)
+except AttributeError:
+    try:
+        style_ui_oven_label_timersel_main_main_default.set_text_font(lv.font_montserrat_23)
+    except AttributeError:
+        style_ui_oven_label_timersel_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_oven_label_timersel_main_main_default.set_text_letter_space(2)
+style_ui_oven_label_timersel_main_main_default.set_text_line_space(0)
+style_ui_oven_label_timersel_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_oven_label_timersel_main_main_default.set_pad_left(0)
+style_ui_oven_label_timersel_main_main_default.set_pad_right(0)
+style_ui_oven_label_timersel_main_main_default.set_pad_top(8)
+style_ui_oven_label_timersel_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Oven_Label_TimerSel
+ui_Oven_Label_TimerSel.add_style(style_ui_oven_label_timersel_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# create style style_ui_oven_group_timer_main_main_default
+style_ui_oven_group_timer_main_main_default = lv.style_t()
+style_ui_oven_group_timer_main_main_default.init()
+style_ui_oven_group_timer_main_main_default.set_radius(0)
+style_ui_oven_group_timer_main_main_default.set_bg_color(lv.color_make(0xff,0xff,0xff))
+style_ui_oven_group_timer_main_main_default.set_bg_grad_color(lv.color_make(0xff,0xff,0xff))
+style_ui_oven_group_timer_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_oven_group_timer_main_main_default.set_bg_opa(0)
+style_ui_oven_group_timer_main_main_default.set_border_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_group_timer_main_main_default.set_border_width(2)
+style_ui_oven_group_timer_main_main_default.set_border_opa(0)
+style_ui_oven_group_timer_main_main_default.set_pad_left(0)
+style_ui_oven_group_timer_main_main_default.set_pad_right(0)
+style_ui_oven_group_timer_main_main_default.set_pad_top(0)
+style_ui_oven_group_timer_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Oven_Group_Timer
+ui_Oven_Group_Timer.add_style(style_ui_oven_group_timer_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 ui_Aircon = lv.obj()
 ui_Aircon.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)

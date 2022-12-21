@@ -23,7 +23,7 @@ static void ui_Oven_Btn_ModeLeft_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_RELEASED:
 	{
-		ui_oven_change_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);
+		ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);
 	}
 		break;
 	default:
@@ -38,7 +38,7 @@ static void ui_Oven_Btn_ModeRigth_event_handler(lv_event_t *e)
 	{
 	case LV_EVENT_RELEASED:
 	{
-		ui_oven_change_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);
+		ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);
 	}
 		break;
 	default:

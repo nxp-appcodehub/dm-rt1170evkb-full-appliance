@@ -87,7 +87,7 @@
 #endif /* LV_ENABLE_GC */
 
 /* Input device read period in milliseconds */
-#define LV_INDEV_DEF_READ_PERIOD          5
+#define LV_INDEV_DEF_READ_PERIOD          15
 
 /*==================
  * Feature usage
