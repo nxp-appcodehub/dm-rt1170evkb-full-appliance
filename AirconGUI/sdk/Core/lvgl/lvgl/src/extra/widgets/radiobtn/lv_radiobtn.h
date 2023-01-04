@@ -28,8 +28,8 @@ extern "C" {
  **********************/
 typedef struct {
     lv_obj_t obj;
-    const char * checked_txt;
-    uint16_t active_index;
+    char * checked_txt;
+    uint32_t active_index;
 } lv_radiobtn_t;
 
 typedef struct {
@@ -47,6 +47,7 @@ extern const lv_obj_class_t lv_radiobtn_item_class;
  */
 typedef enum {
     LV_RADIOBTN_DRAW_PART_BOX,    /**< The tick box*/
+    LV_RADIOBTN_DRAW_PART_BOX_INNER, /**< The inner box of tich box*/
 } lv_radiobtn_draw_part_type_t;
 
 

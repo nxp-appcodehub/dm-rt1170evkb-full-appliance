@@ -41,6 +41,7 @@ typedef struct {
     uint16_t tick_major_length;
     uint16_t tick_major_width;
 
+    bool hide_label;
     int16_t label_gap;
     int16_t label_color;
 
@@ -179,6 +180,17 @@ void lv_analogclock_set_scale_range(lv_obj_t * obj, lv_analogclock_scale_t * sca
                                     uint32_t rotation);
 
 /*=====================
+ * Hide digits
+ *====================*/
+
+/**
+ * Hide the digits or not 
+ * @param obj           pointer to a analogclock object
+ * @param hide_digits   set whether has digits
+ */
+void lv_analogclock_hide_digits(lv_obj_t *obj, bool hide_digits);
+
+/*=====================
  * Add indicator
  *====================*/
 
@@ -195,11 +207,11 @@ lv_analogclock_indicator_t * lv_analogclock_add_needle_line(lv_obj_t * obj, lv_a
                                                             uint16_t width,
                                                             lv_color_t color, int16_t r_mod);
 void lv_analogclock_set_hour_needle_line(lv_obj_t * obj, uint16_t width,
-                                                                 lv_color_t color, int16_t r_mod);
+                                         lv_color_t color, int16_t r_mod);
 void lv_analogclock_set_min_needle_line(lv_obj_t * obj, uint16_t width,
-                                                                lv_color_t color, int16_t r_mod);
+                                        lv_color_t color, int16_t r_mod);
 void lv_analogclock_set_sec_needle_line(lv_obj_t * obj, uint16_t width,
-                                                                lv_color_t color, int16_t r_mod);
+                                        lv_color_t color, int16_t r_mod);
 
 /**
  * Add a needle image indicator the scale
@@ -215,11 +227,11 @@ lv_analogclock_indicator_t * lv_analogclock_add_needle_img(lv_obj_t * obj, lv_an
                                                            const void * src,
                                                            lv_coord_t pivot_x, lv_coord_t pivot_y);
 void lv_analogclock_set_hour_needle_img(lv_obj_t * obj, const void * src,
-                                                                lv_coord_t pivot_x, lv_coord_t pivot_y);
+                                        lv_coord_t pivot_x, lv_coord_t pivot_y);
 void lv_analogclock_set_min_needle_img(lv_obj_t * obj, const void * src,
-                                                               lv_coord_t pivot_x, lv_coord_t pivot_y);
+                                       lv_coord_t pivot_x, lv_coord_t pivot_y);
 void lv_analogclock_set_sec_needle_img(lv_obj_t * obj, const void * src,
-                                                               lv_coord_t pivot_x, lv_coord_t pivot_y);
+                                       lv_coord_t pivot_x, lv_coord_t pivot_y);
 
 /**
  * Add an arc indicator the scale

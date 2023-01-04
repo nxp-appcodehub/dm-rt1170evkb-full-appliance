@@ -13,13 +13,13 @@ PRJ_DIR := $(makefile_path)/..
 LVGL_DIR := $(PRJ_DIR)
 SIMULATOR_DIR := $(makefile_path)
 LVGL_DIR_NAME ?= lvgl
-CFLAGS := -O3 -g0 -I$(LVGL_DIR)/ -I$(makefile_path)/ -c -fmessage-length=0
+CFLAGS := -O3 -g0 -I$(LVGL_DIR)/ -I$(makefile_path)/ -I$(makefile_path)/rlottie -c -fmessage-length=0
 CFLAGS += -I$(LVGL_DIR)/$(LVGL_DIR_NAME)/ -I$(LVGL_DIR)/$(LVGL_DIR_NAME)/src
 
 ifeq ($(OS),Windows_NT)
-LDFLAGS := -lSDL2 -L$(libfile_path) -ldecoder -lopenh264 -lstdc++ -lm
+LDFLAGS := -lSDL2 -L$(libfile_path) -ldecoder -lopenh264 -lrlottie -lstdc++ -lm
 else
-LDFLAGS := -lSDL2 -L$(libfile_path) -ldecoder -lopenh264 -lpthread -lstdc++ -lm
+LDFLAGS := -lSDL2 -L$(libfile_path) -ldecoder -lopenh264 -lrlottie -lpthread -lstdc++ -lm -ldl
 endif
 
 BUILD_DIR := build/

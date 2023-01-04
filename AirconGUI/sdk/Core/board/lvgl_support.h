@@ -18,7 +18,7 @@
 #define LCD_WIDTH             DEMO_BUFFER_WIDTH
 #define LCD_HEIGHT            DEMO_BUFFER_HEIGHT
 #define LCD_FB_BYTE_PER_PIXEL DEMO_BUFFER_BYTE_PER_PIXEL
-#define DEMO_USE_ROTATE 1
+#define DEMO_USE_ROTATE 0
 
 /*******************************************************************************
  * API

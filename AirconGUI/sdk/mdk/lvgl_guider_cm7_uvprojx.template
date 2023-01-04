@@ -665,11 +665,11 @@
                             
               <MiscControls>-fno-common -fdata-sections -ffreestanding -fno-builtin -mthumb</MiscControls>
                             
-              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, DEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, SDK_I2C_BASED_COMPONENT_USED=1, VG_RESOLVE_ENGINE=0, VG_PE_COLOR_KEY=0, VG_IM_INDEX_FORMAT=0, VG_AYUV_INPUT_OUTPUT=0, VG_DOUBLE_IMAGE=0, VG_RECTANGLE_STRIP_MODE=0, VG_MMU=0, VG_IM_FILTER=0, VG_IM_YUV_PACKET=1, VG_IM_YUV_PLANAR=0, VG_PE_YUV_PACKET=1, VG_TARGET_TILED=1, VG_COMMAND_CALL=1, VG_SHARE_BUFFER_IM_16K=0, VG_OFFLINE_MODE=0, VG_RESOLUTION_2880=0, VG_PE_PREMULTIPLY=0, VG_POST_CONVERTER=0, VG_PRE_CONVERTER=0, VG_RENDER_BY_MESH=0, VG_TARGET_FAST_CLEAR=0, VG_BUFFER_NUMBER_OF_TARGET=0, VG_VIDEO_CLEAR_CONTROL=0, VG_VIDEO_CONTROL=0, VGLITE_TST_FIRMWARE=0, VG_LITE_SYS_GPU_CTRL=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS, MCUXPRESSO_SDK</Define>
+              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, DEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS, MCUXPRESSO_SDK</Define>
                             
               <Undefine/>
                             
-              <IncludePath>../Core/board;../Core/source;../Core/CMSIS;../Core/component/lists;../Core/component/serial_manager;../Core/component/silicon_id;../Core/component/uart;../../custom;../Core/device;../Core/drivers;../Core/freertos/freertos_kernel/include;../Core/freertos/freertos_kernel/portable/GCC/ARM_CM4F;../../generated;../../generated/guider_customer_fonts;../../generated/guider_fonts;../Core/lvgl;../Core/lvgl/lvgl;../Core/lvgl/lvgl/src;../Core/lvgl/lvgl/src/font;../Core/touchpanel;../Core/utilities;../Core/vglite/VGLite/rtos;../Core/vglite/VGLiteKernel;../Core/vglite/VGLiteKernel/rtos;../Core/vglite/font;../Core/vglite/font/mcufont/decoder;../Core/vglite/inc;../Core/video;../Core/xip</IncludePath>
+              <IncludePath>../Core/board;../Core/source;../Core/CMSIS;../Core/component/lists;../Core/component/serial_manager;../Core/component/uart;../../custom;../Core/device;../Core/drivers;../Core/freertos/freertos-kernel/include;../Core/freertos/freertos-kernel/portable/GCC/ARM_CM4F;../../generated;../../generated/guider_customer_fonts;../../generated/guider_fonts;../Core/lvgl;../Core/lvgl/lvgl;../Core/lvgl/lvgl/src;../Core/lvgl/lvgl/src/font;../Core/touchpanel;../Core/utilities;../Core/vglite/VGLite/rtos;../Core/vglite/VGLiteKernel;../Core/vglite/VGLiteKernel/rtos;../Core/vglite/font;../Core/vglite/font/mcufont/decoder;../Core/vglite/inc;../Core/video;../Core/xip</IncludePath>
                           
             </VariousControls>
                       
@@ -816,6 +816,16 @@
               <FilePath>../Core/board/pin_mux.h</FilePath>
             </File>
             <File>
+              <FileName>vglite_support.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/board/vglite_support.c</FilePath>
+            </File>
+            <File>
+              <FileName>vglite_support.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/board/vglite_support.h</FilePath>
+            </File>
+            <File>
               <FileName>xmcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/board/xmcd.c</FilePath>
@@ -836,11 +846,6 @@
               <FilePath>../Core/CMSIS/cachel1_armv7.h</FilePath>
             </File>
             <File>
-              <FileName>cmsis_armcc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/CMSIS/cmsis_armcc.h</FilePath>
-            </File>
-            <File>
               <FileName>cmsis_armclang.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/CMSIS/cmsis_armclang.h</FilePath>
@@ -854,16 +859,6 @@
               <FileName>cmsis_compiler.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/CMSIS/cmsis_compiler.h</FilePath>
-            </File>
-            <File>
-              <FileName>cmsis_gcc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/CMSIS/cmsis_gcc.h</FilePath>
-            </File>
-            <File>
-              <FileName>cmsis_iccarm.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/CMSIS/cmsis_iccarm.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_version.h</FileName>
@@ -924,21 +919,6 @@
               <FileName>fsl_component_serial_port_uart.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/component/serial_manager/fsl_component_serial_port_uart.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>component/silicon_id</GroupName>
-          <Files>
-            <File>
-              <FileName>fsl_silicon_id.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/component/silicon_id/fsl_silicon_id.c</FilePath>
-            </File>
-            <File>
-              <FileName>fsl_silicon_id.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/component/silicon_id/fsl_silicon_id.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1174,177 +1154,177 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel</GroupName>
+          <GroupName>freertos/freertos-kernel</GroupName>
           <Files>
             <File>
               <FileName>croutine.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/croutine.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/croutine.c</FilePath>
             </File>
             <File>
               <FileName>event_groups.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/event_groups.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/event_groups.c</FilePath>
             </File>
             <File>
               <FileName>list.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/list.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/list.c</FilePath>
             </File>
             <File>
               <FileName>queue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/queue.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/queue.c</FilePath>
             </File>
             <File>
               <FileName>stream_buffer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/stream_buffer.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/stream_buffer.c</FilePath>
             </File>
             <File>
               <FileName>tasks.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/tasks.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/tasks.c</FilePath>
             </File>
             <File>
               <FileName>timers.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/timers.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/timers.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel/include</GroupName>
+          <GroupName>freertos/freertos-kernel/include</GroupName>
           <Files>
             <File>
               <FileName>atomic.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/atomic.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/atomic.h</FilePath>
             </File>
             <File>
               <FileName>croutine.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/croutine.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/croutine.h</FilePath>
             </File>
             <File>
               <FileName>deprecated_definitions.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/deprecated_definitions.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/deprecated_definitions.h</FilePath>
             </File>
             <File>
               <FileName>event_groups.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/event_groups.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/event_groups.h</FilePath>
             </File>
             <File>
               <FileName>FreeRTOS.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/FreeRTOS.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/FreeRTOS.h</FilePath>
             </File>
             <File>
               <FileName>freertos_tasks_c_additions.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/freertos_tasks_c_additions.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/freertos_tasks_c_additions.h</FilePath>
             </File>
             <File>
               <FileName>list.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/list.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/list.h</FilePath>
             </File>
             <File>
               <FileName>message_buffer.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/message_buffer.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/message_buffer.h</FilePath>
             </File>
             <File>
               <FileName>mpu_prototypes.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/mpu_prototypes.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/mpu_prototypes.h</FilePath>
             </File>
             <File>
               <FileName>mpu_wrappers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/mpu_wrappers.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/mpu_wrappers.h</FilePath>
             </File>
             <File>
               <FileName>portable.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/portable.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/portable.h</FilePath>
             </File>
             <File>
               <FileName>projdefs.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/projdefs.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/projdefs.h</FilePath>
             </File>
             <File>
               <FileName>queue.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/queue.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/queue.h</FilePath>
             </File>
             <File>
               <FileName>semphr.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/semphr.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/semphr.h</FilePath>
             </File>
             <File>
               <FileName>stack_macros.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/stack_macros.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/stack_macros.h</FilePath>
             </File>
             <File>
               <FileName>StackMacros.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/StackMacros.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/StackMacros.h</FilePath>
             </File>
             <File>
               <FileName>stream_buffer.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/stream_buffer.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/stream_buffer.h</FilePath>
             </File>
             <File>
               <FileName>task.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/task.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/task.h</FilePath>
             </File>
             <File>
               <FileName>timers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/timers.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/timers.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel/portable/GCC/ARM_CM4F</GroupName>
+          <GroupName>freertos/freertos-kernel/portable/GCC/ARM_CM4F</GroupName>
           <Files>
             <File>
               <FileName>port.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/portable/GCC/ARM_CM4F/port.c</FilePath>
             </File>
             <File>
               <FileName>portmacro.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/portable/GCC/ARM_CM4F/portmacro.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/portable/GCC/ARM_CM4F/portmacro.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel/portable/MemMang</GroupName>
+          <GroupName>freertos/freertos-kernel/portable/MemMang</GroupName>
           <Files>
             <File>
               <FileName>heap_4.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/portable/MemMang/heap_4.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/portable/MemMang/heap_4.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel/portable</GroupName>
+          <GroupName>freertos/freertos-kernel/portable</GroupName>
           <Files>
             <File>
               <FileName>readme.txt</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/portable/readme.txt</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/portable/readme.txt</FilePath>
             </File>
           </Files>
         </Group>
@@ -1540,6 +1520,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl/src/draw/arm2d</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_gpu_arm2d.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/arm2d/lv_gpu_arm2d.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>lvgl/lvgl/src/draw</GroupName>
           <Files>
             <File>
@@ -1583,6 +1573,16 @@
               <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_label.h</FilePath>
             </File>
             <File>
+              <FileName>lv_draw_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_layer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_layer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_layer.h</FilePath>
+            </File>
+            <File>
               <FileName>lv_draw_line.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_line.c</FilePath>
@@ -1611,6 +1611,16 @@
               <FileName>lv_draw_rect.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_rect.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_transform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_transform.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_transform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_transform.h</FilePath>
             </File>
             <File>
               <FileName>lv_draw_triangle.c</FileName>
@@ -1726,6 +1736,16 @@
               <FileName>lv_draw_vglite_blend.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_vglite_line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_vglite_line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.h</FilePath>
             </File>
             <File>
               <FileName>lv_draw_vglite_rect.c</FileName>
@@ -1928,6 +1948,11 @@
               <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.c</FilePath>
             </File>
             <File>
+              <FileName>lv_draw_sw_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_draw_sw_letter.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.c</FilePath>
@@ -1946,6 +1971,21 @@
               <FileName>lv_draw_sw_rect.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sw_transform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/draw/swm341_dma2d</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_gpu_swm341_dma2d.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2046,6 +2086,16 @@
               <FileName>lv_fs_posix.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fs_rawfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fs_rawfs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.h</FilePath>
             </File>
             <File>
               <FileName>lv_fs_stdio.c</FileName>
@@ -2210,6 +2260,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl/src/extra/others/fragment</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_fragment.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>lvgl/lvgl/src/extra/others/gridnav</GroupName>
           <Files>
             <File>
@@ -2221,6 +2281,31 @@
               <FileName>lv_gridnav.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/gridnav/lv_gridnav.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/others/ime</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_ime_pinyin.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/ime/lv_ime_pinyin.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_ime_pinyin.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/ime/lv_ime_pinyin.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/others/imgfont</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_imgfont.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2246,6 +2331,16 @@
               <FileName>lv_monkey.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/monkey/lv_monkey.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/others/msg</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_msg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/msg/lv_msg.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2661,6 +2756,21 @@
               <FileName>lv_tileview.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/widgets/tileview/lv_tileview.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/widgets/video</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_video.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/video/lv_video.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_video.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/video/lv_video.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3331,6 +3441,26 @@
               <FileName>lv_conf.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/source/lv_conf.h</FilePath>
+            </File>
+            <File>
+              <FileName>lvgl_demo_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/source/lvgl_demo_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>lvgl_demo_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/source/lvgl_demo_utils.h</FilePath>
+            </File>
+            <File>
+              <FileName>lvgl_freertos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/source/lvgl_freertos.c</FilePath>
+            </File>
+            <File>
+              <FileName>lvgl_freertos.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/source/lvgl_freertos.h</FilePath>
             </File>
             <File>
               <FileName>lvgl_guider.c</FileName>
@@ -4430,11 +4560,11 @@
                             
               <MiscControls>-fno-common -fdata-sections -ffreestanding -fno-builtin -mthumb</MiscControls>
                             
-              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, NDEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, SDK_I2C_BASED_COMPONENT_USED=1, VG_RESOLVE_ENGINE=0, VG_PE_COLOR_KEY=0, VG_IM_INDEX_FORMAT=0, VG_AYUV_INPUT_OUTPUT=0, VG_DOUBLE_IMAGE=0, VG_RECTANGLE_STRIP_MODE=0, VG_MMU=0, VG_IM_FILTER=0, VG_IM_YUV_PACKET=1, VG_IM_YUV_PLANAR=0, VG_PE_YUV_PACKET=1, VG_TARGET_TILED=1, VG_COMMAND_CALL=1, VG_SHARE_BUFFER_IM_16K=0, VG_OFFLINE_MODE=0, VG_RESOLUTION_2880=0, VG_PE_PREMULTIPLY=0, VG_POST_CONVERTER=0, VG_PRE_CONVERTER=0, VG_RENDER_BY_MESH=0, VG_TARGET_FAST_CLEAR=0, VG_BUFFER_NUMBER_OF_TARGET=0, VG_VIDEO_CLEAR_CONTROL=0, VG_VIDEO_CONTROL=0, VGLITE_TST_FIRMWARE=0, VG_LITE_SYS_GPU_CTRL=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS, MCUXPRESSO_SDK</Define>
+              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, NDEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS, MCUXPRESSO_SDK</Define>
                             
               <Undefine/>
                             
-              <IncludePath>../Core/board;../Core/source;../Core/CMSIS;../Core/component/lists;../Core/component/serial_manager;../Core/component/silicon_id;../Core/component/uart;../../custom;../Core/device;../Core/drivers;../Core/freertos/freertos_kernel/include;../Core/freertos/freertos_kernel/portable/GCC/ARM_CM4F;../../generated;../../generated/guider_customer_fonts;../../generated/guider_fonts;../Core/lvgl;../Core/lvgl/lvgl;../Core/lvgl/lvgl/src;../Core/lvgl/lvgl/src/font;../Core/touchpanel;../Core/utilities;../Core/vglite/VGLite/rtos;../Core/vglite/VGLiteKernel;../Core/vglite/VGLiteKernel/rtos;../Core/vglite/font;../Core/vglite/font/mcufont/decoder;../Core/vglite/inc;../Core/video;../Core/xip</IncludePath>
+              <IncludePath>../Core/board;../Core/source;../Core/CMSIS;../Core/component/lists;../Core/component/serial_manager;../Core/component/uart;../../custom;../Core/device;../Core/drivers;../Core/freertos/freertos-kernel/include;../Core/freertos/freertos-kernel/portable/GCC/ARM_CM4F;../../generated;../../generated/guider_customer_fonts;../../generated/guider_fonts;../Core/lvgl;../Core/lvgl/lvgl;../Core/lvgl/lvgl/src;../Core/lvgl/lvgl/src/font;../Core/touchpanel;../Core/utilities;../Core/vglite/VGLite/rtos;../Core/vglite/VGLiteKernel;../Core/vglite/VGLiteKernel/rtos;../Core/vglite/font;../Core/vglite/font/mcufont/decoder;../Core/vglite/inc;../Core/video;../Core/xip</IncludePath>
                           
             </VariousControls>
                       
@@ -4581,6 +4711,16 @@
               <FilePath>../Core/board/pin_mux.h</FilePath>
             </File>
             <File>
+              <FileName>vglite_support.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/board/vglite_support.c</FilePath>
+            </File>
+            <File>
+              <FileName>vglite_support.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/board/vglite_support.h</FilePath>
+            </File>
+            <File>
               <FileName>xmcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/board/xmcd.c</FilePath>
@@ -4601,11 +4741,6 @@
               <FilePath>../Core/CMSIS/cachel1_armv7.h</FilePath>
             </File>
             <File>
-              <FileName>cmsis_armcc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/CMSIS/cmsis_armcc.h</FilePath>
-            </File>
-            <File>
               <FileName>cmsis_armclang.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/CMSIS/cmsis_armclang.h</FilePath>
@@ -4619,16 +4754,6 @@
               <FileName>cmsis_compiler.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/CMSIS/cmsis_compiler.h</FilePath>
-            </File>
-            <File>
-              <FileName>cmsis_gcc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/CMSIS/cmsis_gcc.h</FilePath>
-            </File>
-            <File>
-              <FileName>cmsis_iccarm.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/CMSIS/cmsis_iccarm.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_version.h</FileName>
@@ -4689,21 +4814,6 @@
               <FileName>fsl_component_serial_port_uart.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/component/serial_manager/fsl_component_serial_port_uart.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>component/silicon_id</GroupName>
-          <Files>
-            <File>
-              <FileName>fsl_silicon_id.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/component/silicon_id/fsl_silicon_id.c</FilePath>
-            </File>
-            <File>
-              <FileName>fsl_silicon_id.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/component/silicon_id/fsl_silicon_id.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -4939,177 +5049,177 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel</GroupName>
+          <GroupName>freertos/freertos-kernel</GroupName>
           <Files>
             <File>
               <FileName>croutine.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/croutine.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/croutine.c</FilePath>
             </File>
             <File>
               <FileName>event_groups.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/event_groups.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/event_groups.c</FilePath>
             </File>
             <File>
               <FileName>list.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/list.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/list.c</FilePath>
             </File>
             <File>
               <FileName>queue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/queue.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/queue.c</FilePath>
             </File>
             <File>
               <FileName>stream_buffer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/stream_buffer.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/stream_buffer.c</FilePath>
             </File>
             <File>
               <FileName>tasks.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/tasks.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/tasks.c</FilePath>
             </File>
             <File>
               <FileName>timers.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/timers.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/timers.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel/include</GroupName>
+          <GroupName>freertos/freertos-kernel/include</GroupName>
           <Files>
             <File>
               <FileName>atomic.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/atomic.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/atomic.h</FilePath>
             </File>
             <File>
               <FileName>croutine.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/croutine.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/croutine.h</FilePath>
             </File>
             <File>
               <FileName>deprecated_definitions.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/deprecated_definitions.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/deprecated_definitions.h</FilePath>
             </File>
             <File>
               <FileName>event_groups.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/event_groups.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/event_groups.h</FilePath>
             </File>
             <File>
               <FileName>FreeRTOS.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/FreeRTOS.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/FreeRTOS.h</FilePath>
             </File>
             <File>
               <FileName>freertos_tasks_c_additions.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/freertos_tasks_c_additions.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/freertos_tasks_c_additions.h</FilePath>
             </File>
             <File>
               <FileName>list.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/list.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/list.h</FilePath>
             </File>
             <File>
               <FileName>message_buffer.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/message_buffer.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/message_buffer.h</FilePath>
             </File>
             <File>
               <FileName>mpu_prototypes.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/mpu_prototypes.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/mpu_prototypes.h</FilePath>
             </File>
             <File>
               <FileName>mpu_wrappers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/mpu_wrappers.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/mpu_wrappers.h</FilePath>
             </File>
             <File>
               <FileName>portable.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/portable.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/portable.h</FilePath>
             </File>
             <File>
               <FileName>projdefs.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/projdefs.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/projdefs.h</FilePath>
             </File>
             <File>
               <FileName>queue.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/queue.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/queue.h</FilePath>
             </File>
             <File>
               <FileName>semphr.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/semphr.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/semphr.h</FilePath>
             </File>
             <File>
               <FileName>stack_macros.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/stack_macros.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/stack_macros.h</FilePath>
             </File>
             <File>
               <FileName>StackMacros.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/StackMacros.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/StackMacros.h</FilePath>
             </File>
             <File>
               <FileName>stream_buffer.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/stream_buffer.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/stream_buffer.h</FilePath>
             </File>
             <File>
               <FileName>task.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/task.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/task.h</FilePath>
             </File>
             <File>
               <FileName>timers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/include/timers.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/include/timers.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel/portable/GCC/ARM_CM4F</GroupName>
+          <GroupName>freertos/freertos-kernel/portable/GCC/ARM_CM4F</GroupName>
           <Files>
             <File>
               <FileName>port.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/portable/GCC/ARM_CM4F/port.c</FilePath>
             </File>
             <File>
               <FileName>portmacro.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/portable/GCC/ARM_CM4F/portmacro.h</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/portable/GCC/ARM_CM4F/portmacro.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel/portable/MemMang</GroupName>
+          <GroupName>freertos/freertos-kernel/portable/MemMang</GroupName>
           <Files>
             <File>
               <FileName>heap_4.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/portable/MemMang/heap_4.c</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/portable/MemMang/heap_4.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>freertos/freertos_kernel/portable</GroupName>
+          <GroupName>freertos/freertos-kernel/portable</GroupName>
           <Files>
             <File>
               <FileName>readme.txt</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/freertos/freertos_kernel/portable/readme.txt</FilePath>
+              <FilePath>../Core/freertos/freertos-kernel/portable/readme.txt</FilePath>
             </File>
           </Files>
         </Group>
@@ -5305,6 +5415,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl/src/draw/arm2d</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_gpu_arm2d.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/arm2d/lv_gpu_arm2d.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>lvgl/lvgl/src/draw</GroupName>
           <Files>
             <File>
@@ -5348,6 +5468,16 @@
               <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_label.h</FilePath>
             </File>
             <File>
+              <FileName>lv_draw_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_layer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_layer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_layer.h</FilePath>
+            </File>
+            <File>
               <FileName>lv_draw_line.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_line.c</FilePath>
@@ -5376,6 +5506,16 @@
               <FileName>lv_draw_rect.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_rect.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_transform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_transform.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_transform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/lv_draw_transform.h</FilePath>
             </File>
             <File>
               <FileName>lv_draw_triangle.c</FileName>
@@ -5491,6 +5631,16 @@
               <FileName>lv_draw_vglite_blend.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_vglite_line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_vglite_line.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.h</FilePath>
             </File>
             <File>
               <FileName>lv_draw_vglite_rect.c</FileName>
@@ -5693,6 +5843,11 @@
               <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_img.c</FilePath>
             </File>
             <File>
+              <FileName>lv_draw_sw_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_layer.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_draw_sw_letter.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_letter.c</FilePath>
@@ -5711,6 +5866,21 @@
               <FileName>lv_draw_sw_rect.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_rect.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sw_transform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sw/lv_draw_sw_transform.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/draw/swm341_dma2d</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_gpu_swm341_dma2d.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -5811,6 +5981,16 @@
               <FileName>lv_fs_posix.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fs_rawfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fs_rawfs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.h</FilePath>
             </File>
             <File>
               <FileName>lv_fs_stdio.c</FileName>
@@ -5975,6 +6155,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl/src/extra/others/fragment</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_fragment.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>lvgl/lvgl/src/extra/others/gridnav</GroupName>
           <Files>
             <File>
@@ -5986,6 +6176,31 @@
               <FileName>lv_gridnav.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/gridnav/lv_gridnav.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/others/ime</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_ime_pinyin.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/ime/lv_ime_pinyin.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_ime_pinyin.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/ime/lv_ime_pinyin.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/others/imgfont</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_imgfont.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -6011,6 +6226,16 @@
               <FileName>lv_monkey.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/monkey/lv_monkey.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/others/msg</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_msg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/msg/lv_msg.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -6426,6 +6651,21 @@
               <FileName>lv_tileview.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/widgets/tileview/lv_tileview.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/widgets/video</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_video.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/video/lv_video.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_video.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/video/lv_video.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -7096,6 +7336,26 @@
               <FileName>lv_conf.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/source/lv_conf.h</FilePath>
+            </File>
+            <File>
+              <FileName>lvgl_demo_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/source/lvgl_demo_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>lvgl_demo_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/source/lvgl_demo_utils.h</FilePath>
+            </File>
+            <File>
+              <FileName>lvgl_freertos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/source/lvgl_freertos.c</FilePath>
+            </File>
+            <File>
+              <FileName>lvgl_freertos.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/source/lvgl_freertos.h</FilePath>
             </File>
             <File>
               <FileName>lvgl_guider.c</FileName>

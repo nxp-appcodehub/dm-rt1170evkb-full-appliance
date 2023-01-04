@@ -598,7 +598,8 @@ static void show_chinese(char * chineseText)
         }
         lv_textarea_set_text(zh_input_obj->adjustable_box, resultText);
         lv_obj_scroll_to(zh_input_obj->adjustable_box, 0, 0, LV_ANIM_OFF);
-    } else {
+    }
+    else {
         lv_textarea_set_text(zh_input_obj->adjustable_box, "");
     }
     return;

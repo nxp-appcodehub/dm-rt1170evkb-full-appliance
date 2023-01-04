@@ -18,6 +18,8 @@ ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/core/lv_obj_tree.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/core/lv_refr.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/core/lv_theme.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/lv_draw.c
+${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/lv_draw_layer.c
+${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/lv_draw_transform.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/lv_draw_arc.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/lv_draw_img.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/lv_draw_label.c
@@ -34,6 +36,7 @@ ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c
+${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/sdl/lv_draw_sdl.c
@@ -59,6 +62,8 @@ ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/sw/lv_draw_sw_letter.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/sw/lv_draw_sw_line.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/sw/lv_draw_sw_polygon.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/sw/lv_draw_sw_rect.c
+${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/sw/lv_draw_sw_transform.c
+${CMAKE_CURRENT_LIST_DIR}/lvgl/src/draw/sw/lv_draw_sw_layer.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/font/lv_font.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/font/lv_font_fmt_txt.c
@@ -136,6 +141,7 @@ ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/bmp/lv_bmp.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/freetype/lv_freetype.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c
+${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/gif/gifdec.c
@@ -149,6 +155,7 @@ ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/sjpg/lv_sjpg.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/sjpg/tjpgd.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/lv_extra.c
+${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/others/ime/lv_ime_pinyin.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/others/snapshot/lv_snapshot.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/others/gridnav/lv_gridnav.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/others/monkey/lv_monkey.c
@@ -177,6 +184,7 @@ ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/widgets/spinbox/lv_spinbox.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/widgets/spinner/lv_spinner.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/widgets/tabview/lv_tabview.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/widgets/tileview/lv_tileview.c
+${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/widgets/video/lv_video.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/widgets/win/lv_win.c
 ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/extra/widgets/menu/lv_menu.c
 )

@@ -80,6 +80,6 @@ void ui_aircon_set_mode (AIRCON_Mode_T mode);
 
 void ui_aircon_star_cool(void);
 
-void ui_aircon_process_command ( unsigned short cmd_id);
+void ui_aircon_process_command (unsigned short cmd_id);
 
 #endif /* UI_AIRCON_H_ */

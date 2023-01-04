@@ -17,8 +17,12 @@
 #include "VIT.h"
 #include "PL_platformTypes_CortexM.h"
 
+#if VIT_DEVICE_AIRCON
 #include "VIT_Model_Aircon.h"
+#endif
+#if VIT_DEVICE_OVEN
 #include "VIT_Model_Oven.h"
+#endif
 
 #include "mic_proc.h"
 #include "board.h"

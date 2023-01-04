@@ -55,13 +55,6 @@
     #error Only 16bit and 32bit color depth are supported. Set LV_COLOR_DEPTH to 16 or 32.
 #endif
 
-#if defined (__alpha__) || defined (__ia64__) || defined (__x86_64__) \
-    || defined (_WIN64) || defined (__LP64__) || defined (__LLP64__)
-    #define ALIGN_SIZE 8
-#else
-    #define ALIGN_SIZE 4
-#endif
-
 /**********************
  *      TYPEDEFS
  **********************/
@@ -136,8 +129,6 @@ static lv_res_t lv_gpu_nxp_pxp_blit_cf(lv_color_t * dest_buf, const lv_area_t * 
  *      MACROS
  **********************/
 
-#define ROUND_UP(x, align) ((x + (align - 1)) & ~(align - 1))
-
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
@@ -162,9 +153,7 @@ lv_res_t lv_gpu_nxp_pxp_fill(lv_color_t * dest_buf, lv_coord_t dest_stride, cons
         }
     }
 
-    PXP_Init(LV_GPU_NXP_PXP_ID);
-    PXP_EnableCsc1(LV_GPU_NXP_PXP_ID, false); /*Disable CSC1, it is enabled by default.*/
-    PXP_SetProcessBlockSize(LV_GPU_NXP_PXP_ID, kPXP_BlockSize16); /*Block size 16x16 for higher performance*/
+    lv_gpu_nxp_pxp_reset();
 
     /*OUT buffer configure*/
     pxp_output_buffer_config_t outputConfig = {
@@ -223,7 +212,7 @@ lv_res_t lv_gpu_nxp_pxp_fill(lv_color_t * dest_buf, lv_coord_t dest_stride, cons
 
     PXP_SetPorterDuffConfig(LV_GPU_NXP_PXP_ID, &pdConfig);
 
-    lv_gpu_nxp_pxp_run(); /*Start PXP task*/
+    lv_gpu_nxp_pxp_run();
 
     return LV_RES_OK;
 }
@@ -248,9 +237,7 @@ lv_res_t lv_gpu_nxp_pxp_blit(lv_color_t * dest_buf, const lv_area_t * dest_area,
         }
     }
 
-    PXP_Init(LV_GPU_NXP_PXP_ID);
-    PXP_EnableCsc1(LV_GPU_NXP_PXP_ID, false); /*Disable CSC1, it is enabled by default.*/
-    PXP_SetProcessBlockSize(LV_GPU_NXP_PXP_ID, kPXP_BlockSize16); /*block size 16x16 for higher performance*/
+    lv_gpu_nxp_pxp_reset();
 
     /* convert rotation angle */
     pxp_rotate_degree_t pxp_rot;
@@ -325,7 +312,7 @@ lv_res_t lv_gpu_nxp_pxp_blit(lv_color_t * dest_buf, const lv_area_t * dest_area,
     };
     PXP_SetOutputBufferConfig(LV_GPU_NXP_PXP_ID, &outputBufferConfig);
 
-    lv_gpu_nxp_pxp_run(); /* Start PXP task */
+    lv_gpu_nxp_pxp_run();
 
     return LV_RES_OK;
 }
@@ -383,9 +370,6 @@ static lv_res_t lv_gpu_nxp_pxp_blit_opa(lv_color_t * dest_buf, const lv_area_t *
     lv_res_t res;
     uint32_t size = dest_w * dest_h * sizeof(lv_color_t);
 
-    if(ROUND_UP(size, ALIGN_SIZE) >= LV_MEM_SIZE)
-        PXP_RETURN_INV("Insufficient memory for temporary buffer. Please increase LV_MEM_SIZE.");
-
     lv_color_t * tmp_buf = (lv_color_t *)lv_mem_buf_get(size);
     if(!tmp_buf)
         PXP_RETURN_INV("Allocating temporary buffer failed.");
@@ -426,9 +410,7 @@ static lv_res_t lv_gpu_nxp_pxp_blit_cover(lv_color_t * dest_buf, const lv_area_t
     bool recolor = (dsc->recolor_opa != LV_OPA_TRANSP);
     bool rotation = (dsc->angle != 0);
 
-    PXP_Init(LV_GPU_NXP_PXP_ID);
-    PXP_EnableCsc1(LV_GPU_NXP_PXP_ID, false); /*Disable CSC1, it is enabled by default.*/
-    PXP_SetProcessBlockSize(LV_GPU_NXP_PXP_ID, kPXP_BlockSize16); /*block size 16x16 for higher performance*/
+    lv_gpu_nxp_pxp_reset();
 
     if(rotation) {
         /*
@@ -520,7 +502,7 @@ static lv_res_t lv_gpu_nxp_pxp_blit_cover(lv_color_t * dest_buf, const lv_area_t
         PXP_SetPorterDuffConfig(LV_GPU_NXP_PXP_ID, &pdConfig);
     }
 
-    lv_gpu_nxp_pxp_run(); /*Start PXP task*/
+    lv_gpu_nxp_pxp_run();
 
     return LV_RES_OK;
 }
@@ -533,9 +515,7 @@ static lv_res_t lv_gpu_nxp_pxp_blit_cf(lv_color_t * dest_buf, const lv_area_t * 
     lv_coord_t dest_w = lv_area_get_width(dest_area);
     lv_coord_t dest_h = lv_area_get_height(dest_area);
 
-    PXP_Init(LV_GPU_NXP_PXP_ID);
-    PXP_EnableCsc1(LV_GPU_NXP_PXP_ID, false); /*Disable CSC1, it is enabled by default.*/
-    PXP_SetProcessBlockSize(LV_GPU_NXP_PXP_ID, kPXP_BlockSize16); /*block size 16x16 for higher performance*/
+    lv_gpu_nxp_pxp_reset();
 
     pxp_as_blend_config_t asBlendConfig = {
         .alpha = dsc->opa,
@@ -624,7 +604,7 @@ static lv_res_t lv_gpu_nxp_pxp_blit_cf(lv_color_t * dest_buf, const lv_area_t * 
     };
     PXP_SetOutputBufferConfig(LV_GPU_NXP_PXP_ID, &outputBufferConfig);
 
-    lv_gpu_nxp_pxp_run(); /* Start PXP task */
+    lv_gpu_nxp_pxp_run();
 
     return LV_RES_OK;
 }

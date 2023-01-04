@@ -73,6 +73,7 @@ int main(int argc, char ** argv)
         /* Periodically call the lv_task handler.
          * It could be done in a timer interrupt or an OS task too.*/
         lv_task_handler();
+        video_play(&guider_ui);
         usleep(5 * 1000);
     }
 

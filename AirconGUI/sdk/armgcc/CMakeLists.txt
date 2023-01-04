@@ -24,11 +24,19 @@ SET(LIBRARY_OUTPUT_PATH ${ProjDirPath}/${CMAKE_BUILD_TYPE})
 
 project(lvgl_guider_cm7)
 
+set(MCUX_BUILD_TYPES flexspi_nor_sdram_debug flexspi_nor_sdram_release)
+
 set(MCUX_SDK_PROJECT_NAME lvgl_guider_cm7.elf)
+
+if (NOT DEFINED SdkRootDirPath)
+SET(SdkRootDirPath ${ProjDirPath}/../../../../../..)
+endif()
 
 include(${ProjDirPath}/flags.cmake)
 
 include(${ProjDirPath}/config.cmake)
+
+option(USE_LOTTIE_WIDGET "Enable the lottie widget" OFF)
 
 file(GLOB SOURCES
 ${ProjDirPath}/../../custom/*.c
@@ -56,8 +64,16 @@ add_executable(${MCUX_SDK_PROJECT_NAME}
 "${ProjDirPath}/../Core/board/lvgl_support.h"
 "${ProjDirPath}/../Core/board/pin_mux.c"
 "${ProjDirPath}/../Core/board/pin_mux.h"
+"${ProjDirPath}/../Core/board/vglite_support.c"
+"${ProjDirPath}/../Core/board/vglite_support.h"
 "${ProjDirPath}/../Core/source/FreeRTOSConfig.h"
+"${ProjDirPath}/../Core/source/h264_dec.cpp"
+"${ProjDirPath}/../Core/source/h264_dec.h"
 "${ProjDirPath}/../Core/source/lv_conf.h"
+"${ProjDirPath}/../Core/source/lvgl_demo_utils.c"
+"${ProjDirPath}/../Core/source/lvgl_demo_utils.h"
+"${ProjDirPath}/../Core/source/lvgl_freertos.c"
+"${ProjDirPath}/../Core/source/lvgl_freertos.h"
 "${ProjDirPath}/../Core/source/lvgl_guider.c"
 ${SOURCES}
 )
@@ -77,12 +93,12 @@ ${ProjDirPath}/../Core/CMSIS
 ${ProjDirPath}/../Core/board
 ${ProjDirPath}/../Core/component/lists
 ${ProjDirPath}/../Core/component/serial_manager
-${ProjDirPath}/../Core/component/silicon_id
 ${ProjDirPath}/../Core/component/uart
 ${ProjDirPath}/../Core/device
 ${ProjDirPath}/../Core/drivers
-${ProjDirPath}/../Core/freertos/freertos_kernel
+${ProjDirPath}/../Core/freertos/freertos-kernel
 ${ProjDirPath}/../Core/lvgl
+${ProjDirPath}/../Core/rlottie
 ${ProjDirPath}/startup
 ${ProjDirPath}/../Core/touchpanel
 ${ProjDirPath}/../Core/utilities
@@ -162,8 +178,6 @@ include(driver_pmu_1_MIMXRT1176_cm7)
 
 include(driver_dcdc_soc_MIMXRT1176_cm7)
 
-include(component_silicon_id_MIMXRT1176_cm7)
-
 include(driver_xmcd_evkmimxrt1170_MIMXRT1176_cm7)
 
 include(driver_anatop_ai_MIMXRT1176_cm7)
@@ -186,16 +200,19 @@ include(utilities_misc_utilities_MIMXRT1176_cm7)
 
 include(device_MIMXRT1176_system_MIMXRT1176_cm7)
 
+include(middleware_rlottie_MIMXRT1176_cm7)
+
+IF(NOT DEFINED TARGET_LINK_SYSTEM_LIBRARIES)
+SET(TARGET_LINK_SYSTEM_LIBRARIES "-lm -lc -lgcc -lnosys")
+ENDIF()
 
 TARGET_LINK_LIBRARIES(${MCUX_SDK_PROJECT_NAME} PRIVATE -Wl,--start-group)
 
-target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE m)
+target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE ${TARGET_LINK_SYSTEM_LIBRARIES})
 
-target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE c)
-
-target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE gcc)
-
-target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE nosys)
+if(USE_LOTTIE_WIDGET)
+target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE ${ProjDirPath}/../../lib/arm/gcc/librlottie.a)
+endif()
 
 TARGET_LINK_LIBRARIES(${MCUX_SDK_PROJECT_NAME} PRIVATE -Wl,--end-group)
 

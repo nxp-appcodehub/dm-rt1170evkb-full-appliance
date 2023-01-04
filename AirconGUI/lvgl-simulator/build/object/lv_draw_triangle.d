@@ -45,6 +45,8 @@ build/object/lv_draw_triangle.o: \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_arc.h \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_mask.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_math.h \
+ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_transform.h \
+ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_layer.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_mem.h
 
 c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw.h:
@@ -136,5 +138,9 @@ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_arc.h:
 c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_mask.h:
 
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_math.h:
+
+c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_transform.h:
+
+c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_layer.h:
 
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_mem.h:

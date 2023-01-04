@@ -3,38 +3,22 @@
 	"lvglVersion": "v8",
 	"Optimizations": "Balance",
 	"boardPlatformSettings": {
-		"resolution": {
-			"width": "1280",
-			"height": "720"
-		},
+		"id": 64,
 		"name": "MIMXRT1176xxxxx",
-		"panel_name": "RK055MHD091",
-		"color_depth": 16,
-		"display_part_number": [
-			"RK055HDMIPI4MA0"
+		"core": "cortex_m7",
+		"version": "v1.0.0",
+		"description": "MIMXRT1176xxxxx",
+		"lvgl_version_major": 8,
+		"lvgl_version_minor": 2,
+		"lvgl_version_micro": 0,
+		"author": "NXP",
+		"file": "1.4.0/board/MIMXRT1176xxxxx/v8/MIMXRT1176xxxxx_v1.0.0.zip",
+		"checksum": "700456faa379855a30886ed6d16b1f1b",
+		"images": [
+			"C:\\nxp\\GUI-Guider-1.5.0-GA-RC2\\environment\\template\\board\\v8\\MIMXRT1176xxxxx\\images\\preview.png"
 		],
-		"mcuxpresso_config": {
-			"ELF_BINARY_NAME": "littlevgl_guider_cm7.elf",
-			"CMAKE_BUILD_TYPE": "flexspi_nor_sdram_release"
-		},
-		"OS": "RTOS Independent, Baremetal",
-		"mcu": "MIMXRT1176xxxxx",
-		"board": {
-			"id": 64,
-			"name": "MIMXRT1176xxxxx",
-			"version": "v1.0.0",
-			"description": "MIMXRT1176xxxxx",
-			"lvgl_version_major": 8,
-			"lvgl_version_minor": 2,
-			"lvgl_version_micro": 0,
-			"author": "NXP",
-			"file": "1.4.0/board/MIMXRT1176xxxxx/v8/MIMXRT1176xxxxx_v1.0.0.zip",
-			"checksum": "700456faa379855a30886ed6d16b1f1b",
-			"images": [
-				"C:\\NXP\\GUI-Guider-1.4.1-GA\\environment\\template\\board\\v8\\MIMXRT1176xxxxx\\images\\preview.png"
-			],
-			"type": "i.MX RT",
-			"originType": "builtIn",
+		"type": "i.MX RT",
+		"configuration": {
 			"OS": "RTOS Independent, Baremetal",
 			"mcu": "MIMXRT1176xxxxx",
 			"BuildStatus": {
@@ -75,7 +59,8 @@
 				"ELF_BINARY_NAME": "littlevgl_guider_cm7.elf",
 				"CMAKE_BUILD_TYPE": "flexspi_nor_sdram_release"
 			}
-		}
+		},
+		"originType": "builtIn"
 	},
 	"demoTemplateSettings": {
 		"id": 24,
@@ -117,7 +102,7 @@
 		"enable_pxp": false,
 		"supportPXP": true
 	},
-	"version": "1.4.1-GA",
+	"version": "1.5.0-GA-RC2",
 	"lvConf": {
 		"LV_HOR_RES_MAX": "(1280)",
 		"LV_VER_RES_MAX": "(720)",
@@ -137,6 +122,8 @@
 		"LV_ATTRIBUTE_MEM_ALIGN_SIZE": "64",
 		"LV_ATTRIBUTE_MEM_ALIGN": "__attribute__((aligned(LV_ATTRIBUTE_MEM_ALIGN_SIZE)))",
 		"LV_DISP_DEF_REFR_PERIOD": "20",
+		"LV_FS_RAWFS_XIP": false,
+		"LV_FS_RAWFS_XIP_BASE_ADDR": "",
 		"LV_USE_PERF_MONITOR": false
 	},
 	"ImportFonts": {
@@ -158,10 +145,16 @@
 		{
 			"name": "ui_Oven",
 			"id": "ondqjh8k",
-			"version": 4,
+			"type": "scr",
+			"version": 5,
 			"width": 480,
 			"height": 272,
 			"scrollbar_mode": "OFF",
+			"display_kb": false,
+			"chinese_input": false,
+			"chinese_library": "full",
+			"zh_keyboard_font_type": "montserratMedium",
+			"zh_keyboard_font_size": "18",
 			"list": [
 				{
 					"name": "Group_Timer",
@@ -339,8 +332,9 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
-							"img_path": "wheel_bg_2.png",
+							"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\wheel_bg_2.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -559,8 +553,9 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
-							"img_path": "wheel_bg.png",
+							"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\wheel_bg.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -714,8 +709,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_fan_rear.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_fan_rear.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -826,8 +822,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_upper_lower.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_upper_lower.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -866,8 +863,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_fan_upper_lower.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_fan_upper_lower.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -1050,8 +1048,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_fan_lower.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_fan_lower.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -1162,8 +1161,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_gril.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_gril.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -1274,8 +1274,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_fan_gril.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_fan_gril.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -1386,8 +1387,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_upper.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_upper.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -1498,8 +1500,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_lower.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_lower.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -1610,8 +1613,9 @@
 									"default_style": false,
 									"scrollbar_mode": "OFF",
 									"use_fs": false,
+									"fs_type": "flash",
 									"sd_path": "S:",
-									"img_path": "icn_oven_defrost.png",
+									"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_defrost.png",
 									"rotate": 0,
 									"x": 50,
 									"y": 50,
@@ -1747,6 +1751,7 @@
 						},
 						{
 							"name": "Label_TimeLeft",
+							"id": "hf7d0mlq",
 							"type": "label",
 							"left": 319,
 							"top": 130,
@@ -1814,8 +1819,7 @@
 									"shadow_ofs_x": 0,
 									"shadow_ofs_y": 0
 								}
-							],
-							"id": "hf7d0mlq"
+							]
 						},
 						{
 							"name": "Label_Settings",
@@ -1905,13 +1909,14 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
 							"text": "START",
 							"toggle": true,
-							"src_released": "BTN_oven.png",
-							"src_pressed": "BTN_oven.png",
-							"src_checked_released": "BTN_oven.png",
-							"src_checked_pressed": "BTN_oven.png",
+							"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\BTN_oven.png",
+							"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\BTN_oven.png",
+							"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\BTN_oven.png",
+							"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\BTN_oven.png",
 							"color_format": "true-color-alpha",
 							"style": [
 								{
@@ -1941,7 +1946,6 @@
 									"image_opa": 255,
 									"text_color": "#ffffff",
 									"font_family": "Antonio_Regular",
-									"text_align": "LV_TEXT_ALIGN_CENTER",
 									"font": 26,
 									"shadow_color": "#2195f6",
 									"shadow_opa": 255,
@@ -1959,7 +1963,6 @@
 									"text_color": "#ffffff",
 									"image_opa": 255,
 									"font_family": "Antonio_Regular",
-									"text_align": "LV_TEXT_ALIGN_CENTER",
 									"font": 26,
 									"shadow_color": "#2195f6",
 									"shadow_opa": 255,
@@ -2010,9 +2013,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "",
-											"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_oven_set_state(lv_obj_has_state(obj, LV_STATE_CHECKED));"
+											"inc_c": "",
+											"code_c": "lv_obj_t * obj = lv_event_get_target(e);\nui_oven_set_state(!lv_obj_has_state(obj, LV_STATE_CHECKED));",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -2026,7 +2030,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -2048,13 +2053,14 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
 							"text": "",
 							"toggle": true,
-							"src_released": "arrow_right.png",
-							"src_pressed": "arrow_right.png",
-							"src_checked_released": "arrow_right.png",
-							"src_checked_pressed": "arrow_right.png",
+							"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_right.png",
+							"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_right.png",
+							"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_right.png",
+							"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_right.png",
 							"color_format": "true-color-alpha",
 							"style": [
 								{
@@ -2084,7 +2090,6 @@
 									"image_opa": 255,
 									"text_color": "#FF33FF",
 									"font_family": "simsun",
-									"text_align": "LV_TEXT_ALIGN_CENTER",
 									"font": 12,
 									"shadow_color": "#2195f6",
 									"shadow_opa": 255,
@@ -2102,7 +2107,6 @@
 									"text_color": "#FF33FF",
 									"image_opa": 255,
 									"font_family": "simsun",
-									"text_align": "LV_TEXT_ALIGN_CENTER",
 									"font": 12,
 									"shadow_color": "#2195f6",
 									"shadow_opa": 255,
@@ -2153,9 +2157,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "",
-											"code": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);"
+											"inc_c": "",
+											"code_c": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -2169,7 +2174,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -2191,13 +2197,14 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
 							"text": "",
 							"toggle": true,
-							"src_released": "arrow_left.png",
-							"src_pressed": "arrow_left.png",
-							"src_checked_released": "arrow_left.png",
-							"src_checked_pressed": "arrow_left.png",
+							"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_left.png",
+							"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_left.png",
+							"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_left.png",
+							"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_left.png",
 							"color_format": "true-color-alpha",
 							"style": [
 								{
@@ -2227,7 +2234,6 @@
 									"image_opa": 255,
 									"text_color": "#FF33FF",
 									"font_family": "simsun",
-									"text_align": "LV_TEXT_ALIGN_CENTER",
 									"font": 12,
 									"shadow_color": "#2195f6",
 									"shadow_opa": 255,
@@ -2245,7 +2251,6 @@
 									"text_color": "#FF33FF",
 									"image_opa": 255,
 									"font_family": "simsun",
-									"text_align": "LV_TEXT_ALIGN_CENTER",
 									"font": 12,
 									"shadow_color": "#2195f6",
 									"shadow_opa": 255,
@@ -2296,9 +2301,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "#include \"ui_Oven.h\"",
-											"code": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);"
+											"inc_c": "#include \"ui_Oven.h\"",
+											"code_c": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -2312,7 +2318,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -3201,8 +3208,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "title_bg.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\title_bg.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -3220,6 +3228,7 @@
 				},
 				{
 					"name": "Img_Fan",
+					"id": "tik7bwaw",
 					"type": "img",
 					"left": 364,
 					"top": 344,
@@ -3233,8 +3242,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "oven_fan_light_1.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\oven_fan_light_1.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -3248,11 +3258,11 @@
 							"image_recolor_opa": 0,
 							"image_opa": 255
 						}
-					],
-					"id": "tik7bwaw"
+					]
 				},
 				{
 					"name": "Img_Door",
+					"id": "xisobp1e",
 					"type": "img",
 					"left": 5,
 					"top": -1,
@@ -3266,8 +3276,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "oven_light.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\oven_light.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -3281,8 +3292,7 @@
 							"image_recolor_opa": 0,
 							"image_opa": 255
 						}
-					],
-					"id": "xisobp1e"
+					]
 				},
 				{
 					"name": "Img_Bg",
@@ -3300,8 +3310,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "oven_bg.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\oven_bg.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -3318,6 +3329,7 @@
 					]
 				}
 			],
+			"event": [],
 			"style": [
 				{
 					"part": "LV_PART_MAIN",
@@ -3331,10 +3343,16 @@
 		{
 			"name": "ui_Aircon",
 			"id": "defaultScreen",
-			"version": 4,
+			"type": "scr",
+			"version": 5,
 			"width": 480,
 			"height": 272,
 			"scrollbar_mode": "OFF",
+			"display_kb": false,
+			"chinese_input": false,
+			"chinese_library": "full",
+			"zh_keyboard_font_type": "montserratMedium",
+			"zh_keyboard_font_size": "18",
 			"list": [
 				{
 					"name": "Img_Cool",
@@ -3352,8 +3370,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "aircon_cool_1.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\aircon_cool_1.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -3385,8 +3404,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "aircon_fan_1.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\aircon_fan_1.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -3650,8 +3670,9 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
-							"img_path": "arrow_down.png",
+							"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_down.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -3683,6 +3704,10 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"text": "",
+							"mode": false,
+							"text_width": "60",
+							"text_height": "20",
+							"long_mode": "LV_LABEL_LONG_WRAP",
 							"toggle": false,
 							"style": [
 								{
@@ -3838,9 +3863,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "#include \"ui_Aircon.h\"\n",
-											"code": "ui_aircon_update_timer(0,kAIRCON_TimerDown);"
+											"inc_c": "#include \"ui_Aircon.h\"\n",
+											"code_c": "ui_aircon_update_timer(0,kAIRCON_TimerDown);",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -3854,7 +3880,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -3876,8 +3903,9 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
-							"img_path": "arrow_up.png",
+							"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_up.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -3909,6 +3937,10 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"text": "",
+							"mode": false,
+							"text_width": "60",
+							"text_height": "20",
+							"long_mode": "LV_LABEL_LONG_WRAP",
 							"toggle": false,
 							"style": [
 								{
@@ -4064,9 +4096,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "#include \"ui_Aircon.h\"\n",
-											"code": "ui_aircon_update_timer(0,kAIRCON_TimerUp);"
+											"inc_c": "#include \"ui_Aircon.h\"\n",
+											"code_c": "ui_aircon_update_timer(0,kAIRCON_TimerUp);",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -4080,7 +4113,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -4102,8 +4136,9 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
-							"img_path": "icn_fan_low.png",
+							"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_fan_low.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -4279,8 +4314,9 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
-							"img_path": "icn_cool.png",
+							"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_cool.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -4823,9 +4859,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "",
-											"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_aricon_set_fan_speed(lv_slider_get_value(obj));"
+											"inc_c": "",
+											"code_c": "lv_obj_t * obj = lv_event_get_target(e);\nui_aricon_set_fan_speed(lv_slider_get_value(obj));",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -4839,7 +4876,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -5329,6 +5367,10 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"text": "ON",
+							"mode": false,
+							"text_width": "60",
+							"text_height": "20",
+							"long_mode": "LV_LABEL_LONG_WRAP",
 							"toggle": true,
 							"style": [
 								{
@@ -5484,9 +5526,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "",
-											"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_aircon_swing(lv_obj_has_state(obj, LV_STATE_CHECKED));"
+											"inc_c": "",
+											"code_c": "lv_obj_t * obj = lv_event_get_target(e);\nui_aircon_swing(lv_obj_has_state(obj, LV_STATE_CHECKED));",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -5500,7 +5543,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -5677,9 +5721,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "",
-											"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_aircon_set_mode(lv_roller_get_selected(obj));"
+											"inc_c": "",
+											"code_c": "lv_obj_t * obj = lv_event_get_target(e);\nui_aircon_set_mode(lv_roller_get_selected(obj));",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -5693,7 +5738,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -5715,8 +5761,9 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
-							"img_path": "arrow_down.png",
+							"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_down.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -5748,8 +5795,9 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"use_fs": false,
+							"fs_type": "flash",
 							"sd_path": "S:",
-							"img_path": "arrow_up.png",
+							"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_up.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -5781,6 +5829,10 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"text": "",
+							"mode": false,
+							"text_width": "60",
+							"text_height": "20",
+							"long_mode": "LV_LABEL_LONG_WRAP",
 							"toggle": false,
 							"style": [
 								{
@@ -5936,9 +5988,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "#include \"ui_Aircon.h\"\n",
-											"code": "ui_aircon_update_temp (0, kAIRCON_TempDown);"
+											"inc_c": "#include \"ui_Aircon.h\"\n",
+											"code_c": "ui_aircon_update_temp (0, kAIRCON_TempDown);",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -5952,7 +6005,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -6118,6 +6172,10 @@
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"text": "",
+							"mode": false,
+							"text_width": "60",
+							"text_height": "20",
+							"long_mode": "LV_LABEL_LONG_WRAP",
 							"toggle": false,
 							"style": [
 								{
@@ -6273,9 +6331,10 @@
 										},
 										"customer_code": {
 											"ische": true,
-											"code_type": "excute_c_code",
-											"include": "#include \"ui_Aircon.h\"\n",
-											"code": "ui_aircon_update_temp (0, kAIRCON_TempUp);"
+											"inc_c": "#include \"ui_Aircon.h\"\n",
+											"code_c": "ui_aircon_update_temp (0, kAIRCON_TempUp);",
+											"inc_py": "",
+											"code_py": ""
 										},
 										"move": {
 											"ische": false,
@@ -6289,7 +6348,8 @@
 											"duration": 100,
 											"delay": 100,
 											"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-											"is_clean": true
+											"is_clean": true,
+											"is_del": true
 										}
 									}
 								}
@@ -6446,8 +6506,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "aircon_swing_1.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\aircon_swing_1.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -6551,8 +6612,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "title_bg.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\title_bg.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -6584,8 +6646,9 @@
 					"default_style": false,
 					"scrollbar_mode": "OFF",
 					"use_fs": false,
+					"fs_type": "flash",
 					"sd_path": "S:",
-					"img_path": "aircon_bg.png",
+					"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\aircon_bg.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -6602,6 +6665,7 @@
 					]
 				}
 			],
+			"event": [],
 			"style": [
 				{
 					"part": "LV_PART_MAIN",
@@ -6626,7 +6690,17 @@
 		"screen": [
 			{
 				"name": "ui_Oven",
+				"id": "ondqjh8k",
 				"type": "scr",
+				"version": 5,
+				"width": 480,
+				"height": 272,
+				"scrollbar_mode": "OFF",
+				"display_kb": false,
+				"chinese_input": false,
+				"chinese_library": "full",
+				"zh_keyboard_font_type": "montserratMedium",
+				"zh_keyboard_font_size": "18",
 				"style": [
 					{
 						"part": "LV_PART_MAIN",
@@ -6660,12 +6734,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\oven_bg.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\oven_bg.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/oven_bg.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/oven_bg.png",
+						"img_sd_path": "S:/S:/oven_bg.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -6700,12 +6776,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\oven_light.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\oven_light.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/oven_light.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/oven_light.png",
+						"img_sd_path": "S:/S:/oven_light.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -6740,12 +6818,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\oven_fan_light_1.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\oven_fan_light_1.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/oven_fan_light_1.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/oven_fan_light_1.png",
+						"img_sd_path": "S:/S:/oven_fan_light_1.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -6780,12 +6860,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\title_bg.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\title_bg.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/title_bg.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/title_bg.png",
+						"img_sd_path": "S:/S:/title_bg.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -7788,15 +7870,20 @@
 								"text_align": "center",
 								"text": "",
 								"color_format": "true-color-alpha",
-								"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_left.png",
-								"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_left.png",
-								"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_left.png",
-								"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_left.png",
+								"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_left.png",
+								"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_left.png",
+								"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_left.png",
+								"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_left.png",
 								"use_fs": false,
-								"src_sd_released": "S:/arrow_left.png",
-								"src_sd_pressed": "S:/arrow_left.png",
-								"src_sd_checked_released": "S:/arrow_left.png",
-								"src_sd_checked_pressed": "S:/arrow_left.png",
+								"fs_type": "flash",
+								"src_sd_released": "S:/S:/arrow_left.png",
+								"src_sd_pressed": "S:/S:/arrow_left.png",
+								"src_sd_checked_released": "S:/S:/arrow_left.png",
+								"src_sd_checked_pressed": "S:/S:/arrow_left.png",
+								"src_flash_released": "F:/arrow_left.png",
+								"src_flash_pressed": "F:/arrow_left.png",
+								"src_flash_checked_released": "F:/arrow_left.png",
+								"src_flash_checked_pressed": "F:/arrow_left.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -7825,7 +7912,6 @@
 										"image_opa": 255,
 										"text_color": "#FF33FF",
 										"font_family": "simsun",
-										"text_align": "LV_TEXT_ALIGN_CENTER",
 										"font": 12,
 										"shadow_color": "#2195f6",
 										"shadow_opa": 255,
@@ -7843,7 +7929,6 @@
 										"text_color": "#FF33FF",
 										"image_opa": 255,
 										"font_family": "simsun",
-										"text_align": "LV_TEXT_ALIGN_CENTER",
 										"font": 12,
 										"shadow_color": "#2195f6",
 										"shadow_opa": 255,
@@ -7881,15 +7966,20 @@
 								"text_align": "center",
 								"text": "",
 								"color_format": "true-color-alpha",
-								"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_right.png",
-								"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_right.png",
-								"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_right.png",
-								"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_right.png",
+								"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_right.png",
+								"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_right.png",
+								"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_right.png",
+								"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_right.png",
 								"use_fs": false,
-								"src_sd_released": "S:/arrow_right.png",
-								"src_sd_pressed": "S:/arrow_right.png",
-								"src_sd_checked_released": "S:/arrow_right.png",
-								"src_sd_checked_pressed": "S:/arrow_right.png",
+								"fs_type": "flash",
+								"src_sd_released": "S:/S:/arrow_right.png",
+								"src_sd_pressed": "S:/S:/arrow_right.png",
+								"src_sd_checked_released": "S:/S:/arrow_right.png",
+								"src_sd_checked_pressed": "S:/S:/arrow_right.png",
+								"src_flash_released": "F:/arrow_right.png",
+								"src_flash_pressed": "F:/arrow_right.png",
+								"src_flash_checked_released": "F:/arrow_right.png",
+								"src_flash_checked_pressed": "F:/arrow_right.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -7918,7 +8008,6 @@
 										"image_opa": 255,
 										"text_color": "#FF33FF",
 										"font_family": "simsun",
-										"text_align": "LV_TEXT_ALIGN_CENTER",
 										"font": 12,
 										"shadow_color": "#2195f6",
 										"shadow_opa": 255,
@@ -7936,7 +8025,6 @@
 										"text_color": "#FF33FF",
 										"image_opa": 255,
 										"font_family": "simsun",
-										"text_align": "LV_TEXT_ALIGN_CENTER",
 										"font": 12,
 										"shadow_color": "#2195f6",
 										"shadow_opa": 255,
@@ -7974,15 +8062,20 @@
 								"text_align": "center",
 								"text": "START",
 								"color_format": "true-color-alpha",
-								"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\BTN_oven.png",
-								"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\BTN_oven.png",
-								"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\BTN_oven.png",
-								"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\BTN_oven.png",
+								"src_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\BTN_oven.png",
+								"src_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\BTN_oven.png",
+								"src_checked_released": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\BTN_oven.png",
+								"src_checked_pressed": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\BTN_oven.png",
 								"use_fs": false,
-								"src_sd_released": "S:/BTN_oven.png",
-								"src_sd_pressed": "S:/BTN_oven.png",
-								"src_sd_checked_released": "S:/BTN_oven.png",
-								"src_sd_checked_pressed": "S:/BTN_oven.png",
+								"fs_type": "flash",
+								"src_sd_released": "S:/S:/BTN_oven.png",
+								"src_sd_pressed": "S:/S:/BTN_oven.png",
+								"src_sd_checked_released": "S:/S:/BTN_oven.png",
+								"src_sd_checked_pressed": "S:/S:/BTN_oven.png",
+								"src_flash_released": "F:/BTN_oven.png",
+								"src_flash_pressed": "F:/BTN_oven.png",
+								"src_flash_checked_released": "F:/BTN_oven.png",
+								"src_flash_checked_pressed": "F:/BTN_oven.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -8011,7 +8104,6 @@
 										"image_opa": 255,
 										"text_color": "#ffffff",
 										"font_family": "Antonio_Regular",
-										"text_align": "LV_TEXT_ALIGN_CENTER",
 										"font": 26,
 										"shadow_color": "#2195f6",
 										"shadow_opa": 255,
@@ -8029,7 +8121,6 @@
 										"text_color": "#ffffff",
 										"image_opa": 255,
 										"font_family": "Antonio_Regular",
-										"text_align": "LV_TEXT_ALIGN_CENTER",
 										"font": 26,
 										"shadow_color": "#2195f6",
 										"shadow_opa": 255,
@@ -8360,12 +8451,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_defrost.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_defrost.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_defrost.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_defrost.png",
+										"img_sd_path": "S:/S:/icn_oven_defrost.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -8488,12 +8581,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_lower.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_lower.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_lower.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_lower.png",
+										"img_sd_path": "S:/S:/icn_oven_lower.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -8616,12 +8711,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_upper.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_upper.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_upper.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_upper.png",
+										"img_sd_path": "S:/S:/icn_oven_upper.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -8744,12 +8841,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_fan_gril.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_fan_gril.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_fan_gril.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_fan_gril.png",
+										"img_sd_path": "S:/S:/icn_oven_fan_gril.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -8872,12 +8971,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_gril.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_gril.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_gril.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_gril.png",
+										"img_sd_path": "S:/S:/icn_oven_gril.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -9000,12 +9101,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_fan_lower.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_fan_lower.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_fan_lower.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_fan_lower.png",
+										"img_sd_path": "S:/S:/icn_oven_fan_lower.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -9208,12 +9311,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_fan_upper_lower.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_fan_upper_lower.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_fan_upper_lower.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_fan_upper_lower.png",
+										"img_sd_path": "S:/S:/icn_oven_fan_upper_lower.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -9256,12 +9361,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_upper_lower.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_upper_lower.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_upper_lower.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_upper_lower.png",
+										"img_sd_path": "S:/S:/icn_oven_upper_lower.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -9384,12 +9491,14 @@
 											"duration": 1000
 										},
 										"default_style": false,
-										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_oven_fan_rear.png",
+										"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_oven_fan_rear.png",
 										"color_format": "true-color-alpha",
 										"rotate": 0,
 										"pivot": "50,50",
 										"use_fs": false,
-										"img_sd_path": "S:/icn_oven_fan_rear.png",
+										"fs_type": "flash",
+										"img_flash_path": "F:/icn_oven_fan_rear.png",
+										"img_sd_path": "S:/S:/icn_oven_fan_rear.png",
 										"style": [
 											{
 												"part": "LV_PART_MAIN",
@@ -9560,12 +9669,14 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\wheel_bg.png",
+								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\wheel_bg.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
-								"img_sd_path": "S:/wheel_bg.png",
+								"fs_type": "flash",
+								"img_flash_path": "F:/wheel_bg.png",
+								"img_sd_path": "S:/S:/wheel_bg.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -9811,12 +9922,14 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\wheel_bg_2.png",
+								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\wheel_bg_2.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
-								"img_sd_path": "S:/wheel_bg_2.png",
+								"fs_type": "flash",
+								"img_flash_path": "F:/wheel_bg_2.png",
+								"img_sd_path": "S:/S:/wheel_bg_2.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -10019,7 +10132,17 @@
 			},
 			{
 				"name": "ui_Aircon",
+				"id": "defaultScreen",
 				"type": "scr",
+				"version": 5,
+				"width": 480,
+				"height": 272,
+				"scrollbar_mode": "OFF",
+				"display_kb": false,
+				"chinese_input": false,
+				"chinese_library": "full",
+				"zh_keyboard_font_type": "montserratMedium",
+				"zh_keyboard_font_size": "18",
 				"style": [
 					{
 						"part": "LV_PART_MAIN",
@@ -10053,12 +10176,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\aircon_bg.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\aircon_bg.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/aircon_bg.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/aircon_bg.png",
+						"img_sd_path": "S:/S:/aircon_bg.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -10093,12 +10218,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\title_bg.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\title_bg.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/title_bg.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/title_bg.png",
+						"img_sd_path": "S:/S:/title_bg.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -10213,12 +10340,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\aircon_swing_1.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\aircon_swing_1.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/aircon_swing_1.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/aircon_swing_1.png",
+						"img_sd_path": "S:/S:/aircon_swing_1.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -10512,7 +10641,11 @@
 									}
 								],
 								"text": "",
-								"toggle": false
+								"toggle": false,
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"text_height": "20",
+								"text_width": "60",
+								"mode": false
 							},
 							{
 								"name": "ui_Aircon_Label_SetTemp",
@@ -10812,7 +10945,11 @@
 									}
 								],
 								"text": "",
-								"toggle": false
+								"toggle": false,
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"text_height": "20",
+								"text_width": "60",
+								"mode": false
 							},
 							{
 								"name": "ui_Aircon_Img_TemUp",
@@ -10837,12 +10974,14 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_up.png",
+								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_up.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
-								"img_sd_path": "S:/arrow_up.png",
+								"fs_type": "flash",
+								"img_flash_path": "F:/arrow_up.png",
+								"img_sd_path": "S:/S:/arrow_up.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -10877,12 +11016,14 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_down.png",
+								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_down.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
-								"img_sd_path": "S:/arrow_down.png",
+								"fs_type": "flash",
+								"img_flash_path": "F:/arrow_down.png",
+								"img_sd_path": "S:/S:/arrow_down.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -11167,7 +11308,11 @@
 									}
 								],
 								"text": "ON",
-								"toggle": true
+								"toggle": true,
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"text_height": "20",
+								"text_width": "60",
+								"mode": false
 							},
 							{
 								"name": "ui_Aircon_Label_Swing",
@@ -12253,12 +12398,14 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_cool.png",
+								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_cool.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
-								"img_sd_path": "S:/icn_cool.png",
+								"fs_type": "flash",
+								"img_flash_path": "F:/icn_cool.png",
+								"img_sd_path": "S:/S:/icn_cool.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -12453,12 +12600,14 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\icn_fan_low.png",
+								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\icn_fan_low.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
-								"img_sd_path": "S:/icn_fan_low.png",
+								"fs_type": "flash",
+								"img_flash_path": "F:/icn_fan_low.png",
+								"img_sd_path": "S:/S:/icn_fan_low.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -12608,7 +12757,11 @@
 									}
 								],
 								"text": "",
-								"toggle": false
+								"toggle": false,
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"text_height": "20",
+								"text_width": "60",
+								"mode": false
 							},
 							{
 								"name": "ui_Aircon_Img_TimerUp",
@@ -12633,12 +12786,14 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_up.png",
+								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_up.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
-								"img_sd_path": "S:/arrow_up.png",
+								"fs_type": "flash",
+								"img_flash_path": "F:/arrow_up.png",
+								"img_sd_path": "S:/S:/arrow_up.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -12788,7 +12943,11 @@
 									}
 								],
 								"text": "",
-								"toggle": false
+								"toggle": false,
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"text_height": "20",
+								"text_width": "60",
+								"mode": false
 							},
 							{
 								"name": "ui_Aircon_Img_TimerDown",
@@ -12813,12 +12972,14 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\arrow_down.png",
+								"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\arrow_down.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
-								"img_sd_path": "S:/arrow_down.png",
+								"fs_type": "flash",
+								"img_flash_path": "F:/arrow_down.png",
+								"img_sd_path": "S:/S:/arrow_down.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -13120,12 +13281,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\aircon_fan_1.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\aircon_fan_1.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/aircon_fan_1.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/aircon_fan_1.png",
+						"img_sd_path": "S:/S:/aircon_fan_1.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -13160,12 +13323,14 @@
 							"duration": 1000
 						},
 						"default_style": false,
-						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\aircon_cool_1.png",
+						"img_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\image\\aircon_cool_1.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
-						"img_sd_path": "S:/aircon_cool_1.png",
+						"fs_type": "flash",
+						"img_flash_path": "F:/aircon_cool_1.png",
+						"img_sd_path": "S:/S:/aircon_cool_1.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -13186,91 +13351,120 @@
 				"trigger": "released",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "#include \"ui_Oven.h\"",
-				"code": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);"
+				"inc_c": "#include \"ui_Oven.h\"",
+				"code_c": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Oven_Btn_ModeRigth",
 				"trigger": "released",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "",
-				"code": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);"
+				"inc_c": "",
+				"code_c": "ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Oven_Btn_State",
 				"trigger": "released",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "",
-				"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_oven_set_state(lv_obj_has_state(obj, LV_STATE_CHECKED));"
+				"inc_c": "",
+				"code_c": "lv_obj_t * obj = lv_event_get_target(e);\nui_oven_set_state(!lv_obj_has_state(obj, LV_STATE_CHECKED));",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Aircon_Btn_TempUp",
 				"trigger": "released",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "#include \"ui_Aircon.h\"\n",
-				"code": "ui_aircon_update_temp (0, kAIRCON_TempUp);"
+				"inc_c": "#include \"ui_Aircon.h\"\n",
+				"code_c": "ui_aircon_update_temp (0, kAIRCON_TempUp);",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Aircon_Btn_TempDown",
 				"trigger": "released",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "#include \"ui_Aircon.h\"\n",
-				"code": "ui_aircon_update_temp (0, kAIRCON_TempDown);"
+				"inc_c": "#include \"ui_Aircon.h\"\n",
+				"code_c": "ui_aircon_update_temp (0, kAIRCON_TempDown);",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Aircon_Roller_Mode",
 				"trigger": "value_changed",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "",
-				"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_aircon_set_mode(lv_roller_get_selected(obj));"
+				"inc_c": "",
+				"code_c": "lv_obj_t * obj = lv_event_get_target(e);\nui_aircon_set_mode(lv_roller_get_selected(obj));",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Aircon_Btn_Swing",
 				"trigger": "released",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "",
-				"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_aircon_swing(lv_obj_has_state(obj, LV_STATE_CHECKED));"
+				"inc_c": "",
+				"code_c": "lv_obj_t * obj = lv_event_get_target(e);\nui_aircon_swing(lv_obj_has_state(obj, LV_STATE_CHECKED));",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Aircon_Slider_Fan",
 				"trigger": "value_changed",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "",
-				"code": "lv_obj_t * obj = lv_event_get_target(e);\nui_aricon_set_fan_speed(lv_slider_get_value(obj));"
+				"inc_c": "",
+				"code_c": "lv_obj_t * obj = lv_event_get_target(e);\nui_aricon_set_fan_speed(lv_slider_get_value(obj));",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Aircon_Btn_TimerUp",
 				"trigger": "released",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "#include \"ui_Aircon.h\"\n",
-				"code": "ui_aircon_update_timer(0,kAIRCON_TimerUp);"
+				"inc_c": "#include \"ui_Aircon.h\"\n",
+				"code_c": "ui_aircon_update_timer(0,kAIRCON_TimerUp);",
+				"inc_py": "",
+				"code_py": ""
 			},
 			{
 				"src": "ui_Aircon_Btn_TimerDown",
 				"trigger": "released",
 				"dst": "",
 				"action": "customer_code",
-				"code_type": "excute_c_code",
-				"include": "#include \"ui_Aircon.h\"\n",
-				"code": "ui_aircon_update_timer(0,kAIRCON_TimerDown);"
+				"inc_c": "#include \"ui_Aircon.h\"\n",
+				"code_c": "ui_aircon_update_timer(0,kAIRCON_TimerDown);",
+				"inc_py": "",
+				"code_py": ""
 			}
 		]
+	},
+	"projectSettings": {
+		"resolution": {
+			"width": "1280",
+			"height": "720"
+		},
+		"name": "MIMXRT1176xxxxx",
+		"panel_name": "RK055MHD091",
+		"color_depth": 16,
+		"display_part_number": [
+			"RK055HDMIPI4MA0"
+		],
+		"mcuxpresso_config": {
+			"ELF_BINARY_NAME": "littlevgl_guider_cm7.elf",
+			"CMAKE_BUILD_TYPE": "flexspi_nor_sdram_release"
+		},
+		"OS": "RTOS Independent, Baremetal",
+		"mcu": "MIMXRT1176xxxxx",
+		"Optimizations": "Balance"
 	}
 }

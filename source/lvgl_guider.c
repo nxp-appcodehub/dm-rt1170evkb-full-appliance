@@ -21,6 +21,12 @@
 #include "vit_proc.h"
 #include "fsl_soc_src.h"
 #include "ui_Aircon.h"
+#if VIT_DEVICE_AIRCON
+#include "ui_Aircon.h"
+#endif
+#if VIT_DEVICE_OVEN
+#include "ui_Oven.h"
+#endif
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -68,7 +74,12 @@ static void Graphics_Process (void *pvParameters)
 
 		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
 		{
+#if VIT_DEVICE_AIRCON
 			ui_aircon_process_command(cmd_id);
+#endif
+#if VIT_DEVICE_OVEN
+			ui_oven_process_command(cmd_id);
+#endif
 		}
 	}
 }
@@ -177,22 +188,22 @@ int main(void)
 	GPH_Process = xEventGroupCreate();
 
 
-//	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
-//			pdPASS)
-//	{
-//		PRINTF("\r\nFailed to create VIT task\r\n");
-//		while (1)
-//			;
-//	}
-//
-//
-//	if (xTaskCreate(Graphics_Process, "Graphics_Process", configMINIMAL_STACK_SIZE + 400, NULL, configMAX_PRIORITIES - 5, NULL) !=
-//			pdPASS)
-//	{
-//		PRINTF("\r\nFailed to create application task\r\n");
-//		while (1)
-//			;
-//	}
+	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
+			pdPASS)
+	{
+		PRINTF("\r\nFailed to create VIT task\r\n");
+		while (1)
+			;
+	}
+
+
+	if (xTaskCreate(Graphics_Process, "Graphics_Process", configMINIMAL_STACK_SIZE + 400, NULL, configMAX_PRIORITIES - 5, NULL) !=
+			pdPASS)
+	{
+		PRINTF("\r\nFailed to create application task\r\n");
+		while (1)
+			;
+	}
 
 	if (xTaskCreate(AppTask, "lvgl", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 6, NULL) !=
 			pdPASS)

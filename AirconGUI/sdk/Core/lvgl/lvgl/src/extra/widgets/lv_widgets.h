@@ -22,11 +22,11 @@ extern "C" {
 #include "keyboard/lv_keyboard.h"
 #include "keyboard/lv_zh_keyboard.h"
 #include "list/lv_list.h"
-#include "radiobtn/lv_radiobtn.h"
 #include "menu/lv_menu.h"
 #include "msgbox/lv_msgbox.h"
 #include "meter/lv_meter.h"
 #include "analogclock/lv_analogclock.h"
+#include "radiobtn/lv_radiobtn.h"
 #include "spinbox/lv_spinbox.h"
 #include "spinner/lv_spinner.h"
 #include "tabview/lv_tabview.h"
@@ -37,6 +37,7 @@ extern "C" {
 #include "imgbtn/lv_imgbtn.h"
 #include "span/lv_span.h"
 #include "dclock/lv_dclock.h"
+#include "video/lv_video.h"
 
 /*********************
  *      DEFINES

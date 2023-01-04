@@ -55,12 +55,15 @@ build/object/lv_refr.o: \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_arc.h \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_mask.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_math.h \
+ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_transform.h \
+ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_layer.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_color.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_area.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_ll.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_timer.h \
- c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_indev.h \
+ c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_tick.h \
  c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
+ c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_indev.h \
  c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_tick.h \
  c:\repos\future_training\aircongui\lvgl\src\core\lv_obj_tree.h \
  c:\repos\future_training\aircongui\lvgl\src\core\lv_obj_pos.h \
@@ -90,7 +93,10 @@ build/object/lv_refr.o: \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_mask.h \
  c:\repos\future_training\aircongui\lvgl\src\core\lv_obj_pos.h \
  c:\repos\future_training\aircongui\lvgl\src\font\lv_font_fmt_txt.h \
- c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h
+ c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h \
+ c:\repos\future_training\aircongui\lvgl\src\extra\others\snapshot\lv_snapshot.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h
 
 c:\repos\future_training\aircongui\lvgl\src\core\lv_refr.h:
 
@@ -202,6 +208,10 @@ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_mask.h:
 
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_math.h:
 
+c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_transform.h:
+
+c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_layer.h:
+
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_color.h:
 
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_area.h:
@@ -210,9 +220,11 @@ c:\repos\future_training\aircongui\lvgl\src\misc\lv_ll.h:
 
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_timer.h:
 
-c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_indev.h:
+c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_tick.h:
 
 c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
+
+c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_indev.h:
 
 c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_tick.h:
 
@@ -273,3 +285,9 @@ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj_pos.h:
 c:\repos\future_training\aircongui\lvgl\src\font\lv_font_fmt_txt.h:
 
 c:\repos\future_training\aircongui\lvgl\src\font\lv_font.h:
+
+c:\repos\future_training\aircongui\lvgl\src\extra\others\snapshot\lv_snapshot.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
