@@ -240,7 +240,7 @@
 #define LV_USE_CHART 0
 #define LV_USE_COLORWHEEL 0
 #define LV_USE_DCLOCK 0
-#define LV_USE_IMGBTN 0
+#define LV_USE_IMGBTN 1
 #define LV_USE_KEYBOARD 0
 #define LV_USE_LED 0
 #define LV_USE_LIST 0
@@ -255,7 +255,7 @@
 #define LV_USE_SPINBOX 0
 #define LV_USE_SPINNER 0
 #define LV_USE_TABVIEW 0
-#define LV_USE_TILEVIEW 0
+#define LV_USE_TILEVIEW 1
 #define LV_USE_WIN 0
 #define LV_USE_ZH_KEYBOARD 0
 #if LV_USE_ZH_KEYBOARD

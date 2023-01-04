@@ -286,12 +286,12 @@ void lv_obj_scroll_by_bounded(lv_obj_t * obj, lv_coord_t dx, lv_coord_t dy, lv_a
     lv_coord_t y_current = -lv_obj_get_scroll_y(obj);
     lv_coord_t y_bounded = y_current + dy;
 
-    if(y_bounded > 0) y_bounded = 0;
-    if(y_bounded < 0) {
-        lv_coord_t  scroll_max = lv_obj_get_scroll_top(obj) + lv_obj_get_scroll_bottom(obj);
-        if(scroll_max < 0) scroll_max = 0;
-        if(y_bounded < -scroll_max) y_bounded = -scroll_max;
-    }
+//    if(y_bounded > 0) y_bounded = 0;
+//    if(y_bounded < 0) {
+//        lv_coord_t  scroll_max = lv_obj_get_scroll_top(obj) + lv_obj_get_scroll_bottom(obj);
+//        if(scroll_max < 0) scroll_max = 0;
+//        if(y_bounded < -scroll_max) y_bounded = -scroll_max;
+//    }
 
     dx = x_bounded - x_current;
     dy = y_bounded - y_current;

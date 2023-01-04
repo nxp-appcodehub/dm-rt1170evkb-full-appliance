@@ -174,27 +174,25 @@ int main(void)
 	CLOCK_SetRootClockMux(kCLOCK_Root_Mic, 6);
 	CLOCK_SetRootClockDiv(kCLOCK_Root_Mic, 16);
 
-	PRINTF("\r\n Coffee Machine Demo\r\n");
-
 	GPH_Process = xEventGroupCreate();
 
 
-	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
-			pdPASS)
-	{
-		PRINTF("\r\nFailed to create VIT task\r\n");
-		while (1)
-			;
-	}
-
-
-	if (xTaskCreate(Graphics_Process, "Graphics_Process", configMINIMAL_STACK_SIZE + 400, NULL, configMAX_PRIORITIES - 5, NULL) !=
-			pdPASS)
-	{
-		PRINTF("\r\nFailed to create application task\r\n");
-		while (1)
-			;
-	}
+//	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
+//			pdPASS)
+//	{
+//		PRINTF("\r\nFailed to create VIT task\r\n");
+//		while (1)
+//			;
+//	}
+//
+//
+//	if (xTaskCreate(Graphics_Process, "Graphics_Process", configMINIMAL_STACK_SIZE + 400, NULL, configMAX_PRIORITIES - 5, NULL) !=
+//			pdPASS)
+//	{
+//		PRINTF("\r\nFailed to create application task\r\n");
+//		while (1)
+//			;
+//	}
 
 	if (xTaskCreate(AppTask, "lvgl", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 6, NULL) !=
 			pdPASS)
