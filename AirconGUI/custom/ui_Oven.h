@@ -55,10 +55,20 @@ typedef enum
 	kOVEN_Stop,
 } OVEN_State_T;
 
+typedef enum
+{
+	kOVEN_FanOff,
+	kOVEN_FanOn,
+} OVEN_Fan_T;
+
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
 void ui_oven_init (void);
+
+void ui_oven_set_Temperature(uint32_t temp);
+
+void ui_oven_set_Timer(uint32_t time);
 
 void ui_oven_set_mode(OVEN_MODE_T mode, OVEN_MODE_Dir_T dir);
 

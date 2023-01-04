@@ -236,7 +236,7 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h" */
 #define LV_EXPORT_CONST_INT(int_value) struct _silence_gcc_warning
 
 /* Extend the default -32k..32k coordinate range to -4M..4M by using int32_t for coordinates instead of int16_t. */
-#define LV_USE_LARGE_COORD 0
+#define LV_USE_LARGE_COORD 1
 
 /* Prefix variables that are used in GPU accelerated operations, often these need to be
  * placed in RAM sections that are DMA accessible */

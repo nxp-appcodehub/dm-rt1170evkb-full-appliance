@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 NXP
+ * Copyright 2023 NXP
  * SPDX-License-Identifier: MIT
  * The auto-generated can only be used on NXP devices
  */
@@ -68,6 +68,27 @@ void setup_scr_ui_Oven(lv_ui *ui){
 	lv_img_set_src(ui->ui_Oven_Img_Door,&_oven_light_704x720);
 	lv_img_set_pivot(ui->ui_Oven_Img_Door, 50,50);
 	lv_img_set_angle(ui->ui_Oven_Img_Door, 0);
+
+	//Write codes ui_Oven_Img_Fan
+	ui->ui_Oven_Img_Fan = lv_img_create(ui->ui_Oven);
+	lv_obj_set_pos(ui->ui_Oven_Img_Fan, 364, 344);
+	lv_obj_set_size(ui->ui_Oven_Img_Fan, 120, 119);
+	lv_obj_set_scrollbar_mode(ui->ui_Oven_Img_Fan, LV_SCROLLBAR_MODE_OFF);
+
+	//Write style state: LV_STATE_DEFAULT for style_ui_oven_img_fan_main_main_default
+	static lv_style_t style_ui_oven_img_fan_main_main_default;
+	if (style_ui_oven_img_fan_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_oven_img_fan_main_main_default);
+	else
+		lv_style_init(&style_ui_oven_img_fan_main_main_default);
+	lv_style_set_img_recolor(&style_ui_oven_img_fan_main_main_default, lv_color_make(0xff, 0xff, 0xff));
+	lv_style_set_img_recolor_opa(&style_ui_oven_img_fan_main_main_default, 0);
+	lv_style_set_img_opa(&style_ui_oven_img_fan_main_main_default, 255);
+	lv_obj_add_style(ui->ui_Oven_Img_Fan, &style_ui_oven_img_fan_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_add_flag(ui->ui_Oven_Img_Fan, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->ui_Oven_Img_Fan,&_oven_fan_light_1_120x119);
+	lv_img_set_pivot(ui->ui_Oven_Img_Fan, 50,50);
+	lv_img_set_angle(ui->ui_Oven_Img_Fan, 0);
 
 	//Write codes ui_Oven_Img_Lable_Bg
 	ui->ui_Oven_Img_Lable_Bg = lv_img_create(ui->ui_Oven);
@@ -581,7 +602,7 @@ void setup_scr_ui_Oven(lv_ui *ui){
 
 	//Write codes ui_Oven_Btn_State
 	ui->ui_Oven_Btn_State = lv_imgbtn_create(ui->ui_Oven_Group_Oven);
-	lv_obj_set_pos(ui->ui_Oven_Btn_State, 208, 607);
+	lv_obj_set_pos(ui->ui_Oven_Btn_State, 203, 607);
 	lv_obj_set_size(ui->ui_Oven_Btn_State, 134, 51);
 	lv_obj_set_scrollbar_mode(ui->ui_Oven_Btn_State, LV_SCROLLBAR_MODE_OFF);
 
@@ -651,6 +672,66 @@ void setup_scr_ui_Oven(lv_ui *ui){
 	lv_style_set_pad_top(&style_ui_oven_label_settings_main_main_default, 8);
 	lv_style_set_pad_bottom(&style_ui_oven_label_settings_main_main_default, 0);
 	lv_obj_add_style(ui->ui_Oven_Label_Settings, &style_ui_oven_label_settings_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes ui_Oven_Label_TimeLeft
+	ui->ui_Oven_Label_TimeLeft = lv_label_create(ui->ui_Oven_Group_Oven);
+	lv_obj_set_pos(ui->ui_Oven_Label_TimeLeft, 319, 130);
+	lv_obj_set_size(ui->ui_Oven_Label_TimeLeft, 109, 51);
+	lv_obj_set_scrollbar_mode(ui->ui_Oven_Label_TimeLeft, LV_SCROLLBAR_MODE_OFF);
+	lv_label_set_text(ui->ui_Oven_Label_TimeLeft, "15");
+	lv_label_set_long_mode(ui->ui_Oven_Label_TimeLeft, LV_LABEL_LONG_WRAP);
+
+	//Write style state: LV_STATE_DEFAULT for style_ui_oven_label_timeleft_main_main_default
+	static lv_style_t style_ui_oven_label_timeleft_main_main_default;
+	if (style_ui_oven_label_timeleft_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_oven_label_timeleft_main_main_default);
+	else
+		lv_style_init(&style_ui_oven_label_timeleft_main_main_default);
+	lv_style_set_radius(&style_ui_oven_label_timeleft_main_main_default, 0);
+	lv_style_set_bg_color(&style_ui_oven_label_timeleft_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_color(&style_ui_oven_label_timeleft_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_dir(&style_ui_oven_label_timeleft_main_main_default, LV_GRAD_DIR_NONE);
+	lv_style_set_bg_opa(&style_ui_oven_label_timeleft_main_main_default, 0);
+	lv_style_set_text_color(&style_ui_oven_label_timeleft_main_main_default, lv_color_make(0xff, 0xff, 0xff));
+	lv_style_set_text_font(&style_ui_oven_label_timeleft_main_main_default, &lv_font_Antonio_Regular_40);
+	lv_style_set_text_letter_space(&style_ui_oven_label_timeleft_main_main_default, 2);
+	lv_style_set_text_line_space(&style_ui_oven_label_timeleft_main_main_default, 0);
+	lv_style_set_text_align(&style_ui_oven_label_timeleft_main_main_default, LV_TEXT_ALIGN_CENTER);
+	lv_style_set_pad_left(&style_ui_oven_label_timeleft_main_main_default, 0);
+	lv_style_set_pad_right(&style_ui_oven_label_timeleft_main_main_default, 0);
+	lv_style_set_pad_top(&style_ui_oven_label_timeleft_main_main_default, 8);
+	lv_style_set_pad_bottom(&style_ui_oven_label_timeleft_main_main_default, 0);
+	lv_obj_add_style(ui->ui_Oven_Label_TimeLeft, &style_ui_oven_label_timeleft_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes ui_Oven_Label_Min
+	ui->ui_Oven_Label_Min = lv_label_create(ui->ui_Oven_Group_Oven);
+	lv_obj_set_pos(ui->ui_Oven_Label_Min, 393, 146);
+	lv_obj_set_size(ui->ui_Oven_Label_Min, 63, 32);
+	lv_obj_set_scrollbar_mode(ui->ui_Oven_Label_Min, LV_SCROLLBAR_MODE_OFF);
+	lv_label_set_text(ui->ui_Oven_Label_Min, "mins");
+	lv_label_set_long_mode(ui->ui_Oven_Label_Min, LV_LABEL_LONG_WRAP);
+
+	//Write style state: LV_STATE_DEFAULT for style_ui_oven_label_min_main_main_default
+	static lv_style_t style_ui_oven_label_min_main_main_default;
+	if (style_ui_oven_label_min_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_oven_label_min_main_main_default);
+	else
+		lv_style_init(&style_ui_oven_label_min_main_main_default);
+	lv_style_set_radius(&style_ui_oven_label_min_main_main_default, 0);
+	lv_style_set_bg_color(&style_ui_oven_label_min_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_color(&style_ui_oven_label_min_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_dir(&style_ui_oven_label_min_main_main_default, LV_GRAD_DIR_NONE);
+	lv_style_set_bg_opa(&style_ui_oven_label_min_main_main_default, 0);
+	lv_style_set_text_color(&style_ui_oven_label_min_main_main_default, lv_color_make(0xc9, 0xc5, 0xc5));
+	lv_style_set_text_font(&style_ui_oven_label_min_main_main_default, &lv_font_Alatsi_Regular_23);
+	lv_style_set_text_letter_space(&style_ui_oven_label_min_main_main_default, 2);
+	lv_style_set_text_line_space(&style_ui_oven_label_min_main_main_default, 0);
+	lv_style_set_text_align(&style_ui_oven_label_min_main_main_default, LV_TEXT_ALIGN_CENTER);
+	lv_style_set_pad_left(&style_ui_oven_label_min_main_main_default, 0);
+	lv_style_set_pad_right(&style_ui_oven_label_min_main_main_default, 0);
+	lv_style_set_pad_top(&style_ui_oven_label_min_main_main_default, 8);
+	lv_style_set_pad_bottom(&style_ui_oven_label_min_main_main_default, 0);
+	lv_obj_add_style(ui->ui_Oven_Label_Min, &style_ui_oven_label_min_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes ui_Oven_Tile_Mode
 	ui->ui_Oven_Tile_Mode = lv_tileview_create(ui->ui_Oven);

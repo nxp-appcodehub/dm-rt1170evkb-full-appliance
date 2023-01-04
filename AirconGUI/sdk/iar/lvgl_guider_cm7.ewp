@@ -4510,6 +4510,9 @@
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_26.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_40.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Antonio_Regular_80.c</name>
     </file>
     <file>
@@ -4597,6 +4600,9 @@
       <name>$PROJ_DIR$\..\..\generated\images\_oven_bg_1280x720.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_oven_fan_light_1_120x119.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_oven_light_704x720.c</name>
     </file>
     <file>
@@ -4634,6 +4640,12 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-1554664737.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-1570110526.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-159985281.png</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp-1732105536.png</name>
@@ -4759,6 +4771,9 @@
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1544546632.png</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1763242753.png</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp1967892837.png</name>
     </file>
     <file>
@@ -4796,6 +4811,9 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp724664477.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp801628736.png</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\mPythonImages\mp876849070.png</name>

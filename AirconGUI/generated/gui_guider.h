@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 NXP
+ * Copyright 2023 NXP
  * SPDX-License-Identifier: MIT
  * The auto-generated can only be used on NXP devices
  */
@@ -19,6 +19,7 @@ typedef struct
 	bool ui_Oven_del;
 	lv_obj_t *ui_Oven_Img_Bg;
 	lv_obj_t *ui_Oven_Img_Door;
+	lv_obj_t *ui_Oven_Img_Fan;
 	lv_obj_t *ui_Oven_Img_Lable_Bg;
 	lv_obj_t *ui_Oven_Label_Oven;
 	lv_obj_t *ui_Oven_Group_Oven;
@@ -43,6 +44,8 @@ typedef struct
 	lv_obj_t *ui_Oven_Btn_State;
 	lv_obj_t *ui_Oven_Btn_State_label;
 	lv_obj_t *ui_Oven_Label_Settings;
+	lv_obj_t *ui_Oven_Label_TimeLeft;
+	lv_obj_t *ui_Oven_Label_Min;
 	lv_obj_t *ui_Oven_Tile_Mode;
 	lv_obj_t *ui_Oven_Tile_Mode_Mode_9;
 	lv_obj_t *ui_Oven_Img_Mode9;
@@ -146,6 +149,7 @@ LV_IMG_DECLARE(_icn_oven_fan_gril_62x62);
 LV_IMG_DECLARE(_wheel_bg_2_151x259);
 LV_IMG_DECLARE(_oven_bg_1280x720);
 LV_IMG_DECLARE(_icn_oven_defrost_62x62);
+LV_IMG_DECLARE(_oven_fan_light_1_120x119);
 LV_IMG_DECLARE(_icn_oven_fan_upper_lower_62x62);
 LV_IMG_DECLARE(_aircon_swing_1_632x113);
 LV_IMG_DECLARE(_icn_oven_upper_62x62);
