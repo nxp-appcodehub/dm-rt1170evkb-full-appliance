@@ -59,7 +59,7 @@ void ui_oven_init (void)
 
 	/*Init Fan Animation*/
 	lv_anim_t * a;
-	a = _ui_start_img_seq_anim(guider_ui.ui_Oven_Img_Fan, oven_fan, sizeof(oven_fan) / sizeof(oven_fan[0]), LV_DISP_DEF_REFR_PERIOD * 3, false);
+	a = _ui_start_img_seq_anim(guider_ui.ui_Oven_Img_Fan, oven_fan, sizeof(oven_fan) / sizeof(oven_fan[0]), LV_DISP_DEF_REFR_PERIOD * 5, false);
 	a->repeat_cnt = LV_ANIM_REPEAT_INFINITE;
 
 	/*Set first Tile*/
@@ -172,7 +172,7 @@ void ui_oven_set_Temperature(uint32_t temp)
 		}
 	}
 
-	lv_obj_scroll_to_y(guider_ui.ui_Oven_Group_TarTemp, (-107 + 42 * i), LV_ANIM_ON);
+	lv_obj_scroll_to_y(guider_ui.ui_Oven_Group_TarTemp, (-108 + 40 * i), LV_ANIM_ON);
 }
 
 void ui_oven_set_Timer(uint32_t time)
@@ -186,7 +186,7 @@ void ui_oven_set_Timer(uint32_t time)
 			break;
 		}
 	}
-	lv_obj_scroll_to_y(guider_ui.ui_Oven_Group_Timer, (-107 + 42 * i), LV_ANIM_ON);
+	lv_obj_scroll_to_y(guider_ui.ui_Oven_Group_Timer, (-108 + 40 * i), LV_ANIM_ON);
 }
 void ui_oven_set_mode(OVEN_MODE_T mode, OVEN_MODE_Dir_T dir)
 {
@@ -218,7 +218,7 @@ void ui_oven_set_mode(OVEN_MODE_T mode, OVEN_MODE_Dir_T dir)
 	if(Oven_Mode == kOVEN_ModeFFRE || Oven_Mode == kOVEN_ModeFFULC ||Oven_Mode == kOVEN_ModeFFLEC ||Oven_Mode == kOVEN_ModeFFG || Oven_Mode == kOVEN_ModeDeFrost)
 	{
 		ui_oven_fan_state = kOVEN_FanOn;
-		if(ui_oven_light_state == kOVEN_LightOn)
+		if(ui_oven_light_state == kOVEN_LightOn && ui_oven_door_state == kOVEN_DoorClose)
 		{
 			lv_obj_set_style_opa(guider_ui.ui_Oven_Img_Fan, LV_OPA_100, 0);
 		}
@@ -256,7 +256,7 @@ void ui_oven_door(OVEN_Door_T state)
 
 		ui_oven_anim_door(kOVEN_DoorClose, 0);
 
-		if(ui_oven_fan_state == kOVEN_FanOn)
+		if(ui_oven_fan_state == kOVEN_FanOn && ui_oven_light_state == kOVEN_LightOn)
 		{
 			lv_obj_fade_in(guider_ui.ui_Oven_Img_Fan, 10, 100);
 		}
@@ -275,6 +275,7 @@ void ui_oven_set_light(OVEN_Light_T state)
 		{
 			break;
 		}
+		ui_oven_light_state = kOVEN_lightOff;
 		if(ui_oven_door_state == kOVEN_DoorOpen)
 		{
 			ui_oven_door(kOVEN_DoorClose);
@@ -282,7 +283,6 @@ void ui_oven_set_light(OVEN_Light_T state)
 		lv_obj_fade_out(guider_ui.ui_Oven_Img_Door, 0, 0);
 		lv_obj_set_style_opa(guider_ui.ui_Oven_Img_Fan, LV_OPA_TRANSP, 0);
 		//TODO: Update Image of the Door on the menu
-		ui_oven_light_state = kOVEN_lightOff;
 		break;
 	case kOVEN_LightOn:
 		if(ui_oven_light_state == kOVEN_LightOn)
@@ -304,14 +304,58 @@ void ui_oven_set_state(OVEN_State_T state)
 {
 	if(state == kOVEN_Start)
 	{
-		lv_label_set_text(guider_ui.ui_Oven_Btn_State_label, "START");
+		lv_label_set_text(guider_ui.ui_Oven_Btn_State_label, "STOP");
 	}
 	else if (state == kOVEN_Stop)
 	{
-		lv_label_set_text(guider_ui.ui_Oven_Btn_State_label,  "STOP");
+		lv_label_set_text(guider_ui.ui_Oven_Btn_State_label,  "START");
 	}
 }
 
+void ui_oven_process_command (unsigned short cmd_id)
+{
+	switch (cmd_id)
+	{
+	case kVIT_Start:
+		ui_oven_set_state(kOVEN_Start);
+		lv_obj_add_state(guider_ui.ui_Oven_Btn_State,LV_STATE_CHECKED);
+		break;
+	case kVIT_Stop:
+		ui_oven_set_state(kOVEN_Stop);
+		lv_obj_clear_state(guider_ui.ui_Oven_Btn_State,LV_STATE_CHECKED);
+		break;
+	case kVIT_OpenDoor:
+		ui_oven_door(kOVEN_DoorOpen);
+		break;
+	case kVIT_CloseDoor:
+		ui_oven_door(kOVEN_DoorClose);
+		break;
+	case kVIT_LightOn:
+		ui_oven_set_light(kOVEN_LightOn);
+		break;
+	case kVIT_LightOff:
+		ui_oven_set_light(kOVEN_lightOff);
+		break;
+	case kVIT_SetTemp150:
+		ui_oven_set_Temperature(150);
+		break;
+	case kVIT_SetTemp180:
+		ui_oven_set_Temperature(180);
+		break;
+	case kVIT_SetTemp210:
+		ui_oven_set_Temperature(210);
+		break;
+	case kVIT_DefrotsMode:
+		ui_oven_set_mode(kOVEN_ModeDeFrost, 0);
+		break;
+	case kVIT_ModeToLeft:
+		ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);
+		break;
+	case kVIT_ModeToRight:
+		ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);
+		break;
+	}
+}
 /*******************************************************************************
  * Static function
  ******************************************************************************/
@@ -404,12 +448,12 @@ static void ui_oven_anim_door(bool open, uint32_t delay)
 			lv_obj_fade_in(guider_ui.ui_Oven_Img_Door, FADE_ANIM_TIME, delay);
 		}
 
-		a = _ui_start_img_seq_anim(guider_ui.ui_Oven_Img_Door, oven_door, sizeof(oven_door) / sizeof(oven_door[0]), LV_DISP_DEF_REFR_PERIOD, false);
+		a = _ui_start_img_seq_anim(guider_ui.ui_Oven_Img_Door, oven_door, sizeof(oven_door) / sizeof(oven_door[0]), LV_DISP_DEF_REFR_PERIOD * 3, false);
 		a->act_time -= delay + FADE_ANIM_TIME;
 	}
 	else
 	{
-		a = _ui_start_img_seq_anim(guider_ui.ui_Oven_Img_Door, oven_door, sizeof(oven_door) / sizeof(oven_door[0]), LV_DISP_DEF_REFR_PERIOD, true);
+		a = _ui_start_img_seq_anim(guider_ui.ui_Oven_Img_Door, oven_door, sizeof(oven_door) / sizeof(oven_door[0]), LV_DISP_DEF_REFR_PERIOD * 3, true);
 		a->act_time -= delay;
 	}
 }

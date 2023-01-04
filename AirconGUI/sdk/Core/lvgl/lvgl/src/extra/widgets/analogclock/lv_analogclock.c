@@ -88,6 +88,7 @@ lv_analogclock_scale_t * lv_analogclock_add_scale(lv_obj_t * obj)
     scale->tick_length = 8;
     scale->tick_width = 2;
     // scale->tick_color = color;
+    scale->hide_label = false;
     scale->label_gap = 10;
     scale->tick_major_nth = 5;
     scale->tick_major_width = 3;
@@ -137,21 +138,21 @@ void lv_analogclock_set_scale_range(lv_obj_t * obj, lv_analogclock_scale_t * sca
  * Add indicator
  *====================*/
 void lv_analogclock_set_hour_needle_line(lv_obj_t * obj,  uint16_t width,
-                                                                 lv_color_t color, int16_t r_mod)
+                                         lv_color_t color, int16_t r_mod)
 {
     lv_analogclock_t * analogclock = (lv_analogclock_t *)obj;
     analogclock->hour_indic = lv_analogclock_add_needle_line(obj, analogclock->scale, width, color, r_mod);
 }
 
 void lv_analogclock_set_min_needle_line(lv_obj_t * obj, uint16_t width,
-                                                                lv_color_t color, int16_t r_mod)
+                                        lv_color_t color, int16_t r_mod)
 {
     lv_analogclock_t * analogclock = (lv_analogclock_t *)obj;
     analogclock->min_indic = lv_analogclock_add_needle_line(obj, analogclock->scale, width, color, r_mod);
 }
 
 void lv_analogclock_set_sec_needle_line(lv_obj_t * obj, uint16_t width,
-                                                                lv_color_t color, int16_t r_mod)
+                                        lv_color_t color, int16_t r_mod)
 {
     lv_analogclock_t * analogclock = (lv_analogclock_t *)obj;
     analogclock->sec_indic = lv_analogclock_add_needle_line(obj, analogclock->scale, width, color, r_mod);
@@ -179,21 +180,21 @@ lv_analogclock_indicator_t * lv_analogclock_add_needle_line(lv_obj_t * obj, lv_a
 }
 
 void lv_analogclock_set_hour_needle_img(lv_obj_t * obj, const void * src,
-                                                                lv_coord_t pivot_x, lv_coord_t pivot_y)
+                                        lv_coord_t pivot_x, lv_coord_t pivot_y)
 {
     lv_analogclock_t * analogclock = (lv_analogclock_t *)obj;
     analogclock->hour_indic = lv_analogclock_add_needle_img(obj, analogclock->scale, src, pivot_x, pivot_y);
 }
 
 void lv_analogclock_set_min_needle_img(lv_obj_t * obj, const void * src,
-                                                               lv_coord_t pivot_x, lv_coord_t pivot_y)
+                                       lv_coord_t pivot_x, lv_coord_t pivot_y)
 {
     lv_analogclock_t * analogclock = (lv_analogclock_t *)obj;
     analogclock->min_indic = lv_analogclock_add_needle_img(obj, analogclock->scale, src, pivot_x, pivot_y);
 }
 
 void lv_analogclock_set_sec_needle_img(lv_obj_t * obj, const void * src,
-                                                               lv_coord_t pivot_x, lv_coord_t pivot_y)
+                                       lv_coord_t pivot_x, lv_coord_t pivot_y)
 {
     lv_analogclock_t * analogclock = (lv_analogclock_t *)obj;
     analogclock->sec_indic = lv_analogclock_add_needle_img(obj, analogclock->scale, src, pivot_x, pivot_y);
@@ -259,6 +260,16 @@ lv_analogclock_indicator_t * lv_analogclock_add_scale_lines(lv_obj_t * obj,  lv_
 
     lv_obj_invalidate(obj);
     return indic;
+}
+
+/*=====================
+ * Hide digits
+ *====================*/
+void lv_analogclock_hide_digits(lv_obj_t *obj, bool hide_digits)
+{
+    lv_analogclock_t * analogclock = (lv_analogclock_t *)obj;
+    lv_analogclock_scale_t * scale = analogclock->scale;
+    scale->hide_label = hide_digits;
 }
 
 /*=====================
@@ -577,7 +588,7 @@ static void draw_ticks_and_labels(lv_obj_t * obj, lv_draw_ctx_t * draw_ctx, cons
             part_draw_dsc.label_dsc = &label_dsc;
 
             /*Draw the text*/
-            if(major) {
+            if(major && !scale->hide_label) {
                 lv_draw_mask_remove_id(outer_mask_id);
                 uint32_t r_text = r_in_major - scale->label_gap;
                 lv_point_t p;

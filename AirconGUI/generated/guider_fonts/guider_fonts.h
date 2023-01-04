@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 NXP
+ * Copyright 2023 NXP
  * SPDX-License-Identifier: MIT
  */
 #ifndef GUIDER_FONTS_H
@@ -23,8 +23,8 @@ LV_FONT_DECLARE(lv_font_Antonio_Regular_26)
 LV_FONT_DECLARE(lv_font_Antonio_Regular_40)
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_23)
 LV_FONT_DECLARE(lv_font_Antonio_Regular_18)
-LV_FONT_DECLARE(lv_font_Antonio_Regular_15)
 LV_FONT_DECLARE(lv_font_simsun_12)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_15)
 LV_FONT_DECLARE(lv_font_Antonio_Regular_20)
 LV_FONT_DECLARE(lv_font_Antonio_Regular_12)
 LV_FONT_DECLARE(lv_font_Antonio_Regular_19)

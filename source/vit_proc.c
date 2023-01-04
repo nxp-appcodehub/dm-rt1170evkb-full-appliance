@@ -15,9 +15,14 @@
 
 #include "vit_proc.h"
 #include "VIT.h"
-#include "VIT_Model_en.h"
-
 #include "PL_platformTypes_CortexM.h"
+
+#if VIT_DEVICE_AIRCON
+#include "VIT_Model_Aircon.h"
+#endif
+#if VIT_DEVICE_OVEN
+#include "VIT_Model_Oven.h"
+#endif
 
 #include "mic_proc.h"
 #include "board.h"
@@ -143,7 +148,7 @@ int VIT_Initialize()
 {
     VIT_ReturnStatus_en VIT_Status;
 
-    VIT_Status = VIT_SetModel(VIT_Model_en, VIT_MODEL_IN_ROM);
+    VIT_Status = VIT_SetModel(VIT_Model_Oven, VIT_MODEL_IN_ROM);
 
     if (VIT_Status != VIT_SUCCESS)
     {

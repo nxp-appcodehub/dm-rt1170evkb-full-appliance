@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 NXP
+ * Copyright 2023 NXP
  * SPDX-License-Identifier: MIT
  */
 /*******************************************************************************
@@ -26,6 +26,8 @@
 
 /*Store the image of the glyphs*/
 static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap[] = {
+    /* U+0020 " " */
+
     /* U+0021 "!" */
     0xaf, 0xfe, 0x9f, 0xfd, 0x9f, 0xfd, 0x9f, 0xfc,
     0x8f, 0xfc, 0x8f, 0xfb, 0x7f, 0xfb, 0x7f, 0xfb,
@@ -3635,6 +3637,7 @@ static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap[] = {
 
 static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc[] = {
     {.bitmap_index = 0, .adv_w = 0, .box_w = 0, .box_h = 0, .ofs_x = 0, .ofs_y = 0} /* id = 0 reserved */,
+    {.bitmap_index = 0, .adv_w = 79, .box_w = 0, .box_h = 0, .ofs_x = 0, .ofs_y = 0},
     {.bitmap_index = 0, .adv_w = 132, .box_w = 4, .box_h = 19, .ofs_x = 2, .ofs_y = 0},
     {.bitmap_index = 38, .adv_w = 208, .box_w = 9, .box_h = 9, .ofs_x = 2, .ofs_y = 9},
     {.bitmap_index = 79, .adv_w = 258, .box_w = 14, .box_h = 18, .ofs_x = 1, .ofs_y = 0},
@@ -3807,15 +3810,15 @@ static const uint16_t unicode_list_2[] = {
 static const lv_font_fmt_txt_cmap_t cmaps[] =
 {
     {
-        .range_start = 33, .range_length = 11, .glyph_id_start = 1,
+        .range_start = 32, .range_length = 12, .glyph_id_start = 1,
         .unicode_list = NULL, .glyph_id_ofs_list = NULL, .list_length = 0, .type = LV_FONT_FMT_TXT_CMAP_FORMAT0_TINY
     },
     {
-        .range_start = 45, .range_length = 82, .glyph_id_start = 12,
+        .range_start = 45, .range_length = 82, .glyph_id_start = 13,
         .unicode_list = NULL, .glyph_id_ofs_list = NULL, .list_length = 0, .type = LV_FONT_FMT_TXT_CMAP_FORMAT0_TINY
     },
     {
-        .range_start = 186, .range_length = 63465, .glyph_id_start = 94,
+        .range_start = 186, .range_length = 63465, .glyph_id_start = 95,
         .unicode_list = unicode_list_2, .glyph_id_ofs_list = NULL, .list_length = 58, .type = LV_FONT_FMT_TXT_CMAP_SPARSE_TINY
     }
 };
@@ -3828,49 +3831,51 @@ static const lv_font_fmt_txt_cmap_t cmaps[] =
 /*Map glyph_ids to kern left classes*/
 static const uint8_t kern_left_class_mapping[] =
 {
-    0, 0, 1, 0, 0, 0, 2, 1,
-    3, 0, 4, 0, 5, 6, 0, 0,
-    0, 0, 0, 7, 0, 0, 8, 0,
-    0, 6, 6, 0, 0, 0, 0, 0,
-    9, 10, 11, 12, 13, 14, 15, 0,
-    0, 0, 16, 17, 0, 0, 12, 18,
-    12, 19, 20, 21, 0, 22, 23, 24,
-    25, 26, 27, 0, 0, 0, 0, 0,
-    28, 29, 30, 31, 32, 33, 34, 28,
-    35, 36, 37, 31, 28, 28, 29, 29,
-    38, 39, 40, 41, 42, 43, 44, 45,
-    44, 46, 47, 0, 0, 0, 0, 0,
+    0, 0, 0, 1, 0, 0, 0, 2,
+    1, 3, 0, 4, 0, 5, 6, 0,
+    0, 0, 0, 0, 7, 0, 0, 8,
+    0, 0, 6, 6, 0, 0, 0, 0,
+    0, 9, 10, 11, 12, 13, 14, 15,
+    0, 0, 0, 16, 17, 0, 0, 12,
+    18, 12, 19, 20, 21, 0, 22, 23,
+    24, 25, 26, 27, 0, 0, 0, 0,
+    0, 28, 29, 30, 31, 32, 33, 34,
+    28, 35, 36, 37, 31, 28, 28, 29,
+    29, 38, 39, 40, 41, 42, 43, 44,
+    45, 44, 46, 47, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0
 };
 
 /*Map glyph_ids to kern right classes*/
 static const uint8_t kern_right_class_mapping[] =
 {
-    0, 1, 2, 0, 0, 0, 3, 2,
-    0, 4, 5, 0, 6, 7, 0, 0,
-    0, 0, 0, 8, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 9, 0,
-    10, 0, 11, 0, 0, 0, 11, 0,
-    0, 12, 0, 0, 0, 0, 11, 0,
-    11, 0, 13, 14, 0, 15, 16, 17,
-    18, 19, 0, 0, 20, 0, 0, 0,
-    21, 22, 23, 23, 23, 24, 23, 22,
-    25, 26, 22, 22, 27, 27, 23, 28,
-    23, 27, 29, 30, 31, 32, 33, 34,
-    35, 36, 0, 0, 20, 0, 37, 0,
+    0, 0, 1, 2, 0, 0, 0, 3,
+    2, 0, 4, 5, 0, 6, 7, 0,
+    0, 0, 0, 0, 8, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 9,
+    0, 10, 0, 11, 0, 0, 0, 11,
+    0, 0, 12, 0, 0, 0, 0, 11,
+    0, 11, 0, 13, 14, 0, 15, 16,
+    17, 18, 19, 0, 0, 20, 0, 0,
+    0, 21, 22, 23, 23, 23, 24, 23,
+    22, 25, 26, 22, 22, 27, 27, 23,
+    28, 23, 27, 29, 30, 31, 32, 33,
+    34, 35, 36, 0, 0, 20, 0, 37,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0
 };
 
 /*Kern values between classes*/
@@ -4145,7 +4150,7 @@ lv_font_t lv_font_Alatsi_Regular_26 = {
 #endif
     .get_glyph_dsc = lv_font_get_glyph_dsc_fmt_txt,    /*Function pointer to get glyph's data*/
     .get_glyph_bitmap = lv_font_get_bitmap_fmt_txt,    /*Function pointer to get glyph's bitmap*/
-    .line_height = 30,          /*The maximum line height required by the font*/
+    .line_height = 26,          /*The maximum line height required by the font  default: (f.src.ascent - f.src.descent)*/
     .base_line = 6,             /*Baseline measured from the bottom of the line*/
 #if !(LVGL_VERSION_MAJOR == 6 && LVGL_VERSION_MINOR == 0)
     .subpx = LV_FONT_SUBPX_NONE,

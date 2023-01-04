@@ -7,6 +7,8 @@ build/object/lv_font_dejavu_16_persian_hebrew.o: \
  C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_conf.h \
  c:\repos\future_training\aircongui\lvgl\src/misc/lv_types.h \
  c:\repos\future_training\aircongui\lvgl\src/misc/lv_timer.h \
+ c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_tick.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
  c:\repos\future_training\aircongui\lvgl\src/misc/lv_math.h \
  c:\repos\future_training\aircongui\lvgl\src/misc/lv_mem.h \
  c:\repos\future_training\aircongui\lvgl\src/misc/lv_async.h \
@@ -59,6 +61,8 @@ build/object/lv_font_dejavu_16_persian_hebrew.o: \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_arc.h \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_mask.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_math.h \
+ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_transform.h \
+ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_layer.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_color.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_area.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_ll.h \
@@ -130,10 +134,56 @@ build/object/lv_font_dejavu_16_persian_hebrew.o: \
  c:\repos\future_training\aircongui\lvgl\src/lv_api_map.h \
  c:\repos\future_training\aircongui\lvgl\lvgl.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/lv_extra.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/layouts/lv_layouts.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/layouts/flex/lv_flex.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/layouts/grid/lv_grid.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/lv_libs.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/bmp/lv_bmp.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/fsdrv/lv_fsdrv.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/png/lv_png.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/gif/lv_gif.h \
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/qrcode/lv_qrcode.h \
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/sjpg/lv_sjpg.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/freetype/lv_freetype.h \
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/rlottie/lv_rlottie.h \
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/libs/ffmpeg/lv_ffmpeg.h \
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/others/lv_others.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/others/snapshot/lv_snapshot.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/others/monkey/lv_monkey.h \
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/others/gridnav/lv_gridnav.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/others/fragment/lv_fragment.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/others/imgfont/lv_imgfont.h \
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/others/msg/lv_msg.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/others/ime/lv_ime_pinyin.h \
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/themes/lv_themes.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/themes/default/lv_theme_default.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/themes/mono/lv_theme_mono.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/themes/basic/lv_theme_basic.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/lv_widgets.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/animimg/lv_animimg.h \
  c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
- c:\repos\future_training\aircongui\lvgl\lvgl.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/calendar/lv_calendar.h \
  c:\repos\future_training\aircongui\lvgl\src\widgets\lv_btnmatrix.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/calendar/lv_calendar_header_arrow.h \
@@ -149,11 +199,6 @@ build/object/lv_font_dejavu_16_persian_hebrew.o: \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/list/lv_list.h \
  c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
  c:\repos\future_training\aircongui\lvgl\src\extra\layouts\flex\lv_flex.h \
- c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/widgets/radiobtn/lv_radiobtn.h \
- c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
- c:\repos\future_training\aircongui\lvgl\src\extra\layouts\flex\lv_flex.h \
- c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/menu/lv_menu.h \
  c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/msgbox/lv_msgbox.h \
@@ -162,6 +207,10 @@ build/object/lv_font_dejavu_16_persian_hebrew.o: \
  c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/analogclock/lv_analogclock.h \
  c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/widgets/radiobtn/lv_radiobtn.h \
+ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
+ c:\repos\future_training\aircongui\lvgl\src\extra\layouts\flex\lv_flex.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/spinbox/lv_spinbox.h \
  c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/spinner/lv_spinner.h \
@@ -182,42 +231,7 @@ build/object/lv_font_dejavu_16_persian_hebrew.o: \
  c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/dclock/lv_dclock.h \
  c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/layouts/lv_layouts.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/layouts/flex/lv_flex.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/layouts/grid/lv_grid.h \
- c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/themes/lv_themes.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/themes/default/lv_theme_default.h \
- c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/themes/mono/lv_theme_mono.h \
- c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/themes/basic/lv_theme_basic.h \
- c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/others/lv_others.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/others/snapshot/lv_snapshot.h \
- c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
- c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/others/monkey/lv_monkey.h \
- c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/others/gridnav/lv_gridnav.h \
- c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/lv_libs.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/bmp/lv_bmp.h \
- c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/fsdrv/lv_fsdrv.h \
- c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/png/lv_png.h \
- c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/gif/lv_gif.h \
- c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/qrcode/lv_qrcode.h \
- c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/sjpg/lv_sjpg.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/freetype/lv_freetype.h \
- c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/rlottie/lv_rlottie.h \
- c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
- c:\repos\future_training\aircongui\lvgl\src/extra/libs/ffmpeg/lv_ffmpeg.h \
+ c:\repos\future_training\aircongui\lvgl\src/extra/widgets/video/lv_video.h \
  c:\repos\future_training\aircongui\lvgl\src\lvgl.h
 
 c:\repos\future_training\aircongui\lvgl\lvgl.h:
@@ -233,6 +247,10 @@ C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_conf.h:
 c:\repos\future_training\aircongui\lvgl\src/misc/lv_types.h:
 
 c:\repos\future_training\aircongui\lvgl\src/misc/lv_timer.h:
+
+c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_tick.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
 
 c:\repos\future_training\aircongui\lvgl\src/misc/lv_math.h:
 
@@ -337,6 +355,10 @@ c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_arc.h:
 c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_mask.h:
 
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_math.h:
+
+c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_transform.h:
+
+c:\repos\future_training\aircongui\lvgl\src\draw\lv_draw_layer.h:
 
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_color.h:
 
@@ -480,13 +502,105 @@ c:\repos\future_training\aircongui\lvgl\lvgl.h:
 
 c:\repos\future_training\aircongui\lvgl\src/extra/lv_extra.h:
 
+c:\repos\future_training\aircongui\lvgl\src/extra/layouts/lv_layouts.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/layouts/flex/lv_flex.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/layouts/grid/lv_grid.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/lv_libs.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/bmp/lv_bmp.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/fsdrv/lv_fsdrv.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/png/lv_png.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/gif/lv_gif.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/qrcode/lv_qrcode.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/sjpg/lv_sjpg.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/freetype/lv_freetype.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/rlottie/lv_rlottie.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/libs/ffmpeg/lv_ffmpeg.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/others/lv_others.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/others/snapshot/lv_snapshot.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/others/monkey/lv_monkey.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/others/gridnav/lv_gridnav.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/others/fragment/lv_fragment.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/others/imgfont/lv_imgfont.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/others/msg/lv_msg.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/others/ime/lv_ime_pinyin.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/themes/lv_themes.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/themes/default/lv_theme_default.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/themes/mono/lv_theme_mono.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/themes/basic/lv_theme_basic.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
 c:\repos\future_training\aircongui\lvgl\src/extra/widgets/lv_widgets.h:
 
 c:\repos\future_training\aircongui\lvgl\src/extra/widgets/animimg/lv_animimg.h:
 
 c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
-
-c:\repos\future_training\aircongui\lvgl\lvgl.h:
 
 c:\repos\future_training\aircongui\lvgl\src/extra/widgets/calendar/lv_calendar.h:
 
@@ -518,16 +632,6 @@ c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
 
 c:\repos\future_training\aircongui\lvgl\src\extra\layouts\flex\lv_flex.h:
 
-c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/widgets/radiobtn/lv_radiobtn.h:
-
-c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
-
-c:\repos\future_training\aircongui\lvgl\src\extra\layouts\flex\lv_flex.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
-
 c:\repos\future_training\aircongui\lvgl\src/extra/widgets/menu/lv_menu.h:
 
 c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
@@ -543,6 +647,14 @@ c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
 c:\repos\future_training\aircongui\lvgl\src/extra/widgets/analogclock/lv_analogclock.h:
 
 c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+c:\repos\future_training\aircongui\lvgl\src/extra/widgets/radiobtn/lv_radiobtn.h:
+
+c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
+
+c:\repos\future_training\aircongui\lvgl\src\extra\layouts\flex\lv_flex.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
 
 c:\repos\future_training\aircongui\lvgl\src/extra/widgets/spinbox/lv_spinbox.h:
 
@@ -584,76 +696,6 @@ c:\repos\future_training\aircongui\lvgl\src/extra/widgets/dclock/lv_dclock.h:
 
 c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
 
-c:\repos\future_training\aircongui\lvgl\src/extra/layouts/lv_layouts.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/layouts/flex/lv_flex.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/layouts/grid/lv_grid.h:
-
-c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/themes/lv_themes.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/themes/default/lv_theme_default.h:
-
-c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/themes/mono/lv_theme_mono.h:
-
-c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/themes/basic/lv_theme_basic.h:
-
-c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/others/lv_others.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/others/snapshot/lv_snapshot.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
-
-c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/others/monkey/lv_monkey.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/others/gridnav/lv_gridnav.h:
-
-c:\repos\future_training\aircongui\lvgl\src\core\lv_obj.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/lv_libs.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/bmp/lv_bmp.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/fsdrv/lv_fsdrv.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/png/lv_png.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/gif/lv_gif.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/qrcode/lv_qrcode.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/sjpg/lv_sjpg.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/freetype/lv_freetype.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/rlottie/lv_rlottie.h:
-
-c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
-
-c:\repos\future_training\aircongui\lvgl\src/extra/libs/ffmpeg/lv_ffmpeg.h:
+c:\repos\future_training\aircongui\lvgl\src/extra/widgets/video/lv_video.h:
 
 c:\repos\future_training\aircongui\lvgl\src\lvgl.h:

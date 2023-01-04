@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 NXP
+ * Copyright 2023 NXP
  * SPDX-License-Identifier: MIT
  */
 /*******************************************************************************
@@ -2290,7 +2290,7 @@ lv_font_t lv_font_Antonio_Regular_18 = {
 #endif
     .get_glyph_dsc = lv_font_get_glyph_dsc_fmt_txt,    /*Function pointer to get glyph's data*/
     .get_glyph_bitmap = lv_font_get_bitmap_fmt_txt,    /*Function pointer to get glyph's bitmap*/
-    .line_height = 20,          /*The maximum line height required by the font*/
+    .line_height = 18,          /*The maximum line height required by the font  default: (f.src.ascent - f.src.descent)*/
     .base_line = 3,             /*Baseline measured from the bottom of the line*/
 #if !(LVGL_VERSION_MAJOR == 6 && LVGL_VERSION_MINOR == 0)
     .subpx = LV_FONT_SUBPX_NONE,

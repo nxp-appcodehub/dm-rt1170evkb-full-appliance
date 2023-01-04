@@ -9,6 +9,8 @@ build/object/lv_mem.o: \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_gc.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_ll.h \
  c:\repos\future_training\aircongui\lvgl\src\misc\lv_timer.h \
+ c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_tick.h \
+ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_img_cache.h \
  c:\repos\future_training\aircongui\lvgl\src\draw\lv_img_decoder.h \
  c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
@@ -42,6 +44,10 @@ c:\repos\future_training\aircongui\lvgl\src\misc\lv_gc.h:
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_ll.h:
 
 c:\repos\future_training\aircongui\lvgl\src\misc\lv_timer.h:
+
+c:\repos\future_training\aircongui\lvgl\src\hal\lv_hal_tick.h:
+
+c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
 
 c:\repos\future_training\aircongui\lvgl\src\draw\lv_img_cache.h:
 

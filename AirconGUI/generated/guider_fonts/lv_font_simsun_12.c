@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 NXP
+ * Copyright 2023 NXP
  * SPDX-License-Identifier: MIT
  */
 /*******************************************************************************
@@ -26,6 +26,8 @@
 
 /*Store the image of the glyphs*/
 static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap[] = {
+    /* U+0020 " " */
+
     /* U+0021 "!" */
     0x75, 0x86, 0x75, 0x54, 0x43, 0x32, 0x0, 0x22,
     0x87,
@@ -1133,6 +1135,7 @@ static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap[] = {
 
 static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc[] = {
     {.bitmap_index = 0, .adv_w = 0, .box_w = 0, .box_h = 0, .ofs_x = 0, .ofs_y = 0} /* id = 0 reserved */,
+    {.bitmap_index = 0, .adv_w = 96, .box_w = 0, .box_h = 0, .ofs_x = 0, .ofs_y = 0},
     {.bitmap_index = 0, .adv_w = 96, .box_w = 2, .box_h = 9, .ofs_x = 2, .ofs_y = 0},
     {.bitmap_index = 9, .adv_w = 96, .box_w = 6, .box_h = 4, .ofs_x = 0, .ofs_y = 6},
     {.bitmap_index = 21, .adv_w = 96, .box_w = 6, .box_h = 9, .ofs_x = 0, .ofs_y = 0},
@@ -1304,15 +1307,15 @@ static const uint16_t unicode_list_2[] = {
 static const lv_font_fmt_txt_cmap_t cmaps[] =
 {
     {
-        .range_start = 33, .range_length = 11, .glyph_id_start = 1,
+        .range_start = 32, .range_length = 12, .glyph_id_start = 1,
         .unicode_list = NULL, .glyph_id_ofs_list = NULL, .list_length = 0, .type = LV_FONT_FMT_TXT_CMAP_FORMAT0_TINY
     },
     {
-        .range_start = 45, .range_length = 82, .glyph_id_start = 12,
+        .range_start = 45, .range_length = 82, .glyph_id_start = 13,
         .unicode_list = NULL, .glyph_id_ofs_list = NULL, .list_length = 0, .type = LV_FONT_FMT_TXT_CMAP_FORMAT0_TINY
     },
     {
-        .range_start = 61441, .range_length = 2210, .glyph_id_start = 94,
+        .range_start = 61441, .range_length = 2210, .glyph_id_start = 95,
         .unicode_list = unicode_list_2, .glyph_id_ofs_list = NULL, .list_length = 57, .type = LV_FONT_FMT_TXT_CMAP_SPARSE_TINY
     }
 };
@@ -1357,7 +1360,7 @@ lv_font_t lv_font_simsun_12 = {
 #endif
     .get_glyph_dsc = lv_font_get_glyph_dsc_fmt_txt,    /*Function pointer to get glyph's data*/
     .get_glyph_bitmap = lv_font_get_bitmap_fmt_txt,    /*Function pointer to get glyph's bitmap*/
-    .line_height = 13,          /*The maximum line height required by the font*/
+    .line_height = 12,          /*The maximum line height required by the font  default: (f.src.ascent - f.src.descent)*/
     .base_line = 2,             /*Baseline measured from the bottom of the line*/
 #if !(LVGL_VERSION_MAJOR == 6 && LVGL_VERSION_MINOR == 0)
     .subpx = LV_FONT_SUBPX_NONE,

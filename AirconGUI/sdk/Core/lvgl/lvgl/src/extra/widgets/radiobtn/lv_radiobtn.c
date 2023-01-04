@@ -10,12 +10,10 @@
 
 #if LV_USE_RADIOBTN != 0
 
-#include "../../../core/lv_disp.h"
 #include "../../../misc/lv_assert.h"
-#include "../../../misc/lv_txt_ap.h"
 #include "../../../core/lv_group.h"
 #include "../../../draw/lv_draw.h"
-
+#include "../../../misc/lv_txt_ap.h"
 
 /*********************
  *      DEFINES
@@ -62,6 +60,7 @@ const lv_obj_class_t lv_radiobtn_item_class = {
 };
 
 
+
 /**********************
  *      MACROS
  **********************/
@@ -94,6 +93,7 @@ lv_obj_t * lv_radiobtn_add_item(lv_obj_t * parent, const char * txt)
     lv_obj_t * obj = lv_radiobtn_create_item(parent);
     lv_obj_class_init_obj(obj);
     lv_obj_add_flag(obj, LV_OBJ_FLAG_EVENT_BUBBLE);
+    lv_obj_set_style_pad_all(obj, 3, LV_PART_MAIN);
     lv_obj_set_size(obj, LV_PCT(100), LV_SIZE_CONTENT);
     if(txt) {
         lv_radiobtn_set_item_text(obj, txt);
@@ -121,7 +121,7 @@ void lv_radiobtn_set_item_text(lv_obj_t * obj, const char * txt)
 #if LV_USE_ARABIC_PERSIAN_CHARS
     _lv_txt_ap_proc(txt, rb->txt);
 #else
-    strcpy(rb->txt, txt);
+    if(rb->txt != NULL) strncpy(rb->txt, txt, len + 1);
 #endif
 
     rb->static_txt = 0;
@@ -171,7 +171,6 @@ uint32_t lv_radiobtn_get_item_num(lv_obj_t * radiobtn)
 /**********************
  *   STATIC FUNCTIONS
  **********************/
-
 static void lv_radiobtn_constructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
 {
     LV_UNUSED(class_p);
@@ -266,6 +265,7 @@ static void lv_radiobtn_item_draw(lv_event_t * e)
     lv_radiobtn_item_t * btn = (lv_radiobtn_item_t *)obj;
 
     lv_draw_ctx_t * draw_ctx = lv_event_get_draw_ctx(e);
+    if(draw_ctx == NULL) return;
     const lv_font_t * font = lv_obj_get_style_text_font(obj, LV_PART_MAIN);
     lv_coord_t font_h = lv_font_get_line_height(font);
 
@@ -310,6 +310,29 @@ static void lv_radiobtn_item_draw(lv_event_t * e)
     lv_draw_rect(draw_ctx, &indic_dsc, &marker_area_transf);
     lv_event_send(obj, LV_EVENT_DRAW_PART_END, &part_draw_dsc);
 
+    /**draw inner box*/
+    lv_draw_rect_dsc_t indic_inner_dsc;
+    lv_draw_rect_dsc_init(&indic_inner_dsc);
+    lv_obj_init_draw_rect_dsc(obj, LV_PART_CUSTOM_FIRST, &indic_inner_dsc);
+
+    lv_area_t marker_inner_area_transf;
+    lv_area_copy(&marker_inner_area_transf, &marker_area_transf);
+    int16_t dist = ((int16_t)(marker_inner_area_transf.x2 - marker_inner_area_transf.x1) / 4);
+    marker_inner_area_transf.x1 += dist;
+    marker_inner_area_transf.x2 -= dist;
+    marker_inner_area_transf.y1 += dist;
+    marker_inner_area_transf.y2 -= dist;
+
+    part_draw_dsc.rect_dsc = &indic_inner_dsc;
+    part_draw_dsc.class_p = ITEM_CLASS;
+    part_draw_dsc.type = LV_RADIOBTN_DRAW_PART_BOX_INNER;
+    part_draw_dsc.draw_area = &marker_inner_area_transf;
+    part_draw_dsc.part = LV_PART_CUSTOM_FIRST;
+
+    lv_event_send(obj, LV_EVENT_DRAW_PART_BEGIN, &part_draw_dsc);
+    lv_draw_rect(draw_ctx, &indic_inner_dsc, &marker_inner_area_transf);
+    lv_event_send(obj, LV_EVENT_DRAW_PART_END, &part_draw_dsc);
+
     lv_coord_t line_space = lv_obj_get_style_text_line_space(obj, LV_PART_MAIN);
     lv_coord_t letter_space = lv_obj_get_style_text_letter_space(obj, LV_PART_MAIN);
 
@@ -347,15 +370,17 @@ static void lv_radiobtn_event(const lv_obj_class_t * class_p, lv_event_t * e)
         uint16_t active_id = rb->active_index;
         lv_obj_t * old_btn = lv_radiobtn_get_item(obj, active_id);
 
-        if(act_btn == obj) return;
+        if(act_btn == obj || old_btn == NULL) return;
 
         lv_obj_clear_state(old_btn, LV_STATE_CHECKED);
         lv_obj_add_state(act_btn, LV_STATE_CHECKED);
 
         rb->active_index = lv_obj_get_index(act_btn);
-        rb->checked_txt = lv_radiobtn_get_item_text(obj, act_btn);
+        rb->checked_txt = (char *)lv_radiobtn_get_item_text(obj, act_btn);
 
         LV_LOG_USER("Selected radio buttons: %d ", (int)rb->active_index);
     }
+
 }
+
 #endif /*LV_USE_RADIOBTN*/

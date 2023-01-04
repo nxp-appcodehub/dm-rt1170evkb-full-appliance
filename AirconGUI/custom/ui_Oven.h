@@ -61,6 +61,22 @@ typedef enum
 	kOVEN_FanOn,
 } OVEN_Fan_T;
 
+typedef enum
+{
+	kVIT_Start = 1,
+	kVIT_Stop,
+	kVIT_OpenDoor,
+	kVIT_CloseDoor,
+	kVIT_LightOn,
+	kVIT_LightOff,
+	kVIT_SetTemp150,
+	kVIT_SetTemp180,
+	kVIT_SetTemp210,
+	kVIT_DefrotsMode,
+	kVIT_ModeToLeft,
+	kVIT_ModeToRight
+} VIT_Oven_Commands_T;
+
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -77,5 +93,7 @@ void ui_oven_door(OVEN_Door_T state);
 void ui_oven_set_light(OVEN_Light_T state);
 
 void ui_oven_set_state(OVEN_State_T state);
+
+void ui_oven_process_command (unsigned short cmd_id);
 
 #endif /* UI_OVEN_H_ */

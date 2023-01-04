@@ -140,7 +140,7 @@ void MIC_Close()
 int MIC_Read(uint8_t *data, uint32_t size)
 {
     /* Wait 100ms for the previous transfer to finish */
-    if (xSemaphoreTake(semaphoreRX, pdMS_TO_TICKS(500)) != pdTRUE)
+    if (xSemaphoreTake(semaphoreRX, pdMS_TO_TICKS(200)) != pdTRUE)
         return -1;
     /* Copy data from the DMIC buffer */
     memcpy(data, &s_buffer[s_readIndex], size);
