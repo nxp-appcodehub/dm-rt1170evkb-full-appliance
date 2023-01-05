@@ -68,6 +68,7 @@ void ui_oven_init (void)
 	/*Set the light as off*/
 	lv_obj_set_style_opa(guider_ui.ui_Oven_Img_Door, LV_OPA_TRANSP, 0);
 	lv_obj_set_style_opa(guider_ui.ui_Oven_Img_Fan, LV_OPA_TRANSP, 0);
+	lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_TRANSP, 0);
 
 	/*Oven target temperature*/
 	ui_Label_Target_Temp_Numer = lv_label_create(guider_ui.ui_Oven_Img_TempWheel);

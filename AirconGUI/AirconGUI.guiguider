@@ -157,6 +157,31 @@
 			"zh_keyboard_font_size": "18",
 			"list": [
 				{
+					"name": "Lottie_Mic",
+					"id": "gmhmsvyy",
+					"type": "lottie",
+					"left": 0,
+					"top": 646,
+					"is_move_animation": false,
+					"desX": 0,
+					"desY": 0,
+					"path_type": "linear",
+					"duration": 1000,
+					"width": 62,
+					"height": 74,
+					"json_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\lottie\\lf30_gbhpz7py.json",
+					"default_style": false,
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"bg_color": "#2195f6",
+							"bg_opa": 0
+						}
+					]
+				},
+				{
 					"name": "Group_Timer",
 					"id": "oj13moh8",
 					"type": "cont",
@@ -10125,6 +10150,39 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0
+							}
+						]
+					},
+					{
+						"name": "ui_Oven_Lottie_Mic",
+						"id": "gmhmsvyy",
+						"type": "lottie",
+						"pos": [
+							0,
+							646
+						],
+						"size": [
+							62,
+							74
+						],
+						"is_move_animation": false,
+						"path_type": "linear",
+						"move_animation": {
+							"des_pos": [
+								0,
+								0
+							],
+							"duration": 1000
+						},
+						"default_style": false,
+						"json_path": "C:\\Repos\\Future_training\\AirconGUI\\import\\lottie\\lf30_gbhpz7py.json",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"bg_color": "#2195f6",
+								"bg_opa": 0
 							}
 						]
 					}

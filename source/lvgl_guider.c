@@ -70,7 +70,12 @@ static void Graphics_Process (void *pvParameters)
 
 	for(;;)
 	{
-		event_bits = xEventGroupWaitBits(GPH_Process,  VIT_CMD_DETECT, pdTRUE, pdFALSE, portMAX_DELAY);
+		event_bits = xEventGroupWaitBits(GPH_Process, VIT_WW_DETECT | VIT_CMD_DETECT, pdTRUE, pdFALSE, portMAX_DELAY);
+
+		if((event_bits & VIT_WW_DETECT) == VIT_WW_DETECT)
+		{
+			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_100, 0);
+		}
 
 		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
 		{
@@ -79,6 +84,7 @@ static void Graphics_Process (void *pvParameters)
 #endif
 #if VIT_DEVICE_OVEN
 			ui_oven_process_command(cmd_id);
+			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_TRANSP, 0);
 #endif
 		}
 	}

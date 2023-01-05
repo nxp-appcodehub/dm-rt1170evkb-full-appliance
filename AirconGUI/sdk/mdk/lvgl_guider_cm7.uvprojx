@@ -1536,6 +1536,11 @@
       <FilePath>..\..\generated\images\images.mk</FilePath>
     </File>
     <File>
+      <FileName>lottie_lf30_gbhpz7py.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\lottie_lf30_gbhpz7py.c</FilePath>
+    </File>
+    <File>
       <FileName>_aircon_bg_1280x720.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_aircon_bg_1280x720.c</FilePath>
@@ -6252,6 +6257,11 @@
       <FileName>images.mk</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\images\images.mk</FilePath>
+    </File>
+    <File>
+      <FileName>lottie_lf30_gbhpz7py.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\lottie_lf30_gbhpz7py.c</FilePath>
     </File>
     <File>
       <FileName>_aircon_bg_1280x720.c</FileName>
