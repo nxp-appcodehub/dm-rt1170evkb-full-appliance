@@ -82,6 +82,7 @@ typedef struct
 	lv_obj_t *ui_Oven_Img_TimerWheel;
 	lv_obj_t *ui_Oven_Label_SelTimer;
 	lv_obj_t *ui_Oven_Label_TimerSel;
+	lv_obj_t *ui_Oven_lottie_1;
 	lv_obj_t *ui_Aircon;
 	bool ui_Aircon_del;
 	lv_obj_t *ui_Aircon_Img_Bg;
@@ -166,6 +167,8 @@ LV_IMG_DECLARE(_icn_oven_lower_62x62);
 LV_IMG_DECLARE(_icn_oven_fan_lower_62x62);
 LV_IMG_DECLARE(_title_bg_799x130);
 LV_IMG_DECLARE(_icn_fan_low_31x27);
+#define LV_LOT_DECLARE(array_name) extern const uint8_t array_name[];
+LV_LOT_DECLARE(lottie_lf30_gbhpz7py);
 
 #ifdef __cplusplus
 }

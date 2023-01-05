@@ -232,7 +232,9 @@ build/object/lv_rlottie.o: \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/dclock/lv_dclock.h \
  c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h \
  c:\repos\future_training\aircongui\lvgl\src/extra/widgets/video/lv_video.h \
- c:\repos\future_training\aircongui\lvgl\src\lvgl.h
+ c:\repos\future_training\aircongui\lvgl\src\lvgl.h \
+ C:/Repos/Future_training/AirconGUI/lvgl-simulator/rlottie/rlottie_capi.h \
+ C:/Repos/Future_training/AirconGUI/lvgl-simulator/rlottie/rlottiecommon.h
 
 c:\repos\future_training\aircongui\lvgl\src\extra\libs\rlottie\lv_rlottie.h:
 
@@ -699,3 +701,7 @@ c:\repos\future_training\aircongui\lvgl\src\lv_conf_internal.h:
 c:\repos\future_training\aircongui\lvgl\src/extra/widgets/video/lv_video.h:
 
 c:\repos\future_training\aircongui\lvgl\src\lvgl.h:
+
+C:/Repos/Future_training/AirconGUI/lvgl-simulator/rlottie/rlottie_capi.h:
+
+C:/Repos/Future_training/AirconGUI/lvgl-simulator/rlottie/rlottiecommon.h:
