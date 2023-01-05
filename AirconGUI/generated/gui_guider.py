@@ -2060,18 +2060,18 @@ style_ui_oven_group_timer_main_main_default.set_pad_bottom(0)
 ui_Oven_Group_Timer.add_style(style_ui_oven_group_timer_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 
-# create ui_Oven_lottie_1
-ui_Oven_lottie_1.set_pos(int(0),int(646))
-ui_Oven_lottie_1.set_size(62,74)
-ui_Oven_lottie_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
-# create style style_ui_oven_lottie_1_main_main_default
-style_ui_oven_lottie_1_main_main_default = lv.style_t()
-style_ui_oven_lottie_1_main_main_default.init()
-style_ui_oven_lottie_1_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
-style_ui_oven_lottie_1_main_main_default.set_bg_opa(0)
+# create ui_Oven_Lottie_Mic
+ui_Oven_Lottie_Mic.set_pos(int(0),int(646))
+ui_Oven_Lottie_Mic.set_size(62,74)
+ui_Oven_Lottie_Mic.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+# create style style_ui_oven_lottie_mic_main_main_default
+style_ui_oven_lottie_mic_main_main_default = lv.style_t()
+style_ui_oven_lottie_mic_main_main_default.init()
+style_ui_oven_lottie_mic_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_oven_lottie_mic_main_main_default.set_bg_opa(0)
 
-# add style for ui_Oven_lottie_1
-ui_Oven_lottie_1.add_style(style_ui_oven_lottie_1_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+# add style for ui_Oven_Lottie_Mic
+ui_Oven_Lottie_Mic.add_style(style_ui_oven_lottie_mic_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 
 # create ui_Aircon

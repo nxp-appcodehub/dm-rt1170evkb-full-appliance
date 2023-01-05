@@ -340,7 +340,7 @@ int VIT_Execute(void *inputBuffer, int size)
             }
 
             /*Set event WW detect*/
-//            xEventGroupSetBits(GPH_Process, VIT_WW_DETECT);
+            xEventGroupSetBits(GPH_Process, VIT_WW_DETECT);
         }
     }
     else if (VIT_DetectionResults == VIT_VC_DETECTED)

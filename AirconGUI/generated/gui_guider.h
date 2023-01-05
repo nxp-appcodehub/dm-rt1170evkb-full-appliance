@@ -82,7 +82,7 @@ typedef struct
 	lv_obj_t *ui_Oven_Img_TimerWheel;
 	lv_obj_t *ui_Oven_Label_SelTimer;
 	lv_obj_t *ui_Oven_Label_TimerSel;
-	lv_obj_t *ui_Oven_lottie_1;
+	lv_obj_t *ui_Oven_Lottie_Mic;
 	lv_obj_t *ui_Aircon;
 	bool ui_Aircon_del;
 	lv_obj_t *ui_Aircon_Img_Bg;

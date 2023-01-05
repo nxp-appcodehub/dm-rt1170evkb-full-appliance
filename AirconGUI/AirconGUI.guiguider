@@ -157,7 +157,8 @@
 			"zh_keyboard_font_size": "18",
 			"list": [
 				{
-					"name": "lottie_1",
+					"name": "Lottie_Mic",
+					"id": "gmhmsvyy",
 					"type": "lottie",
 					"left": 0,
 					"top": 646,
@@ -178,8 +179,7 @@
 							"bg_color": "#2195f6",
 							"bg_opa": 0
 						}
-					],
-					"id": "gmhmsvyy"
+					]
 				},
 				{
 					"name": "Group_Timer",
@@ -10154,7 +10154,7 @@
 						]
 					},
 					{
-						"name": "ui_Oven_lottie_1",
+						"name": "ui_Oven_Lottie_Mic",
 						"id": "gmhmsvyy",
 						"type": "lottie",
 						"pos": [

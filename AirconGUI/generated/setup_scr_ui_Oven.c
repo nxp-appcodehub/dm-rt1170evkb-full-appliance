@@ -1670,20 +1670,20 @@ void setup_scr_ui_Oven(lv_ui *ui){
 	lv_style_set_pad_bottom(&style_ui_oven_label_timersel_main_main_default, 0);
 	lv_obj_add_style(ui->ui_Oven_Label_TimerSel, &style_ui_oven_label_timersel_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes ui_Oven_lottie_1
-	ui->ui_Oven_lottie_1 = lv_rlottie_create_from_raw(ui->ui_Oven, 62, 74, (const void *)lottie_lf30_gbhpz7py);
-	lv_obj_set_pos(ui->ui_Oven_lottie_1, 0, 646);
-	lv_obj_set_size(ui->ui_Oven_lottie_1, 62, 74);
+	//Write codes ui_Oven_Lottie_Mic
+	ui->ui_Oven_Lottie_Mic = lv_rlottie_create_from_raw(ui->ui_Oven, 62, 74, (const void *)lottie_lf30_gbhpz7py);
+	lv_obj_set_pos(ui->ui_Oven_Lottie_Mic, 0, 646);
+	lv_obj_set_size(ui->ui_Oven_Lottie_Mic, 62, 74);
 
-	//Write style state: LV_STATE_DEFAULT for style_ui_oven_lottie_1_main_main_default
-	static lv_style_t style_ui_oven_lottie_1_main_main_default;
-	if (style_ui_oven_lottie_1_main_main_default.prop_cnt > 1)
-		lv_style_reset(&style_ui_oven_lottie_1_main_main_default);
+	//Write style state: LV_STATE_DEFAULT for style_ui_oven_lottie_mic_main_main_default
+	static lv_style_t style_ui_oven_lottie_mic_main_main_default;
+	if (style_ui_oven_lottie_mic_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_oven_lottie_mic_main_main_default);
 	else
-		lv_style_init(&style_ui_oven_lottie_1_main_main_default);
-	lv_style_set_bg_color(&style_ui_oven_lottie_1_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
-	lv_style_set_bg_opa(&style_ui_oven_lottie_1_main_main_default, 0);
-	lv_obj_add_style(ui->ui_Oven_lottie_1, &style_ui_oven_lottie_1_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+		lv_style_init(&style_ui_oven_lottie_mic_main_main_default);
+	lv_style_set_bg_color(&style_ui_oven_lottie_mic_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_opa(&style_ui_oven_lottie_mic_main_main_default, 0);
+	lv_obj_add_style(ui->ui_Oven_Lottie_Mic, &style_ui_oven_lottie_mic_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Init events for screen
 	events_init_ui_Oven(ui);
