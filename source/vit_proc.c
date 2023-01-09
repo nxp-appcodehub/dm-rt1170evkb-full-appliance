@@ -26,15 +26,27 @@
 
 #include "mic_proc.h"
 #include "board.h"
+#include "arm_math.h"
 
 #define VIT_CMD_TIME_SPAN   3
 
 #define NUMBER_OF_CHANNELS  DEMO_CHANNEL_NUM
 #define BYTE_DEPTH          PDM_BYTE_DEPTH
+#define MODEL_LOCATION      VIT_MODEL_IN_RAM
 
 #define DEVICE_ID           VIT_IMXRT1170
 
 #define MEMORY_ALIGNMENT    8 // in bytes
+
+#define VIT_MEM_INFO        1   // Print VIT memory usage
+#define CPU_PROFILING       1   // Enable VIT and VoiceSeeker profiling of CPU usage
+#define MIC_DB              1   // Calculate dB of mic data
+
+
+#define DEMO_FRAME_MS       (10)    // Only 10 or 30 ms supported by VIT
+#define SAMPLES_PER_FRAME   (VIT_SAMPLE_RATE * DEMO_FRAME_MS / 1000U)
+#define WINDOW_FRAMES       (1000 / DEMO_FRAME_MS)  // One measurement per ~1s
+
 
 static VIT_Handle_t VITHandle = PL_NULL;      // VIT handle pointer
 static VIT_InstanceParams_st VITInstParams;   // VIT instance parameters structure
@@ -44,7 +56,7 @@ static PL_BOOL InitPhase_Error        = PL_FALSE;
 static VIT_DataIn_st VIT_InputBuffers = {PL_NULL, PL_NULL,
                                          PL_NULL}; // Resetting Input Buffer addresses provided to VIT_process() API
 static PL_INT8 *pMemory[PL_NR_MEMORY_REGIONS];
-static PL_INT16 DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS];
+static PL_INT16 DeInterleavedBuffer[SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS];
 
 extern EventGroupHandle_t GPH_Process;
 PL_UINT16 cmd_id = 0;
@@ -52,10 +64,58 @@ PL_UINT16 cmd_id = 0;
 #if DEBUG_MIC
 #include <cr_section_macros.h>
 #define TEST_BUFF_DURATION  2U
-#define FRAME_SIZE          (VIT_SAMPLES_PER_FRAME * BYTE_DEPTH * NUMBER_OF_CHANNELS)
+#define FRAME_SIZE          (SAMPLES_PER_FRAME * BYTE_DEPTH * NUMBER_OF_CHANNELS)
 #define TEST_BUFF_SIZE      (VIT_SAMPLE_RATE * BYTE_DEPTH * NUMBER_OF_CHANNELS * TEST_BUFF_DURATION)
 __BSS(BOARD_SDRAM) int8_t debug_pcm_buffer[TEST_BUFF_SIZE];
 int AudioIoFrameCnt = 0;
+#endif
+
+
+#if CPU_PROFILING
+static uint32_t cpu_profiling_count = 0;
+static uint32_t cycles[WINDOW_FRAMES] = { 0 };
+#endif
+
+#if MIC_DB
+static uint32_t mic_db_count = 0;
+static float rms[NUMBER_OF_CHANNELS+1][WINDOW_FRAMES] = { 0 };
+static float float_inputBuffer[SAMPLES_PER_FRAME] = { 0 };
+#endif
+
+__BSS(SRAM_OC1) SDK_ALIGN(static uint8_t ocram_slow_data_region[216 * 1024], + MEMORY_ALIGNMENT);
+AT_QUICKACCESS_SECTION_DATA_ALIGN(static uint8_t dtc_fast_data_region[136 * 1024], MEMORY_ALIGNMENT);
+AT_QUICKACCESS_SECTION_DATA_ALIGN(static uint8_t dtc_fast_coef_region[10 * 1024], MEMORY_ALIGNMENT);
+AT_QUICKACCESS_SECTION_DATA_ALIGN(static uint8_t dtc_fast_temp_region[48  * 1024], MEMORY_ALIGNMENT);
+
+
+/****************************************************************************************/
+/*                                                                                      */
+/*  Functions                                                                            */
+/*                                                                                      */
+/****************************************************************************************/
+#if CPU_PROFILING
+static void enableCpuCycleCounter(void)
+{
+    /* Make sure the DWT trace fucntion is enabled. */
+    if (CoreDebug_DEMCR_TRCENA_Msk != (CoreDebug_DEMCR_TRCENA_Msk & CoreDebug->DEMCR))
+    {
+        CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+    }
+
+    /* CYCCNT not supported on this device. */
+    assert(DWT_CTRL_NOCYCCNT_Msk != (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk));
+
+    /* Read CYCCNT directly if CYCCENT has already been enabled, otherwise enable CYCCENT first. */
+    if (DWT_CTRL_CYCCNTENA_Msk != (DWT_CTRL_CYCCNTENA_Msk & DWT->CTRL))
+    {
+        DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+    }
+}
+
+static uint32_t getCpuCycleCount(void)
+{
+    return DWT->CYCCNT;
+}
 #endif
 
 VIT_ReturnStatus_en VIT_ModelInfo(void)
@@ -146,9 +206,21 @@ VIT_ReturnStatus_en VIT_ModelInfo(void)
 
 int VIT_Initialize()
 {
-    VIT_ReturnStatus_en VIT_Status;
+    VIT_ReturnStatus_en VIT_Status = VIT_SUCCESS;
+    uint16_t i, minIdx; /* loop index */
+    int32_t temp32;     /* temporary address */
+    int16_t j;          /* loop index */
+    uint16_t order[PL_NR_MEMORY_REGIONS];
 
-    VIT_Status = VIT_SetModel(VIT_Model_Oven, VIT_MODEL_IN_ROM);
+#if CPU_PROFILING
+    enableCpuCycleCounter();
+    cpu_profiling_count = 0;
+#endif
+#if MIC_DB
+    mic_db_count = 0;
+#endif
+
+    VIT_Status = VIT_SetModel(VIT_Model_Oven, MODEL_LOCATION);
 
     if (VIT_Status != VIT_SUCCESS)
     {
@@ -164,7 +236,7 @@ int VIT_Initialize()
      *   Configure VIT Instance Parameters
      */
     VITInstParams.SampleRate_Hz   = VIT_SAMPLE_RATE;
-    VITInstParams.SamplesPerFrame = VIT_SAMPLES_PER_FRAME;
+    VITInstParams.SamplesPerFrame = SAMPLES_PER_FRAME;
     VITInstParams.NumberOfChannel = NUMBER_OF_CHANNELS;
     VITInstParams.DeviceId        = DEVICE_ID;
 
@@ -179,21 +251,99 @@ int VIT_Initialize()
         return VIT_Status;
     }
 
+    /* Initialize order variable */
+    for (i = 0; i < PL_NR_MEMORY_REGIONS; i++)
+    {
+        order[i] = i;
+    }
+
+    /* Sort region indexes by region size */
+    for (i = 0; i < (PL_NR_MEMORY_REGIONS - 1); i++)
+    {
+        minIdx = i;
+        for (j = i + 1; j < PL_NR_MEMORY_REGIONS; j++)
+            if (VITMemoryTable.Region[order[j]].Size < VITMemoryTable.Region[order[minIdx]].Size)
+                minIdx = j;
+
+        /* Swap indexes */
+        temp32        = order[minIdx];
+        order[minIdx] = order[i];
+        order[i]      = temp32;
+    }
+
+    float total_size_allocated = 0;
     /*
      *   Reserve memory space: Malloc for each memory type
      */
-    for (int i = 0; i < PL_NR_MEMORY_REGIONS; i++)
+    for (j = (PL_NR_MEMORY_REGIONS - 1); j >= 0; j--)
     {
         /* Log the memory size */
-        if (VITMemoryTable.Region[i].Size != 0)
+        if (VITMemoryTable.Region[order[j]].Size != 0)
         {
             // reserve memory space
             // NB: VITMemoryTable.Region[PL_MEMREGION_PERSISTENT_FAST_DATA] should be allocated
             //      in the fastest memory of the platform (when possible) - this is not the case in this example.
-            pMemory[i] = OSA_MemoryAllocate(VITMemoryTable.Region[i].Size + MEMORY_ALIGNMENT);
-            VITMemoryTable.Region[i].pBaseAddress = (void *)pMemory[i];
+
+            if (PL_PERSISTENT_SLOW_DATA == order[j])
+            {
+//                pMemory[j] = OSA_MemoryAllocate(VITMemoryTable.Region[order[j]].Size + MEMORY_ALIGNMENT);
+                pMemory[j] = &ocram_slow_data_region[0];
+            }
+            else if (PL_PERSISTENT_FAST_DATA == order[j])
+            {
+                pMemory[j] = &dtc_fast_data_region[0];
+            }
+            else if (PL_PERSISTENT_FAST_COEF == order[j])
+            {
+                pMemory[j] = &dtc_fast_coef_region[0];
+            }
+            else if (PL_TEMPORARY_FAST == order[j])
+            {
+                pMemory[j] = &dtc_fast_temp_region[0];
+            }
+            if (!pMemory[j])
+            {
+                return VIT_INVALID_NULLADDRESS;
+            }
+            VITMemoryTable.Region[order[j]].pBaseAddress = (void *)pMemory[j];
+
+#if VIT_MEM_INFO
+            PRINTF(" VITMemoryTable.Region[");
+            PRINTF("%s", order[j] == PL_PERSISTENT_SLOW_DATA ? "SLOW_DATA" :
+                    order[j] == PL_PERSISTENT_FAST_DATA ? "FAST_DATA" :
+                    order[j] == PL_PERSISTENT_FAST_COEF ? "FAST_COEF" :
+                    order[j] == PL_TEMPORARY_FAST ? "TEMP_FAST" : "UNKNOWN");
+            PRINTF("] @ 0x%x", VITMemoryTable.Region[order[j]].pBaseAddress);
+            PRINTF(" Size = %.2f kB\r\n", (float)(VITMemoryTable.Region[order[j]].Size) / 1024.0f);
+            total_size_allocated += (float)(VITMemoryTable.Region[order[j]].Size) / 1024.0f;
+#endif
         }
     }
+
+#if VIT_MEM_INFO
+    float vit_model_size_kb = (float) sizeof(VIT_Model_Oven) / 1024.0f;
+    float vit_model_ram_size = 0;
+
+    PRINTF(" Total Size Allocated = %.2f kB\r\n", total_size_allocated);
+    if (MODEL_LOCATION == VIT_MODEL_IN_ROM)
+        PRINTF(" VIT Model located in ROM");
+    else if (MODEL_LOCATION == VIT_MODEL_IN_RAM)
+        PRINTF(" VIT Model located in RAM");
+
+    PRINTF(" @ 0x%x", &VIT_Model_Oven);
+    PRINTF(" Size = %.2f kB\r\n", vit_model_size_kb);
+
+    if ((int) &VIT_Model_Oven[0] & 0xFF000000 == 0x30000000)
+    {
+        vit_model_ram_size = 0; // Model placed in flash
+    }
+    else if ((int) &VIT_Model_Oven[0] & 0xFF000000 == 0x20000000)
+    {
+        vit_model_ram_size = vit_model_size_kb; // Model placed in RAM (CM33 system bus)
+    }
+
+    PRINTF("\r\n Total RAM = %.2f kB\r\n", total_size_allocated + vit_model_ram_size);
+#endif
 
     /*
      *    Create VIT Instance
@@ -259,12 +409,16 @@ int VIT_Execute(void *inputBuffer, int size)
 
     VIT_DetectionStatus_en VIT_DetectionResults = VIT_NO_DETECTION; // VIT detection result
 
-    if (size != VIT_SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS * BYTE_DEPTH)
+#if CPU_PROFILING
+    uint32_t tic = 0, toc = 0;
+#endif
+
+    if (size != SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS * BYTE_DEPTH)
     {
         PRINTF("Input buffer format issue\r\n");
         return VIT_INVALID_FRAME_SIZE;
     }
-    DeInterleave(inputBuffer, DeInterleavedBuffer, VIT_SAMPLES_PER_FRAME, NUMBER_OF_CHANNELS);
+    DeInterleave(inputBuffer, DeInterleavedBuffer, SAMPLES_PER_FRAME, NUMBER_OF_CHANNELS);
 
 #if DEBUG_MIC
      // Copy float vector to debug_buffer
@@ -297,20 +451,27 @@ int VIT_Execute(void *inputBuffer, int size)
     else if (VITInstParams.NumberOfChannel == _2CHAN)
     {
         VIT_InputBuffers.pBuffer_Chan1 = DeInterleavedBuffer;
-        VIT_InputBuffers.pBuffer_Chan2 = &DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * 1];
+        VIT_InputBuffers.pBuffer_Chan2 = &DeInterleavedBuffer[SAMPLES_PER_FRAME * 1];
         VIT_InputBuffers.pBuffer_Chan3 = PL_NULL;
     }
     else if (VITInstParams.NumberOfChannel == _3CHAN)
     {
         VIT_InputBuffers.pBuffer_Chan1 = DeInterleavedBuffer;
-        VIT_InputBuffers.pBuffer_Chan2 = &DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * 1];
-        VIT_InputBuffers.pBuffer_Chan3 = &DeInterleavedBuffer[VIT_SAMPLES_PER_FRAME * 2];
+        VIT_InputBuffers.pBuffer_Chan2 = &DeInterleavedBuffer[SAMPLES_PER_FRAME * 1];
+        VIT_InputBuffers.pBuffer_Chan3 = &DeInterleavedBuffer[SAMPLES_PER_FRAME * 2];
     }
 
+#if CPU_PROFILING
+     __disable_irq();
+    tic = getCpuCycleCount();
+#endif
     VIT_Status = VIT_Process(VITHandle,
                              &VIT_InputBuffers, // temporal audio input data
                              &VIT_DetectionResults);
-
+#if CPU_PROFILING
+    toc = getCpuCycleCount();
+     __enable_irq();
+#endif
     if (VIT_Status != VIT_SUCCESS)
     {
         PRINTF("VIT_Process error: %d\r\n", VIT_Status);
@@ -374,6 +535,67 @@ int VIT_Execute(void *inputBuffer, int size)
             }
         }
     }
+
+#if CPU_PROFILING
+    uint32_t avg_cycles = 0, max_cycles = 0;
+    uint32_t max_index = 0;
+
+    cycles[cpu_profiling_count % WINDOW_FRAMES] = toc - tic;
+
+    if (cpu_profiling_count == 0)
+    {
+        PRINTF("\r\n VIT MHz");
+        PRINTF("\r\n Avg\tMax");
+    }
+    /* Calculate CPU usage for one window */
+    if ((cpu_profiling_count + 1) % WINDOW_FRAMES == 0)
+    {
+        /* VIT */
+        arm_mean_q31(cycles, WINDOW_FRAMES, &avg_cycles);
+        arm_max_q31(cycles, WINDOW_FRAMES, &max_cycles, &max_index);
+
+        /* Adjust for 1s of CPU usage depending on window size */
+        PRINTF("\r\n %.2f", ((float) avg_cycles * WINDOW_FRAMES) / 1000000.0f);
+        PRINTF("\t%.2f", ((float) max_cycles * WINDOW_FRAMES) / 1000000.0f);
+
+    }
+    cpu_profiling_count++;
+#endif
+
+#if MIC_DB
+    for (uint8_t ch = 0; ch < NUMBER_OF_CHANNELS; ch++)
+    {
+        float sum[NUMBER_OF_CHANNELS] = { 0 };
+
+        PL_INT16 *InputTempDataINT16 = (PL_INT16*) DeInterleavedBuffer;
+
+        arm_q15_to_float(&InputTempDataINT16[SAMPLES_PER_FRAME * ch], &float_inputBuffer[0], SAMPLES_PER_FRAME);
+        /* Get RMS value */
+        arm_rms_f32(&float_inputBuffer[0], SAMPLES_PER_FRAME, &rms[ch][mic_db_count % WINDOW_FRAMES]);
+
+        if (mic_db_count == 0)
+        {
+            PRINTF("\tch%d dB", ch);
+        }
+        /* Calculate average values for the selected window */
+        if ((mic_db_count + 1) % WINDOW_FRAMES == 0)
+        {
+            float avg_rms[NUMBER_OF_CHANNELS] = { 0 };
+            float value_dB[NUMBER_OF_CHANNELS] = { 0 };
+            float value_dBFS[NUMBER_OF_CHANNELS] = { 0 };
+
+            arm_mean_f32(&rms[ch][0], WINDOW_FRAMES, &avg_rms[ch]);
+
+            /* Convert to dB and dBFS */
+            value_dB[ch] = 20 * log10f(avg_rms[ch]);
+            value_dBFS[ch] = 20 * log10f(avg_rms[ch]) + 3.0103f;
+
+            PRINTF("\t%.2f", value_dB[ch]);
+        }
+    }
+    mic_db_count++;
+#endif
+
     return VIT_Status;
 }
 
@@ -425,7 +647,7 @@ void DeInterleave(const PL_INT16 *pDataInput, PL_INT16 *pDataOutput, PL_UINT16 F
 
 void VIT_Task(void *pvParameters)
 {
-    uint8_t buff[VIT_SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS * BYTE_DEPTH];
+    uint8_t buff[SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS * BYTE_DEPTH];
 
     MIC_Init();
     VIT_Initialize();
