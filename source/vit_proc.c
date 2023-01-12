@@ -25,8 +25,9 @@
 #endif
 
 #include "mic_proc.h"
-#include "board.h"
 #include "arm_math.h"
+#include <cr_section_macros.h>
+#include "board.h"
 
 #define VIT_CMD_TIME_SPAN   3
 
@@ -48,6 +49,9 @@
 #define WINDOW_FRAMES       (1000 / DEMO_FRAME_MS)  // One measurement per ~1s
 
 
+#define EXAMPLE_SW_GPIO         BOARD_USER_BUTTON_GPIO
+#define EXAMPLE_SW_GPIO_PIN     BOARD_USER_BUTTON_GPIO_PIN
+
 static VIT_Handle_t VITHandle = PL_NULL;      // VIT handle pointer
 static VIT_InstanceParams_st VITInstParams;   // VIT instance parameters structure
 static VIT_ControlParams_st VITControlParams; // VIT control parameters structure
@@ -62,7 +66,6 @@ extern EventGroupHandle_t GPH_Process;
 PL_UINT16 cmd_id = 0;
 
 #if DEBUG_MIC
-#include <cr_section_macros.h>
 #define TEST_BUFF_DURATION  2U
 #define FRAME_SIZE          (SAMPLES_PER_FRAME * BYTE_DEPTH * NUMBER_OF_CHANNELS)
 #define TEST_BUFF_SIZE      (VIT_SAMPLE_RATE * BYTE_DEPTH * NUMBER_OF_CHANNELS * TEST_BUFF_DURATION)
@@ -82,10 +85,10 @@ static float rms[NUMBER_OF_CHANNELS+1][WINDOW_FRAMES] = { 0 };
 static float float_inputBuffer[SAMPLES_PER_FRAME] = { 0 };
 #endif
 
-__BSS(SRAM_OC1) SDK_ALIGN(static uint8_t ocram_slow_data_region[216 * 1024], + MEMORY_ALIGNMENT);
-AT_QUICKACCESS_SECTION_DATA_ALIGN(static uint8_t dtc_fast_data_region[136 * 1024], MEMORY_ALIGNMENT);
-AT_QUICKACCESS_SECTION_DATA_ALIGN(static uint8_t dtc_fast_coef_region[10 * 1024], MEMORY_ALIGNMENT);
-AT_QUICKACCESS_SECTION_DATA_ALIGN(static uint8_t dtc_fast_temp_region[48  * 1024], MEMORY_ALIGNMENT);
+__BSS(SRAM_OC1) SDK_ALIGN(static PL_INT8 ocram_slow_data_region[216 * 1024], MEMORY_ALIGNMENT);
+AT_QUICKACCESS_SECTION_DATA_ALIGN(static PL_INT8 dtc_fast_data_region[136 * 1024], MEMORY_ALIGNMENT);
+AT_QUICKACCESS_SECTION_DATA_ALIGN(static PL_INT8 dtc_fast_coef_region[10 * 1024], MEMORY_ALIGNMENT);
+AT_QUICKACCESS_SECTION_DATA_ALIGN(static PL_INT8 dtc_fast_temp_region[48  * 1024], MEMORY_ALIGNMENT);
 
 
 /****************************************************************************************/
@@ -314,7 +317,7 @@ int VIT_Initialize()
                     order[j] == PL_PERSISTENT_FAST_COEF ? "FAST_COEF" :
                     order[j] == PL_TEMPORARY_FAST ? "TEMP_FAST" : "UNKNOWN");
             PRINTF("] @ 0x%x", VITMemoryTable.Region[order[j]].pBaseAddress);
-            PRINTF(" Size = %.2f kB\r\n", (float)(VITMemoryTable.Region[order[j]].Size) / 1024.0f);
+            PRINTF(" Size = %.1f kB\r\n", (float)(VITMemoryTable.Region[order[j]].Size) / 1024.0f);
             total_size_allocated += (float)(VITMemoryTable.Region[order[j]].Size) / 1024.0f;
 #endif
         }
@@ -324,25 +327,25 @@ int VIT_Initialize()
     float vit_model_size_kb = (float) sizeof(VIT_Model_Oven) / 1024.0f;
     float vit_model_ram_size = 0;
 
-    PRINTF(" Total Size Allocated = %.2f kB\r\n", total_size_allocated);
+    PRINTF(" RAM Allocated = %.1f kB\r\n", total_size_allocated);
     if (MODEL_LOCATION == VIT_MODEL_IN_ROM)
-        PRINTF(" VIT Model located in ROM");
+        PRINTF(" VIT_MODEL_IN_ROM");
     else if (MODEL_LOCATION == VIT_MODEL_IN_RAM)
-        PRINTF(" VIT Model located in RAM");
+        PRINTF(" VIT_MODEL_IN_RAM");
 
-    PRINTF(" @ 0x%x", &VIT_Model_Oven);
-    PRINTF(" Size = %.2f kB\r\n", vit_model_size_kb);
+    PRINTF(" @ 0x%x", &VIT_Model_Oven[0]);
+    PRINTF(" Size = %.1f kB\r\n", vit_model_size_kb);
 
-    if ((int) &VIT_Model_Oven[0] & 0xFF000000 == 0x30000000)
+    if (((int) &VIT_Model_Oven[0] & 0xFF000000) == 0x30000000)
     {
         vit_model_ram_size = 0; // Model placed in flash
     }
-    else if ((int) &VIT_Model_Oven[0] & 0xFF000000 == 0x20000000)
+    else if (((int) &VIT_Model_Oven[0] & 0xFF000000) == 0x20000000)
     {
         vit_model_ram_size = vit_model_size_kb; // Model placed in RAM (CM33 system bus)
     }
 
-    PRINTF("\r\n Total RAM = %.2f kB\r\n", total_size_allocated + vit_model_ram_size);
+    PRINTF("\r\n VIT Total RAM = %.1f kB\r\n", total_size_allocated + vit_model_ram_size);
 #endif
 
     /*
@@ -397,7 +400,6 @@ int VIT_Initialize()
     }
 
     PRINTF("\n[VIT] Started\r\n");
-
     return VIT_Status;
 }
 
@@ -555,8 +557,8 @@ int VIT_Execute(void *inputBuffer, int size)
         arm_max_q31(cycles, WINDOW_FRAMES, &max_cycles, &max_index);
 
         /* Adjust for 1s of CPU usage depending on window size */
-        PRINTF("\r\n %.2f", ((float) avg_cycles * WINDOW_FRAMES) / 1000000.0f);
-        PRINTF("\t%.2f", ((float) max_cycles * WINDOW_FRAMES) / 1000000.0f);
+        PRINTF("\r\n %.1f", ((float) avg_cycles * WINDOW_FRAMES) / 1000000.0f);
+        PRINTF("\t%.1f", ((float) max_cycles * WINDOW_FRAMES) / 1000000.0f);
 
     }
     cpu_profiling_count++;
@@ -590,12 +592,11 @@ int VIT_Execute(void *inputBuffer, int size)
             value_dB[ch] = 20 * log10f(avg_rms[ch]);
             value_dBFS[ch] = 20 * log10f(avg_rms[ch]) + 3.0103f;
 
-            PRINTF("\t%.2f", value_dB[ch]);
+            PRINTF("\t%.1f", value_dB[ch]);
         }
     }
     mic_db_count++;
 #endif
-
     return VIT_Status;
 }
 
@@ -649,19 +650,37 @@ void VIT_Task(void *pvParameters)
 {
     uint8_t buff[SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS * BYTE_DEPTH];
 
+    /* Define the init structure for the input switch pin */
+    gpio_pin_config_t sw_config = {
+        kGPIO_DigitalInput,
+        0,
+        kGPIO_IntRisingEdge,
+    };
+
     MIC_Init();
     VIT_Initialize();
 
+    GPIO_PinInit(EXAMPLE_SW_GPIO, EXAMPLE_SW_GPIO_PIN, &sw_config);
+
     while (1)
     {
+        if(MIC_GetStatus())
+        {
+            PRINTF("[VIT] mic buffer overflow\r\n");
+        }
+
         if(MIC_Read(buff, sizeof(buff)) == 0)
         {
-            VIT_Execute(buff, sizeof(buff));
+            if (1 == GPIO_PinRead(EXAMPLE_SW_GPIO, EXAMPLE_SW_GPIO_PIN))
+            {
+                VIT_Execute(buff, sizeof(buff));
+            }
         }
         else
         {
             PRINTF("[VIT] Error: no mic data\r\n");
         }
+
     }
 }
 
