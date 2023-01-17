@@ -14,5 +14,6 @@
 void MIC_Init(void);
 void MIC_Close();
 int MIC_Read(uint8_t *data, uint32_t size);
+int MIC_GetStatus();
 
 #endif /* MIC_PROC_H_ */

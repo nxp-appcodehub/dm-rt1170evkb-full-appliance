@@ -1,0 +1,8 @@
+        *(.data.$${memory.alias})
+        *(.data.$${memory.name})
+        *(.data.$${memory.alias}.*)
+        *(.data.$${memory.name}.*)
+<#if memory.name=="SRAM_ITC_cm7">
+        *libVIT_CM7_v05_06_00.a:(.text*)
+</#if>
+

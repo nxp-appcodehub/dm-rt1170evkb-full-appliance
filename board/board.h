@@ -12,6 +12,7 @@
 #include "fsl_common.h"
 #include "fsl_gpio.h"
 #include "fsl_clock.h"
+#include "pin_mux.h"
 
 /*******************************************************************************
  * Definitions
@@ -84,6 +85,19 @@
 #define USER_LED_TOGGLE()                                       \
     GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, \
                   0x1 ^ GPIO_PinRead(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN)) /*!< Toggle target USER_LED */
+
+#define D0_On()     GPIO_PinWrite(TEST_GPIO_D0_PERIPHERAL, TEST_GPIO_D0_CHANNEL, 1)
+#define D1_On()     GPIO_PinWrite(TEST_GPIO_D1_PERIPHERAL, TEST_GPIO_D1_CHANNEL, 1)
+#define D2_On()     GPIO_PinWrite(TEST_GPIO_D2_PERIPHERAL, TEST_GPIO_D2_CHANNEL, 1)
+#define D3_On()     GPIO_PinWrite(TEST_GPIO_D3_PERIPHERAL, TEST_GPIO_D3_CHANNEL, 1)
+#define D4_On()     GPIO_PinWrite(TEST_GPIO_D4_PERIPHERAL, TEST_GPIO_D4_CHANNEL, 1)
+#define D5_On()     GPIO_PinWrite(TEST_GPIO_D5_PERIPHERAL, TEST_GPIO_D5_CHANNEL, 1)
+#define D0_Off()    GPIO_PinWrite(TEST_GPIO_D0_PERIPHERAL, TEST_GPIO_D0_CHANNEL, 0)
+#define D1_Off()    GPIO_PinWrite(TEST_GPIO_D1_PERIPHERAL, TEST_GPIO_D1_CHANNEL, 0)
+#define D2_Off()    GPIO_PinWrite(TEST_GPIO_D2_PERIPHERAL, TEST_GPIO_D2_CHANNEL, 0)
+#define D3_Off()    GPIO_PinWrite(TEST_GPIO_D3_PERIPHERAL, TEST_GPIO_D3_CHANNEL, 0)
+#define D4_Off()    GPIO_PinWrite(TEST_GPIO_D4_PERIPHERAL, TEST_GPIO_D4_CHANNEL, 0)
+#define D5_Off()    GPIO_PinWrite(TEST_GPIO_D5_PERIPHERAL, TEST_GPIO_D5_CHANNEL, 0)
 
 /*! @brief Define the port interrupt number for the board switches */
 #ifndef BOARD_USER_BUTTON_GPIO

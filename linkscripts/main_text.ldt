@@ -1,0 +1,2 @@
+       *(EXCLUDE_FILE(*libVIT_CM7_v05_06_00.a:) .text*)
+

@@ -40,7 +40,7 @@
 
 /* DMA/PDM Buffers */
 #define RECORD_BUFFER_SIZE      (VIT_SAMPLES_PER_FRAME * PDM_BYTE_DEPTH * DEMO_CHANNEL_NUM)
-#define BUFFER_NUM              (3U)
+#define BUFFER_NUM              (5U)
 #define BUFFER_SIZE             (RECORD_BUFFER_SIZE * BUFFER_NUM)
 
 /*******************************************************************************
@@ -71,11 +71,19 @@ static pdm_channel_config_t channelConfig = {
 };
 
 static SemaphoreHandle_t semaphoreRX;
+static bool mic_over_flow_flag = false;
 
 static void pdmRxCallback(PDM_Type *base, pdm_edma_handle_t *handle, status_t status, void *userData)
 {
     BaseType_t reschedule = -1;
-    xSemaphoreGiveFromISR(semaphoreRX, &reschedule);
+    if (pdFALSE == xSemaphoreGiveFromISR(semaphoreRX, &reschedule))
+    {
+        /* Semaphore full, move read index */
+        mic_over_flow_flag = true;
+        s_readIndex += RECORD_BUFFER_SIZE;
+        if (s_readIndex >= BUFFER_SIZE)
+            s_readIndex -= BUFFER_SIZE;
+    }
     portYIELD_FROM_ISR(reschedule);
 }
 
@@ -127,7 +135,8 @@ void MIC_Init(void)
         s_receiveXfer[ibuf].linkTransfer = &s_receiveXfer[ibuf_next];
     }
 
-    semaphoreRX = xSemaphoreCreateBinary();
+    /* Create semaphore for each buffer, except one that will always be filling by DMA */
+    semaphoreRX = xSemaphoreCreateCounting(BUFFER_NUM - 1, 0);
     PDM_TransferReceiveEDMA(DEMO_PDM, &pdmRxHandle, &s_receiveXfer[0]);
 }
 
@@ -149,4 +158,11 @@ int MIC_Read(uint8_t *data, uint32_t size)
         s_readIndex -= BUFFER_SIZE;
 
     return 0;
+}
+
+int MIC_GetStatus()
+{
+    int status = mic_over_flow_flag;
+    mic_over_flow_flag = false;
+    return status;
 }
