@@ -118,7 +118,7 @@ void BOARD_InitMipiPanelPins(void);           /* Function assigned for the Corte
  */
 void BOARD_InitMicPins(void);                 /* Function assigned for the Cortex-M7F */
 
-#define BOARD_INITTESTPINS_IOMUXC_GPR_GPR42_GPIO_MUX3_GPIO_SEL_LOW_MASK 0x08U /*!< GPIO3 and CM7_GPIO3 share same IO MUX function, GPIO_MUX3 selects one GPIO function: affected bits mask */
+#define BOARD_INITTESTPINS_IOMUXC_GPR_GPR42_GPIO_MUX3_GPIO_SEL_LOW_MASK 0x38U /*!< GPIO3 and CM7_GPIO3 share same IO MUX function, GPIO_MUX3 selects one GPIO function: affected bits mask */
 
 /* GPIO_DISP_B2_11 (coord A6), LPUART2_RXD/BT_UART_RXD/U16[3]/U355[20]/J9[2] */
 /* Routed pin properties */
@@ -143,6 +143,18 @@ void BOARD_InitMicPins(void);                 /* Function assigned for the Corte
 #define TEST_GPIO_D3_PERIPHERAL                                            GPIO3   /*!< Peripheral name */
 #define TEST_GPIO_D3_SIGNAL                                          gpio_mux_io   /*!< Signal name */
 #define TEST_GPIO_D3_CHANNEL                                                  3U   /*!< Signal channel */
+
+/* GPIO_AD_06 (coord N13), USB_OTG2_OC/U18[A2]/J9[10]/AUD_INT */
+/* Routed pin properties */
+#define TEST_GPIO_D4_PERIPHERAL                                            GPIO3   /*!< Peripheral name */
+#define TEST_GPIO_D4_SIGNAL                                          gpio_mux_io   /*!< Signal name */
+#define TEST_GPIO_D4_CHANNEL                                                  5U   /*!< Signal channel */
+
+/* GPIO_AD_05 (coord P13), SIM1_PWR_FAIL/J9[12]/J25[5]/LCD_LPTE */
+/* Routed pin properties */
+#define TEST_GPIO_D5_PERIPHERAL                                            GPIO3   /*!< Peripheral name */
+#define TEST_GPIO_D5_SIGNAL                                          gpio_mux_io   /*!< Signal name */
+#define TEST_GPIO_D5_CHANNEL                                                  4U   /*!< Signal channel */
 
 /*!
  * @brief Configures pin routing and optionally pin electrical features.

@@ -174,36 +174,36 @@ VIT_ReturnStatus_en VIT_ModelInfo(void)
     /*
      *   VIT Get Library information
      */
-//    VIT_LibInfo_st Lib_Info;
-//    VIT_Status = VIT_GetLibInfo(&Lib_Info);
-//    if (VIT_Status != VIT_SUCCESS)
-//    {
-//        PRINTF("VIT_GetLibInfo error: %d\r\n", VIT_Status);
-//        return VIT_INVALID_STATE;
-//    }
-//    PRINTF("\n  VIT Lib Info\r\n");
-//    PRINTF("  VIT LIB Release: 0x%04x\r\n", Lib_Info.VIT_LIB_Release);
-//    PRINTF("  VIT Features supported by the lib: 0x%04x\r\n", Lib_Info.VIT_Features_Supported);
-//    PRINTF("  Number of channels supported by VIT lib: %d\r\n", Lib_Info.NumberOfChannels_Supported);
-//    if (Lib_Info.WakeWord_In_Text2Model)
-//    {
-//        PRINTF("  VIT WakeWord in Text2Model\r\n\r\n");
-//    }
-//    else
-//    {
-//        PRINTF("  VIT WakeWord in Audio2Model\r\n\r\n");
-//    }
-//    /*
-//     *   Configure VIT Instance Parameters
-//     */
-//    // Check that NUMBER_OF_CHANNELS is supported by VIT
-//    // Retrieve from VIT_GetLibInfo API the number of channel supported by the VIT lib
-//    PL_UINT16 max_nb_of_Channels = Lib_Info.NumberOfChannels_Supported;
-//    if (NUMBER_OF_CHANNELS > max_nb_of_Channels)
-//    {
-//        PRINTF("VIT lib is supporting only: %d channels\r\n", max_nb_of_Channels);
-//        return VIT_INVALID_PARAMETER_OUTOFRANGE;
-//    }
+    VIT_LibInfo_st Lib_Info;
+    VIT_Status = VIT_GetLibInfo(&Lib_Info);
+    if (VIT_Status != VIT_SUCCESS)
+    {
+        PRINTF("VIT_GetLibInfo error: %d\r\n", VIT_Status);
+        return VIT_INVALID_STATE;
+    }
+    PRINTF("\n  VIT Lib Info\r\n");
+    PRINTF("  VIT LIB Release: 0x%04x\r\n", Lib_Info.VIT_LIB_Release);
+    PRINTF("  VIT Features supported by the lib: 0x%04x\r\n", Lib_Info.VIT_Features_Supported);
+    PRINTF("  Number of channels supported by VIT lib: %d\r\n", Lib_Info.NumberOfChannels_Supported);
+    if (Lib_Info.WakeWord_In_Text2Model)
+    {
+        PRINTF("  VIT WakeWord in Text2Model\r\n\r\n");
+    }
+    else
+    {
+        PRINTF("  VIT WakeWord in Audio2Model\r\n\r\n");
+    }
+    /*
+     *   Configure VIT Instance Parameters
+     */
+    // Check that NUMBER_OF_CHANNELS is supported by VIT
+    // Retrieve from VIT_GetLibInfo API the number of channel supported by the VIT lib
+    PL_UINT16 max_nb_of_Channels = Lib_Info.NumberOfChannels_Supported;
+    if (NUMBER_OF_CHANNELS > max_nb_of_Channels)
+    {
+        PRINTF("VIT lib is supporting only: %d channels\r\n", max_nb_of_Channels);
+        return VIT_INVALID_PARAMETER_OUTOFRANGE;
+    }
     return VIT_SUCCESS;
 }
 
@@ -648,6 +648,7 @@ void DeInterleave(const PL_INT16 *pDataInput, PL_INT16 *pDataOutput, PL_UINT16 F
 
 void VIT_Task(void *pvParameters)
 {
+    vTaskSetApplicationTaskTag( NULL, ( void * ) 3 );
     uint8_t buff[SAMPLES_PER_FRAME * NUMBER_OF_CHANNELS * BYTE_DEPTH];
 
     /* Define the init structure for the input switch pin */

@@ -65,6 +65,7 @@ static void print_cb(const char *buf)
 
 static void Graphics_Process (void *pvParameters)
 {
+    vTaskSetApplicationTaskTag( NULL, ( void * ) 2 );
 
 	EventBits_t event_bits;
 
@@ -95,6 +96,8 @@ static void AppTask(void *param)
 	lv_log_register_print_cb(print_cb);
 #endif
 
+	vTaskSetApplicationTaskTag( NULL, ( void * ) 1 );
+
 	lv_port_pre_init();
 	lv_init();
 	lv_port_disp_init();
@@ -108,7 +111,11 @@ static void AppTask(void *param)
 
 	for (;;)
 	{
+        D5_On();
 		lv_task_handler();
+        D5_Off();
+        vTaskDelay(1);
+
 	}
 }
 
@@ -140,6 +147,9 @@ int main(void)
 	BOARD_MIPIPanelTouch_I2C_Init();
 	BOARD_InitTestPins();
 	BOARD_InitDebugConsole();
+
+	D0_On();	D1_On();	D2_On();	D3_On();	D4_On();	D5_On();
+	D0_Off();	D1_Off();	D2_Off();	D3_Off();	D4_Off();	D5_Off();
 
 	CLOCK_InitAudioPll(&audioPllConfig);
 

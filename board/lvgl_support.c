@@ -276,7 +276,8 @@ void lv_port_disp_init(void)
     disp_drv.draw_buf = &disp_buf;
 
     /* Partial refresh */
-    disp_drv.full_refresh = 1;
+    disp_drv.full_refresh = 0;
+    disp_drv.direct_mode = 1;
 
     /*Finally register the driver*/
     lv_disp_drv_register(&disp_drv);
@@ -332,6 +333,7 @@ static void DEMO_WaitBufferSwitchOff(void)
 
 static void DEMO_FlushDisplay(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p)
 {
+    D2_On();
 #if DEMO_USE_ROTATE
 
     /*
@@ -401,6 +403,7 @@ static void DEMO_FlushDisplay(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv
      * Inform the graphics library that you are ready with the flushing*/
     lv_disp_flush_ready(disp_drv);
 #endif /* DEMO_USE_ROTATE */
+    D2_Off();
 }
 
 void lv_port_indev_init(void)
@@ -478,6 +481,7 @@ static void DEMO_InitTouch(void)
 /* Will be called by the library to read the touchpad */
 static void DEMO_ReadTouch(lv_indev_drv_t *drv, lv_indev_data_t *data)
 {
+    D4_On();
     static int touch_x = 0;
     static int touch_y = 0;
 
@@ -498,6 +502,7 @@ static void DEMO_ReadTouch(lv_indev_drv_t *drv, lv_indev_data_t *data)
     data->point.x = touch_x * DEMO_PANEL_WIDTH / s_touchResolutionX;
     data->point.y = touch_y * DEMO_PANEL_HEIGHT / s_touchResolutionY;
 #endif
+    D4_Off();
 }
 
 #if LV_USE_GPU_NXP_VG_LITE

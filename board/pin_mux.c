@@ -17,6 +17,8 @@ pin_labels:
 - {pin_num: A6, pin_signal: GPIO_DISP_B2_11, label: 'LPUART2_RXD/BT_UART_RXD/U16[3]/U355[20]/J9[2]', identifier: BT_UART_RXD;D0}
 - {pin_num: B6, pin_signal: GPIO_DISP_B2_12, label: 'RGMII1_PHY_INTB/U10[31]/BT_UART_CTS/U16[5]/U355[19]/J9[6]', identifier: GPIO_DISP_B2_12;D2}
 - {pin_num: M13, pin_signal: GPIO_AD_04, label: 'SIM1_PD/J44[C8]/USER_LED_CTL1/J9[8]/J25[7]', identifier: SIM1_PD;D3}
+- {pin_num: P13, pin_signal: GPIO_AD_05, label: 'SIM1_PWR_FAIL/J9[12]/J25[5]/LCD_LPTE', identifier: SIM1_PWR_FAIL;D5}
+- {pin_num: N13, pin_signal: GPIO_AD_06, label: 'USB_OTG2_OC/U18[A2]/J9[10]/AUD_INT', identifier: D4}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -226,6 +228,8 @@ BOARD_InitTestPins:
   - {pin_num: D9, peripheral: GPIO5, signal: 'gpio_mux_io, 11', pin_signal: GPIO_DISP_B2_10, identifier: D1, direction: OUTPUT}
   - {pin_num: B6, peripheral: GPIO5, signal: 'gpio_mux_io, 13', pin_signal: GPIO_DISP_B2_12, identifier: D2, direction: OUTPUT}
   - {pin_num: M13, peripheral: GPIO3, signal: 'gpio_mux_io, 03', pin_signal: GPIO_AD_04, identifier: D3, direction: OUTPUT}
+  - {pin_num: N13, peripheral: GPIO3, signal: 'gpio_mux_io, 05', pin_signal: GPIO_AD_06, direction: OUTPUT}
+  - {pin_num: P13, peripheral: GPIO3, signal: 'gpio_mux_io, 04', pin_signal: GPIO_AD_05, identifier: D5, direction: OUTPUT}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -246,6 +250,24 @@ void BOARD_InitTestPins(void) {
   };
   /* Initialize GPIO functionality on GPIO_AD_04 (pin M13) */
   GPIO_PinInit(GPIO3, 3U, &D3_config);
+
+  /* GPIO configuration of D5 on GPIO_AD_05 (pin P13) */
+  gpio_pin_config_t D5_config = {
+      .direction = kGPIO_DigitalOutput,
+      .outputLogic = 0U,
+      .interruptMode = kGPIO_NoIntmode
+  };
+  /* Initialize GPIO functionality on GPIO_AD_05 (pin P13) */
+  GPIO_PinInit(GPIO3, 4U, &D5_config);
+
+  /* GPIO configuration of D4 on GPIO_AD_06 (pin N13) */
+  gpio_pin_config_t D4_config = {
+      .direction = kGPIO_DigitalOutput,
+      .outputLogic = 0U,
+      .interruptMode = kGPIO_NoIntmode
+  };
+  /* Initialize GPIO functionality on GPIO_AD_06 (pin N13) */
+  GPIO_PinInit(GPIO3, 5U, &D4_config);
 
   /* GPIO configuration of D1 on GPIO_DISP_B2_10 (pin D9) */
   gpio_pin_config_t D1_config = {
@@ -276,6 +298,12 @@ void BOARD_InitTestPins(void) {
 
   IOMUXC_SetPinMux(
       IOMUXC_GPIO_AD_04_GPIO_MUX3_IO03,       /* GPIO_AD_04 is configured as GPIO_MUX3_IO03 */
+      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
+  IOMUXC_SetPinMux(
+      IOMUXC_GPIO_AD_05_GPIO_MUX3_IO04,       /* GPIO_AD_05 is configured as GPIO_MUX3_IO04 */
+      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
+  IOMUXC_SetPinMux(
+      IOMUXC_GPIO_AD_06_GPIO_MUX3_IO05,       /* GPIO_AD_06 is configured as GPIO_MUX3_IO05 */
       0U);                                    /* Software Input On Field: Input Path is determined by functionality */
   IOMUXC_SetPinMux(
       IOMUXC_GPIO_DISP_B2_10_GPIO_MUX5_IO11,  /* GPIO_DISP_B2_10 is configured as GPIO_MUX5_IO11 */

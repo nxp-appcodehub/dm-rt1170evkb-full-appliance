@@ -66,7 +66,7 @@
 #define configNUM_THREAD_LOCAL_STORAGE_POINTERS 5
 /* Used memory allocation (heap_x.c) */
 #define configFRTOS_MEMORY_SCHEME               4
-#define configUSE_APPLICATION_TASK_TAG          0
+#define configUSE_APPLICATION_TASK_TAG          1
 
 /* Memory allocation related definitions. */
 #define configSUPPORT_STATIC_ALLOCATION         1
@@ -150,4 +150,38 @@ standard names. */
 
 #define configINCLUDE_FREERTOS_TASK_C_ADDITIONS_H 1
 
+#include "board.h"
+#define traceTASK_SWITCHED_IN()             \
+{   switch((int)pxCurrentTCB->pxTaskTag)    \
+    {                                       \
+    case 1:                                 \
+        D1_On();                            \
+        break;                              \
+    case 2:                                 \
+        break;                              \
+    case 3:                                 \
+        D3_On();                            \
+        break;                              \
+    default:                                \
+        D0_On();                            \
+        break;                              \
+    }                                       \
+}
+
+#define traceTASK_SWITCHED_OUT()            \
+{   switch((int)pxCurrentTCB->pxTaskTag)    \
+    {                                       \
+    case 1:                                 \
+        D1_Off();                           \
+        break;                              \
+    case 2:                                 \
+        break;                              \
+    case 3:                                 \
+        D3_Off();                           \
+        break;                              \
+    default:                                \
+        D0_Off();                           \
+        break;                              \
+    }                                       \
+}
 #endif /* FREERTOS_CONFIG_H */
