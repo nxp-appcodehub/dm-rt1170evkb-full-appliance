@@ -387,7 +387,7 @@
 								<option id="com.crt.advproject.link.cpp.lto.optmization.level.1981654295" name="Link-time optimization level" superClass="com.crt.advproject.link.cpp.lto.optmization.level" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.cpp.thumb.465101690" name="Thumb mode" superClass="com.crt.advproject.link.cpp.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.crt.advproject.link.cpp.manage.1469523604" name="Manage linker script" superClass="com.crt.advproject.link.cpp.manage" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.cpp.script.281257091" name="Linker script" superClass="com.crt.advproject.link.cpp.script" useByScannerDiscovery="false" value="evkmimxrt1170_appliance_aircon_Debug.ld" valueType="string"/>
+								<option id="com.crt.advproject.link.cpp.script.281257091" name="Linker script" superClass="com.crt.advproject.link.cpp.script" useByScannerDiscovery="false" value="evkmimxrt1170_appliance_oven_Debug.ld" valueType="string"/>
 								<option id="com.crt.advproject.link.cpp.scriptdir.979992880" name="Script path" superClass="com.crt.advproject.link.cpp.scriptdir" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.cpp.crpenable.898080129" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.cpp.crpenable" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.cpp.flashconfigenable.1098448271" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.cpp.flashconfigenable" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -919,7 +919,7 @@
 								<option id="com.crt.advproject.link.cpp.fpu.417965532" name="Floating point" superClass="com.crt.advproject.link.cpp.fpu" useByScannerDiscovery="false" value="com.crt.advproject.link.cpp.fpu.fpv5dp.hard" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.cpp.thumb.1470987057" name="Thumb mode" superClass="com.crt.advproject.link.cpp.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.crt.advproject.link.cpp.manage.280877309" name="Manage linker script" superClass="com.crt.advproject.link.cpp.manage" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.cpp.script.924145508" name="Linker script" superClass="com.crt.advproject.link.cpp.script" useByScannerDiscovery="false" value="evkmimxrt1170_appliance_aircon_Release.ld" valueType="string"/>
+								<option id="com.crt.advproject.link.cpp.script.924145508" name="Linker script" superClass="com.crt.advproject.link.cpp.script" useByScannerDiscovery="false" value="evkmimxrt1170_appliance_oven_Release.ld" valueType="string"/>
 								<option id="com.crt.advproject.link.cpp.scriptdir.1887977753" name="Script path" superClass="com.crt.advproject.link.cpp.scriptdir" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.crt.advproject.link.cpp.crpenable.845210932" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.cpp.crpenable" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.cpp.flashconfigenable.467942768" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.cpp.flashconfigenable" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -1130,10 +1130,10 @@
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Debug">
-			<resource resourceType="PROJECT" workspacePath="/evkmimxrt1170_appliance_aircon"/>
+			<resource resourceType="PROJECT" workspacePath="/evkmimxrt1170_appliance_oven"/>
 		</configuration>
 		<configuration configurationName="Release">
-			<resource resourceType="PROJECT" workspacePath="/evkmimxrt1170_appliance_aircon"/>
+			<resource resourceType="PROJECT" workspacePath="/evkmimxrt1170_appliance_oven"/>
 		</configuration>
 	</storageModule>
 </cproject>
