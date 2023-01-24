@@ -334,6 +334,13 @@ static void DEMO_WaitBufferSwitchOff(void)
 static void DEMO_FlushDisplay(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p)
 {
     D2_On();
+
+    if( !lv_disp_flush_is_last( disp_drv ))
+    {
+        lv_disp_flush_ready( disp_drv );
+        D2_Off();
+        return;
+    }
 #if DEMO_USE_ROTATE
 
     /*
