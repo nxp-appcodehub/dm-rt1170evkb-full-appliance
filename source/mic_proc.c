@@ -14,8 +14,7 @@
 #include "fsl_debug_console.h"
 
 #include "mic_proc.h"
-#include "PL_platformTypes_CortexM.h"
-#include "VIT.h"
+#include "vit_proc.h"
 
 /*******************************************************************************
  * Definitions
@@ -28,6 +27,8 @@
 #define DEMO_PDM_CIC_OVERSAMPLE_RATE    (0U)
 #define DEMO_PDM_ENABLE_CHANNEL_0       (0U)
 #define DEMO_PDM_ENABLE_CHANNEL_1       (1U)
+#define DEMO_PDM_ENABLE_CHANNEL_2       (2U)
+#define DEMO_PDM_ENABLE_CHANNEL_3       (3U)
 #define DEMO_PDM_SAMPLE_CLOCK_RATE      (6144000U) /* 6.144MHZ */
 #define DEMO_PDM_CHANNEL_GAIN           kPDM_DfOutputGain4
 #define DEMO_AUDIO_SAMPLE_RATE          (16000)
@@ -39,9 +40,11 @@
 #define DEMO_PDM_REQUEST_SOURCE         kDmaRequestMuxPdm
 
 /* DMA/PDM Buffers */
-#define RECORD_BUFFER_SIZE      (VIT_SAMPLES_PER_FRAME * PDM_BYTE_DEPTH * DEMO_CHANNEL_NUM)
+#define RECORD_BUFFER_SIZE      (SAMPLES_PER_FRAME * PDM_BYTE_DEPTH * DEMO_CHANNEL_NUM)
+#define RECORD_BUFFER_MAX_SIZE  (SAMPLES_PER_FRAME * PDM_BYTE_DEPTH * DEMO_MAX_CHANNEL_NUM)
 #define BUFFER_NUM              (5U)
 #define BUFFER_SIZE             (RECORD_BUFFER_SIZE * BUFFER_NUM)
+#define BUFFER_MAX_SIZE         (RECORD_BUFFER_MAX_SIZE * BUFFER_NUM)
 
 /*******************************************************************************
  * Variables
@@ -49,7 +52,7 @@
 AT_NONCACHEABLE_SECTION_ALIGN(pdm_edma_handle_t pdmRxHandle, 4);
 AT_NONCACHEABLE_SECTION_ALIGN(edma_handle_t dmaRxHandle, 4);
 AT_QUICKACCESS_SECTION_DATA_ALIGN(edma_tcd_t s_edmaTcd[BUFFER_NUM], 32U);
-AT_NONCACHEABLE_SECTION_ALIGN(static uint8_t s_buffer[BUFFER_SIZE], 16);
+AT_NONCACHEABLE_SECTION_ALIGN(static uint8_t s_buffer[BUFFER_MAX_SIZE], 16);
 
 static pdm_edma_transfer_t s_receiveXfer[BUFFER_NUM];
 static volatile uint32_t s_readIndex = 0U;
@@ -73,6 +76,9 @@ static pdm_channel_config_t channelConfig = {
 static SemaphoreHandle_t semaphoreRX;
 static bool mic_over_flow_flag = false;
 
+uint8_t g_mic_channel_num = 0;  /* Number of mics used depends on board used */
+Board_t boardUsed;
+
 static void pdmRxCallback(PDM_Type *base, pdm_edma_handle_t *handle, status_t status, void *userData)
 {
     BaseType_t reschedule = -1;
@@ -90,6 +96,21 @@ static void pdmRxCallback(PDM_Type *base, pdm_edma_handle_t *handle, status_t st
 void MIC_Init(void)
 {
     edma_config_t dmaConfig;
+
+    switch (boardUsed)
+    {
+    case MIMXRT1170_EVK:
+        g_mic_channel_num = 1;
+        channelConfig.gain = kPDM_DfOutputGain4;
+        break;
+    case MIMXRT1170_EVKB:
+        g_mic_channel_num = 3;
+        channelConfig.gain = kPDM_DfOutputGain1;
+        break;
+    default:
+        g_mic_channel_num = 1;
+        break;
+    }
 
     NVIC_SetPriority(PDM_ERROR_IRQn, 5);
     NVIC_SetPriority(DMA_ERROR_IRQn, 5);
@@ -117,6 +138,10 @@ void MIC_Init(void)
     if (DEMO_CHANNEL_NUM >= 2)
     {
     	PDM_TransferSetChannelConfigEDMA(DEMO_PDM, &pdmRxHandle, DEMO_PDM_ENABLE_CHANNEL_1, &channelConfig);
+    }
+    if (DEMO_CHANNEL_NUM >= 3)
+    {
+    	PDM_TransferSetChannelConfigEDMA(DEMO_PDM, &pdmRxHandle, DEMO_PDM_ENABLE_CHANNEL_2, &channelConfig);
     }
     PDM_SetSampleRateConfig(DEMO_PDM, DEMO_PDM_CLK_FREQ, DEMO_AUDIO_SAMPLE_RATE);
     PDM_Reset(DEMO_PDM);

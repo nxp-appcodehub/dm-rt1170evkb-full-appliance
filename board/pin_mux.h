@@ -112,6 +112,12 @@ void BOARD_InitMipiPanelPins(void);           /* Function assigned for the Corte
 #define BOARD_INITMICPINS_DMIC_DATA0_SIGNAL                        mic_bitstream   /*!< Signal name */
 #define BOARD_INITMICPINS_DMIC_DATA0_CHANNEL                                  0U   /*!< Signal channel */
 
+/* GPIO_LPSR_10 (coord R5), JTAG_nTRST/J1[3]/LPSPI6_SCK /J26[9]/DMIC_DATA1 */
+/* Routed pin properties */
+#define BOARD_INITMICPINS_DMIC_DATA1_PERIPHERAL                              MIC   /*!< Peripheral name */
+#define BOARD_INITMICPINS_DMIC_DATA1_SIGNAL                        mic_bitstream   /*!< Signal name */
+#define BOARD_INITMICPINS_DMIC_DATA1_CHANNEL                                  1U   /*!< Signal channel */
+
 /*!
  * @brief Configures pin routing and optionally pin electrical features.
  *
