@@ -118,21 +118,21 @@ int16_t AFE_VoiceSeeker_Init(AFE_VoiceSeeker_st* AFE_VoiceSeekerConfig, uint16_t
     }
     // mic1 xyz
     if (AFE_VoiceSeekerConfig->vsl_config.num_mics > 1) {
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][0] = 35.0f; // X
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][1] = 0.0f; // Y
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][2] = 0.0f; // Z
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[1][0] = 35.0f; // X
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[1][1] = 0.0f; // Y
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[1][2] = 0.0f; // Z
     }
     // mic2 xyz
     if (AFE_VoiceSeekerConfig->vsl_config.num_mics > 2) {
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][0] = 0.0f; // X
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][1] = -36.0f; // Y
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][2] = 0.0f; // Z
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[2][0] = 0.0f; // X
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[2][1] = -36.0f; // Y
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[2][2] = 0.0f; // Z
     }
     // mic3 xyz
     if (AFE_VoiceSeekerConfig->vsl_config.num_mics > 3) {
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][0] = 0.0f; // X
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][1] = 0.0f; // Y
-        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[0][2] = 0.0f; // Z
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[3][0] = 0.0f; // X
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[3][1] = 0.0f; // Y
+        AFE_VoiceSeekerConfig->vsl_config.mic_xyz_mm[3][2] = 0.0f; // Z
     }
 
 
