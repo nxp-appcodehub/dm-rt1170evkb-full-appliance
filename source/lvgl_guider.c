@@ -82,13 +82,13 @@ static void Graphics_Process (void *pvParameters)
 
 		if((event_bits & VIT_WW_DETECT) == VIT_WW_DETECT)
 		{
-//            GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 1U);
+            GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 1U);
 			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_100, 0);
 		}
 
 		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
 		{
-//           GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 0U);
+           GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 0U);
 #if VIT_DEVICE_AIRCON
 			ui_aircon_process_command(cmd_id);
 #endif
@@ -155,6 +155,7 @@ int main(void)
 	BOARD_InitMipiPanelPins();
 	BOARD_MIPIPanelTouch_I2C_Init();
 	BOARD_InitTestPins();
+	BOARD_InitLEDPins();
 	BOARD_InitDebugConsole();
 
 	D0_On();	D1_On();	D2_On();	D3_On();	D4_On();	D5_On();
@@ -220,7 +221,7 @@ int main(void)
     }
 
     /* Init output LED GPIO. */
-//    GPIO_PinInit(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, &led_config);
+    GPIO_PinInit(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, &led_config);
 
 
 	GPH_Process = xEventGroupCreate();

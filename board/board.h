@@ -73,7 +73,7 @@
 #define BOARD_USER_LED_GPIO GPIO9
 #endif
 #ifndef BOARD_USER_LED_GPIO_PIN
-#define BOARD_USER_LED_GPIO_PIN (3U)
+#define BOARD_USER_LED_GPIO_PIN (25U)
 #endif
 
 #define USER_LED_INIT(output)                                            \

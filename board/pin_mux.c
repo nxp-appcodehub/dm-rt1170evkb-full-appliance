@@ -20,6 +20,7 @@ pin_labels:
 - {pin_num: M13, pin_signal: GPIO_AD_04, label: 'SIM1_PD/J44[C8]/USER_LED_CTL1/J9[8]/J25[7]', identifier: SIM1_PD;D3}
 - {pin_num: P13, pin_signal: GPIO_AD_05, label: 'SIM1_PWR_FAIL/J9[12]/J25[5]/LCD_LPTE', identifier: SIM1_PWR_FAIL;D5}
 - {pin_num: N13, pin_signal: GPIO_AD_06, label: 'USB_OTG2_OC/U18[A2]/J9[10]/AUD_INT', identifier: D4}
+- {pin_num: L14, pin_signal: GPIO_AD_26, label: 'CSI_PWR_CTL/USER_LED_CTL2/J50[16]', identifier: RED_LED}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -323,6 +324,39 @@ void BOARD_InitTestPins(void) {
     (~(BOARD_INITTESTPINS_IOMUXC_GPR_GPR42_GPIO_MUX3_GPIO_SEL_LOW_MASK))) /* Mask bits to zero which are setting */
       | IOMUXC_GPR_GPR42_GPIO_MUX3_GPIO_SEL_LOW(0x00U) /* GPIO3 and CM7_GPIO3 share same IO MUX function, GPIO_MUX3 selects one GPIO function: 0x00U */
     );
+}
+
+
+/*
+ * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
+BOARD_InitLEDPins:
+- options: {callFromInitBoot: 'false', coreID: cm7, enableClock: 'true'}
+- pin_list:
+  - {pin_num: L14, peripheral: GPIO9, signal: 'gpio_io, 25', pin_signal: GPIO_AD_26, direction: OUTPUT, pull_up_down_config: no_init}
+ * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
+ */
+
+/* FUNCTION ************************************************************************************************************
+ *
+ * Function Name : BOARD_InitLEDPins, assigned for the Cortex-M7F core.
+ * Description   : Configures pin routing and optionally pin electrical features.
+ *
+ * END ****************************************************************************************************************/
+void BOARD_InitLEDPins(void) {
+  CLOCK_EnableClock(kCLOCK_Iomuxc);           /* LPCG on: LPCG is ON. */
+
+  /* GPIO configuration of RED_LED on GPIO_AD_26 (pin L14) */
+  gpio_pin_config_t RED_LED_config = {
+      .direction = kGPIO_DigitalOutput,
+      .outputLogic = 0U,
+      .interruptMode = kGPIO_NoIntmode
+  };
+  /* Initialize GPIO functionality on GPIO_AD_26 (pin L14) */
+  GPIO_PinInit(GPIO9, 25U, &RED_LED_config);
+
+  IOMUXC_SetPinMux(
+      IOMUXC_GPIO_AD_26_GPIO9_IO25,           /* GPIO_AD_26 is configured as GPIO9_IO25 */
+      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
 }
 
 /***********************************************************************************************************************

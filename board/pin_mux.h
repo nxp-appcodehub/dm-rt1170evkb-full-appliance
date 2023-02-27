@@ -168,6 +168,23 @@ void BOARD_InitMicPins(void);                 /* Function assigned for the Corte
  */
 void BOARD_InitTestPins(void);                /* Function assigned for the Cortex-M7F */
 
+/* GPIO_AD_26 (coord L14), CSI_PWR_CTL/USER_LED_CTL2/J50[16] */
+/* Routed pin properties */
+#define BOARD_INITLEDPINS_RED_LED_PERIPHERAL                               GPIO9   /*!< Peripheral name */
+#define BOARD_INITLEDPINS_RED_LED_SIGNAL                                 gpio_io   /*!< Signal name */
+#define BOARD_INITLEDPINS_RED_LED_CHANNEL                                    25U   /*!< Signal channel */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_INITLEDPINS_RED_LED_GPIO                                     GPIO9   /*!< GPIO peripheral base pointer */
+#define BOARD_INITLEDPINS_RED_LED_GPIO_PIN                                   25U   /*!< GPIO pin number */
+#define BOARD_INITLEDPINS_RED_LED_GPIO_PIN_MASK                      (1U << 25U)   /*!< GPIO pin mask */
+
+/*!
+ * @brief Configures pin routing and optionally pin electrical features.
+ *
+ */
+void BOARD_InitLEDPins(void);                 /* Function assigned for the Cortex-M7F */
+
 #if defined(__cplusplus)
 }
 #endif
