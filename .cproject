@@ -112,6 +112,8 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generated/guider_customer_fonts}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generated/guider_fonts}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/evkmimxrt1170/lvgl_examples/lvgl_guider/cm7}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/rdsp_utilities_public/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/rdsp_utilities_public/rdsp_memory_utils_public}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.include.files.1018816204" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.cpp.exe.debug.option.optimization.level.1779306164" name="Optimization Level" superClass="com.crt.advproject.cpp.exe.debug.option.optimization.level" useByScannerDiscovery="true"/>
@@ -177,6 +179,7 @@
 									<listOptionValue builtIn="false" value="CPU_MIMXRT1176DVMAA"/>
 									<listOptionValue builtIn="false" value="VIT_DEVICE_OVEN=1"/>
 									<listOptionValue builtIn="false" value="VIT_DEVICE_AIRCON=0"/>
+									<listOptionValue builtIn="false" value="AFE_VOICESEEKER"/>
 									<listOptionValue builtIn="false" value="CPU_MIMXRT1176DVMAA_cm7"/>
 									<listOptionValue builtIn="false" value="XIP_BOOT_HEADER_DCD_ENABLE=1"/>
 									<listOptionValue builtIn="false" value="USE_SDRAM"/>
@@ -282,6 +285,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generated/guider_customer_fonts}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generated/guider_fonts}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/evkmimxrt1170/lvgl_examples/lvgl_guider/cm7}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/rdsp_utilities_public/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/rdsp_utilities_public/rdsp_memory_utils_public}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/ARM_CortexM7/include}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.include.files.363462014" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.gcc.exe.debug.option.optimization.level.2116523945" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.debug.option.optimization.level" useByScannerDiscovery="true" value="gnu.c.optimization.level.more" valueType="enumerated"/>
@@ -365,12 +371,14 @@
 								<option id="gnu.cpp.link.option.strip.1889143734" name="Omit all symbol information (-s)" superClass="gnu.cpp.link.option.strip" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.674215369" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="rlottie"/>
-									<listOptionValue builtIn="false" value="VIT_CM7_v05_06_00"/>
+									<listOptionValue builtIn="false" value="VIT_CM7_v04_07_05"/>
+									<listOptionValue builtIn="false" value="voiceseeker_no_aec"/>
 									<listOptionValue builtIn="false" value="arm_cortexM7lfdp_math"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1551655835" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rlottie}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/vit/RT1170_CortexM7/Lib}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/ARM_CortexM7/lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/DSP}&quot;"/>
 								</option>
 								<option id="gnu.cpp.link.option.flags.2094722113" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false"/>
@@ -521,7 +529,8 @@
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="utilities"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="vglite"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="video"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="vit"/>
+						<entry excluding="RT1170_CortexM7/ExApp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="vit"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="voice_seeker"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="xip"/>
 					</sourceEntries>
 				</configuration>
@@ -637,6 +646,8 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generated/guider_customer_fonts}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generated/guider_fonts}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/evkmimxrt1170/lvgl_examples/lvgl_guider/cm7}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/rdsp_utilities_public/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/rdsp_utilities_public/rdsp_memory_utils_public}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.include.files.928706488" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false"/>
 								<option id="gnu.cpp.compiler.option.optimization.flags.2072081777" name="Other optimization flags" superClass="gnu.cpp.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-fno-common" valueType="string"/>
@@ -709,6 +720,7 @@
 									<listOptionValue builtIn="false" value="CPU_MIMXRT1176DVMAA"/>
 									<listOptionValue builtIn="false" value="VIT_DEVICE_OVEN=1"/>
 									<listOptionValue builtIn="false" value="VIT_DEVICE_AIRCON=0"/>
+									<listOptionValue builtIn="false" value="AFE_VOICESEEKER"/>
 									<listOptionValue builtIn="false" value="CPU_MIMXRT1176DVMAA_cm7"/>
 									<listOptionValue builtIn="false" value="XIP_BOOT_HEADER_DCD_ENABLE=1"/>
 									<listOptionValue builtIn="false" value="USE_SDRAM"/>
@@ -807,6 +819,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generated/guider_customer_fonts}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generated/guider_fonts}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/evkmimxrt1170/lvgl_examples/lvgl_guider/cm7}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/rdsp_utilities_public/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/rdsp_utilities_public/rdsp_memory_utils_public}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/ARM_CortexM7/include}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.include.files.393166606" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files" useByScannerDiscovery="false"/>
 								<option id="gnu.c.compiler.option.optimization.flags.123448157" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-fno-common" valueType="string"/>
@@ -890,12 +905,14 @@
 								<option id="gnu.cpp.link.option.strip.727603411" name="Omit all symbol information (-s)" superClass="gnu.cpp.link.option.strip" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.1594525420" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="rlottie"/>
-									<listOptionValue builtIn="false" value="VIT_CM7_v05_06_00"/>
+									<listOptionValue builtIn="false" value="VIT_CM7_v04_07_05"/>
+									<listOptionValue builtIn="false" value="voiceseeker_no_aec"/>
 									<listOptionValue builtIn="false" value="arm_cortexM7lfdp_math"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.142142729" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rlottie}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/vit/RT1170_CortexM7/Lib}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/voice_seeker/ARM_CortexM7/lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/DSP}&quot;"/>
 								</option>
 								<option id="gnu.cpp.link.option.flags.1081035889" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false"/>
@@ -1056,7 +1073,8 @@
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="utilities"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="vglite"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="video"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="vit"/>
+						<entry excluding="RT1170_CortexM7/ExApp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="vit"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="voice_seeker"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="xip"/>
 					</sourceEntries>
 				</configuration>
@@ -1086,7 +1104,7 @@
 	<storageModule moduleId="com.nxp.mcuxpresso.core.datamodels">
 		<sdkName>SDK_2.x_MIMXRT1170-EVK</sdkName>
 		<sdkExample>evkmimxrt1170_lvgl_guider_cm7</sdkExample>
-		<sdkVersion>2.12.1</sdkVersion>
+		<sdkVersion>2.13.0</sdkVersion>
 		<sdkComponents>driver.video-common.MIMXRT1176;driver.display-common.MIMXRT1176;driver.display-rm68191.MIMXRT1176;platform.drivers.mipi_dsi_split.MIMXRT1176;driver.display-mipi-dsi-cmd.MIMXRT1176;platform.drivers.common.MIMXRT1176;driver.display-rm68200.MIMXRT1176;driver.dc-fb-lcdifv2.MIMXRT1176;driver.gt911.MIMXRT1176;platform.drivers.lpi2c.MIMXRT1176;platform.drivers.soc_src.MIMXRT1176;platform.drivers.cache_armv7_m7.MIMXRT1176;platform.drivers.pxp.MIMXRT1176;platform.drivers.elcdif.MIMXRT1176;driver.dc-fb-elcdif.MIMXRT1176;middleware.vglite.MIMXRT1176;driver.display-hx8394.MIMXRT1176;middleware.freertos-kernel.heap_4.MIMXRT1176;platform.drivers.clock.MIMXRT1176;middleware.lvgl.MIMXRT1176;platform.devices.MIMXRT1176_CMSIS.MIMXRT1176;utility.debug_console.MIMXRT1176;component.lpuart_adapter.MIMXRT1176;component.serial_manager.MIMXRT1176;component.lists.MIMXRT1176;component.serial_manager_uart.MIMXRT1176;platform.drivers.lpuart.MIMXRT1176;platform.devices.MIMXRT1176_startup.MIMXRT1176;platform.drivers.iomuxc.MIMXRT1176;platform.utilities.assert.MIMXRT1176;platform.drivers.igpio.MIMXRT1176;platform.drivers.xip_device.MIMXRT1176;platform.drivers.xip_board.evkmimxrt1170.MIMXRT1176;platform.drivers.pmu_1.MIMXRT1176;platform.drivers.dcdc_soc.MIMXRT1176;component.silicon_id.MIMXRT1176;platform.drivers.xmcd.evkmimxrt1170.MIMXRT1176;platform.drivers.anatop_ai.MIMXRT1176;CMSIS_Include_core_cm.MIMXRT1176;platform.drivers.soc_mipi_csi2rx.MIMXRT1176;driver.dc-fb-common.MIMXRT1176;platform.drivers.lcdifv2.MIMXRT1176;platform.drivers.memory.MIMXRT1176;middleware.freertos-kernel.MIMXRT1176;middleware.freertos-kernel.extension.MIMXRT1176;platform.utilities.misc_utilities.MIMXRT1176;platform.devices.MIMXRT1176_system.MIMXRT1176;evkmimxrt1170_lvgl_guider_cm7;</sdkComponents>
 		<boardId>evkmimxrt1170</boardId>
 		<package>MIMXRT1176DVMAA</package>
