@@ -104,6 +104,10 @@ void MIC_Init(void)
         channelConfig.gain = kPDM_DfOutputGain4;
         break;
     case MIMXRT1170_EVKB:
+        g_mic_channel_num = 2;
+        channelConfig.gain = kPDM_DfOutputGain1;
+        break;
+    case MIMXRT1170_EVKB_REVC1:
         g_mic_channel_num = 3;
         channelConfig.gain = kPDM_DfOutputGain1;
         break;

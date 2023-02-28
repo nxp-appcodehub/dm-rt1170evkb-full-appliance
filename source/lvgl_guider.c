@@ -200,7 +200,7 @@ int main(void)
     }
     else
     {
-        boardUsed = MIMXRT1170_EVKB;
+        boardUsed = MIMXRT1170_EVKB_REVC1;
         PRINTF("RT1170-EVKB Rev C1 detected.\r\n");
     }
 

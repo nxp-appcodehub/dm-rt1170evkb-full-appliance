@@ -18,6 +18,7 @@ typedef enum
 {
     MIMXRT1170_EVK,
     MIMXRT1170_EVKB,
+    MIMXRT1170_EVKB_REVC1,
     UNKWON_BOARD,
 } Board_t;
 

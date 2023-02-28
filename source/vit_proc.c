@@ -41,7 +41,7 @@
 #define MEMORY_ALIGNMENT    8 // in bytes
 
 #define BYTE_DEPTH          PDM_BYTE_DEPTH
-#define VIT_CMD_TIME_SPAN   3.0
+#define VIT_CMD_TIME_SPAN   5.0
 #define MODEL_LOCATION      VIT_MODEL_IN_RAM
 #define VIT_OPERATING_MODE  VIT_WAKEWORD_ENABLE | VIT_VOICECMD_ENABLE
 #define VIT_MEM_INFO        1   // Print VIT memory usage
