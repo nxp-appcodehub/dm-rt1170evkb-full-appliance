@@ -19,6 +19,7 @@
 #include "custom.h"
 
 #include "vit_proc.h"
+#include "vit_proc.h"
 #include "fsl_soc_src.h"
 #include "ui_Aircon.h"
 #if VIT_DEVICE_AIRCON
@@ -30,6 +31,11 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
+#define FXOS8700_I2C_ADDR       0x1F
+#define FXOS8700_WHO_AM_I_REG   0x0D
+
+#define FXLS8974_I2C_ADDR       0x18
+#define FXLS8974_WHO_AM_I_REG   0x13
 
 /*******************************************************************************
  * Variables
@@ -51,6 +57,7 @@ const clock_audio_pll_config_t audioPllConfig = {
 
 EventGroupHandle_t GPH_Process = NULL;
 extern PL_UINT16 cmd_id;
+
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -75,11 +82,13 @@ static void Graphics_Process (void *pvParameters)
 
 		if((event_bits & VIT_WW_DETECT) == VIT_WW_DETECT)
 		{
+            GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 1U);
 			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_100, 0);
 		}
 
 		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
 		{
+           GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 0U);
 #if VIT_DEVICE_AIRCON
 			ui_aircon_process_command(cmd_id);
 #endif
@@ -111,9 +120,7 @@ static void AppTask(void *param)
 
 	for (;;)
 	{
-        D5_On();
 		lv_task_handler();
-        D5_Off();
         vTaskDelay(1);
 
 	}
@@ -129,6 +136,8 @@ static void AppTask(void *param)
 int main(void)
 {
 	BaseType_t stat;
+    /* Define the init structure for the output LED pin*/
+    gpio_pin_config_t led_config = {kGPIO_DigitalOutput, 0, kGPIO_NoIntmode};
 
 	/* Init board hardware. */
 	BOARD_ConfigMPU();
@@ -146,6 +155,7 @@ int main(void)
 	BOARD_InitMipiPanelPins();
 	BOARD_MIPIPanelTouch_I2C_Init();
 	BOARD_InitTestPins();
+	BOARD_InitLEDPins();
 	BOARD_InitDebugConsole();
 
 	D0_On();	D1_On();	D2_On();	D3_On();	D4_On();	D5_On();
@@ -156,6 +166,63 @@ int main(void)
 	/* 24.576m mic root clock */
 	CLOCK_SetRootClockMux(kCLOCK_Root_Mic, 6);
 	CLOCK_SetRootClockDiv(kCLOCK_Root_Mic, 16);
+
+    /* I2C initialize */
+    BOARD_Accel_I2C_Init();
+
+    /* Read accelerometer to identify board version  */
+    uint8_t accel_address = FXOS8700_I2C_ADDR;
+    uint8_t rxBuff[1] = {0};
+    status_t result = BOARD_Accel_I2C_Receive(accel_address, FXOS8700_WHO_AM_I_REG, 1, rxBuff, 1);
+    if (result != kStatus_Success)
+    {
+        accel_address = FXLS8974_I2C_ADDR;
+        result = BOARD_Accel_I2C_Receive(accel_address, FXLS8974_WHO_AM_I_REG, 1, rxBuff, 1);
+    }
+
+    if (result != kStatus_Success)
+    {
+        PRINTF("Accel read failed\r\n");
+        accel_address = 0;
+    }
+
+    if (accel_address == FXOS8700_I2C_ADDR)
+    {
+        boardUsed = MIMXRT1170_EVK;
+        PRINTF("RT1170-EVK detected.\r\n");
+        PRINTF("Place the board upside down to face the microphone acoustic hole.\r\n");
+    }
+    else if (accel_address == FXLS8974_I2C_ADDR)
+    {
+        boardUsed = MIMXRT1170_EVKB;
+        PRINTF("RT1170-EVKB detected.\r\n");
+        PRINTF("NOTE: If using RT1170-EVKB Rev A, open jumper J91 to avoid unexpected resets.\r\n");
+    }
+    else
+    {
+        boardUsed = MIMXRT1170_EVKB_REVC1;
+        PRINTF("RT1170-EVKB Rev C1 detected.\r\n");
+    }
+
+    /* Display support */
+    if (DEMO_PANEL == DEMO_PANEL_RK055AHD091)
+    {
+        PRINTF("Using RK055HDMIPI4M LCD Panel (Not Recommended for New Designs).\r\n");
+
+    }
+    else if (DEMO_PANEL == DEMO_PANEL_RK055MHD091)
+    {
+        PRINTF("Using RK055HDMIPI4MA0 LCD Panel.\r\n");
+
+    }
+    else
+    {
+        PRINTF("Display not supported for this demo.\r\n");
+    }
+
+    /* Init output LED GPIO. */
+    GPIO_PinInit(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, &led_config);
+
 
 	GPH_Process = xEventGroupCreate();
 

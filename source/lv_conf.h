@@ -225,7 +225,8 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h" */
 
 /* Prefix performance critical functions to place them into a faster memory (e.g RAM)
  * Uses 15-20 kB extra memory */
-#define LV_ATTRIBUTE_FAST_MEM
+#include <cr_section_macros.h>
+#define LV_ATTRIBUTE_FAST_MEM __RAMFUNC(SRAM_ITC_cm7)
 
 /* Export integer constant to binding.
  * This macro is used with constants in the form of LV_<CONST> that

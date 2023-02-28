@@ -6,19 +6,21 @@
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Pins v12.0
+product: Pins v13.0
 processor: MIMXRT1176xxxxx
 package_id: MIMXRT1176DVMAA
 mcu_data: ksdk2_0
-processor_version: 12.0.1
+processor_version: 13.0.1
 board: MIMXRT1170-EVK
 pin_labels:
+- {pin_num: R5, pin_signal: GPIO_LPSR_10, label: 'JTAG_nTRST/J1[3]/LPSPI6_SCK /J26[9]/DMIC_DATA1', identifier: DMIC_DATA1}
 - {pin_num: D9, pin_signal: GPIO_DISP_B2_10, label: 'LPUART2_TXD/BT_UART_TXD/U354[4]/U16[2]/J25[3]/J9[4]', identifier: BT_UART_TXD;D1}
 - {pin_num: A6, pin_signal: GPIO_DISP_B2_11, label: 'LPUART2_RXD/BT_UART_RXD/U16[3]/U355[20]/J9[2]', identifier: BT_UART_RXD;D0}
 - {pin_num: B6, pin_signal: GPIO_DISP_B2_12, label: 'RGMII1_PHY_INTB/U10[31]/BT_UART_CTS/U16[5]/U355[19]/J9[6]', identifier: GPIO_DISP_B2_12;D2}
 - {pin_num: M13, pin_signal: GPIO_AD_04, label: 'SIM1_PD/J44[C8]/USER_LED_CTL1/J9[8]/J25[7]', identifier: SIM1_PD;D3}
 - {pin_num: P13, pin_signal: GPIO_AD_05, label: 'SIM1_PWR_FAIL/J9[12]/J25[5]/LCD_LPTE', identifier: SIM1_PWR_FAIL;D5}
 - {pin_num: N13, pin_signal: GPIO_AD_06, label: 'USB_OTG2_OC/U18[A2]/J9[10]/AUD_INT', identifier: D4}
+- {pin_num: L14, pin_signal: GPIO_AD_26, label: 'CSI_PWR_CTL/USER_LED_CTL2/J50[16]', identifier: RED_LED}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -180,6 +182,7 @@ BOARD_InitMicPins:
 - pin_list:
   - {pin_num: U8, peripheral: MIC, signal: CLK, pin_signal: GPIO_LPSR_08, slew_rate: Fast}
   - {pin_num: P5, peripheral: MIC, signal: 'mic_bitstream, 00', pin_signal: GPIO_LPSR_09, slew_rate: Fast}
+  - {pin_num: R5, peripheral: MIC, signal: 'mic_bitstream, 01', pin_signal: GPIO_LPSR_10}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -197,6 +200,9 @@ void BOARD_InitMicPins(void) {
       0U);                                    /* Software Input On Field: Input Path is determined by functionality */
   IOMUXC_SetPinMux(
       IOMUXC_GPIO_LPSR_09_MIC_BITSTREAM0,     /* GPIO_LPSR_09 is configured as MIC_BITSTREAM0 */
+      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
+  IOMUXC_SetPinMux(
+      IOMUXC_GPIO_LPSR_10_MIC_BITSTREAM1,     /* GPIO_LPSR_10 is configured as MIC_BITSTREAM1 */
       0U);                                    /* Software Input On Field: Input Path is determined by functionality */
   IOMUXC_SetPinConfig(
       IOMUXC_GPIO_LPSR_08_MIC_CLK,            /* GPIO_LPSR_08 PAD functional properties : */
@@ -318,6 +324,39 @@ void BOARD_InitTestPins(void) {
     (~(BOARD_INITTESTPINS_IOMUXC_GPR_GPR42_GPIO_MUX3_GPIO_SEL_LOW_MASK))) /* Mask bits to zero which are setting */
       | IOMUXC_GPR_GPR42_GPIO_MUX3_GPIO_SEL_LOW(0x00U) /* GPIO3 and CM7_GPIO3 share same IO MUX function, GPIO_MUX3 selects one GPIO function: 0x00U */
     );
+}
+
+
+/*
+ * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
+BOARD_InitLEDPins:
+- options: {callFromInitBoot: 'false', coreID: cm7, enableClock: 'true'}
+- pin_list:
+  - {pin_num: L14, peripheral: GPIO9, signal: 'gpio_io, 25', pin_signal: GPIO_AD_26, direction: OUTPUT, pull_up_down_config: no_init}
+ * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
+ */
+
+/* FUNCTION ************************************************************************************************************
+ *
+ * Function Name : BOARD_InitLEDPins, assigned for the Cortex-M7F core.
+ * Description   : Configures pin routing and optionally pin electrical features.
+ *
+ * END ****************************************************************************************************************/
+void BOARD_InitLEDPins(void) {
+  CLOCK_EnableClock(kCLOCK_Iomuxc);           /* LPCG on: LPCG is ON. */
+
+  /* GPIO configuration of RED_LED on GPIO_AD_26 (pin L14) */
+  gpio_pin_config_t RED_LED_config = {
+      .direction = kGPIO_DigitalOutput,
+      .outputLogic = 0U,
+      .interruptMode = kGPIO_NoIntmode
+  };
+  /* Initialize GPIO functionality on GPIO_AD_26 (pin L14) */
+  GPIO_PinInit(GPIO9, 25U, &RED_LED_config);
+
+  IOMUXC_SetPinMux(
+      IOMUXC_GPIO_AD_26_GPIO9_IO25,           /* GPIO_AD_26 is configured as GPIO9_IO25 */
+      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
 }
 
 /***********************************************************************************************************************
