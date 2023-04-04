@@ -12,6 +12,7 @@
 #include "fsl_dmamux.h"
 #include "fsl_os_abstraction.h"
 #include "fsl_debug_console.h"
+#include "fsl_lpi2c.h"
 
 #include "mic_proc.h"
 #include "vit_proc.h"
@@ -46,6 +47,10 @@
 #define BUFFER_SIZE             (RECORD_BUFFER_SIZE * BUFFER_NUM)
 #define BUFFER_MAX_SIZE         (RECORD_BUFFER_MAX_SIZE * BUFFER_NUM)
 
+/* On-board codec */
+#define CODEC_I2C_ADDR      0x1A
+#define WM8962_RESET_REG    0x0F
+#define WM8962_CHIP_ID      0x4362
 /*******************************************************************************
  * Variables
  ******************************************************************************/
@@ -97,23 +102,40 @@ void MIC_Init(void)
 {
     edma_config_t dmaConfig;
 
-    switch (boardUsed)
+    /* I2C initialize */
+    BOARD_Codec_I2C_Init();
+
+    /* Read codec to identify board version  */
+    uint8_t codec_address = CODEC_I2C_ADDR;
+    uint16_t rxBuff[1] = {0};
+    status_t result = BOARD_Codec_I2C_Receive(codec_address, WM8962_RESET_REG, 2, (uint8_t*)rxBuff, 2);
+    if (result == kStatus_LPI2C_Nak)
     {
-    case MIMXRT1170_EVK:
+        /* WM8960 on the RT1170-EVK doesn't support I2C reads so it returns NAK */
+        boardUsed = MIMXRT1170_EVK;
         g_mic_channel_num = 1;
         channelConfig.gain = kPDM_DfOutputGain4;
-        break;
-    case MIMXRT1170_EVKB:
-        g_mic_channel_num = 2;
-        channelConfig.gain = kPDM_DfOutputGain1;
-        break;
-    case MIMXRT1170_EVKB_REVC1:
+
+        PRINTF("RT1170-EVK detected.\r\n");
+        PRINTF("Using 1 microphone.\r\n");
+        PRINTF("Place the board upside down to face the microphone acoustic hole.\r\n");
+    }
+    else if (result == kStatus_Success && rxBuff[0] == WM8962_CHIP_ID)
+    {
+        boardUsed = MIMXRT1170_EVKB;
         g_mic_channel_num = 3;
         channelConfig.gain = kPDM_DfOutputGain1;
-        break;
-    default:
+
+        PRINTF("RT1170-EVKB detected.\r\n");
+        PRINTF("Using 3 microphones.\r\n");
+        PRINTF("NOTE: If using RT1170-EVKB Rev A, HW rework is needed to enable 3rd mic\r\n");
+    }
+    else
+    {
+        PRINTF("Unknown board detected.\r\n");
+
+        boardUsed = UNKWON_BOARD;
         g_mic_channel_num = 1;
-        break;
     }
 
     NVIC_SetPriority(PDM_ERROR_IRQn, 5);

@@ -59,7 +59,7 @@ PL_UINT16 cmd_id = 0;
 
 #if RECORD_MIC
 #define TEST_BUFF_DURATION  1U
-#define FRAME_SIZE          (SAMPLES_PER_FRAME * BYTE_DEPTH * DEMO_MAX_CHANNEL_NUM)
+#define FRAME_SIZE          (SAMPLES_PER_FRAME * BYTE_DEPTH * DEMO_CHANNEL_NUM)
 #define TEST_BUFF_SIZE      (VIT_SAMPLE_RATE * BYTE_DEPTH * DEMO_MAX_CHANNEL_NUM * TEST_BUFF_DURATION)
 #endif
 
@@ -516,7 +516,8 @@ int VIT_Execute(void *arg, void *inputBuffer, int size)
     }
     else
     {
-        VIT_InputData = inputBuffer;             //Configure address of VIT_InputBuffer
+        DeInterleave(inputBuffer, (PL_INT16*) TempData, SAMPLES_PER_FRAME, NUMBER_OF_CHANNELS);
+        VIT_InputData = (PL_INT16*) TempData;             //Configure address of VIT_InputBuffer
     }
 
     /*
@@ -527,12 +528,11 @@ int VIT_Execute(void *arg, void *inputBuffer, int size)
      // Copy float vector to debug_buffer
      if (AudioIoFrameCnt * FRAME_SIZE < TEST_BUFF_SIZE )
      {
-         memcpy((void *)&record_mic_buff[AudioIoFrameCnt * FRAME_SIZE % TEST_BUFF_SIZE], (void *)inputBuffer, FRAME_SIZE);
+         memcpy((void *)&record_mic_buff[AudioIoFrameCnt * FRAME_SIZE % TEST_BUFF_SIZE], (void *)VIT_InputData, FRAME_SIZE);
      }
-     else if ( AudioIoFrameCnt * FRAME_SIZE == TEST_BUFF_SIZE )
+     else if ( AudioIoFrameCnt * FRAME_SIZE >= TEST_BUFF_SIZE )
      {
          PRINTF("[VIT] Saved %ds of %d-ch mic data to record_mic_buff\r\n", TEST_BUFF_DURATION, NUMBER_OF_CHANNELS);
-         __NOP();
      }
      AudioIoFrameCnt++;
 #endif

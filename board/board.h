@@ -150,7 +150,7 @@
 #define BOARD_CODEC_I2C_INSTANCE             5U
 #define BOARD_CODEC_I2C_CLOCK_SOURCE_SELECT  (0U)
 #define BOARD_CODEC_I2C_CLOCK_SOURCE_DIVIDER (6U)
-#define BOARD_CODEC_I2C_CLOCK_FREQ           (24000000U)
+#define BOARD_CODEC_I2C_CLOCK_FREQ           (CLOCK_GetRootClockFreq(kCLOCK_Root_Lpi2c5))
 
 /* @Brief Board CAMERA configuration */
 #define BOARD_CAMERA_I2C_BASEADDR      LPI2C6
