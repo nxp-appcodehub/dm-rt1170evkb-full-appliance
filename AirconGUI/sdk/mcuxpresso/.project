@@ -176,7 +176,7 @@
 	<variableList>
 		<variable>
 			<name>GUIDER_PROJECT_LOC</name>
-			<value>file:/C:/Repos/Future_training/AirconGUI/sdk/mcuxpresso</value>
+			<value>file:/C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/sdk/mcuxpresso</value>
 		</variable>
 	</variableList>
 </projectDescription>

@@ -7,10 +7,11 @@
 #include "events_init.h"
 #include <stdio.h>
 #include "lvgl.h"
-#include "ui_Oven.h"
 
+#include "ui_Hood.h"
 #include "ui_Aircon.h"
 
+#include "ui_Oven.h"
 
 void events_init(lv_ui *ui)
 {
@@ -21,45 +22,15 @@ void video_play(lv_ui *ui)
 
 }
 
-static void ui_Oven_Btn_ModeLeft_event_handler(lv_event_t *e)
+static void ui_Hood_ui_Slider_Hood_Fan_event_handler(lv_event_t *e)
 {
 	lv_event_code_t code = lv_event_get_code(e);
 	switch (code)
 	{
-	case LV_EVENT_RELEASED:
-	{
-		ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);
-	}
-		break;
-	default:
-		break;
-	}
-}
-
-static void ui_Oven_Btn_ModeRigth_event_handler(lv_event_t *e)
-{
-	lv_event_code_t code = lv_event_get_code(e);
-	switch (code)
-	{
-	case LV_EVENT_RELEASED:
-	{
-		ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);
-	}
-		break;
-	default:
-		break;
-	}
-}
-
-static void ui_Oven_Btn_State_event_handler(lv_event_t *e)
-{
-	lv_event_code_t code = lv_event_get_code(e);
-	switch (code)
-	{
-	case LV_EVENT_RELEASED:
+	case LV_EVENT_VALUE_CHANGED:
 	{
 		lv_obj_t * obj = lv_event_get_target(e);
-		ui_oven_set_state(!lv_obj_has_state(obj, LV_STATE_CHECKED));
+		ui_hood_set_fan_speed(lv_slider_get_value(obj));
 	}
 		break;
 	default:
@@ -67,11 +38,26 @@ static void ui_Oven_Btn_State_event_handler(lv_event_t *e)
 	}
 }
 
-void events_init_ui_Oven(lv_ui *ui)
+static void ui_Hood_sw_1_event_handler(lv_event_t *e)
 {
-	lv_obj_add_event_cb(ui->ui_Oven_Btn_ModeLeft, ui_Oven_Btn_ModeLeft_event_handler, LV_EVENT_ALL, ui);
-	lv_obj_add_event_cb(ui->ui_Oven_Btn_ModeRigth, ui_Oven_Btn_ModeRigth_event_handler, LV_EVENT_ALL, ui);
-	lv_obj_add_event_cb(ui->ui_Oven_Btn_State, ui_Oven_Btn_State_event_handler, LV_EVENT_ALL, ui);
+	lv_event_code_t code = lv_event_get_code(e);
+	switch (code)
+	{
+	case LV_EVENT_VALUE_CHANGED:
+	{
+		lv_obj_t * obj = lv_event_get_target(e);
+		ui_hood_set_light(lv_obj_has_state(obj, LV_STATE_CHECKED));
+	}
+		break;
+	default:
+		break;
+	}
+}
+
+void events_init_ui_Hood(lv_ui *ui)
+{
+	lv_obj_add_event_cb(ui->ui_Hood_ui_Slider_Hood_Fan, ui_Hood_ui_Slider_Hood_Fan_event_handler, LV_EVENT_ALL, ui);
+	lv_obj_add_event_cb(ui->ui_Hood_sw_1, ui_Hood_sw_1_event_handler, LV_EVENT_ALL, ui);
 }
 
 static void ui_Aircon_Btn_TempUp_event_handler(lv_event_t *e)
@@ -191,4 +177,57 @@ void events_init_ui_Aircon(lv_ui *ui)
 	lv_obj_add_event_cb(ui->ui_Aircon_Slider_Fan, ui_Aircon_Slider_Fan_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->ui_Aircon_Btn_TimerUp, ui_Aircon_Btn_TimerUp_event_handler, LV_EVENT_ALL, ui);
 	lv_obj_add_event_cb(ui->ui_Aircon_Btn_TimerDown, ui_Aircon_Btn_TimerDown_event_handler, LV_EVENT_ALL, ui);
+}
+
+static void ui_Oven_Btn_ModeLeft_event_handler(lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+	switch (code)
+	{
+	case LV_EVENT_RELEASED:
+	{
+		ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirLeft);
+	}
+		break;
+	default:
+		break;
+	}
+}
+
+static void ui_Oven_Btn_ModeRigth_event_handler(lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+	switch (code)
+	{
+	case LV_EVENT_RELEASED:
+	{
+		ui_oven_set_mode(kOVEN_ModeNull, kOVEN_ModeDirRight);
+	}
+		break;
+	default:
+		break;
+	}
+}
+
+static void ui_Oven_Btn_State_event_handler(lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+	switch (code)
+	{
+	case LV_EVENT_RELEASED:
+	{
+		lv_obj_t * obj = lv_event_get_target(e);
+		ui_oven_set_state(!lv_obj_has_state(obj, LV_STATE_CHECKED));
+	}
+		break;
+	default:
+		break;
+	}
+}
+
+void events_init_ui_Oven(lv_ui *ui)
+{
+	lv_obj_add_event_cb(ui->ui_Oven_Btn_ModeLeft, ui_Oven_Btn_ModeLeft_event_handler, LV_EVENT_ALL, ui);
+	lv_obj_add_event_cb(ui->ui_Oven_Btn_ModeRigth, ui_Oven_Btn_ModeRigth_event_handler, LV_EVENT_ALL, ui);
+	lv_obj_add_event_cb(ui->ui_Oven_Btn_State, ui_Oven_Btn_State_event_handler, LV_EVENT_ALL, ui);
 }

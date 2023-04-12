@@ -460,7 +460,7 @@
 
 #define LV_USE_SLIDER 1
 
-#define LV_USE_SWITCH 0
+#define LV_USE_SWITCH 1
 
 #define LV_USE_TEXTAREA 0
 #if LV_USE_TEXTAREA

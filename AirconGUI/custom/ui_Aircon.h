@@ -67,7 +67,7 @@ typedef enum
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
-
+void ui_aircon_init (void);
 void ui_aircon_update_temp (uint32_t temp, AIRCON_Temp_T state);
 
 void ui_aircon_update_timer (uint32_t hour, AIRCON_Timer_T state);

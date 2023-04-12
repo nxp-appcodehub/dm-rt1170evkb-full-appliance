@@ -28,6 +28,9 @@
 #if VIT_DEVICE_OVEN
 #include "ui_Oven.h"
 #endif
+#if VIT_DEVICE_HOOD
+#include "ui_Hood.h"
+#endif
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -78,7 +81,7 @@ static void Graphics_Process (void *pvParameters)
 		if((event_bits & VIT_WW_DETECT) == VIT_WW_DETECT)
 		{
             GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 1U);
-			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_100, 0);
+			lv_obj_set_style_opa(guider_ui.ui_Hood_Lottie_Mic, LV_OPA_100, 0);
 		}
 
 		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
@@ -90,6 +93,10 @@ static void Graphics_Process (void *pvParameters)
 #if VIT_DEVICE_OVEN
 			ui_oven_process_command(cmd_id);
 			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_TRANSP, 0);
+#endif
+#if VIT_DEVICE_HOOD
+			ui_hood_process_command(cmd_id);
+			lv_obj_set_style_opa(guider_ui.ui_Hood_Lottie_Mic, LV_OPA_TRANSP, 0);
 #endif
 		}
 	}

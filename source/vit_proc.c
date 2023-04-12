@@ -23,6 +23,9 @@
 #if VIT_DEVICE_OVEN
 #include "VIT_Model_Oven.h"
 #endif
+#if VIT_DEVICE_HOOD
+#include "VIT_Model_Hood.h"
+#endif
 
 /*    VoiceSeeker Configuration      */
 #ifdef AFE_VOICESEEKER
@@ -229,7 +232,7 @@ int VIT_Initialize(void *arg)
     mic_db_count = 0;
 #endif
 
-    VIT_Status = VIT_SetModel(VIT_Model_Oven, MODEL_LOCATION);
+    VIT_Status = VIT_SetModel(VIT_Model_Hood, MODEL_LOCATION);
 
     if (VIT_Status != VIT_SUCCESS)
     {
@@ -331,7 +334,7 @@ int VIT_Initialize(void *arg)
     }
 
 #if VIT_MEM_INFO
-    float vit_model_size_kb = (float) sizeof(VIT_Model_Oven) / 1024.0f;
+    float vit_model_size_kb = (float) sizeof(VIT_Model_Hood) / 1024.0f;
     float vit_model_ram_size = 0;
 
     PRINTF(" RAM Allocated = %.1f kB\r\n", total_size_allocated);
@@ -340,14 +343,14 @@ int VIT_Initialize(void *arg)
     else if (MODEL_LOCATION == VIT_MODEL_IN_RAM)
         PRINTF(" VIT_MODEL_IN_RAM");
 
-    PRINTF(" @ 0x%x", &VIT_Model_Oven[0]);
+    PRINTF(" @ 0x%x", &VIT_Model_Hood[0]);
     PRINTF(" Size = %.1f kB\r\n", vit_model_size_kb);
 
-    if (((int) &VIT_Model_Oven[0] & 0xFF000000) == 0x30000000)
+    if (((int) &VIT_Model_Hood[0] & 0xFF000000) == 0x30000000)
     {
         vit_model_ram_size = 0; // Model placed in flash
     }
-    else if (((int) &VIT_Model_Oven[0] & 0xFF000000) == 0x20000000)
+    else if (((int) &VIT_Model_Hood[0] & 0xFF000000) == 0x20000000)
     {
         vit_model_ram_size = vit_model_size_kb; // Model placed in RAM (CM33 system bus)
     }

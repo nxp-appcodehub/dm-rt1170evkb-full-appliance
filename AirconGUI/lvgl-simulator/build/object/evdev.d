@@ -1,11 +1,11 @@
 build/object/evdev.o: \
- C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_drivers/indev/evdev.c \
- C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_drivers/indev/evdev.h \
- C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_drv_conf.h \
- C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_conf.h
+ C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/lvgl-simulator/lv_drivers/indev/evdev.c \
+ C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/lvgl-simulator/lv_drivers/indev/evdev.h \
+ C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/lvgl-simulator/lv_drv_conf.h \
+ C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/lvgl-simulator/lv_conf.h
 
-C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_drivers/indev/evdev.h:
+C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/lvgl-simulator/lv_drivers/indev/evdev.h:
 
-C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_drv_conf.h:
+C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/lvgl-simulator/lv_drv_conf.h:
 
-C:/Repos/Future_training/AirconGUI/lvgl-simulator/lv_conf.h:
+C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/lvgl-simulator/lv_conf.h:
