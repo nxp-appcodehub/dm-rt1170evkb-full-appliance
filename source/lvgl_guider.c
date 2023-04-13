@@ -17,11 +17,13 @@
 #include "gui_guider.h"
 #include "events_init.h"
 #include "custom.h"
-
-#include "vit_proc.h"
-#include "vit_proc.h"
 #include "fsl_soc_src.h"
-#include "ui_Aircon.h"
+
+#if VIT_ENABLED
+#include "vit_proc.h"
+#include "vit_proc.h"
+#endif
+
 #if VIT_DEVICE_AIRCON
 #include "ui_Aircon.h"
 #endif
@@ -46,6 +48,7 @@ lv_ui guider_ui;
  *                              = 24 * (32 + 77/100)  / 2
  *                              = 393.24MHZ
  */
+#if VIT_ENABLED
 const clock_audio_pll_config_t audioPllConfig = {
 		.loopDivider = 32,  /* PLL loop divider. Valid range for DIV_SELECT divider value: 27~54. */
 		.postDivider = 1,   /* Divider after the PLL, should only be 0, 1, 2, 3, 4, 5 */
@@ -55,7 +58,7 @@ const clock_audio_pll_config_t audioPllConfig = {
 
 EventGroupHandle_t GPH_Process = NULL;
 extern PL_UINT16 cmd_id;
-
+#endif
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -68,6 +71,7 @@ static void print_cb(const char *buf)
 }
 #endif
 
+#if VIT_ENABLED
 static void Graphics_Process (void *pvParameters)
 {
     vTaskSetApplicationTaskTag( NULL, ( void * ) 2 );
@@ -81,7 +85,13 @@ static void Graphics_Process (void *pvParameters)
 		if((event_bits & VIT_WW_DETECT) == VIT_WW_DETECT)
 		{
             GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 1U);
+#if VIT_DEVICE_HOOD
 			lv_obj_set_style_opa(guider_ui.ui_Hood_Lottie_Mic, LV_OPA_100, 0);
+#endif
+
+#if VIT_DEVICE_OVEN
+			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_100, 0);
+#endif
 		}
 
 		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
@@ -101,6 +111,8 @@ static void Graphics_Process (void *pvParameters)
 		}
 	}
 }
+#endif
+
 static void AppTask(void *param)
 {
 #if LV_USE_LOG
@@ -153,7 +165,9 @@ int main(void)
 	SRC_AssertSliceSoftwareReset(SRC, kSRC_DisplaySlice);
 
 	BOARD_InitLpuartPins();
+#if VIT_ENABLED
 	BOARD_InitMicPins();
+#endif
 	BOARD_InitMipiPanelPins();
 	BOARD_MIPIPanelTouch_I2C_Init();
 	BOARD_InitTestPins();
@@ -162,13 +176,13 @@ int main(void)
 
 	D0_On();	D1_On();	D2_On();	D3_On();	D4_On();	D5_On();
 	D0_Off();	D1_Off();	D2_Off();	D3_Off();	D4_Off();	D5_Off();
-
+#if VIT_ENABLED
 	CLOCK_InitAudioPll(&audioPllConfig);
 
 	/* 24.576m mic root clock */
 	CLOCK_SetRootClockMux(kCLOCK_Root_Mic, 6);
 	CLOCK_SetRootClockDiv(kCLOCK_Root_Mic, 16);
-
+#endif
     /* Display support */
     if (DEMO_PANEL == DEMO_PANEL_RK055AHD091)
     {
@@ -188,7 +202,7 @@ int main(void)
     /* Init output LED GPIO. */
     GPIO_PinInit(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, &led_config);
 
-
+#if VIT_ENABLED
 	GPH_Process = xEventGroupCreate();
 
 	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
@@ -206,6 +220,7 @@ int main(void)
 		while (1)
 			;
 	}
+#endif
 
 	if (xTaskCreate(AppTask, "lvgl", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 6, NULL) !=
 			pdPASS)
