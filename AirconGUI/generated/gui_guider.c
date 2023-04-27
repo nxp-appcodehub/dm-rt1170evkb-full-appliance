@@ -10,6 +10,7 @@
 
 
 void init_scr_del_flag(lv_ui *ui){
+	ui->ui_Home_del = true;
 	ui->ui_Hood_del = true;
 	ui->ui_Aircon_del = true;
 	ui->ui_Oven_del = true;
@@ -17,6 +18,6 @@ void init_scr_del_flag(lv_ui *ui){
 
 void setup_ui(lv_ui *ui){
 	init_scr_del_flag(ui);
-	setup_scr_ui_Hood(ui);
-	lv_scr_load(ui->ui_Hood);
+	setup_scr_ui_Home(ui);
+	lv_scr_load(ui->ui_Home);
 }

@@ -181,16 +181,20 @@ void ui_aricon_set_fan_speed (AIRCON_Fan_Speed_T speed)
 		frame_time = 125;
 		lv_label_set_text(guider_ui.ui_Aircon_Label_FanState, "LOW");
 		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_low_31x27);
+		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Fan_Text, "Low\n");
+
 		break;
 	case kAIRCON_FanMedium:
 		frame_time = 100;
 		lv_label_set_text(guider_ui.ui_Aircon_Label_FanState, "MEDIUM");
 		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_low_31x27);
+		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Fan_Text, "Medium\n");
 		break;
 	case kAIRCON_FanHigh:
 		frame_time = 75;
 		lv_label_set_text(guider_ui.ui_Aircon_Label_FanState, "HIGH");
 		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_high_31x27);
+		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Fan_Text, "High\n");
 		break;
 	}
 
@@ -206,16 +210,19 @@ void ui_aircon_set_mode (AIRCON_Mode_T mode)
 		lv_label_set_text(guider_ui.ui_Aircon_Label_On, "ON");
 		lv_img_set_src(guider_ui.ui_Aircon_Img_Comp, &_icn_cool_27x31);
 		lv_obj_fade_in(guider_ui.ui_Aircon_Img_Cool, FADE_ANIM_TIME, 0);
+		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Mode_Text, "Cool\n");
 		break;
 	case kAIRCON_ModeDry:
 		lv_label_set_text(guider_ui.ui_Aircon_Label_On, "ON");
 		lv_img_set_src(guider_ui.ui_Aircon_Img_Comp, &_icn_dry_27x31);
 		lv_obj_fade_in(guider_ui.ui_Aircon_Img_Cool, FADE_ANIM_TIME, 0);
+		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Mode_Text, "Dry\n");
 		break;
 	case kAIRCON_ModeFan:
 		lv_label_set_text(guider_ui.ui_Aircon_Label_On, "OFF");
 		lv_img_set_src(guider_ui.ui_Aircon_Img_Comp, &_icn_fan_27x31);
 		lv_obj_fade_out(guider_ui.ui_Aircon_Img_Cool, FADE_ANIM_TIME, 0);
+		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Mode_Text, "Fan\n");
 		break;
 	}
 

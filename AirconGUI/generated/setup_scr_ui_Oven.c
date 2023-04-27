@@ -90,26 +90,26 @@ void setup_scr_ui_Oven(lv_ui *ui){
 	lv_img_set_pivot(ui->ui_Oven_Img_Fan, 50,50);
 	lv_img_set_angle(ui->ui_Oven_Img_Fan, 0);
 
-	//Write codes ui_Oven_Img_Lable_Bg
-	ui->ui_Oven_Img_Lable_Bg = lv_img_create(ui->ui_Oven);
-	lv_obj_set_pos(ui->ui_Oven_Img_Lable_Bg, 0, 590);
-	lv_obj_set_size(ui->ui_Oven_Img_Lable_Bg, 654, 130);
-	lv_obj_set_scrollbar_mode(ui->ui_Oven_Img_Lable_Bg, LV_SCROLLBAR_MODE_OFF);
+	//Write codes ui_Oven_Img_Label_Bg
+	ui->ui_Oven_Img_Label_Bg = lv_img_create(ui->ui_Oven);
+	lv_obj_set_pos(ui->ui_Oven_Img_Label_Bg, 0, 590);
+	lv_obj_set_size(ui->ui_Oven_Img_Label_Bg, 654, 130);
+	lv_obj_set_scrollbar_mode(ui->ui_Oven_Img_Label_Bg, LV_SCROLLBAR_MODE_OFF);
 
-	//Write style state: LV_STATE_DEFAULT for style_ui_oven_img_lable_bg_main_main_default
-	static lv_style_t style_ui_oven_img_lable_bg_main_main_default;
-	if (style_ui_oven_img_lable_bg_main_main_default.prop_cnt > 1)
-		lv_style_reset(&style_ui_oven_img_lable_bg_main_main_default);
+	//Write style state: LV_STATE_DEFAULT for style_ui_oven_img_label_bg_main_main_default
+	static lv_style_t style_ui_oven_img_label_bg_main_main_default;
+	if (style_ui_oven_img_label_bg_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_oven_img_label_bg_main_main_default);
 	else
-		lv_style_init(&style_ui_oven_img_lable_bg_main_main_default);
-	lv_style_set_img_recolor(&style_ui_oven_img_lable_bg_main_main_default, lv_color_make(0xff, 0xff, 0xff));
-	lv_style_set_img_recolor_opa(&style_ui_oven_img_lable_bg_main_main_default, 0);
-	lv_style_set_img_opa(&style_ui_oven_img_lable_bg_main_main_default, 255);
-	lv_obj_add_style(ui->ui_Oven_Img_Lable_Bg, &style_ui_oven_img_lable_bg_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_add_flag(ui->ui_Oven_Img_Lable_Bg, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->ui_Oven_Img_Lable_Bg,&_title_bg_654x130);
-	lv_img_set_pivot(ui->ui_Oven_Img_Lable_Bg, 50,50);
-	lv_img_set_angle(ui->ui_Oven_Img_Lable_Bg, 0);
+		lv_style_init(&style_ui_oven_img_label_bg_main_main_default);
+	lv_style_set_img_recolor(&style_ui_oven_img_label_bg_main_main_default, lv_color_make(0xff, 0xff, 0xff));
+	lv_style_set_img_recolor_opa(&style_ui_oven_img_label_bg_main_main_default, 0);
+	lv_style_set_img_opa(&style_ui_oven_img_label_bg_main_main_default, 255);
+	lv_obj_add_style(ui->ui_Oven_Img_Label_Bg, &style_ui_oven_img_label_bg_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_add_flag(ui->ui_Oven_Img_Label_Bg, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->ui_Oven_Img_Label_Bg,&_title_bg_654x130);
+	lv_img_set_pivot(ui->ui_Oven_Img_Label_Bg, 50,50);
+	lv_img_set_angle(ui->ui_Oven_Img_Label_Bg, 0);
 
 	//Write codes ui_Oven_Label_Oven
 	ui->ui_Oven_Label_Oven = lv_label_create(ui->ui_Oven);
@@ -1684,6 +1684,41 @@ void setup_scr_ui_Oven(lv_ui *ui){
 	lv_style_set_bg_color(&style_ui_oven_lottie_mic_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
 	lv_style_set_bg_opa(&style_ui_oven_lottie_mic_main_main_default, 0);
 	lv_obj_add_style(ui->ui_Oven_Lottie_Mic, &style_ui_oven_lottie_mic_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes ui_Oven_ui_Btn_Back3
+	ui->ui_Oven_ui_Btn_Back3 = lv_btn_create(ui->ui_Oven);
+	lv_obj_set_pos(ui->ui_Oven_ui_Btn_Back3, -41, 24);
+	lv_obj_set_size(ui->ui_Oven_ui_Btn_Back3, 155, 65);
+	lv_obj_set_scrollbar_mode(ui->ui_Oven_ui_Btn_Back3, LV_SCROLLBAR_MODE_OFF);
+
+	//Write style state: LV_STATE_DEFAULT for style_ui_oven_ui_btn_back3_main_main_default
+	static lv_style_t style_ui_oven_ui_btn_back3_main_main_default;
+	if (style_ui_oven_ui_btn_back3_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_oven_ui_btn_back3_main_main_default);
+	else
+		lv_style_init(&style_ui_oven_ui_btn_back3_main_main_default);
+	lv_style_set_radius(&style_ui_oven_ui_btn_back3_main_main_default, 65);
+	lv_style_set_bg_color(&style_ui_oven_ui_btn_back3_main_main_default, lv_color_make(0x18, 0x18, 0x18));
+	lv_style_set_bg_grad_color(&style_ui_oven_ui_btn_back3_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_grad_dir(&style_ui_oven_ui_btn_back3_main_main_default, LV_GRAD_DIR_NONE);
+	lv_style_set_bg_opa(&style_ui_oven_ui_btn_back3_main_main_default, 255);
+	lv_style_set_shadow_width(&style_ui_oven_ui_btn_back3_main_main_default, 0);
+	lv_style_set_shadow_color(&style_ui_oven_ui_btn_back3_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_shadow_opa(&style_ui_oven_ui_btn_back3_main_main_default, 255);
+	lv_style_set_shadow_spread(&style_ui_oven_ui_btn_back3_main_main_default, 0);
+	lv_style_set_shadow_ofs_x(&style_ui_oven_ui_btn_back3_main_main_default, 0);
+	lv_style_set_shadow_ofs_y(&style_ui_oven_ui_btn_back3_main_main_default, 0);
+	lv_style_set_border_color(&style_ui_oven_ui_btn_back3_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_border_width(&style_ui_oven_ui_btn_back3_main_main_default, 0);
+	lv_style_set_border_opa(&style_ui_oven_ui_btn_back3_main_main_default, 255);
+	lv_style_set_text_color(&style_ui_oven_ui_btn_back3_main_main_default, lv_color_make(0xff, 0xff, 0xff));
+	lv_style_set_text_font(&style_ui_oven_ui_btn_back3_main_main_default, &lv_font_montserratMedium_16);
+	lv_style_set_text_align(&style_ui_oven_ui_btn_back3_main_main_default, LV_TEXT_ALIGN_CENTER);
+	lv_obj_add_style(ui->ui_Oven_ui_Btn_Back3, &style_ui_oven_ui_btn_back3_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+	ui->ui_Oven_ui_Btn_Back3_label = lv_label_create(ui->ui_Oven_ui_Btn_Back3);
+	lv_label_set_text(ui->ui_Oven_ui_Btn_Back3_label, "BACK");
+	lv_obj_set_style_pad_all(ui->ui_Oven_ui_Btn_Back3, 0, LV_STATE_DEFAULT);
+	lv_obj_align(ui->ui_Oven_ui_Btn_Back3_label, LV_ALIGN_CENTER, 0, 0);
 
 	//Init events for screen
 	events_init_ui_Oven(ui);

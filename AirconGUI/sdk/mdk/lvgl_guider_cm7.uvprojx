@@ -1426,6 +1426,11 @@
       <FilePath>..\..\generated\setup_scr_ui_Aircon.c</FilePath>
     </File>
     <File>
+      <FileName>setup_scr_ui_Home.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\setup_scr_ui_Home.c</FilePath>
+    </File>
+    <File>
       <FileName>setup_scr_ui_Hood.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\setup_scr_ui_Hood.c</FilePath>
@@ -1531,6 +1536,11 @@
       <FilePath>..\..\generated\guider_fonts\lv_font_Antonio_Regular_80.c</FilePath>
     </File>
     <File>
+      <FileName>lv_font_montserratMedium_12.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\guider_fonts\lv_font_montserratMedium_12.c</FilePath>
+    </File>
+    <File>
       <FileName>lv_font_montserratMedium_16.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\guider_fonts\lv_font_montserratMedium_16.c</FilePath>
@@ -1539,6 +1549,11 @@
       <FileName>lv_font_montserratMedium_19.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\guider_fonts\lv_font_montserratMedium_19.c</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_montserratMedium_80.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\guider_fonts\lv_font_montserratMedium_80.c</FilePath>
     </File>
     <File>
       <FileName>lv_font_simsun_12.c</FileName>
@@ -1581,6 +1596,11 @@
       <FilePath>..\..\generated\images\_aircon_fan_1_98x98.c</FilePath>
     </File>
     <File>
+      <FileName>_aircon_small_318x125.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_aircon_small_318x125.c</FilePath>
+    </File>
+    <File>
       <FileName>_aircon_swing_1_632x113.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_aircon_swing_1_632x113.c</FilePath>
@@ -1621,6 +1641,11 @@
       <FilePath>..\..\generated\images\_hood_light_901x460.c</FilePath>
     </File>
     <File>
+      <FileName>_hood_small_299x199.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_hood_small_299x199.c</FilePath>
+    </File>
+    <File>
       <FileName>_icn_cool_27x31.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_icn_cool_27x31.c</FilePath>
@@ -1629,6 +1654,11 @@
       <FileName>_icn_fan_low_31x27.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_icn_fan_low_31x27.c</FilePath>
+    </File>
+    <File>
+      <FileName>_icn_light_on_39x31.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_icn_light_on_39x31.c</FilePath>
     </File>
     <File>
       <FileName>_icn_oven_defrost_62x62.c</FileName>
@@ -1676,6 +1706,21 @@
       <FilePath>..\..\generated\images\_icn_oven_upper_lower_62x62.c</FilePath>
     </File>
     <File>
+      <FileName>_icn_weather_1_56x52.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_icn_weather_1_56x52.c</FilePath>
+    </File>
+    <File>
+      <FileName>_menu_bg_1280x720.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_menu_bg_1280x720.c</FilePath>
+    </File>
+    <File>
+      <FileName>_nxp_75x27.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_nxp_75x27.c</FilePath>
+    </File>
+    <File>
       <FileName>_oven_bg_1280x720.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_oven_bg_1280x720.c</FilePath>
@@ -1691,6 +1736,11 @@
       <FilePath>..\..\generated\images\_oven_light_704x720.c</FilePath>
     </File>
     <File>
+      <FileName>_oven_light_menu_257x269.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_oven_light_menu_257x269.c</FilePath>
+    </File>
+    <File>
       <FileName>_smog_1_133x472.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_smog_1_133x472.c</FilePath>
@@ -1701,9 +1751,29 @@
       <FilePath>..\..\generated\images\_smog_2_133x630.c</FilePath>
     </File>
     <File>
+      <FileName>_text_aircon_15x88.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_text_aircon_15x88.c</FilePath>
+    </File>
+    <File>
       <FileName>_text_fan_param_198x26.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_text_fan_param_198x26.c</FilePath>
+    </File>
+    <File>
+      <FileName>_text_hood_15x68.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_text_hood_15x68.c</FilePath>
+    </File>
+    <File>
+      <FileName>_text_oven_15x62.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_text_oven_15x62.c</FilePath>
+    </File>
+    <File>
+      <FileName>_title_bg_2_783x128.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_title_bg_2_783x128.c</FilePath>
     </File>
     <File>
       <FileName>_title_bg_654x130.c</FileName>
@@ -1754,6 +1824,11 @@
       <FileName>mp-1208182560.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-1208182560.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp-1262772160.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-1262772160.png</FilePath>
     </File>
     <File>
       <FileName>mp-1267706048.png</FileName>
@@ -1831,6 +1906,11 @@
       <FilePath>..\..\generated\mPythonImages\mp-1658848555.png</FilePath>
     </File>
     <File>
+      <FileName>mp-1661550303.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-1661550303.png</FilePath>
+    </File>
+    <File>
       <FileName>mp-1664750881.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-1664750881.png</FilePath>
@@ -1884,6 +1964,11 @@
       <FileName>mp-1871569157.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-1871569157.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp-1930188335.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-1930188335.png</FilePath>
     </File>
     <File>
       <FileName>mp-1944917857.png</FileName>
@@ -1976,6 +2061,11 @@
       <FilePath>..\..\generated\mPythonImages\mp-593050720.png</FilePath>
     </File>
     <File>
+      <FileName>mp-614912009.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-614912009.png</FilePath>
+    </File>
+    <File>
       <FileName>mp-624713004.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-624713004.png</FilePath>
@@ -2016,6 +2106,11 @@
       <FilePath>..\..\generated\mPythonImages\mp-75953565.png</FilePath>
     </File>
     <File>
+      <FileName>mp-786914309.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-786914309.png</FilePath>
+    </File>
+    <File>
       <FileName>mp-813759931.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-813759931.png</FilePath>
@@ -2046,6 +2141,11 @@
       <FilePath>..\..\generated\mPythonImages\mp-916631490.png</FilePath>
     </File>
     <File>
+      <FileName>mp-953814729.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-953814729.png</FilePath>
+    </File>
+    <File>
       <FileName>mp-969121250.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-969121250.png</FilePath>
@@ -2054,6 +2154,11 @@
       <FileName>mp-987791325.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-987791325.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp1029885532.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp1029885532.png</FilePath>
     </File>
     <File>
       <FileName>mp1049674065.png</FileName>
@@ -2189,6 +2294,11 @@
       <FileName>mp165687971.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp165687971.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp1664636825.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp1664636825.png</FilePath>
     </File>
     <File>
       <FileName>mp1666757188.png</FileName>
@@ -2346,6 +2456,16 @@
       <FilePath>..\..\generated\mPythonImages\mp601162837.png</FilePath>
     </File>
     <File>
+      <FileName>mp620017900.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp620017900.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp668500926.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp668500926.png</FilePath>
+    </File>
+    <File>
       <FileName>mp691787330.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp691787330.png</FilePath>
@@ -2359,6 +2479,11 @@
       <FileName>mp724664477.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp724664477.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp758006804.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp758006804.png</FilePath>
     </File>
     <File>
       <FileName>mp793850858.png</FileName>
@@ -2384,6 +2509,11 @@
       <FileName>mp898788451.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp898788451.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp900884389.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp900884389.png</FilePath>
     </File>
     <File>
       <FileName>mp90307259.png</FileName>
@@ -6394,6 +6524,11 @@
       <FilePath>..\..\generated\setup_scr_ui_Aircon.c</FilePath>
     </File>
     <File>
+      <FileName>setup_scr_ui_Home.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\setup_scr_ui_Home.c</FilePath>
+    </File>
+    <File>
       <FileName>setup_scr_ui_Hood.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\setup_scr_ui_Hood.c</FilePath>
@@ -6499,6 +6634,11 @@
       <FilePath>..\..\generated\guider_fonts\lv_font_Antonio_Regular_80.c</FilePath>
     </File>
     <File>
+      <FileName>lv_font_montserratMedium_12.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\guider_fonts\lv_font_montserratMedium_12.c</FilePath>
+    </File>
+    <File>
       <FileName>lv_font_montserratMedium_16.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\guider_fonts\lv_font_montserratMedium_16.c</FilePath>
@@ -6507,6 +6647,11 @@
       <FileName>lv_font_montserratMedium_19.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\guider_fonts\lv_font_montserratMedium_19.c</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_montserratMedium_80.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\guider_fonts\lv_font_montserratMedium_80.c</FilePath>
     </File>
     <File>
       <FileName>lv_font_simsun_12.c</FileName>
@@ -6549,6 +6694,11 @@
       <FilePath>..\..\generated\images\_aircon_fan_1_98x98.c</FilePath>
     </File>
     <File>
+      <FileName>_aircon_small_318x125.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_aircon_small_318x125.c</FilePath>
+    </File>
+    <File>
       <FileName>_aircon_swing_1_632x113.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_aircon_swing_1_632x113.c</FilePath>
@@ -6589,6 +6739,11 @@
       <FilePath>..\..\generated\images\_hood_light_901x460.c</FilePath>
     </File>
     <File>
+      <FileName>_hood_small_299x199.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_hood_small_299x199.c</FilePath>
+    </File>
+    <File>
       <FileName>_icn_cool_27x31.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_icn_cool_27x31.c</FilePath>
@@ -6597,6 +6752,11 @@
       <FileName>_icn_fan_low_31x27.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_icn_fan_low_31x27.c</FilePath>
+    </File>
+    <File>
+      <FileName>_icn_light_on_39x31.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_icn_light_on_39x31.c</FilePath>
     </File>
     <File>
       <FileName>_icn_oven_defrost_62x62.c</FileName>
@@ -6644,6 +6804,21 @@
       <FilePath>..\..\generated\images\_icn_oven_upper_lower_62x62.c</FilePath>
     </File>
     <File>
+      <FileName>_icn_weather_1_56x52.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_icn_weather_1_56x52.c</FilePath>
+    </File>
+    <File>
+      <FileName>_menu_bg_1280x720.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_menu_bg_1280x720.c</FilePath>
+    </File>
+    <File>
+      <FileName>_nxp_75x27.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_nxp_75x27.c</FilePath>
+    </File>
+    <File>
       <FileName>_oven_bg_1280x720.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_oven_bg_1280x720.c</FilePath>
@@ -6659,6 +6834,11 @@
       <FilePath>..\..\generated\images\_oven_light_704x720.c</FilePath>
     </File>
     <File>
+      <FileName>_oven_light_menu_257x269.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_oven_light_menu_257x269.c</FilePath>
+    </File>
+    <File>
       <FileName>_smog_1_133x472.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_smog_1_133x472.c</FilePath>
@@ -6669,9 +6849,29 @@
       <FilePath>..\..\generated\images\_smog_2_133x630.c</FilePath>
     </File>
     <File>
+      <FileName>_text_aircon_15x88.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_text_aircon_15x88.c</FilePath>
+    </File>
+    <File>
       <FileName>_text_fan_param_198x26.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\images\_text_fan_param_198x26.c</FilePath>
+    </File>
+    <File>
+      <FileName>_text_hood_15x68.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_text_hood_15x68.c</FilePath>
+    </File>
+    <File>
+      <FileName>_text_oven_15x62.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_text_oven_15x62.c</FilePath>
+    </File>
+    <File>
+      <FileName>_title_bg_2_783x128.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\images\_title_bg_2_783x128.c</FilePath>
     </File>
     <File>
       <FileName>_title_bg_654x130.c</FileName>
@@ -6722,6 +6922,11 @@
       <FileName>mp-1208182560.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-1208182560.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp-1262772160.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-1262772160.png</FilePath>
     </File>
     <File>
       <FileName>mp-1267706048.png</FileName>
@@ -6799,6 +7004,11 @@
       <FilePath>..\..\generated\mPythonImages\mp-1658848555.png</FilePath>
     </File>
     <File>
+      <FileName>mp-1661550303.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-1661550303.png</FilePath>
+    </File>
+    <File>
       <FileName>mp-1664750881.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-1664750881.png</FilePath>
@@ -6852,6 +7062,11 @@
       <FileName>mp-1871569157.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-1871569157.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp-1930188335.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-1930188335.png</FilePath>
     </File>
     <File>
       <FileName>mp-1944917857.png</FileName>
@@ -6944,6 +7159,11 @@
       <FilePath>..\..\generated\mPythonImages\mp-593050720.png</FilePath>
     </File>
     <File>
+      <FileName>mp-614912009.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-614912009.png</FilePath>
+    </File>
+    <File>
       <FileName>mp-624713004.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-624713004.png</FilePath>
@@ -6984,6 +7204,11 @@
       <FilePath>..\..\generated\mPythonImages\mp-75953565.png</FilePath>
     </File>
     <File>
+      <FileName>mp-786914309.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-786914309.png</FilePath>
+    </File>
+    <File>
       <FileName>mp-813759931.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-813759931.png</FilePath>
@@ -7014,6 +7239,11 @@
       <FilePath>..\..\generated\mPythonImages\mp-916631490.png</FilePath>
     </File>
     <File>
+      <FileName>mp-953814729.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp-953814729.png</FilePath>
+    </File>
+    <File>
       <FileName>mp-969121250.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-969121250.png</FilePath>
@@ -7022,6 +7252,11 @@
       <FileName>mp-987791325.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp-987791325.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp1029885532.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp1029885532.png</FilePath>
     </File>
     <File>
       <FileName>mp1049674065.png</FileName>
@@ -7157,6 +7392,11 @@
       <FileName>mp165687971.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp165687971.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp1664636825.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp1664636825.png</FilePath>
     </File>
     <File>
       <FileName>mp1666757188.png</FileName>
@@ -7314,6 +7554,16 @@
       <FilePath>..\..\generated\mPythonImages\mp601162837.png</FilePath>
     </File>
     <File>
+      <FileName>mp620017900.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp620017900.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp668500926.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp668500926.png</FilePath>
+    </File>
+    <File>
       <FileName>mp691787330.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp691787330.png</FilePath>
@@ -7327,6 +7577,11 @@
       <FileName>mp724664477.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp724664477.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp758006804.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp758006804.png</FilePath>
     </File>
     <File>
       <FileName>mp793850858.png</FileName>
@@ -7352,6 +7607,11 @@
       <FileName>mp898788451.png</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\mPythonImages\mp898788451.png</FilePath>
+    </File>
+    <File>
+      <FileName>mp900884389.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\mPythonImages\mp900884389.png</FilePath>
     </File>
     <File>
       <FileName>mp90307259.png</FileName>

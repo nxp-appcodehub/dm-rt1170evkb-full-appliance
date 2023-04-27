@@ -15,6 +15,7 @@ extern "C" {
 
 void events_init(lv_ui *ui);
 void video_play(lv_ui *ui);
+void events_init_ui_Home(lv_ui *ui);
 void events_init_ui_Hood(lv_ui *ui);
 void events_init_ui_Aircon(lv_ui *ui);
 void events_init_ui_Oven(lv_ui *ui);

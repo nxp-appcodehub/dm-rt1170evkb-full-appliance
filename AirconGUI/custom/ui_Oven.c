@@ -58,11 +58,6 @@ void ui_oven_init (void)
 	lv_obj_clear_flag(guider_ui.ui_Oven_Tile_Mode, LV_OBJ_FLAG_SCROLLABLE);
 	lv_obj_clear_flag(guider_ui.ui_Oven_Tile_Mode, LV_OBJ_FLAG_CLICKABLE);
 
-	lv_obj_add_flag(guider_ui.ui_Oven_Btn_ModeLeft, LV_OBJ_FLAG_ADV_HITTEST);
-	lv_obj_clear_flag(guider_ui.ui_Oven_Btn_ModeLeft_label, LV_OBJ_FLAG_CLICKABLE);
-	lv_obj_add_flag(guider_ui.ui_Oven_Btn_ModeRigth, LV_OBJ_FLAG_ADV_HITTEST);
-	lv_obj_clear_flag(guider_ui.ui_Oven_Btn_ModeRigth_label, LV_OBJ_FLAG_CLICKABLE);
-
 	/*Init Fan Animation*/
 	lv_anim_t * a;
 	a = _ui_start_img_seq_anim(guider_ui.ui_Oven_Img_Fan, oven_fan, sizeof(oven_fan) / sizeof(oven_fan[0]), LV_DISP_DEF_REFR_PERIOD * 5, false);

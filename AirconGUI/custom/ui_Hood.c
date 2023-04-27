@@ -127,22 +127,27 @@ void ui_hood_process_command(unsigned short cmd_id){
 		case kVIT_Light_On:
 			ui_hood_set_light(kHOOD_LightOn);
 			lv_obj_add_state(guider_ui.ui_Hood_sw_1,LV_STATE_CHECKED);
+			lv_label_set_text(guider_ui.ui_Home_ui_Label_Hood_Light_Text, "On\n");
 			break;
 		case kVIT_Light_Off:
 			ui_hood_set_light(kHOOD_lightOff);
 			lv_obj_clear_state(guider_ui.ui_Hood_sw_1,LV_STATE_CHECKED);
+			lv_label_set_text(guider_ui.ui_Home_ui_Label_Hood_Light_Text, "Off\n");
 			break;
 		case kVIT_SetFanOff:
 			ui_hood_set_fan_speed (kHOOD_FanOff);
 			lv_slider_set_value(guider_ui.ui_Hood_ui_Slider_Hood_Fan,kHOOD_FanOff, 0);
+			lv_label_set_text(guider_ui.ui_Home_ui_Label_Hood_Fan_Text, "Off\n");
 			break;
 		case kVIT_SetFanLow:
 			ui_hood_set_fan_speed (kHOOD_FanLow);
 			lv_slider_set_value(guider_ui.ui_Hood_ui_Slider_Hood_Fan,kHOOD_FanLow, 0);
+			lv_label_set_text(guider_ui.ui_Home_ui_Label_Hood_Fan_Text, "Low\n");
 			break;
 		case kVIT_SetFanHigh:
 			ui_hood_set_fan_speed (kHOOD_FanHigh);
 			lv_slider_set_value(guider_ui.ui_Hood_ui_Slider_Hood_Fan,kHOOD_FanHigh, 0);
+			lv_label_set_text(guider_ui.ui_Home_ui_Label_Hood_Fan_Text, "High\n");
 			break;
 		}
 }
