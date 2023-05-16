@@ -82,4 +82,8 @@ void ui_aircon_star_cool(void);
 
 void ui_aircon_process_command (unsigned short cmd_id);
 
+void ui_aircon_menu_swing_anim_close(void);
+
+void ui_aircon_menu_swing_anim_start(uint32_t delay);
+
 #endif /* UI_AIRCON_H_ */

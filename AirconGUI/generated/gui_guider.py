@@ -461,8 +461,8 @@ ui_Home_ui_Label_Aircon_Mode_Text.add_style(style_ui_home_ui_label_aircon_mode_t
 
 # create ui_Home_ui_Label_Aircon_Fan_Text
 ui_Home_ui_Label_Aircon_Fan_Text = lv.label(ui_Home_ui_Group_Aircon_Content)
-ui_Home_ui_Label_Aircon_Fan_Text.set_pos(int(281),int(226))
-ui_Home_ui_Label_Aircon_Fan_Text.set_size(60,31)
+ui_Home_ui_Label_Aircon_Fan_Text.set_pos(int(268),int(226))
+ui_Home_ui_Label_Aircon_Fan_Text.set_size(89,32)
 ui_Home_ui_Label_Aircon_Fan_Text.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 ui_Home_ui_Label_Aircon_Fan_Text.set_text("Low")
 ui_Home_ui_Label_Aircon_Fan_Text.set_long_mode(lv.label.LONG.WRAP)
@@ -565,7 +565,7 @@ ui_Home_ui_Label_Aircon_Number1 = lv.label(ui_Home_ui_Group_Aircon_Content)
 ui_Home_ui_Label_Aircon_Number1.set_pos(int(75),int(155))
 ui_Home_ui_Label_Aircon_Number1.set_size(120,89)
 ui_Home_ui_Label_Aircon_Number1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
-ui_Home_ui_Label_Aircon_Number1.set_text("46")
+ui_Home_ui_Label_Aircon_Number1.set_text("25")
 ui_Home_ui_Label_Aircon_Number1.set_long_mode(lv.label.LONG.WRAP)
 # create style style_ui_home_ui_label_aircon_number1_main_main_default
 style_ui_home_ui_label_aircon_number1_main_main_default = lv.style_t()
@@ -577,7 +577,7 @@ style_ui_home_ui_label_aircon_number1_main_main_default.set_bg_grad_dir(lv.GRAD_
 style_ui_home_ui_label_aircon_number1_main_main_default.set_bg_opa(0)
 style_ui_home_ui_label_aircon_number1_main_main_default.set_text_color(lv.color_make(0x52,0xDA,0xFf))
 try:
-    style_ui_home_ui_label_aircon_number1_main_main_default.set_text_font(lv.font_montserratMedium_80)
+    style_ui_home_ui_label_aircon_number1_main_main_default.set_text_font(lv.font_Antonio_Regular_80)
 except AttributeError:
     try:
         style_ui_home_ui_label_aircon_number1_main_main_default.set_text_font(lv.font_montserrat_80)
@@ -593,6 +593,41 @@ style_ui_home_ui_label_aircon_number1_main_main_default.set_pad_bottom(0)
 
 # add style for ui_Home_ui_Label_Aircon_Number1
 ui_Home_ui_Label_Aircon_Number1.add_style(style_ui_home_ui_label_aircon_number1_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Label_Aircon_centigrade
+ui_Home_ui_Label_Aircon_centigrade = lv.label(ui_Home_ui_Group_Aircon_Content)
+ui_Home_ui_Label_Aircon_centigrade.set_pos(int(156),int(165))
+ui_Home_ui_Label_Aircon_centigrade.set_size(64,31)
+ui_Home_ui_Label_Aircon_centigrade.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Label_Aircon_centigrade.set_text("°C")
+ui_Home_ui_Label_Aircon_centigrade.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_home_ui_label_aircon_centigrade_main_main_default
+style_ui_home_ui_label_aircon_centigrade_main_main_default = lv.style_t()
+style_ui_home_ui_label_aircon_centigrade_main_main_default.init()
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_radius(0)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_bg_opa(0)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_home_ui_label_aircon_centigrade_main_main_default.set_text_font(lv.font_montserratMedium_16)
+except AttributeError:
+    try:
+        style_ui_home_ui_label_aircon_centigrade_main_main_default.set_text_font(lv.font_montserrat_16)
+    except AttributeError:
+        style_ui_home_ui_label_aircon_centigrade_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_text_letter_space(2)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_text_line_space(0)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_pad_left(0)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_pad_right(0)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_pad_top(8)
+style_ui_home_ui_label_aircon_centigrade_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Home_ui_Label_Aircon_centigrade
+ui_Home_ui_Label_Aircon_centigrade.add_style(style_ui_home_ui_label_aircon_centigrade_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 # create style style_ui_home_ui_group_aircon_content_main_main_default
 style_ui_home_ui_group_aircon_content_main_main_default = lv.style_t()
@@ -612,6 +647,39 @@ style_ui_home_ui_group_aircon_content_main_main_default.set_pad_bottom(0)
 
 # add style for ui_Home_ui_Group_Aircon_Content
 ui_Home_ui_Group_Aircon_Content.add_style(style_ui_home_ui_group_aircon_content_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Image_Hood_Light_Menu
+ui_Home_ui_Image_Hood_Light_Menu = lv.img(ui_Home)
+ui_Home_ui_Image_Hood_Light_Menu.set_pos(int(424),int(191))
+ui_Home_ui_Image_Hood_Light_Menu.set_size(439,217)
+ui_Home_ui_Image_Hood_Light_Menu.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Image_Hood_Light_Menu.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp753363290.png','rb') as f:
+        ui_Home_ui_Image_Hood_Light_Menu_img_data = f.read()
+except:
+    print('Could not open C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp753363290.png')
+    sys.exit()
+
+ui_Home_ui_Image_Hood_Light_Menu_img = lv.img_dsc_t({
+  'data_size': len(ui_Home_ui_Image_Hood_Light_Menu_img_data),
+  'header': {'always_zero': 0, 'w': 439, 'h': 217, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Home_ui_Image_Hood_Light_Menu_img_data
+})
+
+ui_Home_ui_Image_Hood_Light_Menu.set_src(ui_Home_ui_Image_Hood_Light_Menu_img)
+ui_Home_ui_Image_Hood_Light_Menu.set_pivot(50,50)
+ui_Home_ui_Image_Hood_Light_Menu.set_angle(0)
+# create style style_ui_home_ui_image_hood_light_menu_main_main_default
+style_ui_home_ui_image_hood_light_menu_main_main_default = lv.style_t()
+style_ui_home_ui_image_hood_light_menu_main_main_default.init()
+style_ui_home_ui_image_hood_light_menu_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_image_hood_light_menu_main_main_default.set_img_recolor_opa(0)
+style_ui_home_ui_image_hood_light_menu_main_main_default.set_img_opa(255)
+
+# add style for ui_Home_ui_Image_Hood_Light_Menu
+ui_Home_ui_Image_Hood_Light_Menu.add_style(style_ui_home_ui_image_hood_light_menu_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 
 # create ui_Home_ui_Group_Oven_Content
@@ -950,7 +1018,7 @@ ui_Home_ui_Label_Oven_Number1 = lv.label(ui_Home_ui_Group_Oven_Content)
 ui_Home_ui_Label_Oven_Number1.set_pos(int(73),int(33))
 ui_Home_ui_Label_Oven_Number1.set_size(173,92)
 ui_Home_ui_Label_Oven_Number1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
-ui_Home_ui_Label_Oven_Number1.set_text("234")
+ui_Home_ui_Label_Oven_Number1.set_text("250")
 ui_Home_ui_Label_Oven_Number1.set_long_mode(lv.label.LONG.WRAP)
 # create style style_ui_home_ui_label_oven_number1_main_main_default
 style_ui_home_ui_label_oven_number1_main_main_default = lv.style_t()
@@ -962,7 +1030,7 @@ style_ui_home_ui_label_oven_number1_main_main_default.set_bg_grad_dir(lv.GRAD_DI
 style_ui_home_ui_label_oven_number1_main_main_default.set_bg_opa(0)
 style_ui_home_ui_label_oven_number1_main_main_default.set_text_color(lv.color_make(0xFF,0x91,0x10))
 try:
-    style_ui_home_ui_label_oven_number1_main_main_default.set_text_font(lv.font_montserratMedium_80)
+    style_ui_home_ui_label_oven_number1_main_main_default.set_text_font(lv.font_Antonio_Regular_80)
 except AttributeError:
     try:
         style_ui_home_ui_label_oven_number1_main_main_default.set_text_font(lv.font_montserrat_80)
@@ -978,6 +1046,111 @@ style_ui_home_ui_label_oven_number1_main_main_default.set_pad_bottom(0)
 
 # add style for ui_Home_ui_Label_Oven_Number1
 ui_Home_ui_Label_Oven_Number1.add_style(style_ui_home_ui_label_oven_number1_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Label_Oven_TimeLeft
+ui_Home_ui_Label_Oven_TimeLeft = lv.label(ui_Home_ui_Group_Oven_Content)
+ui_Home_ui_Label_Oven_TimeLeft.set_pos(int(146),int(173))
+ui_Home_ui_Label_Oven_TimeLeft.set_size(65,61)
+ui_Home_ui_Label_Oven_TimeLeft.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Label_Oven_TimeLeft.set_text("25")
+ui_Home_ui_Label_Oven_TimeLeft.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_home_ui_label_oven_timeleft_main_main_default
+style_ui_home_ui_label_oven_timeleft_main_main_default = lv.style_t()
+style_ui_home_ui_label_oven_timeleft_main_main_default.init()
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_radius(0)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_bg_opa(0)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_home_ui_label_oven_timeleft_main_main_default.set_text_font(lv.font_Antonio_Regular_45)
+except AttributeError:
+    try:
+        style_ui_home_ui_label_oven_timeleft_main_main_default.set_text_font(lv.font_montserrat_45)
+    except AttributeError:
+        style_ui_home_ui_label_oven_timeleft_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_text_letter_space(2)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_text_line_space(0)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_pad_left(0)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_pad_right(0)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_pad_top(8)
+style_ui_home_ui_label_oven_timeleft_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Home_ui_Label_Oven_TimeLeft
+ui_Home_ui_Label_Oven_TimeLeft.add_style(style_ui_home_ui_label_oven_timeleft_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Label_Oven_Mins
+ui_Home_ui_Label_Oven_Mins = lv.label(ui_Home_ui_Group_Oven_Content)
+ui_Home_ui_Label_Oven_Mins.set_pos(int(186),int(196))
+ui_Home_ui_Label_Oven_Mins.set_size(100,32)
+ui_Home_ui_Label_Oven_Mins.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Label_Oven_Mins.set_text("mins")
+ui_Home_ui_Label_Oven_Mins.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_home_ui_label_oven_mins_main_main_default
+style_ui_home_ui_label_oven_mins_main_main_default = lv.style_t()
+style_ui_home_ui_label_oven_mins_main_main_default.init()
+style_ui_home_ui_label_oven_mins_main_main_default.set_radius(0)
+style_ui_home_ui_label_oven_mins_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_label_oven_mins_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_label_oven_mins_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_home_ui_label_oven_mins_main_main_default.set_bg_opa(0)
+style_ui_home_ui_label_oven_mins_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_home_ui_label_oven_mins_main_main_default.set_text_font(lv.font_montserratMedium_16)
+except AttributeError:
+    try:
+        style_ui_home_ui_label_oven_mins_main_main_default.set_text_font(lv.font_montserrat_16)
+    except AttributeError:
+        style_ui_home_ui_label_oven_mins_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_home_ui_label_oven_mins_main_main_default.set_text_letter_space(2)
+style_ui_home_ui_label_oven_mins_main_main_default.set_text_line_space(0)
+style_ui_home_ui_label_oven_mins_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_home_ui_label_oven_mins_main_main_default.set_pad_left(0)
+style_ui_home_ui_label_oven_mins_main_main_default.set_pad_right(0)
+style_ui_home_ui_label_oven_mins_main_main_default.set_pad_top(8)
+style_ui_home_ui_label_oven_mins_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Home_ui_Label_Oven_Mins
+ui_Home_ui_Label_Oven_Mins.add_style(style_ui_home_ui_label_oven_mins_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Label_Oven_centigrade
+ui_Home_ui_Label_Oven_centigrade = lv.label(ui_Home_ui_Group_Oven_Content)
+ui_Home_ui_Label_Oven_centigrade.set_pos(int(201),int(42))
+ui_Home_ui_Label_Oven_centigrade.set_size(64,31)
+ui_Home_ui_Label_Oven_centigrade.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Label_Oven_centigrade.set_text("°C")
+ui_Home_ui_Label_Oven_centigrade.set_long_mode(lv.label.LONG.WRAP)
+# create style style_ui_home_ui_label_oven_centigrade_main_main_default
+style_ui_home_ui_label_oven_centigrade_main_main_default = lv.style_t()
+style_ui_home_ui_label_oven_centigrade_main_main_default.init()
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_radius(0)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_bg_grad_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_bg_opa(0)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_text_color(lv.color_make(0xff,0xff,0xff))
+try:
+    style_ui_home_ui_label_oven_centigrade_main_main_default.set_text_font(lv.font_montserratMedium_16)
+except AttributeError:
+    try:
+        style_ui_home_ui_label_oven_centigrade_main_main_default.set_text_font(lv.font_montserrat_16)
+    except AttributeError:
+        style_ui_home_ui_label_oven_centigrade_main_main_default.set_text_font(lv.font_montserrat_16)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_text_letter_space(2)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_text_line_space(0)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_pad_left(0)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_pad_right(0)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_pad_top(8)
+style_ui_home_ui_label_oven_centigrade_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Home_ui_Label_Oven_centigrade
+ui_Home_ui_Label_Oven_centigrade.add_style(style_ui_home_ui_label_oven_centigrade_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 # create style style_ui_home_ui_group_oven_content_main_main_default
 style_ui_home_ui_group_oven_content_main_main_default = lv.style_t()
@@ -1622,7 +1795,7 @@ ui_Home_ui_Btn_Aircon.add_style(style_ui_home_ui_btn_aircon_main_main_default, l
 
 # create ui_Home_ui_Btn_Oven
 ui_Home_ui_Btn_Oven = lv.btn(ui_Home)
-ui_Home_ui_Btn_Oven.set_pos(int(493),int(405))
+ui_Home_ui_Btn_Oven.set_pos(int(497),int(405))
 ui_Home_ui_Btn_Oven.set_size(287,295)
 ui_Home_ui_Btn_Oven.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 # create style style_ui_home_ui_btn_oven_main_main_default
@@ -1648,6 +1821,221 @@ style_ui_home_ui_btn_oven_main_main_default.set_text_align(lv.TEXT_ALIGN.CENTER)
 
 # add style for ui_Home_ui_Btn_Oven
 ui_Home_ui_Btn_Oven.add_style(style_ui_home_ui_btn_oven_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Image_Menu_Swing
+ui_Home_ui_Image_Menu_Swing = lv.img(ui_Home)
+ui_Home_ui_Image_Menu_Swing.set_pos(int(72),int(135))
+ui_Home_ui_Image_Menu_Swing.set_size(298,39)
+ui_Home_ui_Image_Menu_Swing.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Image_Menu_Swing.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp754669097.png','rb') as f:
+        ui_Home_ui_Image_Menu_Swing_img_data = f.read()
+except:
+    print('Could not open C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp754669097.png')
+    sys.exit()
+
+ui_Home_ui_Image_Menu_Swing_img = lv.img_dsc_t({
+  'data_size': len(ui_Home_ui_Image_Menu_Swing_img_data),
+  'header': {'always_zero': 0, 'w': 298, 'h': 39, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Home_ui_Image_Menu_Swing_img_data
+})
+
+ui_Home_ui_Image_Menu_Swing.set_src(ui_Home_ui_Image_Menu_Swing_img)
+ui_Home_ui_Image_Menu_Swing.set_pivot(50,50)
+ui_Home_ui_Image_Menu_Swing.set_angle(0)
+# create style style_ui_home_ui_image_menu_swing_main_main_default
+style_ui_home_ui_image_menu_swing_main_main_default = lv.style_t()
+style_ui_home_ui_image_menu_swing_main_main_default.init()
+style_ui_home_ui_image_menu_swing_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_image_menu_swing_main_main_default.set_img_recolor_opa(0)
+style_ui_home_ui_image_menu_swing_main_main_default.set_img_opa(255)
+
+# add style for ui_Home_ui_Image_Menu_Swing
+ui_Home_ui_Image_Menu_Swing.add_style(style_ui_home_ui_image_menu_swing_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Group_Smog_menu_1
+ui_Home_ui_Group_Smog_menu_1 = lv.obj(ui_Home)
+ui_Home_ui_Group_Smog_menu_1.set_pos(int(494),int(207))
+ui_Home_ui_Group_Smog_menu_1.set_size(165,152)
+ui_Home_ui_Group_Smog_menu_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+
+# create ui_Home_ui_Image_Smog_menu_11
+ui_Home_ui_Image_Smog_menu_11 = lv.img(ui_Home_ui_Group_Smog_menu_1)
+ui_Home_ui_Image_Smog_menu_11.set_pos(int(31),int(0))
+ui_Home_ui_Image_Smog_menu_11.set_size(110,472)
+ui_Home_ui_Image_Smog_menu_11.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Image_Smog_menu_11.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp-1141147008.png','rb') as f:
+        ui_Home_ui_Image_Smog_menu_11_img_data = f.read()
+except:
+    print('Could not open C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp-1141147008.png')
+    sys.exit()
+
+ui_Home_ui_Image_Smog_menu_11_img = lv.img_dsc_t({
+  'data_size': len(ui_Home_ui_Image_Smog_menu_11_img_data),
+  'header': {'always_zero': 0, 'w': 110, 'h': 472, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Home_ui_Image_Smog_menu_11_img_data
+})
+
+ui_Home_ui_Image_Smog_menu_11.set_src(ui_Home_ui_Image_Smog_menu_11_img)
+ui_Home_ui_Image_Smog_menu_11.set_pivot(50,50)
+ui_Home_ui_Image_Smog_menu_11.set_angle(0)
+# create style style_ui_home_ui_image_smog_menu_11_main_main_default
+style_ui_home_ui_image_smog_menu_11_main_main_default = lv.style_t()
+style_ui_home_ui_image_smog_menu_11_main_main_default.init()
+style_ui_home_ui_image_smog_menu_11_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_image_smog_menu_11_main_main_default.set_img_recolor_opa(0)
+style_ui_home_ui_image_smog_menu_11_main_main_default.set_img_opa(255)
+
+# add style for ui_Home_ui_Image_Smog_menu_11
+ui_Home_ui_Image_Smog_menu_11.add_style(style_ui_home_ui_image_smog_menu_11_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Image_Smog_menu_12
+ui_Home_ui_Image_Smog_menu_12 = lv.img(ui_Home_ui_Group_Smog_menu_1)
+ui_Home_ui_Image_Smog_menu_12.set_pos(int(31),int(310))
+ui_Home_ui_Image_Smog_menu_12.set_size(110,630)
+ui_Home_ui_Image_Smog_menu_12.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Image_Smog_menu_12.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp-586806715.png','rb') as f:
+        ui_Home_ui_Image_Smog_menu_12_img_data = f.read()
+except:
+    print('Could not open C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp-586806715.png')
+    sys.exit()
+
+ui_Home_ui_Image_Smog_menu_12_img = lv.img_dsc_t({
+  'data_size': len(ui_Home_ui_Image_Smog_menu_12_img_data),
+  'header': {'always_zero': 0, 'w': 110, 'h': 630, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Home_ui_Image_Smog_menu_12_img_data
+})
+
+ui_Home_ui_Image_Smog_menu_12.set_src(ui_Home_ui_Image_Smog_menu_12_img)
+ui_Home_ui_Image_Smog_menu_12.set_pivot(0,0)
+ui_Home_ui_Image_Smog_menu_12.set_angle(0)
+# create style style_ui_home_ui_image_smog_menu_12_main_main_default
+style_ui_home_ui_image_smog_menu_12_main_main_default = lv.style_t()
+style_ui_home_ui_image_smog_menu_12_main_main_default.init()
+style_ui_home_ui_image_smog_menu_12_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_image_smog_menu_12_main_main_default.set_img_recolor_opa(0)
+style_ui_home_ui_image_smog_menu_12_main_main_default.set_img_opa(255)
+
+# add style for ui_Home_ui_Image_Smog_menu_12
+ui_Home_ui_Image_Smog_menu_12.add_style(style_ui_home_ui_image_smog_menu_12_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# create style style_ui_home_ui_group_smog_menu_1_main_main_default
+style_ui_home_ui_group_smog_menu_1_main_main_default = lv.style_t()
+style_ui_home_ui_group_smog_menu_1_main_main_default.init()
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_radius(0)
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_bg_color(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_bg_grad_color(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_bg_opa(0)
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_border_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_border_width(2)
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_border_opa(0)
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_pad_left(0)
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_pad_right(0)
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_pad_top(0)
+style_ui_home_ui_group_smog_menu_1_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Home_ui_Group_Smog_menu_1
+ui_Home_ui_Group_Smog_menu_1.add_style(style_ui_home_ui_group_smog_menu_1_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Group_Smog_menu_2
+ui_Home_ui_Group_Smog_menu_2 = lv.obj(ui_Home)
+ui_Home_ui_Group_Smog_menu_2.set_pos(int(599),int(207))
+ui_Home_ui_Group_Smog_menu_2.set_size(165,161)
+ui_Home_ui_Group_Smog_menu_2.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+
+# create ui_Home_ui_Image_Smog_menu_21
+ui_Home_ui_Image_Smog_menu_21 = lv.img(ui_Home_ui_Group_Smog_menu_2)
+ui_Home_ui_Image_Smog_menu_21.set_pos(int(31),int(0))
+ui_Home_ui_Image_Smog_menu_21.set_size(110,472)
+ui_Home_ui_Image_Smog_menu_21.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Image_Smog_menu_21.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp-1141147008.png','rb') as f:
+        ui_Home_ui_Image_Smog_menu_21_img_data = f.read()
+except:
+    print('Could not open C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp-1141147008.png')
+    sys.exit()
+
+ui_Home_ui_Image_Smog_menu_21_img = lv.img_dsc_t({
+  'data_size': len(ui_Home_ui_Image_Smog_menu_21_img_data),
+  'header': {'always_zero': 0, 'w': 110, 'h': 472, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Home_ui_Image_Smog_menu_21_img_data
+})
+
+ui_Home_ui_Image_Smog_menu_21.set_src(ui_Home_ui_Image_Smog_menu_21_img)
+ui_Home_ui_Image_Smog_menu_21.set_pivot(50,50)
+ui_Home_ui_Image_Smog_menu_21.set_angle(0)
+# create style style_ui_home_ui_image_smog_menu_21_main_main_default
+style_ui_home_ui_image_smog_menu_21_main_main_default = lv.style_t()
+style_ui_home_ui_image_smog_menu_21_main_main_default.init()
+style_ui_home_ui_image_smog_menu_21_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_image_smog_menu_21_main_main_default.set_img_recolor_opa(0)
+style_ui_home_ui_image_smog_menu_21_main_main_default.set_img_opa(255)
+
+# add style for ui_Home_ui_Image_Smog_menu_21
+ui_Home_ui_Image_Smog_menu_21.add_style(style_ui_home_ui_image_smog_menu_21_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
+# create ui_Home_ui_Image_Smog_menu_22
+ui_Home_ui_Image_Smog_menu_22 = lv.img(ui_Home_ui_Group_Smog_menu_2)
+ui_Home_ui_Image_Smog_menu_22.set_pos(int(31),int(310))
+ui_Home_ui_Image_Smog_menu_22.set_size(110,630)
+ui_Home_ui_Image_Smog_menu_22.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+ui_Home_ui_Image_Smog_menu_22.add_flag(lv.obj.FLAG.CLICKABLE)
+try:
+    with open('C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp-586806715.png','rb') as f:
+        ui_Home_ui_Image_Smog_menu_22_img_data = f.read()
+except:
+    print('Could not open C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\generated\\mPythonImages\\mp-586806715.png')
+    sys.exit()
+
+ui_Home_ui_Image_Smog_menu_22_img = lv.img_dsc_t({
+  'data_size': len(ui_Home_ui_Image_Smog_menu_22_img_data),
+  'header': {'always_zero': 0, 'w': 110, 'h': 630, 'cf': lv.img.CF.TRUE_COLOR_ALPHA},
+  'data': ui_Home_ui_Image_Smog_menu_22_img_data
+})
+
+ui_Home_ui_Image_Smog_menu_22.set_src(ui_Home_ui_Image_Smog_menu_22_img)
+ui_Home_ui_Image_Smog_menu_22.set_pivot(0,0)
+ui_Home_ui_Image_Smog_menu_22.set_angle(0)
+# create style style_ui_home_ui_image_smog_menu_22_main_main_default
+style_ui_home_ui_image_smog_menu_22_main_main_default = lv.style_t()
+style_ui_home_ui_image_smog_menu_22_main_main_default.init()
+style_ui_home_ui_image_smog_menu_22_main_main_default.set_img_recolor(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_image_smog_menu_22_main_main_default.set_img_recolor_opa(0)
+style_ui_home_ui_image_smog_menu_22_main_main_default.set_img_opa(255)
+
+# add style for ui_Home_ui_Image_Smog_menu_22
+ui_Home_ui_Image_Smog_menu_22.add_style(style_ui_home_ui_image_smog_menu_22_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# create style style_ui_home_ui_group_smog_menu_2_main_main_default
+style_ui_home_ui_group_smog_menu_2_main_main_default = lv.style_t()
+style_ui_home_ui_group_smog_menu_2_main_main_default.init()
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_radius(0)
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_bg_color(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_bg_grad_color(lv.color_make(0xff,0xff,0xff))
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_bg_grad_dir(lv.GRAD_DIR.NONE)
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_bg_opa(0)
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_border_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_border_width(2)
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_border_opa(0)
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_pad_left(0)
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_pad_right(0)
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_pad_top(0)
+style_ui_home_ui_group_smog_menu_2_main_main_default.set_pad_bottom(0)
+
+# add style for ui_Home_ui_Group_Smog_menu_2
+ui_Home_ui_Group_Smog_menu_2.add_style(style_ui_home_ui_group_smog_menu_2_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 
 # create ui_Hood

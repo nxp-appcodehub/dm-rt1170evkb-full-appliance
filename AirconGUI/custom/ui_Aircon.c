@@ -25,6 +25,30 @@ uint32_t AirconTemp = 25;
 uint32_t TimerHour = 1;
 int32_t TimerMin = 15;
 
+/*Declare Image for swing menu animation*/
+LV_IMG_DECLARE(_aircon_menu_swing_01_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_02_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_03_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_04_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_05_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_06_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_07_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_08_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_09_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_10_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_11_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_12_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_13_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_14_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_15_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_16_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_17_298x39);
+
+static const lv_img_dsc_t * aircon_menu_swing[] = {&_aircon_menu_swing_01_298x39, &_aircon_menu_swing_02_298x39, &_aircon_menu_swing_03_298x39,
+		&_aircon_menu_swing_04_298x39, &_aircon_menu_swing_05_298x39, &_aircon_menu_swing_06_298x39, &_aircon_menu_swing_07_298x39, &_aircon_menu_swing_08_298x39,
+		&_aircon_menu_swing_09_298x39, &_aircon_menu_swing_10_298x39, &_aircon_menu_swing_11_298x39, &_aircon_menu_swing_12_298x39, &_aircon_menu_swing_13_298x39,
+		&_aircon_menu_swing_14_298x39, &_aircon_menu_swing_15_298x39, &_aircon_menu_swing_16_298x39, &_aircon_menu_swing_17_298x39};
+
 /*Declare Image for swing animation*/
 LV_IMG_DECLARE(_aircon_swing_1_632x113);
 LV_IMG_DECLARE(_aircon_swing_2_632x113);
@@ -84,6 +108,9 @@ LV_IMG_DECLARE(_icn_fan_27x31);
  ******************************************************************************/
 void ui_aircon_init (void)
 {
+	setup_scr_ui_Aircon(&guider_ui);
+	guider_ui.ui_Aircon_del = false;
+
 	lv_obj_clear_flag(guider_ui.ui_Aircon_Cont, LV_OBJ_FLAG_SCROLLABLE);
 
 	lv_obj_set_style_radius(guider_ui.ui_Aircon_Slider_Fan, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -121,6 +148,7 @@ void ui_aircon_update_temp (uint32_t temp, AIRCON_Temp_T state)
 		}
 	}
 	lv_label_set_text_fmt(guider_ui.ui_Aircon_Label_Temp, "%02d",AirconTemp);
+	lv_label_set_text_fmt(guider_ui.ui_Home_ui_Label_Aircon_Number1, "%02d",AirconTemp);
 
 }
 
@@ -156,6 +184,7 @@ void ui_aircon_update_timer (uint32_t hour,  AIRCON_Timer_T state)
 
 	lv_label_set_text_fmt(guider_ui.ui_Aircon_Label_TimerHour, "%02d",TimerHour);
 	lv_label_set_text_fmt(guider_ui.ui_Aircon_Label_TimerMin, "%02d",TimerMin);
+
 }
 
 
@@ -164,10 +193,12 @@ void ui_aircon_swing (bool state)
 	if(state == kAIRCON_SwingOff)
 	{
 		ui_aircon_swing_anim_close();
+		ui_aircon_menu_swing_anim_close();
 	}
 	else if (state == kAIRCON_SwingOn)
 	{
 		ui_aircon_swing_anim_start(0);
+		ui_aircon_menu_swing_anim_start(0);
 	}
 }
 
@@ -339,3 +370,46 @@ void ui_aircon_swing_anim_close(void)
 	}
 }
 
+void ui_aircon_menu_swing_anim_close(void)
+{
+	uint32_t i;
+	for(i = 0; i < sizeof(aircon_menu_swing) / sizeof(aircon_menu_swing[0]); i++) {
+		if(lv_img_get_src(guider_ui.ui_Home_ui_Image_Menu_Swing) == aircon_menu_swing[i]) {
+			i++;
+			_ui_start_img_seq_anim(guider_ui.ui_Home_ui_Image_Menu_Swing, aircon_menu_swing, i, 30, true);
+			break;
+		}
+	}
+}
+
+
+
+void ui_aircon_menu_swing_anim_start(uint32_t delay)
+{
+	lv_anim_t * a = NULL;
+
+	if(delay == 0) {
+		uint32_t dim = sizeof(aircon_menu_swing) / sizeof(aircon_menu_swing[0]);
+		uint32_t i;
+		for(i = 0; i < dim; i++) {
+			if(lv_img_get_src(guider_ui.ui_Home_ui_Image_Menu_Swing) == aircon_menu_swing[i]) {
+				break;
+			}
+		}
+		if(i == dim) i = 0;
+		a = _ui_start_img_seq_anim(guider_ui.ui_Home_ui_Image_Menu_Swing, aircon_menu_swing, sizeof(aircon_menu_swing) / sizeof(aircon_menu_swing[0]), 90, false);
+		a->current_value = i;
+		a->act_time = i * 90;
+		a->repeat_delay = 240;
+		a->playback_delay = 240;
+		lv_img_set_src(guider_ui.ui_Home_ui_Image_Menu_Swing, aircon_menu_swing[i]);
+	} else {
+		a = _ui_start_img_seq_anim(guider_ui.ui_Home_ui_Image_Menu_Swing, aircon_menu_swing, sizeof(aircon_menu_swing) / sizeof(aircon_menu_swing[0]), 90, false);
+		a->act_time = -delay;
+		a->repeat_delay = 240;
+		a->playback_delay = 240;
+	}
+
+	a->playback_time = a->time;
+	a->repeat_cnt = LV_ANIM_REPEAT_INFINITE;
+}

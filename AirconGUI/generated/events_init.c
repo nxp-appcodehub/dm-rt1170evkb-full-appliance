@@ -35,8 +35,8 @@ static void ui_Home_ui_Btn_Hood_event_handler(lv_event_t *e)
 		{
 			if (guider_ui.ui_Hood_del == true)
 				setup_scr_ui_Hood(&guider_ui);
-			lv_scr_load_anim(guider_ui.ui_Hood, LV_SCR_LOAD_ANIM_NONE, 100, 100, true);
-			guider_ui.ui_Home_del = true;
+			lv_scr_load_anim(guider_ui.ui_Hood, LV_SCR_LOAD_ANIM_NONE, 100, 100, false);
+			guider_ui.ui_Home_del = false;
 		}
 	}
 		break;
@@ -58,8 +58,8 @@ static void ui_Home_ui_Btn_Aircon_event_handler(lv_event_t *e)
 		{
 			if (guider_ui.ui_Aircon_del == true)
 				setup_scr_ui_Aircon(&guider_ui);
-			lv_scr_load_anim(guider_ui.ui_Aircon, LV_SCR_LOAD_ANIM_NONE, 100, 100, true);
-			guider_ui.ui_Home_del = true;
+			lv_scr_load_anim(guider_ui.ui_Aircon, LV_SCR_LOAD_ANIM_NONE, 100, 100, false);
+			guider_ui.ui_Home_del = false;
 		}
 	}
 		break;
@@ -81,8 +81,8 @@ static void ui_Home_ui_Btn_Oven_event_handler(lv_event_t *e)
 		{
 			if (guider_ui.ui_Oven_del == true)
 				setup_scr_ui_Oven(&guider_ui);
-			lv_scr_load_anim(guider_ui.ui_Oven, LV_SCR_LOAD_ANIM_NONE, 100, 100, true);
-			guider_ui.ui_Home_del = true;
+			lv_scr_load_anim(guider_ui.ui_Oven, LV_SCR_LOAD_ANIM_NONE, 100, 100, false);
+			guider_ui.ui_Home_del = false;
 		}
 	}
 		break;
@@ -143,8 +143,8 @@ static void ui_Hood_ui_Btn_Back1_event_handler(lv_event_t *e)
 		{
 			if (guider_ui.ui_Home_del == true)
 				setup_scr_ui_Home(&guider_ui);
-			lv_scr_load_anim(guider_ui.ui_Home, LV_SCR_LOAD_ANIM_NONE, 100, 100, true);
-			guider_ui.ui_Hood_del = true;
+			lv_scr_load_anim(guider_ui.ui_Home, LV_SCR_LOAD_ANIM_NONE, 100, 100, false);
+			guider_ui.ui_Hood_del = false;
 		}
 	}
 		break;
@@ -281,8 +281,8 @@ static void ui_Aircon_ui_Btn_Back2_event_handler(lv_event_t *e)
 		{
 			if (guider_ui.ui_Home_del == true)
 				setup_scr_ui_Home(&guider_ui);
-			lv_scr_load_anim(guider_ui.ui_Home, LV_SCR_LOAD_ANIM_NONE, 100, 100, true);
-			guider_ui.ui_Aircon_del = true;
+			lv_scr_load_anim(guider_ui.ui_Home, LV_SCR_LOAD_ANIM_NONE, 100, 100, false);
+			guider_ui.ui_Aircon_del = false;
 		}
 	}
 		break;
@@ -362,8 +362,8 @@ static void ui_Oven_ui_Btn_Back3_event_handler(lv_event_t *e)
 		{
 			if (guider_ui.ui_Home_del == true)
 				setup_scr_ui_Home(&guider_ui);
-			lv_scr_load_anim(guider_ui.ui_Home, LV_SCR_LOAD_ANIM_NONE, 100, 100, true);
-			guider_ui.ui_Oven_del = true;
+			lv_scr_load_anim(guider_ui.ui_Home, LV_SCR_LOAD_ANIM_NONE, 100, 100, false);
+			guider_ui.ui_Oven_del = false;
 		}
 	}
 		break;

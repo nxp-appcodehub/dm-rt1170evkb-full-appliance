@@ -157,10 +157,266 @@
 			"zh_keyboard_font_size": "18",
 			"list": [
 				{
+					"name": "ui_Group_Smog_menu_2",
+					"id": "hl289rla",
+					"type": "cont",
+					"left": 599,
+					"top": 207,
+					"is_move_animation": false,
+					"desX": 0,
+					"desY": 0,
+					"path_type": "linear",
+					"duration": 1000,
+					"width": 165,
+					"height": 161,
+					"default_style": false,
+					"scrollbar_mode": "OFF",
+					"child": [
+						{
+							"name": "ui_Image_Smog_menu_22",
+							"id": "geyd57xi",
+							"type": "img",
+							"left": 31,
+							"top": 310,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 110,
+							"height": 630,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"use_fs": false,
+							"fs_type": "flash",
+							"sd_path": "",
+							"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\smog_2.png",
+							"rotate": 0,
+							"x": 0,
+							"y": 0,
+							"color_format": "true-color-alpha",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"image_recolor": "#ffffff",
+									"image_recolor_opa": 0,
+									"image_opa": 255
+								}
+							]
+						},
+						{
+							"name": "ui_Image_Smog_menu_21",
+							"id": "xkswdug2",
+							"type": "img",
+							"left": 31,
+							"top": 0,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 110,
+							"height": 472,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"use_fs": false,
+							"fs_type": "flash",
+							"sd_path": "",
+							"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\smog_1.png",
+							"rotate": 0,
+							"x": 50,
+							"y": 50,
+							"color_format": "true-color-alpha",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"image_recolor": "#ffffff",
+									"image_recolor_opa": 0,
+									"image_opa": 255
+								}
+							]
+						}
+					],
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"border_width": 2,
+							"border_color": "#2195f6",
+							"border_opa": 0,
+							"radius": 0,
+							"bg_color": "#ffffff",
+							"bg_grad_color": "#ffffff",
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_opa": 0,
+							"padding_top": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"padding_right": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0
+						}
+					]
+				},
+				{
+					"name": "ui_Group_Smog_menu_1",
+					"id": "efu8wcza",
+					"type": "cont",
+					"left": 494,
+					"top": 207,
+					"is_move_animation": false,
+					"desX": 0,
+					"desY": 0,
+					"path_type": "linear",
+					"duration": 1000,
+					"width": 165,
+					"height": 152,
+					"default_style": false,
+					"scrollbar_mode": "OFF",
+					"child": [
+						{
+							"name": "ui_Image_Smog_menu_12",
+							"id": "bhs60n72",
+							"type": "img",
+							"left": 31,
+							"top": 310,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 110,
+							"height": 630,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"use_fs": false,
+							"fs_type": "flash",
+							"sd_path": "",
+							"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\smog_2.png",
+							"rotate": 0,
+							"x": 0,
+							"y": 0,
+							"color_format": "true-color-alpha",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"image_recolor": "#ffffff",
+									"image_recolor_opa": 0,
+									"image_opa": 255
+								}
+							]
+						},
+						{
+							"name": "ui_Image_Smog_menu_11",
+							"id": "2ea2a0nn",
+							"type": "img",
+							"left": 31,
+							"top": 0,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 110,
+							"height": 472,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"use_fs": false,
+							"fs_type": "flash",
+							"sd_path": "",
+							"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\smog_1.png",
+							"rotate": 0,
+							"x": 50,
+							"y": 50,
+							"color_format": "true-color-alpha",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"image_recolor": "#ffffff",
+									"image_recolor_opa": 0,
+									"image_opa": 255
+								}
+							]
+						}
+					],
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"border_width": 2,
+							"border_color": "#2195f6",
+							"border_opa": 0,
+							"radius": 0,
+							"bg_color": "#ffffff",
+							"bg_grad_color": "#ffffff",
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_opa": 0,
+							"padding_top": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"padding_right": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0
+						}
+					]
+				},
+				{
+					"name": "ui_Image_Menu_Swing",
+					"id": "mkr7oolj",
+					"type": "img",
+					"left": 72,
+					"top": 135,
+					"is_move_animation": false,
+					"desX": 0,
+					"desY": 0,
+					"path_type": "linear",
+					"duration": 1000,
+					"width": 298,
+					"height": 39,
+					"default_style": false,
+					"scrollbar_mode": "OFF",
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\aircon_menu_swing_01.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
 					"name": "ui_Btn_Oven",
 					"id": "70mkl8d5",
 					"type": "btn",
-					"left": 493,
+					"left": 497,
 					"top": 405,
 					"is_move_animation": false,
 					"desX": 0,
@@ -349,7 +605,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": true
+									"is_del": false
 								}
 							}
 						}
@@ -548,7 +804,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": true
+									"is_del": false
 								}
 							}
 						}
@@ -815,7 +1071,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": true
+									"is_del": false
 								}
 							}
 						}
@@ -1634,6 +1890,222 @@
 					"scrollbar_mode": "OFF",
 					"child": [
 						{
+							"name": "ui_Label_Oven_centigrade",
+							"id": "ddz7x8wt",
+							"type": "label",
+							"left": 201,
+							"top": 42,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 64,
+							"height": 31,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"text": "°C",
+							"long_mode": "LV_LABEL_LONG_WRAP",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"font_family": "montserratMedium",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 0,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								},
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DISABLED",
+									"disable": true,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"font_family": "montserratMedium",
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 255,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								}
+							]
+						},
+						{
+							"name": "ui_Label_Oven_Mins",
+							"id": "galfe0i5",
+							"type": "label",
+							"left": 186,
+							"top": 196,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 100,
+							"height": 32,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"text": "mins",
+							"long_mode": "LV_LABEL_LONG_WRAP",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"font_family": "montserratMedium",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 0,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								},
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DISABLED",
+									"disable": true,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"font_family": "montserratMedium",
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 255,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								}
+							]
+						},
+						{
+							"name": "ui_Label_Oven_TimeLeft",
+							"id": "nxz35uyw",
+							"type": "label",
+							"left": 146,
+							"top": 173,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 65,
+							"height": 61,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"text": "25",
+							"long_mode": "LV_LABEL_LONG_WRAP",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 45,
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"font_family": "Antonio_Regular",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 0,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								},
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DISABLED",
+									"disable": true,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"font_family": "montserratMedium",
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 255,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								}
+							]
+						},
+						{
 							"name": "ui_Label_Oven_Number1",
 							"id": "l0y1btzn",
 							"type": "label",
@@ -1648,7 +2120,7 @@
 							"height": 92,
 							"default_style": false,
 							"scrollbar_mode": "OFF",
-							"text": "234",
+							"text": "250",
 							"long_mode": "LV_LABEL_LONG_WRAP",
 							"style": [
 								{
@@ -1659,7 +2131,7 @@
 									"text_color": "#FF9110",
 									"font": 80,
 									"text_align": "LV_TEXT_ALIGN_CENTER",
-									"font_family": "montserratMedium",
+									"font_family": "Antonio_Regular",
 									"letter_space": 2,
 									"line_space": 0,
 									"bg_color": "#2195f6",
@@ -2305,6 +2777,40 @@
 					]
 				},
 				{
+					"name": "ui_Image_Hood_Light_Menu",
+					"id": "iio4pw6s",
+					"type": "img",
+					"left": 424,
+					"top": 191,
+					"is_move_animation": false,
+					"desX": 0,
+					"desY": 0,
+					"path_type": "linear",
+					"duration": 1000,
+					"width": 439,
+					"height": 217,
+					"default_style": false,
+					"scrollbar_mode": "OFF",
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\hood_menu_light.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
 					"name": "ui_Group_Aircon_Content",
 					"id": "9yblykel",
 					"type": "cont",
@@ -2321,6 +2827,78 @@
 					"scrollbar_mode": "OFF",
 					"child": [
 						{
+							"name": "ui_Label_Aircon_centigrade",
+							"id": "swr1z9c0",
+							"type": "label",
+							"left": 156,
+							"top": 165,
+							"is_move_animation": false,
+							"desX": 0,
+							"desY": 0,
+							"path_type": "linear",
+							"duration": 1000,
+							"width": 64,
+							"height": 31,
+							"default_style": false,
+							"scrollbar_mode": "OFF",
+							"text": "°C",
+							"long_mode": "LV_LABEL_LONG_WRAP",
+							"style": [
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DEFAULT",
+									"disable": false,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"font_family": "montserratMedium",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 0,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								},
+								{
+									"part": "LV_PART_MAIN",
+									"state": "LV_STATE_DISABLED",
+									"disable": true,
+									"radius": 0,
+									"text_color": "#ffffff",
+									"font": 16,
+									"font_family": "montserratMedium",
+									"text_align": "LV_TEXT_ALIGN_CENTER",
+									"letter_space": 2,
+									"line_space": 0,
+									"bg_color": "#2195f6",
+									"bg_grad_color": "#2195f6",
+									"bg_opa": 255,
+									"bg_grad_dir": "LV_GRAD_DIR_NONE",
+									"padding_top": 8,
+									"padding_right": 0,
+									"padding_bottom": 0,
+									"padding_left": 0,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
+								}
+							]
+						},
+						{
 							"name": "ui_Label_Aircon_Number1",
 							"id": "ndor6fk2",
 							"type": "label",
@@ -2335,7 +2913,7 @@
 							"height": 89,
 							"default_style": false,
 							"scrollbar_mode": "OFF",
-							"text": "46",
+							"text": "25",
 							"long_mode": "LV_LABEL_LONG_WRAP",
 							"style": [
 								{
@@ -2346,7 +2924,7 @@
 									"text_color": "#52DAFf",
 									"font": 80,
 									"text_align": "LV_TEXT_ALIGN_CENTER",
-									"font_family": "montserratMedium",
+									"font_family": "Antonio_Regular",
 									"letter_space": 2,
 									"line_space": 0,
 									"bg_color": "#2195f6",
@@ -2464,15 +3042,15 @@
 							"name": "ui_Label_Aircon_Fan_Text",
 							"id": "id4rsb5l",
 							"type": "label",
-							"left": 281,
+							"left": 268,
 							"top": 226,
 							"is_move_animation": false,
 							"desX": 0,
 							"desY": 0,
 							"path_type": "linear",
 							"duration": 1000,
-							"width": 60,
-							"height": 31,
+							"width": 89,
+							"height": 32,
 							"default_style": false,
 							"scrollbar_mode": "OFF",
 							"text": "Low",
@@ -3283,7 +3861,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": true
+									"is_del": false
 								}
 							}
 						}
@@ -4627,7 +5205,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": true
+									"is_del": false
 								}
 							}
 						}
@@ -8162,7 +8740,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": true
+									"is_del": false
 								}
 							}
 						}
@@ -12019,12 +12597,12 @@
 								"type": "label",
 								"scrollbar_mode": "OFF",
 								"pos": [
-									281,
+									268,
 									226
 								],
 								"size": [
-									60,
-									31
+									89,
+									32
 								],
 								"is_move_animation": false,
 								"path_type": "linear",
@@ -12200,7 +12778,7 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"text": "46",
+								"text": "25",
 								"long_mode": "LV_LABEL_LONG_WRAP",
 								"style": [
 									{
@@ -12210,6 +12788,86 @@
 										"radius": 0,
 										"text_color": "#52DAFf",
 										"font": 80,
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"font_family": "Antonio_Regular",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 0,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									},
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DISABLED",
+										"disable": true,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
+										"font_family": "montserratMedium",
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 255,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									}
+								]
+							},
+							{
+								"name": "ui_Home_ui_Label_Aircon_centigrade",
+								"id": "swr1z9c0",
+								"type": "label",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									156,
+									165
+								],
+								"size": [
+									64,
+									31
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"text": "°C",
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
 										"text_align": "LV_TEXT_ALIGN_CENTER",
 										"font_family": "montserratMedium",
 										"letter_space": 2,
@@ -12281,6 +12939,48 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0
+							}
+						]
+					},
+					{
+						"name": "ui_Home_ui_Image_Hood_Light_Menu",
+						"id": "iio4pw6s",
+						"type": "img",
+						"scrollbar_mode": "OFF",
+						"pos": [
+							424,
+							191
+						],
+						"size": [
+							439,
+							217
+						],
+						"is_move_animation": false,
+						"path_type": "linear",
+						"move_animation": {
+							"des_pos": [
+								0,
+								0
+							],
+							"duration": 1000
+						},
+						"default_style": false,
+						"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\hood_menu_light.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/hood_menu_light.png",
+						"img_sd_path": "S:/hood_menu_light.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
 							}
 						]
 					},
@@ -12975,7 +13675,7 @@
 									"duration": 1000
 								},
 								"default_style": false,
-								"text": "234",
+								"text": "250",
 								"long_mode": "LV_LABEL_LONG_WRAP",
 								"style": [
 									{
@@ -12985,6 +13685,246 @@
 										"radius": 0,
 										"text_color": "#FF9110",
 										"font": 80,
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"font_family": "Antonio_Regular",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 0,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									},
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DISABLED",
+										"disable": true,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
+										"font_family": "montserratMedium",
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 255,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									}
+								]
+							},
+							{
+								"name": "ui_Home_ui_Label_Oven_TimeLeft",
+								"id": "nxz35uyw",
+								"type": "label",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									146,
+									173
+								],
+								"size": [
+									65,
+									61
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"text": "25",
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 45,
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"font_family": "Antonio_Regular",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 0,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									},
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DISABLED",
+										"disable": true,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
+										"font_family": "montserratMedium",
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 255,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									}
+								]
+							},
+							{
+								"name": "ui_Home_ui_Label_Oven_Mins",
+								"id": "galfe0i5",
+								"type": "label",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									186,
+									196
+								],
+								"size": [
+									100,
+									32
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"text": "mins",
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"font_family": "montserratMedium",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 0,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									},
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DISABLED",
+										"disable": true,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
+										"font_family": "montserratMedium",
+										"text_align": "LV_TEXT_ALIGN_CENTER",
+										"letter_space": 2,
+										"line_space": 0,
+										"bg_color": "#2195f6",
+										"bg_grad_color": "#2195f6",
+										"bg_opa": 255,
+										"bg_grad_dir": "LV_GRAD_DIR_NONE",
+										"padding_top": 8,
+										"padding_right": 0,
+										"padding_bottom": 0,
+										"padding_left": 0,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
+									}
+								]
+							},
+							{
+								"name": "ui_Home_ui_Label_Oven_centigrade",
+								"id": "ddz7x8wt",
+								"type": "label",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									201,
+									42
+								],
+								"size": [
+									64,
+									31
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"text": "°C",
+								"long_mode": "LV_LABEL_LONG_WRAP",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"radius": 0,
+										"text_color": "#ffffff",
+										"font": 16,
 										"text_align": "LV_TEXT_ALIGN_CENTER",
 										"font_family": "montserratMedium",
 										"letter_space": 2,
@@ -14349,7 +15289,7 @@
 						"type": "btn",
 						"scrollbar_mode": "OFF",
 						"pos": [
-							493,
+							497,
 							405
 						],
 						"size": [
@@ -14486,6 +15426,318 @@
 						"text_height": "20",
 						"text_width": "60",
 						"mode": false
+					},
+					{
+						"name": "ui_Home_ui_Image_Menu_Swing",
+						"id": "mkr7oolj",
+						"type": "img",
+						"scrollbar_mode": "OFF",
+						"pos": [
+							72,
+							135
+						],
+						"size": [
+							298,
+							39
+						],
+						"is_move_animation": false,
+						"path_type": "linear",
+						"move_animation": {
+							"des_pos": [
+								0,
+								0
+							],
+							"duration": 1000
+						},
+						"default_style": false,
+						"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\aircon_menu_swing_01.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/aircon_menu_swing_01.png",
+						"img_sd_path": "S:/aircon_menu_swing_01.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "ui_Home_ui_Group_Smog_menu_1",
+						"id": "efu8wcza",
+						"type": "cont",
+						"scrollbar_mode": "OFF",
+						"pos": [
+							494,
+							207
+						],
+						"size": [
+							165,
+							152
+						],
+						"is_move_animation": false,
+						"path_type": "linear",
+						"move_animation": {
+							"des_pos": [
+								0,
+								0
+							],
+							"duration": 1000
+						},
+						"default_style": false,
+						"child": [
+							{
+								"name": "ui_Home_ui_Image_Smog_menu_11",
+								"id": "2ea2a0nn",
+								"type": "img",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									31,
+									0
+								],
+								"size": [
+									110,
+									472
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\smog_1.png",
+								"color_format": "true-color-alpha",
+								"rotate": 0,
+								"pivot": "50,50",
+								"use_fs": false,
+								"fs_type": "flash",
+								"img_flash_path": "F:/smog_1.png",
+								"img_sd_path": "S:/smog_1.png",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"image_recolor": "#ffffff",
+										"image_recolor_opa": 0,
+										"image_opa": 255
+									}
+								]
+							},
+							{
+								"name": "ui_Home_ui_Image_Smog_menu_12",
+								"id": "bhs60n72",
+								"type": "img",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									31,
+									310
+								],
+								"size": [
+									110,
+									630
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\smog_2.png",
+								"color_format": "true-color-alpha",
+								"rotate": 0,
+								"pivot": "0,0",
+								"use_fs": false,
+								"fs_type": "flash",
+								"img_flash_path": "F:/smog_2.png",
+								"img_sd_path": "S:/smog_2.png",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"image_recolor": "#ffffff",
+										"image_recolor_opa": 0,
+										"image_opa": 255
+									}
+								]
+							}
+						],
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"border_width": 2,
+								"border_color": "#2195f6",
+								"border_opa": 0,
+								"radius": 0,
+								"bg_color": "#ffffff",
+								"bg_grad_color": "#ffffff",
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_opa": 0,
+								"padding_top": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"padding_right": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0
+							}
+						]
+					},
+					{
+						"name": "ui_Home_ui_Group_Smog_menu_2",
+						"id": "hl289rla",
+						"type": "cont",
+						"scrollbar_mode": "OFF",
+						"pos": [
+							599,
+							207
+						],
+						"size": [
+							165,
+							161
+						],
+						"is_move_animation": false,
+						"path_type": "linear",
+						"move_animation": {
+							"des_pos": [
+								0,
+								0
+							],
+							"duration": 1000
+						},
+						"default_style": false,
+						"child": [
+							{
+								"name": "ui_Home_ui_Image_Smog_menu_21",
+								"id": "xkswdug2",
+								"type": "img",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									31,
+									0
+								],
+								"size": [
+									110,
+									472
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\smog_1.png",
+								"color_format": "true-color-alpha",
+								"rotate": 0,
+								"pivot": "50,50",
+								"use_fs": false,
+								"fs_type": "flash",
+								"img_flash_path": "F:/smog_1.png",
+								"img_sd_path": "S:/smog_1.png",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"image_recolor": "#ffffff",
+										"image_recolor_opa": 0,
+										"image_opa": 255
+									}
+								]
+							},
+							{
+								"name": "ui_Home_ui_Image_Smog_menu_22",
+								"id": "geyd57xi",
+								"type": "img",
+								"scrollbar_mode": "OFF",
+								"pos": [
+									31,
+									310
+								],
+								"size": [
+									110,
+									630
+								],
+								"is_move_animation": false,
+								"path_type": "linear",
+								"move_animation": {
+									"des_pos": [
+										0,
+										0
+									],
+									"duration": 1000
+								},
+								"default_style": false,
+								"img_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\image\\smog_2.png",
+								"color_format": "true-color-alpha",
+								"rotate": 0,
+								"pivot": "0,0",
+								"use_fs": false,
+								"fs_type": "flash",
+								"img_flash_path": "F:/smog_2.png",
+								"img_sd_path": "S:/smog_2.png",
+								"style": [
+									{
+										"part": "LV_PART_MAIN",
+										"state": "LV_STATE_DEFAULT",
+										"disable": false,
+										"image_recolor": "#ffffff",
+										"image_recolor_opa": 0,
+										"image_opa": 255
+									}
+								]
+							}
+						],
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"border_width": 2,
+								"border_color": "#2195f6",
+								"border_opa": 0,
+								"radius": 0,
+								"bg_color": "#ffffff",
+								"bg_grad_color": "#ffffff",
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_opa": 0,
+								"padding_top": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"padding_right": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0
+							}
+						]
 					}
 				]
 			},
@@ -22787,7 +24039,7 @@
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": true
+				"is_del": false
 			},
 			{
 				"src": "ui_Home_ui_Btn_Aircon",
@@ -22798,7 +24050,7 @@
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": true
+				"is_del": false
 			},
 			{
 				"src": "ui_Home_ui_Btn_Oven",
@@ -22809,7 +24061,7 @@
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": true
+				"is_del": false
 			},
 			{
 				"src": "ui_Hood_ui_Slider_Hood_Fan",
@@ -22840,7 +24092,7 @@
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": true
+				"is_del": false
 			},
 			{
 				"src": "ui_Aircon_Btn_TempUp",
@@ -22921,7 +24173,7 @@
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": true
+				"is_del": false
 			},
 			{
 				"src": "ui_Oven_Btn_ModeLeft",
@@ -22962,7 +24214,7 @@
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": true
+				"is_del": false
 			}
 		]
 	},

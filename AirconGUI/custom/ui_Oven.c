@@ -24,12 +24,21 @@ LV_IMG_DECLARE(_oven_fan_light_1_120x119);
 LV_IMG_DECLARE(_oven_fan_light_2_120x119);
 LV_IMG_DECLARE(_oven_fan_light_3_120x119);
 LV_IMG_DECLARE(_oven_fan_light_4_120x119);
+LV_IMG_DECLARE(_oven_menu_door_9_257x269);
+LV_IMG_DECLARE(_oven_light_menu_257x269);
 
 static const lv_img_dsc_t * oven_door[] = {&_oven_light_704x720, /*&_oven_door_01_704x720,*/ &_oven_door_02_704x720, /*&_oven_door_03_704x720,*/ &_oven_door_04_704x720,
 		/*&_oven_door_05_704x720,*/ &_oven_door_06_704x720, &_oven_door_07_704x720, &_oven_door_08_704x720};
 
 static const lv_img_dsc_t * oven_fan[] = {&_oven_fan_light_1_120x119, &_oven_fan_light_2_120x119, &_oven_fan_light_3_120x119,
 		&_oven_fan_light_4_120x119};
+
+static const lv_img_dsc_t * oven_mode_menu[] = {&_icn_oven_fan_rear_62x62, &_icn_oven_upper_lower_62x62, &_icn_oven_fan_upper_lower_62x62,
+		&_icn_oven_fan_lower_62x62, &_icn_oven_gril_62x62, &_icn_oven_fan_gril_62x62, &_icn_oven_upper_62x62, &_icn_oven_lower_62x62, &_icn_oven_defrost_62x62};
+
+static const lv_img_dsc_t * oven_mode_text_menu[] = {"Fan Forced\n Rear Element", "Upper & Lower\n Elements\n Convection",
+		"Fan Forced\n Upper & Lower\n Convection", "Fan Forced\n Lower Element\n Convection", "Grill", "Fan Forced\n Grill",
+		"Upper Outer\n Element", "Lower Outer\n Element", "Defrost"};
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -51,7 +60,11 @@ bool ui_oven_fan_state = kOVEN_FanOn;
 /*Complete Oven setting*/
 void ui_oven_init (void)
 {
+	setup_scr_ui_Oven(&guider_ui);
+	guider_ui.ui_Oven_del = false;
 
+	lv_img_set_src(guider_ui.ui_Home_ui_Image_Oven_Mode, oven_mode_menu[kOVEN_ModeFFRE]);
+	lv_label_set_text(guider_ui.ui_Home_ui_Label_Mode1, oven_mode_text_menu[kOVEN_ModeFFRE]);
 	/*clear scroll for the oven group*/
 	lv_obj_clear_flag(guider_ui.ui_Oven_Group_Oven, LV_OBJ_FLAG_SCROLLABLE);
 
@@ -217,6 +230,10 @@ void ui_oven_set_mode(OVEN_MODE_T mode, OVEN_MODE_Dir_T dir)
 	}
 	lv_obj_set_tile_id(guider_ui.ui_Oven_Tile_Mode, Oven_Mode, 0 ,LV_ANIM_ON);
 
+	lv_img_set_src(guider_ui.ui_Home_ui_Image_Oven_Mode, oven_mode_menu[Oven_Mode]);
+
+	lv_label_set_text(guider_ui.ui_Home_ui_Label_Mode1, oven_mode_text_menu[Oven_Mode]);
+
 	if(Oven_Mode == kOVEN_ModeFFRE || Oven_Mode == kOVEN_ModeFFULC ||Oven_Mode == kOVEN_ModeFFLEC ||Oven_Mode == kOVEN_ModeFFG || Oven_Mode == kOVEN_ModeDeFrost)
 	{
 		ui_oven_fan_state = kOVEN_FanOn;
@@ -246,7 +263,8 @@ void ui_oven_door(OVEN_Door_T state)
 			lv_obj_set_style_opa(guider_ui.ui_Oven_Img_Fan, LV_OPA_TRANSP, 0);
 		}
 		ui_oven_anim_door(kOVEN_DoorOpen, 0);
-		//TODO: Update Image of the Door on the menu.
+
+		lv_img_set_src(guider_ui.ui_Home_ui_Image_Oven_Menu,&_oven_menu_door_9_257x269);
 		ui_oven_door_state = kOVEN_DoorOpen;
 		ui_oven_light_state = kOVEN_LightOn;
 		break;
@@ -262,7 +280,8 @@ void ui_oven_door(OVEN_Door_T state)
 		{
 			lv_obj_fade_in(guider_ui.ui_Oven_Img_Fan, 10, 100);
 		}
-		//TODO: Update Image of the Door on the menu
+
+		lv_img_set_src(guider_ui.ui_Home_ui_Image_Oven_Menu,&_oven_light_menu_257x269);
 		ui_oven_door_state = kOVEN_DoorClose;
 		break;
 	}
@@ -432,10 +451,12 @@ static void oven_wheel_scroll_event_cb(lv_event_t * e)
 	if(cont == guider_ui.ui_Oven_Group_TarTemp)
 	{
 		lv_label_set_text(guider_ui.ui_Oven_Label_Temp, lv_label_get_text(y_min_obj));
+		lv_label_set_text(guider_ui.ui_Home_ui_Label_Oven_Number1, lv_label_get_text(y_min_obj));
 	}
 	else if(cont == guider_ui.ui_Oven_Group_Timer)
 	{
 		lv_label_set_text(guider_ui.ui_Oven_Label_TimeLeft, lv_label_get_text(y_min_obj));
+		lv_label_set_text(guider_ui.ui_Home_ui_Label_Oven_TimeLeft, lv_label_get_text(y_min_obj));
 	}
 }
 
@@ -459,4 +480,5 @@ static void ui_oven_anim_door(bool open, uint32_t delay)
 		a->act_time -= delay;
 	}
 }
+
 
