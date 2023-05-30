@@ -25,7 +25,7 @@
 #endif
 
 #if LV_USE_GPU_NXP_PXP
-#include "draw/nxp/pxp/lv_draw_pxp_blend.h"
+#include "../lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.h"
 #endif
 
 /*******************************************************************************
@@ -377,8 +377,11 @@ static void DEMO_FlushDisplay(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv
         .y2 = DEMO_BUFFER_WIDTH - 1,
     };
 
-    lv_gpu_nxp_pxp_blit(((lv_color_t *)inactiveFrameBuffer), &dest_area, DEMO_BUFFER_WIDTH, color_p, area, LV_OPA_COVER,
+    lv_gpu_nxp_pxp_blit(((lv_color_t *)inactiveFrameBuffer), &dest_area, DEMO_BUFFER_WIDTH, color_p, area, DEMO_BUFFER_HEIGHT ,LV_OPA_COVER,
                         LV_DISP_ROT_270);
+
+
+
 
 #else /* Use CPU to rotate the panel. */
     for (uint32_t y = 0; y < LVGL_BUFFER_HEIGHT; y++)

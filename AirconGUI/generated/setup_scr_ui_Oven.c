@@ -1672,7 +1672,7 @@ void setup_scr_ui_Oven(lv_ui *ui){
 
 	//Write codes ui_Oven_Lottie_Mic
 	ui->ui_Oven_Lottie_Mic = lv_rlottie_create_from_raw(ui->ui_Oven, 62, 74, (const void *)lottie_lf30_gbhpz7py);
-	lv_obj_set_pos(ui->ui_Oven_Lottie_Mic, 0, 646);
+	lv_obj_set_pos(ui->ui_Oven_Lottie_Mic, 8, 639);
 	lv_obj_set_size(ui->ui_Oven_Lottie_Mic, 62, 74);
 
 	//Write style state: LV_STATE_DEFAULT for style_ui_oven_lottie_mic_main_main_default

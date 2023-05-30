@@ -109,7 +109,7 @@ LV_IMG_DECLARE(_icn_fan_27x31);
 void ui_aircon_init (void)
 {
 	setup_scr_ui_Aircon(&guider_ui);
-	guider_ui.ui_Aircon_del = false;
+	//guider_ui.ui_Aircon_del = false;
 
 	lv_obj_clear_flag(guider_ui.ui_Aircon_Cont, LV_OBJ_FLAG_SCROLLABLE);
 

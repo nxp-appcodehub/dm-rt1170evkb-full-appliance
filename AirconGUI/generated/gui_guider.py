@@ -4279,6 +4279,20 @@ style_ui_aircon_ui_btn_back2_main_main_default.set_text_align(lv.TEXT_ALIGN.CENT
 ui_Aircon_ui_Btn_Back2.add_style(style_ui_aircon_ui_btn_back2_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 
+# create ui_Aircon_Lottie_Mic
+ui_Aircon_Lottie_Mic.set_pos(int(8),int(639))
+ui_Aircon_Lottie_Mic.set_size(62,74)
+ui_Aircon_Lottie_Mic.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+# create style style_ui_aircon_lottie_mic_main_main_default
+style_ui_aircon_lottie_mic_main_main_default = lv.style_t()
+style_ui_aircon_lottie_mic_main_main_default.init()
+style_ui_aircon_lottie_mic_main_main_default.set_bg_color(lv.color_make(0x21,0x95,0xf6))
+style_ui_aircon_lottie_mic_main_main_default.set_bg_opa(0)
+
+# add style for ui_Aircon_Lottie_Mic
+ui_Aircon_Lottie_Mic.add_style(style_ui_aircon_lottie_mic_main_main_default, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+
 # create ui_Oven
 ui_Oven = lv.obj()
 ui_Oven.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
@@ -6206,7 +6220,7 @@ ui_Oven_Group_Timer.add_style(style_ui_oven_group_timer_main_main_default, lv.PA
 
 
 # create ui_Oven_Lottie_Mic
-ui_Oven_Lottie_Mic.set_pos(int(0),int(646))
+ui_Oven_Lottie_Mic.set_pos(int(8),int(639))
 ui_Oven_Lottie_Mic.set_size(62,74)
 ui_Oven_Lottie_Mic.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 # create style style_ui_oven_lottie_mic_main_main_default
@@ -6255,25 +6269,25 @@ ui_Oven_ui_Btn_Back3.add_style(style_ui_oven_ui_btn_back3_main_main_default, lv.
 
 
 
-def ui_Oven_ui_Btn_Back3_clicked_1_event_cb(e,ui_Home):
+def ui_Oven_ui_Btn_Back3_released_1_event_cb(e,ui_Home):
     src = e.get_target()
     code = e.get_code()
     lv.scr_load_anim(ui_Home, lv.SCR_LOAD_ANIM.NONE, 100, 100, False)
-ui_Oven_ui_Btn_Back3.add_event_cb(lambda e: ui_Oven_ui_Btn_Back3_clicked_1_event_cb(e,ui_Home), lv.EVENT.CLICKED, None)
+ui_Oven_ui_Btn_Back3.add_event_cb(lambda e: ui_Oven_ui_Btn_Back3_released_1_event_cb(e,ui_Home), lv.EVENT.RELEASED, None)
 
 
-def ui_Home_ui_Btn_Hood_clicked_1_event_cb(e,ui_Hood):
+def ui_Home_ui_Btn_Hood_released_1_event_cb(e,ui_Hood):
     src = e.get_target()
     code = e.get_code()
     lv.scr_load_anim(ui_Hood, lv.SCR_LOAD_ANIM.NONE, 100, 100, False)
-ui_Home_ui_Btn_Hood.add_event_cb(lambda e: ui_Home_ui_Btn_Hood_clicked_1_event_cb(e,ui_Hood), lv.EVENT.CLICKED, None)
+ui_Home_ui_Btn_Hood.add_event_cb(lambda e: ui_Home_ui_Btn_Hood_released_1_event_cb(e,ui_Hood), lv.EVENT.RELEASED, None)
 
 
-def ui_Home_ui_Btn_Aircon_clicked_1_event_cb(e,ui_Aircon):
+def ui_Home_ui_Btn_Aircon_released_1_event_cb(e,ui_Aircon):
     src = e.get_target()
     code = e.get_code()
     lv.scr_load_anim(ui_Aircon, lv.SCR_LOAD_ANIM.NONE, 100, 100, False)
-ui_Home_ui_Btn_Aircon.add_event_cb(lambda e: ui_Home_ui_Btn_Aircon_clicked_1_event_cb(e,ui_Aircon), lv.EVENT.CLICKED, None)
+ui_Home_ui_Btn_Aircon.add_event_cb(lambda e: ui_Home_ui_Btn_Aircon_released_1_event_cb(e,ui_Aircon), lv.EVENT.RELEASED, None)
 
 
 
@@ -6288,28 +6302,28 @@ ui_Hood_sw_1.add_event_cb(lambda e: ui_Hood_sw_1_value_changed_1_event_cb(e,ui_H
 
 
 
-def ui_Hood_ui_Btn_Back1_clicked_1_event_cb(e,ui_Home):
+def ui_Hood_ui_Btn_Back1_released_1_event_cb(e,ui_Home):
     src = e.get_target()
     code = e.get_code()
     lv.scr_load_anim(ui_Home, lv.SCR_LOAD_ANIM.NONE, 100, 100, False)
-ui_Hood_ui_Btn_Back1.add_event_cb(lambda e: ui_Hood_ui_Btn_Back1_clicked_1_event_cb(e,ui_Home), lv.EVENT.CLICKED, None)
+ui_Hood_ui_Btn_Back1.add_event_cb(lambda e: ui_Hood_ui_Btn_Back1_released_1_event_cb(e,ui_Home), lv.EVENT.RELEASED, None)
 
 
 
 
 
-def ui_Home_ui_Btn_Oven_clicked_1_event_cb(e,ui_Oven):
+def ui_Home_ui_Btn_Oven_released_1_event_cb(e,ui_Oven):
     src = e.get_target()
     code = e.get_code()
     lv.scr_load_anim(ui_Oven, lv.SCR_LOAD_ANIM.NONE, 100, 100, False)
-ui_Home_ui_Btn_Oven.add_event_cb(lambda e: ui_Home_ui_Btn_Oven_clicked_1_event_cb(e,ui_Oven), lv.EVENT.CLICKED, None)
+ui_Home_ui_Btn_Oven.add_event_cb(lambda e: ui_Home_ui_Btn_Oven_released_1_event_cb(e,ui_Oven), lv.EVENT.RELEASED, None)
 
 
-def ui_Aircon_ui_Btn_Back2_clicked_1_event_cb(e,ui_Home):
+def ui_Aircon_ui_Btn_Back2_released_1_event_cb(e,ui_Home):
     src = e.get_target()
     code = e.get_code()
     lv.scr_load_anim(ui_Home, lv.SCR_LOAD_ANIM.NONE, 100, 100, False)
-ui_Aircon_ui_Btn_Back2.add_event_cb(lambda e: ui_Aircon_ui_Btn_Back2_clicked_1_event_cb(e,ui_Home), lv.EVENT.CLICKED, None)
+ui_Aircon_ui_Btn_Back2.add_event_cb(lambda e: ui_Aircon_ui_Btn_Back2_released_1_event_cb(e,ui_Home), lv.EVENT.RELEASED, None)
 
 
 

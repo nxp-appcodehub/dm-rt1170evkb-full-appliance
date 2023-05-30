@@ -548,7 +548,7 @@
 					],
 					"event": [
 						{
-							"trigger": "clicked",
+							"trigger": "released",
 							"dst": "ondqjh8k",
 							"action": {
 								"bg_color": {
@@ -605,7 +605,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": false
+									"is_del": true
 								}
 							}
 						}
@@ -747,7 +747,7 @@
 					],
 					"event": [
 						{
-							"trigger": "clicked",
+							"trigger": "released",
 							"dst": "defaultScreen",
 							"action": {
 								"bg_color": {
@@ -804,7 +804,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": false
+									"is_del": true
 								}
 							}
 						}
@@ -1014,7 +1014,7 @@
 					],
 					"event": [
 						{
-							"trigger": "clicked",
+							"trigger": "released",
 							"dst": "j9kiqm39",
 							"action": {
 								"bg_color": {
@@ -1071,7 +1071,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": false
+									"is_del": true
 								}
 							}
 						}
@@ -3804,7 +3804,7 @@
 					],
 					"event": [
 						{
-							"trigger": "clicked",
+							"trigger": "released",
 							"dst": "hvelve6c",
 							"action": {
 								"bg_color": {
@@ -3861,7 +3861,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": false
+									"is_del": true
 								}
 							}
 						}
@@ -5013,6 +5013,31 @@
 			"zh_keyboard_font_size": "18",
 			"list": [
 				{
+					"name": "Lottie_Mic",
+					"type": "lottie",
+					"left": 8,
+					"top": 639,
+					"is_move_animation": false,
+					"desX": 0,
+					"desY": 0,
+					"path_type": "linear",
+					"duration": 1000,
+					"width": 62,
+					"height": 74,
+					"json_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\lottie\\KNiPNozN4m.json",
+					"default_style": false,
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"bg_color": "#2195f6",
+							"bg_opa": 0
+						}
+					],
+					"id": "lx9twh2g"
+				},
+				{
 					"name": "ui_Btn_Back2",
 					"id": "tce7ys4q",
 					"type": "btn",
@@ -5148,7 +5173,7 @@
 					],
 					"event": [
 						{
-							"trigger": "clicked",
+							"trigger": "released",
 							"dst": "hvelve6c",
 							"action": {
 								"bg_color": {
@@ -5205,7 +5230,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": false
+									"is_del": true
 								}
 							}
 						}
@@ -8683,7 +8708,7 @@
 					],
 					"event": [
 						{
-							"trigger": "clicked",
+							"trigger": "released",
 							"dst": "hvelve6c",
 							"action": {
 								"bg_color": {
@@ -8740,7 +8765,7 @@
 									"delay": 100,
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
-									"is_del": false
+									"is_del": true
 								}
 							}
 						}
@@ -8750,8 +8775,8 @@
 					"name": "Lottie_Mic",
 					"id": "gmhmsvyy",
 					"type": "lottie",
-					"left": 0,
-					"top": 646,
+					"left": 8,
+					"top": 639,
 					"is_move_animation": false,
 					"desX": 0,
 					"desY": 0,
@@ -20406,6 +20431,39 @@
 						"text_height": "20",
 						"text_width": "60",
 						"mode": false
+					},
+					{
+						"name": "ui_Aircon_Lottie_Mic",
+						"id": "lx9twh2g",
+						"type": "lottie",
+						"pos": [
+							8,
+							639
+						],
+						"size": [
+							62,
+							74
+						],
+						"is_move_animation": false,
+						"path_type": "linear",
+						"move_animation": {
+							"des_pos": [
+								0,
+								0
+							],
+							"duration": 1000
+						},
+						"default_style": false,
+						"json_path": "C:\\Users\\nxf93737\\Documents\\MCUXpressoIDE_11.7.0_9198\\Range\\range_hood\\AirconGUI\\import\\lottie\\KNiPNozN4m.json",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"bg_color": "#2195f6",
+								"bg_opa": 0
+							}
+						]
 					}
 				]
 			},
@@ -23854,8 +23912,8 @@
 						"id": "gmhmsvyy",
 						"type": "lottie",
 						"pos": [
-							0,
-							646
+							8,
+							639
 						],
 						"size": [
 							62,
@@ -24032,36 +24090,36 @@
 		"event": [
 			{
 				"src": "ui_Home_ui_Btn_Hood",
-				"trigger": "clicked",
+				"trigger": "released",
 				"dst": "ui_Hood",
 				"action": "load_screen",
 				"duration": 100,
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": false
+				"is_del": true
 			},
 			{
 				"src": "ui_Home_ui_Btn_Aircon",
-				"trigger": "clicked",
+				"trigger": "released",
 				"dst": "ui_Aircon",
 				"action": "load_screen",
 				"duration": 100,
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": false
+				"is_del": true
 			},
 			{
 				"src": "ui_Home_ui_Btn_Oven",
-				"trigger": "clicked",
+				"trigger": "released",
 				"dst": "ui_Oven",
 				"action": "load_screen",
 				"duration": 100,
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": false
+				"is_del": true
 			},
 			{
 				"src": "ui_Hood_ui_Slider_Hood_Fan",
@@ -24085,14 +24143,14 @@
 			},
 			{
 				"src": "ui_Hood_ui_Btn_Back1",
-				"trigger": "clicked",
+				"trigger": "released",
 				"dst": "ui_Home",
 				"action": "load_screen",
 				"duration": 100,
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": false
+				"is_del": true
 			},
 			{
 				"src": "ui_Aircon_Btn_TempUp",
@@ -24166,14 +24224,14 @@
 			},
 			{
 				"src": "ui_Aircon_ui_Btn_Back2",
-				"trigger": "clicked",
+				"trigger": "released",
 				"dst": "ui_Home",
 				"action": "load_screen",
 				"duration": 100,
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": false
+				"is_del": true
 			},
 			{
 				"src": "ui_Oven_Btn_ModeLeft",
@@ -24207,14 +24265,14 @@
 			},
 			{
 				"src": "ui_Oven_ui_Btn_Back3",
-				"trigger": "clicked",
+				"trigger": "released",
 				"dst": "ui_Home",
 				"action": "load_screen",
 				"duration": 100,
 				"delay": 100,
 				"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 				"is_clean": false,
-				"is_del": false
+				"is_del": true
 			}
 		]
 	},

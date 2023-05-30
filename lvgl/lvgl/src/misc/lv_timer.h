@@ -13,6 +13,7 @@ extern "C" {
  *      INCLUDES
  *********************/
 #include "../lv_conf_internal.h"
+#include "../hal/lv_hal_tick.h"
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -31,6 +32,18 @@ extern "C" {
  **********************/
 
 struct _lv_timer_t;
+
+/**
+ * Get idle time callback.
+ * It returns the idle time counter in ms since the last reset.
+ */
+typedef uint32_t (*lv_timer_get_idle_cb_t)(void);
+
+/**
+ * Reset idle time callback.
+ * It sets to zero the idle time counter.
+ */
+typedef void (*lv_timer_reset_idle_cb_t)(void);
 
 /**
  * Timers execute this type of functions.
@@ -54,6 +67,21 @@ typedef struct _lv_timer_t {
  **********************/
 
 /**
+ * Register custom get idle time function.
+ */
+void lv_timer_register_get_idle_cb(lv_timer_get_idle_cb_t get_idle_cb);
+
+/**
+ * Register custom reset idle time function.
+ */
+void lv_timer_register_reset_idle_cb(lv_timer_reset_idle_cb_t reset_idle_cb);
+
+/**
+ * Reset idle time counter.
+ */
+void lv_timer_reset_idle(void);
+
+/**
  * Init the lv_timer module
  */
 void _lv_timer_core_init(void);
@@ -67,6 +95,24 @@ void _lv_timer_core_init(void);
 LV_ATTRIBUTE_TIMER_HANDLER uint32_t lv_timer_handler(void);
 
 //! @endcond
+
+/**
+ * Call it in the super-loop of main() or threads. It will run lv_timer_handler()
+ * with a given period in ms. You can use it with sleep or delay in OS environment.
+ * This function is used to simplify the porting.
+ * @param __ms the period for running lv_timer_handler()
+ */
+static inline LV_ATTRIBUTE_TIMER_HANDLER uint32_t lv_timer_handler_run_in_period(uint32_t ms)
+{
+    static uint32_t last_tick = 0;
+    uint32_t curr_tick = lv_tick_get();
+
+    if((curr_tick - last_tick) >= (ms)) {
+        last_tick = curr_tick;
+        return lv_timer_handler();
+    }
+    return 1;
+}
 
 /**
  * Create an "empty" timer. It needs to initialized with at least

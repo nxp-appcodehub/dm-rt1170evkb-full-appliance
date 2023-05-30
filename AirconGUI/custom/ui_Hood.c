@@ -23,7 +23,7 @@ bool ui_hood_light_state = kHOOD_lightOff;
 void ui_hood_init (void)
 {
 	setup_scr_ui_Hood(&guider_ui);
-	guider_ui.ui_Hood_del = false;
+	//guider_ui.ui_Hood_del = false;
 
 	ui_hood_set_light(kHOOD_lightOff);
 	ui_hood_set_fan_speed (kHOOD_FanLow);

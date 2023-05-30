@@ -1500,6 +1500,21 @@ void setup_scr_ui_Aircon(lv_ui *ui){
 	lv_obj_set_style_pad_all(ui->ui_Aircon_ui_Btn_Back2, 0, LV_STATE_DEFAULT);
 	lv_obj_align(ui->ui_Aircon_ui_Btn_Back2_label, LV_ALIGN_CENTER, 0, 0);
 
+	//Write codes ui_Aircon_Lottie_Mic
+	ui->ui_Aircon_Lottie_Mic = lv_rlottie_create_from_raw(ui->ui_Aircon, 62, 74, (const void *)lottie_KNiPNozN4m);
+	lv_obj_set_pos(ui->ui_Aircon_Lottie_Mic, 8, 639);
+	lv_obj_set_size(ui->ui_Aircon_Lottie_Mic, 62, 74);
+
+	//Write style state: LV_STATE_DEFAULT for style_ui_aircon_lottie_mic_main_main_default
+	static lv_style_t style_ui_aircon_lottie_mic_main_main_default;
+	if (style_ui_aircon_lottie_mic_main_main_default.prop_cnt > 1)
+		lv_style_reset(&style_ui_aircon_lottie_mic_main_main_default);
+	else
+		lv_style_init(&style_ui_aircon_lottie_mic_main_main_default);
+	lv_style_set_bg_color(&style_ui_aircon_lottie_mic_main_main_default, lv_color_make(0x21, 0x95, 0xf6));
+	lv_style_set_bg_opa(&style_ui_aircon_lottie_mic_main_main_default, 0);
+	lv_obj_add_style(ui->ui_Aircon_Lottie_Mic, &style_ui_aircon_lottie_mic_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Init events for screen
 	events_init_ui_Aircon(ui);
 }
