@@ -62,7 +62,7 @@
 #define HAL_UART_DMA_RING_BUFFER_ENABLE (0U)
 #endif /* HAL_UART_DMA_ENABLE */
 #ifndef LPUART_RING_BUFFER_SIZE
-#define LPUART_RING_BUFFER_SIZE (256U)
+#define LPUART_RING_BUFFER_SIZE (128U)
 #endif
 
 #if (defined(HAL_UART_DMA_ENABLE) && (HAL_UART_DMA_ENABLE > 0U))
@@ -103,6 +103,11 @@ typedef struct _hal_uart_dma_state
 #endif
     hal_uart_dma_receive_state_t dma_rx;
     hal_uart_dma_send_state_t dma_tx;
+#if (defined(HAL_UART_ADAPTER_LOWPOWER) && (HAL_UART_ADAPTER_LOWPOWER > 0U))
+    dma_channel_mux_configure_t dma_channel_mux_configure;
+    dma_mux_configure_t dma_mux_configure;
+    hal_uart_dma_config_t hal_uart_dma_config;
+#endif
 } hal_uart_dma_state_t;
 
 typedef struct _lpuart_dma_list
@@ -208,6 +213,8 @@ AT_NONCACHEABLE_SECTION_ALIGN(
     static edma_tcd_t tcdMemoryPoolPtr[sizeof(s_LpuartAdapterBase) / sizeof(LPUART_Type *)][1], sizeof(edma_tcd_t));
 
 static volatile uint32_t ringBufferIndex[sizeof(s_LpuartAdapterBase) / sizeof(LPUART_Type *)] = {0U};
+static void LPUART_StartRingBufferEDMA(hal_uart_handle_t handle);
+static void LPUART_DMACallbacks(LPUART_Type *base, lpuart_edma_handle_t *handle, status_t status, void *userData);
 #endif
 #endif /* HAL_UART_DMA_ENABLE */
 
@@ -280,7 +287,11 @@ static uint32_t HAL_UartGetDmaReceivedBytes(uint8_t instance)
 
     remainingBytes =
         EDMA_GetRemainingMajorLoopCount(uartDmaHandle->rxEdmaHandle.base, uartDmaHandle->rxEdmaHandle.channel);
-    if (remainingBytes != LPUART_RING_BUFFER_SIZE)
+    if (remainingBytes == LPUART_RING_BUFFER_SIZE)
+    {
+        remainingBytes = 0;
+    }
+    else
     {
         newIndex = LPUART_RING_BUFFER_SIZE - remainingBytes;
     }
@@ -410,6 +421,7 @@ static void HAL_UartInterruptHandle(uint8_t instance)
 #else  /* HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION */
     hal_dma_callback_msg_t msg;
     hal_uart_dma_state_t *uartDmaHandle = s_UartDmaState[instance];
+    uint32_t sentCount = 0U;
 #endif /* HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION */
 #endif /* HAL_UART_DMA_ENABLE */
     hal_uart_state_t *uartHandle = s_UartState[instance];
@@ -433,7 +445,14 @@ static void HAL_UartInterruptHandle(uint8_t instance)
             if ((0U != ((uint32_t)kLPUART_TransmissionCompleteFlag & status)) &&
                 (0U != (LPUART_GetEnabledInterrupts(s_LpuartAdapterBase[instance]) &
                         (uint32_t)kLPUART_TransmissionCompleteFlag)))
+
             {
+#if (defined(FSL_FEATURE_SOC_DMA_COUNT) && (FSL_FEATURE_SOC_DMA_COUNT > 0U))
+#elif (defined(FSL_FEATURE_SOC_EDMA_COUNT) && (FSL_FEATURE_SOC_EDMA_COUNT > 0U))
+                (void)LPUART_TransferGetSendCountEDMA(s_LpuartAdapterBase[uartDmaHandle->instance],
+                                                &uartDmaHandle->edmaHandle, &sentCount);
+#endif /* FSL_FEATURE_SOC_EDMA_COUNT */
+
                 /* Disable tx complete interrupt */
                 (void)LPUART_DisableInterrupts(s_LpuartAdapterBase[instance],
                                                (uint32_t)kLPUART_TransmissionCompleteFlag);
@@ -498,7 +517,7 @@ static void HAL_UartInterruptHandle(uint8_t instance)
         status = LPUART_GetStatusFlags(s_LpuartAdapterBase[instance]);
     }
 #if (defined(FSL_FEATURE_LPUART_IS_LPFLEXCOMM) && (FSL_FEATURE_LPUART_IS_LPFLEXCOMM > 0U))
-    if (((0U != ((uint32_t)kLPUART_RxDataRegFullInterruptFlag & status)) &&
+    if (((0U != ((uint32_t)kLPUART_RxDataRegFullFlag & status)) &&
 #else
     /* Receive data register full */
     if (((0U != ((uint32_t)kLPUART_RxDataRegFullFlag & status)) &&
@@ -520,7 +539,14 @@ static void HAL_UartInterruptHandle(uint8_t instance)
             count = ((uint8_t)((s_LpuartAdapterBase[instance]->WATER & LPUART_WATER_RXCOUNT_MASK) >>
                                LPUART_WATER_RXCOUNT_SHIFT));
 #else
-            count = 1u;
+            if (0U != (status & (uint32_t)kLPUART_RxDataRegFullInterruptEnable))
+            {
+                count = 1U;
+            }
+            else
+            {
+                count = 0U;
+            }
 #endif
             while (0u != count)
             {
@@ -604,7 +630,7 @@ static void HAL_UartInterruptHandle(uint8_t instance)
 }
 #endif /* HAL_UART_TRANSFER_MODE */
 #if (defined(FSL_FEATURE_LPUART_IS_LPFLEXCOMM) && (FSL_FEATURE_LPUART_IS_LPFLEXCOMM > 0U))
-static void HAL_LpUartInterruptHandle_Wapper(void *base, void *handle)
+static void HAL_LpUartInterruptHandle_Wapper(uint32_t instance, void *handle)
 {
     hal_uart_state_t *uartHandle = (hal_uart_state_t *)handle;
     HAL_UartInterruptHandle(uartHandle->instance);
@@ -655,7 +681,7 @@ static hal_uart_status_t HAL_UartInitCommon(hal_uart_handle_t handle, const hal_
     lpuartConfig.rxIdleConfig = kLPUART_IdleCharacter2;
 #endif /* HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION */
 
-    status = LPUART_Init(s_LpuartAdapterBase[config->instance], (void *)&lpuartConfig, config->srcClock_Hz);
+    status = LPUART_Init(s_LpuartAdapterBase[config->instance], (const void *)&lpuartConfig, config->srcClock_Hz);
 
     if ((int32_t)kStatus_Success != status)
     {
@@ -690,10 +716,10 @@ hal_uart_status_t HAL_UartInit(hal_uart_handle_t handle, const hal_uart_config_t
         LPUART_TransferCreateHandle(s_LpuartAdapterBase[config->instance], &uartHandle->hardwareHandle,
                                     (lpuart_transfer_callback_t)HAL_UartCallback, handle);
 #else
-
         s_UartState[uartHandle->instance] = uartHandle;
 #if (defined(FSL_FEATURE_LPUART_IS_LPFLEXCOMM) && (FSL_FEATURE_LPUART_IS_LPFLEXCOMM > 0U))
-        LP_FLEXCOMM_SetIRQHandler(s_LpuartAdapterBase[config->instance], HAL_LpUartInterruptHandle_Wapper, handle);
+        LP_FLEXCOMM_SetIRQHandler(config->instance, HAL_LpUartInterruptHandle_Wapper, handle,
+                                  LP_FLEXCOMM_PERIPH_LPUART);
 #endif /* FSL_FEATURE_LPUART_IS_LPFLEXCOMM */
 
 /* Enable interrupt in NVIC. */
@@ -716,7 +742,7 @@ hal_uart_status_t HAL_UartInit(hal_uart_handle_t handle, const hal_uart_config_t
         uartHandle->reg_WATER = s_LpuartAdapterBase[uartHandle->instance]->WATER;
         uartHandle->reg_MODIR = s_LpuartAdapterBase[uartHandle->instance]->MODIR;
 #else
-        memcpy(&uartHandle->config, config, sizeof(hal_uart_config_t));
+        (void)memcpy(&uartHandle->config, config, sizeof(hal_uart_config_t));
 #endif
 #endif
     }
@@ -789,6 +815,7 @@ hal_uart_status_t HAL_UartExitLowpower(hal_uart_handle_t handle)
     assert(handle);
 
     uartHandle = (hal_uart_state_t *)handle;
+
 #if (defined(HAL_UART_ADAPTER_LOWPOWER_RESTORE) && (HAL_UART_ADAPTER_LOWPOWER_RESTORE > 0U))
 #if !(defined(FSL_SDK_DISABLE_DRIVER_CLOCK_CONTROL) && FSL_SDK_DISABLE_DRIVER_CLOCK_CONTROL)
     /* Enable lpuart clock */
@@ -805,6 +832,7 @@ hal_uart_status_t HAL_UartExitLowpower(hal_uart_handle_t handle)
 #endif /* FSL_FEATURE_LPUART_HAS_FIFO */
     s_LpuartAdapterBase[uartHandle->instance]->CTRL = uartHandle->reg_CTRL;
 #if (defined(UART_ADAPTER_NON_BLOCKING_MODE) && (UART_ADAPTER_NON_BLOCKING_MODE > 0U))
+    s_UartState[uartHandle->instance] = handle;
 /* Enable interrupt in NVIC. */
 #if defined(FSL_FEATURE_LPUART_HAS_SEPARATE_RX_TX_IRQ) && FSL_FEATURE_LPUART_HAS_SEPARATE_RX_TX_IRQ
     NVIC_SetPriority((IRQn_Type)s_LpuartRxIRQ[uartHandle->instance], HAL_UART_ISR_PRIORITY);
@@ -821,6 +849,20 @@ hal_uart_status_t HAL_UartExitLowpower(hal_uart_handle_t handle)
 #endif
 #else
     HAL_UartInit(handle, &uartHandle->config);
+#endif
+#if (defined(HAL_UART_DMA_ENABLE) && (HAL_UART_DMA_ENABLE > 0U))
+#if (defined(HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION) && (HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION > 0U))
+#else
+    /* Enable RX interrupt for detecting the IDLE line interrupt. */
+    LPUART_EnableInterrupts(s_LpuartAdapterBase[uartHandle->instance], kLPUART_IdleLineInterruptEnable);
+#endif /* HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION */
+
+#if (defined(FSL_FEATURE_SOC_EDMA_COUNT) && (FSL_FEATURE_SOC_EDMA_COUNT > 0U))
+    HAL_UartDMAInit(uartHandle, uartHandle->dmaHandle, &uartHandle->dmaHandle->hal_uart_dma_config);
+    LPUART_StartRingBufferEDMA(handle);
+    ringBufferIndex[uartHandle->instance] = 0;
+#elif (defined(FSL_FEATURE_SOC_DMA_COUNT) && (FSL_FEATURE_SOC_DMA_COUNT > 0U))
+#endif /* FSL_FEATURE_SOC_EDMA_COUNT */
 #endif
 #endif
     return kStatus_HAL_UartSuccess;
@@ -1113,7 +1155,9 @@ void HAL_UartIsrFunction(hal_uart_handle_t handle)
     assert(0U == HAL_UART_TRANSFER_MODE);
 
     uartHandle = (hal_uart_state_t *)handle;
-
+#if (defined(HAL_UART_DMA_ENABLE) && (HAL_UART_DMA_ENABLE > 0U))
+    hal_uart_dma_state_t *uartDmaHandle = s_UartDmaState[uartHandle->instance];
+#endif
 #if 0
 #if defined(FSL_FEATURE_LPUART_HAS_SEPARATE_RX_TX_IRQ) && FSL_FEATURE_LPUART_HAS_SEPARATE_RX_TX_IRQ
     DisableIRQ(s_LpuartRxIRQ[uartHandle->instance]);
@@ -1122,7 +1166,17 @@ void HAL_UartIsrFunction(hal_uart_handle_t handle)
     DisableIRQ(s_LpuartIRQ[uartHandle->instance]);
 #endif
 #endif
+#if (defined(HAL_UART_DMA_ENABLE) && (HAL_UART_DMA_ENABLE > 0U))
+#if (defined(FSL_FEATURE_SOC_EDMA_COUNT) && (FSL_FEATURE_SOC_EDMA_COUNT > 0U))
+    if ((NULL != uartDmaHandle) && (uartDmaHandle->dma_tx.buffer != NULL))
+    {
+        EDMA_HandleIRQ(&uartHandle->dmaHandle->txEdmaHandle);
+    }
+#endif
+#endif
+
     HAL_UartInterruptHandle(uartHandle->instance);
+
 #if 0
 #if defined(FSL_FEATURE_LPUART_HAS_SEPARATE_RX_TX_IRQ) && FSL_FEATURE_LPUART_HAS_SEPARATE_RX_TX_IRQ
     NVIC_SetPriority((IRQn_Type)s_LpuartRxIRQ[uartHandle->instance], HAL_UART_ISR_PRIORITY);
@@ -1809,12 +1863,17 @@ hal_uart_dma_status_t HAL_UartDMAInit(hal_uart_handle_t handle,
                      dmaMux->dma_dmamux_configure.rx_request);
     DMAMUX_EnableChannel(dmaMuxBases[dmaMux->dma_dmamux_configure.dma_mux_instance], dmaConfig->tx_channel);
     DMAMUX_EnableChannel(dmaMuxBases[dmaMux->dma_dmamux_configure.dma_mux_instance], dmaConfig->rx_channel);
-
+#if (defined(HAL_UART_ADAPTER_LOWPOWER) && (HAL_UART_ADAPTER_LOWPOWER > 0U))
+    (void)memcpy(&uartDmaHandle->dma_mux_configure, dmaConfig->dma_mux_configure, sizeof(dma_mux_configure_t));
+#endif /* HAL_UART_ADAPTER_LOWPOWER */
 #endif /* FSL_FEATURE_SOC_DMAMUX_COUNT */
     /* Init the EDMA module */
 #if defined(EDMA_BASE_PTRS)
     EDMA_Type *dmaBases[]                                             = EDMA_BASE_PTRS;
     IRQn_Type s_edmaIRQNumbers[][FSL_FEATURE_EDMA_MODULE_MAX_CHANNEL] = EDMA_CHN_IRQS;
+#elif (defined(FSL_FEATURE_LPUART_IS_LPFLEXCOMM) && (FSL_FEATURE_LPUART_IS_LPFLEXCOMM > 0U))
+    DMA_Type *dmaBases[]                                              = DMA_BASE_PTRS;
+    IRQn_Type s_edmaIRQNumbers[][FSL_FEATURE_EDMA_MODULE_MAX_CHANNEL] = DMA_CHN_IRQS;
 #else
     DMA_Type *dmaBases[]                                          = DMA_BASE_PTRS;
     IRQn_Type s_edmaIRQNumbers[][FSL_FEATURE_EDMA_MODULE_CHANNEL] = DMA_CHN_IRQS;
@@ -1843,12 +1902,20 @@ hal_uart_dma_status_t HAL_UartDMAInit(hal_uart_handle_t handle,
                        (dma_request_source_t)dmaChannelMux->dma_dmamux_configure.dma_tx_channel_mux);
     EDMA_SetChannelMux(dmaBases[dmaConfig->dma_instance], dmaConfig->rx_channel,
                        (dma_request_source_t)dmaChannelMux->dma_dmamux_configure.dma_rx_channel_mux);
+#if (defined(HAL_UART_ADAPTER_LOWPOWER) && (HAL_UART_ADAPTER_LOWPOWER > 0U))
+    (void)memcpy(&uartDmaHandle->dma_channel_mux_configure, dmaConfig->dma_channel_mux_configure,
+                 sizeof(dma_channel_mux_configure_t));
+#endif /* HAL_UART_ADAPTER_LOWPOWER */
 #endif /* FSL_FEATURE_EDMA_HAS_CHANNEL_MUX */
-    NVIC_SetPriority(s_edmaIRQNumbers[dmaConfig->dma_instance][dmaConfig->tx_channel], HAL_UART_ISR_PRIORITY);
-    NVIC_SetPriority(s_edmaIRQNumbers[dmaConfig->dma_instance][dmaConfig->rx_channel], HAL_UART_ISR_PRIORITY);
+#if (defined(HAL_UART_ADAPTER_LOWPOWER) && (HAL_UART_ADAPTER_LOWPOWER > 0U))
+    (void)memcpy(&uartDmaHandle->hal_uart_dma_config, dmaConfig, sizeof(hal_uart_dma_config_t));
+    uartDmaHandle->hal_uart_dma_config.dma_mux_configure         = &uartDmaHandle->dma_mux_configure;
+    uartDmaHandle->hal_uart_dma_config.dma_channel_mux_configure = &uartDmaHandle->dma_channel_mux_configure;
+#endif /* HAL_UART_ADAPTER_LOWPOWER */
 #elif (defined(FSL_FEATURE_SOC_DMA_COUNT) && (FSL_FEATURE_SOC_DMA_COUNT > 0U))
 #endif /* FSL_FEATURE_SOC_EDMA_COUNT */
-
+    NVIC_SetPriority(s_edmaIRQNumbers[dmaConfig->dma_instance][dmaConfig->tx_channel], HAL_UART_ISR_PRIORITY);
+    NVIC_SetPriority(s_edmaIRQNumbers[dmaConfig->dma_instance][dmaConfig->rx_channel], HAL_UART_ISR_PRIORITY);
 #if (defined(HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION) && (HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION > 0U))
 #else /* HAL_UART_DMA_USE_SOFTWARE_IDLELINE_DETECTION */
     s_UartDmaState[uartDmaHandle->instance] = uartDmaHandle;
@@ -1989,6 +2056,14 @@ hal_uart_dma_status_t HAL_UartDMATransferInstallCallback(hal_uart_handle_t handl
     LPUART_TransferCreateHandleEDMA(s_LpuartAdapterBase[uartDmaHandle->instance], &uartDmaHandle->edmaHandle,
                                     LPUART_DMACallbacks, uartDmaHandle, &uartDmaHandle->txEdmaHandle,
                                     &uartDmaHandle->rxEdmaHandle);
+
+#if (defined(UART_ADAPTER_NON_BLOCKING_MODE) && (UART_ADAPTER_NON_BLOCKING_MODE > 0U))
+#if (defined(FSL_FEATURE_LPUART_IS_LPFLEXCOMM) && (FSL_FEATURE_LPUART_IS_LPFLEXCOMM > 0U))
+    LP_FLEXCOMM_SetIRQHandler(uartHandle->instance, HAL_LpUartInterruptHandle_Wapper, handle,
+                              LP_FLEXCOMM_PERIPH_LPUART);
+#endif /* FSL_FEATURE_LPUART_IS_LPFLEXCOMM */
+#endif /* UART_ADAPTER_NON_BLOCKING_MODE */
+
 #if (defined(HAL_UART_DMA_RING_BUFFER_ENABLE) && (HAL_UART_DMA_RING_BUFFER_ENABLE > 0U))
     LPUART_StartRingBufferEDMA(handle);
 #endif /* HAL_UART_DMA_RING_BUFFER_ENABLE */
@@ -2170,6 +2245,11 @@ hal_uart_dma_status_t HAL_UartDMAAbortReceive(hal_uart_handle_t handle)
     uartDmaHandle = uartHandle->dmaHandle;
 
     assert(uartDmaHandle);
+	
+#if (defined(HAL_UART_DMA_RING_BUFFER_ENABLE) && (HAL_UART_DMA_RING_BUFFER_ENABLE > 0U))
+    /* Make sure to re-initialize the ring bufferIndex */
+    ringBufferIndex[uartDmaHandle->instance] = 0U;
+#endif
 
 #if (defined(FSL_FEATURE_SOC_EDMA_COUNT) && (FSL_FEATURE_SOC_EDMA_COUNT > 0U))
     LPUART_TransferAbortReceiveEDMA(s_LpuartAdapterBase[uartDmaHandle->instance], &uartDmaHandle->edmaHandle);

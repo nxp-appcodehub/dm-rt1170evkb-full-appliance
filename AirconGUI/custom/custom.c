@@ -39,8 +39,8 @@
 void custom_init(lv_ui *ui)
 {
 
-	//ui_aircon_init();
-	//ui_oven_init();
-	//ui_hood_init();
+	ui_aircon_init();
+	ui_oven_init();
+	ui_hood_init();
 }
 

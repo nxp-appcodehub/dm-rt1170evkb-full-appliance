@@ -253,6 +253,9 @@
             #define LV_TICK_CUSTOM_SYS_TIME_EXPR (millis())    /*Expression evaluating to current system time in ms*/
         #endif
     #endif
+    /*If using lvgl as ESP32 component*/
+    // #define LV_TICK_CUSTOM_INCLUDE "esp_timer.h"
+    // #define LV_TICK_CUSTOM_SYS_TIME_EXPR ((esp_timer_get_time() / 1000LL))
 #endif   /*LV_TICK_CUSTOM*/
 
 /*Default Dot Per Inch. Used to initialize default sizes such as widgets sized, style paddings.
@@ -1757,6 +1760,15 @@
         #define LV_USE_ZH_KEYBOARD   1
     #endif
 #endif
+#if LV_USE_ZH_KEYBOARD
+    #ifndef LV_ZH_KEYBOARD_MINI
+        #ifdef CONFIG_LV_ZH_KEYBOARD_MINI
+            #define LV_ZH_KEYBOARD_MINI CONFIG_LV_ZH_KEYBOARD_MINI
+        #else
+            #define LV_ZH_KEYBOARD_MINI   1
+        #endif
+    #endif
+#endif
 
 #ifndef LV_USE_LED
     #ifdef _LV_KCONFIG_PRESENT
@@ -1893,6 +1905,18 @@
         #endif
     #else
         #define LV_USE_TABVIEW    1
+    #endif
+#endif
+
+#ifndef LV_USE_TEXTPROGRESS
+    #ifdef _LV_KCONFIG_PRESENT
+        #ifdef CONFIG_LV_USE_TEXTPROGRESS
+            #define LV_USE_TEXTPROGRESS CONFIG_LV_USE_TEXTPROGRESS
+        #else
+            #define LV_USE_TEXTPROGRESS 0
+        #endif
+    #else
+        #define LV_USE_TEXTPROGRESS 1
     #endif
 #endif
 
@@ -2223,6 +2247,15 @@
         #define LV_USE_QRCODE CONFIG_LV_USE_QRCODE
     #else
         #define LV_USE_QRCODE 0
+    #endif
+#endif
+
+/*Barcode library*/
+#ifndef LV_USE_BARCODE
+    #ifdef CONFIG_LV_USE_BARCODE
+        #define LV_USE_BARCODE CONFIG_LV_USE_BARCODE
+    #else
+        #define LV_USE_BARCODE 0
     #endif
 #endif
 

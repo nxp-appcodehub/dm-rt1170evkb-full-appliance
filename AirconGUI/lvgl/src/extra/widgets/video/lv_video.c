@@ -53,8 +53,8 @@
  *  STATIC PROTOTYPES
  **********************/
 
-static int VIDEO_WIDTH = 0;
-static int VIDEO_HEIGHT = 0;
+static int16_t video_width = 0;
+static int16_t video_height = 0;
 static void lv_video_constructor(const lv_obj_class_t * class_p, lv_obj_t * obj);
 static void lv_video_destructor(const lv_obj_class_t * class_p, lv_obj_t * obj);
 
@@ -95,11 +95,13 @@ const lv_obj_class_t lv_video_class = {
     static pxp_ps_buffer_config_t s_pxpPsBufferConfig;
     static volatile uint8_t s_lcdActiveFbIdx = 0;
     static int buffer_byte_per_pixel = 2;
-    static uint8_t s_lcdBuffer[2][480][272];
+    static uint8_t * s_lcdBuffer[2];
 #else
     static int mallocInit = 0;
     static uint8_t * rgb, *py, *pu, *pv;
 #endif
+
+static uint8_t s_decodeBuf[DEMO_DECODE_BUF_SIZE];
 
 /**********************
  *      MACROS
@@ -116,10 +118,16 @@ const lv_obj_class_t lv_video_class = {
  */
 lv_obj_t * lv_video_create(lv_obj_t * parent, int widgetWidth, int widgetHeight)
 {
-    // init video size.
-    VIDEO_WIDTH = widgetWidth;
-    VIDEO_HEIGHT = widgetHeight;
     LV_LOG_INFO("begin");
+
+    video_width = widgetWidth;
+    video_height = widgetHeight;
+
+#if !LV_USE_GUIDER_SIMULATOR
+    s_lcdBuffer[0] = malloc(widgetWidth * widgetHeight * buffer_byte_per_pixel);
+    s_lcdBuffer[1] = malloc(widgetWidth * widgetHeight * buffer_byte_per_pixel);
+#endif
+
     lv_obj_t * obj = lv_obj_class_create_obj(MY_CLASS, parent);
     lv_obj_class_init_obj(obj);
     return obj;
@@ -161,9 +169,6 @@ int Decoder_Data(const uint8_t * data, int len, bool isStartOfFile, bool isEndOf
 
     static int32_t decodeBufStart = 0;
     static int32_t decodeBufEnd   = 0;
-
-    /* Used for frame rate calculation. */
-    static uint8_t s_decodeBuf[DEMO_DECODE_BUF_SIZE];
 
     if(isStartOfFile) {
         decodeBufStart         = 0;
@@ -314,14 +319,15 @@ int Video_InitPXP()
 
     memset(&s_pxpPsBufferConfig, 0, sizeof(s_pxpPsBufferConfig));
     memset(&s_pxpOutputBufferConfig, 0, sizeof(s_pxpOutputBufferConfig));
-    memset(s_lcdBuffer, 0, sizeof(s_lcdBuffer));
+    memset(s_lcdBuffer[0], 0, video_width * video_height * buffer_byte_per_pixel);
+    memset(s_lcdBuffer[1], 0, video_width * video_height * buffer_byte_per_pixel);
     s_pxpPsBufferConfig.pixelFormat = kPXP_PsPixelFormatYVU420;
     s_pxpPsBufferConfig.swapByte    = false,
 
     s_pxpOutputBufferConfig.pixelFormat    = kPXP_OutputPixelFormatRGB565;
     s_pxpOutputBufferConfig.interlacedMode = kPXP_OutputProgressive;
     s_pxpOutputBufferConfig.buffer1Addr    = 0U,
-    s_pxpOutputBufferConfig.pitchBytes     = (VIDEO_WIDTH * buffer_byte_per_pixel);
+    s_pxpOutputBufferConfig.pitchBytes     = (video_width * buffer_byte_per_pixel);
 
     /* Initialize hardware. */
     PXP_Init(PXP);
@@ -352,8 +358,8 @@ static void PXP_DisplayFrame(uint16_t width,
     static uint16_t oldInputWidth  = 0U;
     static uint16_t oldInputHeight = 0U;
 
-    uint16_t lcdWidth  = VIDEO_WIDTH;
-    uint16_t lcdHeight = VIDEO_HEIGHT;
+    uint16_t lcdWidth  = video_width;
+    uint16_t lcdHeight = video_height;
 
     DCACHE_CleanInvalidateByRange((uint32_t)Y, height * Y_Stride);
     DCACHE_CleanInvalidateByRange((uint32_t)U, height * UV_Stride / 2);
@@ -443,7 +449,7 @@ static void CPU_DisplayFrame(SBufferInfo sDstBufInfo, unsigned char ** dst, lv_o
             memcpy(pv + i * width, pPtr, width);
             pPtr += UVStride;
         }
-        yuv420pToRgb565(width * 2, height * 2, VIDEO_WIDTH, VIDEO_HEIGHT, py, pu, pv, (uint16_t *)rgb);
+        yuv420pToRgb565(width * 2, height * 2, video_width, video_height, py, pu, pv, (uint16_t *)rgb);
         // update the image data.
         video->frameImage.data = rgb;
         lv_img_set_src(obj, &video->frameImage);
@@ -555,9 +561,9 @@ static void lv_video_constructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
     OpenH264_Init();
     video->frameImage.header.always_zero = 0;
     video->frameImage.header.cf = LV_IMG_CF_TRUE_COLOR;
-    video->frameImage.header.w = VIDEO_WIDTH;
-    video->frameImage.header.h = VIDEO_HEIGHT;
-    video->frameImage.data_size = VIDEO_WIDTH * VIDEO_HEIGHT * LV_COLOR_SIZE / 8;
+    video->frameImage.header.w = video_width;
+    video->frameImage.header.h = video_height;
+    video->frameImage.data_size = video_width * video_height * LV_COLOR_SIZE / 8;
     video->blk.data = (uint8_t *)malloc(DEMO_FILE_BUF_SIZE + 4);
     video->frameImage.data = NULL;
     video->fileStart = true;
@@ -574,6 +580,7 @@ static void lv_video_destructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
         free(video->blk.data);
         video->blk.data = NULL;
     }
+
 #if LV_USE_GUIDER_SIMULATOR
     mallocInit = 0;
     if(rgb) {
@@ -583,7 +590,12 @@ static void lv_video_destructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
         free(rgb);
     }
 #else
-    //    PXP_Deinit(PXP);
+    if(s_lcdBuffer[0] != NULL && s_lcdBuffer[1] != NULL) {
+        free(s_lcdBuffer[0]);
+        free(s_lcdBuffer[1]);
+        s_lcdBuffer[0] = NULL;
+        s_lcdBuffer[1] = NULL;
+    }
 #endif
     lv_img_cache_invalidate_src(lv_img_get_src(obj));
 }

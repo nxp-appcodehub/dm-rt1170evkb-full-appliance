@@ -1,8 +1,11 @@
 /*
- * Copyright 2023 NXP
- * SPDX-License-Identifier: MIT
- * The auto-generated can only be used on NXP devices
- */
+* Copyright 2023 NXP
+* NXP Confidential and Proprietary. This software is owned or controlled by NXP and may only be used strictly in
+* accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
+* activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
+* comply with and are bound by, such license terms.  If you do not agree to be bound by the applicable license
+* terms, then you may not retain, install, activate or otherwise use the software.
+*/
 
 #ifndef GUI_GUIDER_H
 #define GUI_GUIDER_H
@@ -11,10 +14,10 @@ extern "C" {
 #endif
 
 #include "lvgl.h"
-#include "guider_fonts.h"
 
 typedef struct
 {
+  
 	lv_obj_t *ui_Home;
 	bool ui_Home_del;
 	lv_obj_t *ui_Home_ui_Image_Menu_Bg;
@@ -190,33 +193,33 @@ typedef struct
 	lv_obj_t *ui_Oven_Label_TimeLeft;
 	lv_obj_t *ui_Oven_Label_Min;
 	lv_obj_t *ui_Oven_Tile_Mode;
-	lv_obj_t *ui_Oven_Tile_Mode_Mode_9;
-	lv_obj_t *ui_Oven_Img_Mode9;
-	lv_obj_t *ui_Oven_Label_Mode9;
-	lv_obj_t *ui_Oven_Tile_Mode_Mode_8;
-	lv_obj_t *ui_Oven_Img_Mode8;
-	lv_obj_t *ui_Oven_Label_Mode8;
-	lv_obj_t *ui_Oven_Tile_Mode_Mode_7;
-	lv_obj_t *ui_Oven_Img_Mode7;
-	lv_obj_t *ui_Oven_Label_Mode7;
-	lv_obj_t *ui_Oven_Tile_Mode_Mode_6;
-	lv_obj_t *ui_Oven_Img_Mode6;
-	lv_obj_t *ui_Oven_Label_Mode6;
-	lv_obj_t *ui_Oven_Tile_Mode_Mode_5;
-	lv_obj_t *ui_Oven_Img_Mode5;
-	lv_obj_t *ui_Oven_Label_Mode5;
-	lv_obj_t *ui_Oven_Tile_Mode_Mode_4;
-	lv_obj_t *ui_Oven_Img_Mode4;
-	lv_obj_t *ui_Oven_Label_Mode4;
-	lv_obj_t *ui_Oven_Tile_Mode_Mode_3;
-	lv_obj_t *ui_Oven_Label_Mode3;
-	lv_obj_t *ui_Oven_Img_Mode3;
-	lv_obj_t *ui_Oven_Tile_Mode_Mode_2;
-	lv_obj_t *ui_Oven_Img_Mode2;
-	lv_obj_t *ui_Oven_Label_Mode2;
 	lv_obj_t *ui_Oven_Tile_Mode_Mode_1;
+	lv_obj_t *ui_Oven_Tile_Mode_Mode_2;
+	lv_obj_t *ui_Oven_Tile_Mode_Mode_3;
+	lv_obj_t *ui_Oven_Tile_Mode_Mode_4;
+	lv_obj_t *ui_Oven_Tile_Mode_Mode_5;
+	lv_obj_t *ui_Oven_Tile_Mode_Mode_6;
+	lv_obj_t *ui_Oven_Tile_Mode_Mode_7;
+	lv_obj_t *ui_Oven_Tile_Mode_Mode_8;
+	lv_obj_t *ui_Oven_Tile_Mode_Mode_9;
 	lv_obj_t *ui_Oven_Img_Mode1;
 	lv_obj_t *ui_Oven_Label_Mode1;
+	lv_obj_t *ui_Oven_Img_Mode2;
+	lv_obj_t *ui_Oven_Label_Mode2;
+	lv_obj_t *ui_Oven_Label_Mode3;
+	lv_obj_t *ui_Oven_Img_Mode3;
+	lv_obj_t *ui_Oven_Img_Mode4;
+	lv_obj_t *ui_Oven_Label_Mode4;
+	lv_obj_t *ui_Oven_Img_Mode5;
+	lv_obj_t *ui_Oven_Label_Mode5;
+	lv_obj_t *ui_Oven_Img_Mode6;
+	lv_obj_t *ui_Oven_Label_Mode6;
+	lv_obj_t *ui_Oven_Img_Mode7;
+	lv_obj_t *ui_Oven_Label_Mode7;
+	lv_obj_t *ui_Oven_Img_Mode8;
+	lv_obj_t *ui_Oven_Label_Mode8;
+	lv_obj_t *ui_Oven_Img_Mode9;
+	lv_obj_t *ui_Oven_Label_Mode9;
 	lv_obj_t *ui_Oven_Group_TarTemp;
 	lv_obj_t *ui_Oven_Img_TempWheel;
 	lv_obj_t *ui_Oven_Label_SelTemp;
@@ -230,63 +233,108 @@ typedef struct
 	lv_obj_t *ui_Oven_ui_Btn_Back3_label;
 }lv_ui;
 
+void ui_init_style(lv_style_t * style);
 void init_scr_del_flag(lv_ui *ui);
 void setup_ui(lv_ui *ui);
 extern lv_ui guider_ui;
+
 void setup_scr_ui_Home(lv_ui *ui);
 void setup_scr_ui_Hood(lv_ui *ui);
 void setup_scr_ui_Aircon(lv_ui *ui);
 void setup_scr_ui_Oven(lv_ui *ui);
-LV_IMG_DECLARE(_aircon_fan_1_98x98);
-LV_IMG_DECLARE(_icn_oven_gril_62x62);
-LV_IMG_DECLARE(_text_aircon_15x88);
-LV_IMG_DECLARE(_menu_bg_1280x720);
-LV_IMG_DECLARE(_aircon_cool_1_92x102);
-LV_IMG_DECLARE(_smog_1_133x472);
-LV_IMG_DECLARE(_BTN_oven_alpha_134x51);
-LV_IMG_DECLARE(_icn_light_on_39x31);
-LV_IMG_DECLARE(_hood_light_901x460);
-LV_IMG_DECLARE(_text_oven_15x62);
-LV_IMG_DECLARE(_oven_light_704x720);
-LV_IMG_DECLARE(_text_hood_15x68);
-LV_IMG_DECLARE(_icn_oven_upper_lower_62x62);
-LV_IMG_DECLARE(_icn_oven_fan_gril_62x62);
-LV_IMG_DECLARE(_title_bg_2_783x128);
-LV_IMG_DECLARE(_wheel_bg_2_151x259);
-LV_IMG_DECLARE(_smog_2_133x630);
-LV_IMG_DECLARE(_oven_bg_1280x720);
-LV_IMG_DECLARE(_icn_oven_defrost_62x62);
-LV_IMG_DECLARE(_hood_small_299x199);
-LV_IMG_DECLARE(_oven_light_menu_257x269);
-LV_IMG_DECLARE(_hood_menu_light_439x217);
-LV_IMG_DECLARE(_hood_bg_1280x720);
-LV_IMG_DECLARE(_icn_oven_fan_upper_lower_62x62);
-LV_IMG_DECLARE(_oven_fan_light_1_120x119);
-LV_IMG_DECLARE(_aircon_swing_1_632x113);
-LV_IMG_DECLARE(_icn_oven_upper_62x62);
-LV_IMG_DECLARE(_icn_weather_1_56x52);
-LV_IMG_DECLARE(_wheel_bg_151x259);
-LV_IMG_DECLARE(_nxp_75x27);
-LV_IMG_DECLARE(_smog_2_110x630);
-LV_IMG_DECLARE(_aircon_bg_1280x720);
-LV_IMG_DECLARE(_title_bg_654x130);
-LV_IMG_DECLARE(_icn_cool_27x31);
-LV_IMG_DECLARE(_aircon_menu_swing_01_298x39);
-LV_IMG_DECLARE(_icn_oven_fan_rear_62x62);
-LV_IMG_DECLARE(_aircon_small_318x125);
-LV_IMG_DECLARE(_arrow_down_28x14);
-LV_IMG_DECLARE(_arrow_left_alpha_18x35);
-LV_IMG_DECLARE(_text_fan_param_198x26);
-LV_IMG_DECLARE(_arrow_right_alpha_18x35);
-LV_IMG_DECLARE(_smog_1_110x472);
-LV_IMG_DECLARE(_arrow_up_28x14);
-LV_IMG_DECLARE(_icn_fan_low_31x27);
-LV_IMG_DECLARE(_title_bg_799x130);
-LV_IMG_DECLARE(_icn_oven_lower_62x62);
-LV_IMG_DECLARE(_icn_oven_fan_lower_62x62);
+LV_IMG_DECLARE(_menu_bg_alpha_1280x720);
+LV_IMG_DECLARE(_nxp_alpha_75x27);
+LV_IMG_DECLARE(_text_aircon_alpha_15x88);
+LV_IMG_DECLARE(_icn_cool_alpha_27x31);
+LV_IMG_DECLARE(_icn_fan_low_alpha_31x27);
+LV_IMG_DECLARE(_hood_menu_light_alpha_439x217);
+LV_IMG_DECLARE(_text_oven_alpha_15x62);
+LV_IMG_DECLARE(_icn_oven_fan_upper_lower_alpha_62x62);
+LV_IMG_DECLARE(_text_hood_alpha_15x68);
+LV_IMG_DECLARE(_icn_light_on_alpha_39x31);
+LV_IMG_DECLARE(_icn_fan_low_alpha_31x27);
+LV_IMG_DECLARE(_icn_weather_1_alpha_56x52);
+LV_IMG_DECLARE(_hood_small_alpha_299x199);
+LV_IMG_DECLARE(_aircon_small_alpha_318x125);
+LV_IMG_DECLARE(_oven_light_menu_alpha_257x269);
+LV_IMG_DECLARE(_aircon_menu_swing_01_alpha_298x39);
+LV_IMG_DECLARE(_smog_1_alpha_110x472);
+LV_IMG_DECLARE(_smog_2_alpha_110x630);
+LV_IMG_DECLARE(_smog_1_alpha_110x472);
+LV_IMG_DECLARE(_smog_2_alpha_110x630);
+LV_IMG_DECLARE(_hood_bg_alpha_1280x720);
+LV_IMG_DECLARE(_hood_light_alpha_901x460);
+LV_IMG_DECLARE(_text_fan_param_alpha_198x26);
+LV_IMG_DECLARE(_smog_1_alpha_133x472);
+LV_IMG_DECLARE(_smog_2_alpha_133x630);
+LV_IMG_DECLARE(_smog_1_alpha_133x472);
+LV_IMG_DECLARE(_smog_2_alpha_133x630);
+#define LV_LOT_DECLARE(array_name) extern const uint8_t array_name[];
+LV_LOT_DECLARE(lottie_lf30_gbhpz7py);
+LV_IMG_DECLARE(_title_bg_2_alpha_783x128);
+LV_IMG_DECLARE(_aircon_bg_alpha_1280x720);
+LV_IMG_DECLARE(_title_bg_alpha_799x130);
+LV_IMG_DECLARE(_aircon_swing_1_alpha_632x113);
+LV_IMG_DECLARE(_arrow_up_alpha_28x14);
+LV_IMG_DECLARE(_arrow_down_alpha_28x14);
+LV_IMG_DECLARE(_icn_cool_alpha_27x31);
+LV_IMG_DECLARE(_icn_fan_low_alpha_31x27);
+LV_IMG_DECLARE(_arrow_up_alpha_28x14);
+LV_IMG_DECLARE(_arrow_down_alpha_28x14);
+LV_IMG_DECLARE(_aircon_fan_1_alpha_98x98);
+LV_IMG_DECLARE(_aircon_cool_1_alpha_92x102);
 #define LV_LOT_DECLARE(array_name) extern const uint8_t array_name[];
 LV_LOT_DECLARE(lottie_KNiPNozN4m);
+LV_IMG_DECLARE(_oven_bg_alpha_1280x720);
+LV_IMG_DECLARE(_oven_light_alpha_704x720);
+LV_IMG_DECLARE(_oven_fan_light_1_alpha_120x119);
+LV_IMG_DECLARE(_title_bg_alpha_654x130);
+LV_IMG_DECLARE(_arrow_left_alpha_18x35);
+LV_IMG_DECLARE(_arrow_left_alpha_18x35);
+LV_IMG_DECLARE(_arrow_left_alpha_18x35);
+LV_IMG_DECLARE(_arrow_left_alpha_18x35);
+LV_IMG_DECLARE(_arrow_right_alpha_18x35);
+LV_IMG_DECLARE(_arrow_right_alpha_18x35);
+LV_IMG_DECLARE(_arrow_right_alpha_18x35);
+LV_IMG_DECLARE(_arrow_right_alpha_18x35);
+LV_IMG_DECLARE(_BTN_oven_alpha_134x51);
+LV_IMG_DECLARE(_BTN_oven_alpha_134x51);
+LV_IMG_DECLARE(_BTN_oven_alpha_134x51);
+LV_IMG_DECLARE(_BTN_oven_alpha_134x51);
+LV_IMG_DECLARE(_icn_oven_fan_rear_alpha_62x62);
+LV_IMG_DECLARE(_icn_oven_upper_lower_alpha_62x62);
+LV_IMG_DECLARE(_icn_oven_fan_upper_lower_alpha_62x62);
+LV_IMG_DECLARE(_icn_oven_fan_lower_alpha_62x62);
+LV_IMG_DECLARE(_icn_oven_gril_alpha_62x62);
+LV_IMG_DECLARE(_icn_oven_fan_gril_alpha_62x62);
+LV_IMG_DECLARE(_icn_oven_upper_alpha_62x62);
+LV_IMG_DECLARE(_icn_oven_lower_alpha_62x62);
+LV_IMG_DECLARE(_icn_oven_defrost_alpha_62x62);
+LV_IMG_DECLARE(_wheel_bg_alpha_151x259);
+LV_IMG_DECLARE(_wheel_bg_2_alpha_151x259);
+#define LV_LOT_DECLARE(array_name) extern const uint8_t array_name[];
 LV_LOT_DECLARE(lottie_lf30_gbhpz7py);
+
+LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_80)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_45)
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(lv_font_montserratMedium_19)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_22)
+LV_FONT_DECLARE(lv_font_simsun_16)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_120)
+LV_FONT_DECLARE(lv_font_simsun_12)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_21)
+LV_FONT_DECLARE(lv_font_Alatsi_Regular_26)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_15)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_20)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_12)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_19)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_26)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_40)
+LV_FONT_DECLARE(lv_font_Alatsi_Regular_23)
+LV_FONT_DECLARE(lv_font_Antonio_Regular_18)
+
 
 #ifdef __cplusplus
 }

@@ -41,7 +41,7 @@ typedef struct _rawfs_file_t {
     rawfs_addr_t base;
     rawfs_addr_t offset;
     rawfs_size_t size;
-    char *name;
+    char * name;
 } rawfs_file_t;
 
 void lv_fs_rawfs_init(void);

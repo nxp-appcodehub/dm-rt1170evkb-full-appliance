@@ -271,35 +271,35 @@
 #define LV_BIG_ENDIAN_SYSTEM 0
 
 /*Define a custom attribute to `lv_tick_inc` function*/
-#define LV_ATTRIBUTE_TICK_INC
+#define LV_ATTRIBUTE_TICK_INC 
 
 /*Define a custom attribute to `lv_timer_handler` function*/
-#define LV_ATTRIBUTE_TIMER_HANDLER
+#define LV_ATTRIBUTE_TIMER_HANDLER 
 
 /*Define a custom attribute to `lv_disp_flush_ready` function*/
-#define LV_ATTRIBUTE_FLUSH_READY
+#define LV_ATTRIBUTE_FLUSH_READY 
 
 /*Required alignment size for buffers*/
 #define LV_ATTRIBUTE_MEM_ALIGN_SIZE 64
 
 /*Will be added where memories needs to be aligned (with -Os data might not be aligned to boundary by default).
  * E.g. __attribute__((aligned(4)))*/
-#define LV_ATTRIBUTE_MEM_ALIGN
+#define LV_ATTRIBUTE_MEM_ALIGN __attribute__((aligned(LV_ATTRIBUTE_MEM_ALIGN_SIZE)))
 
 #ifndef LV_ATTRIBUTE_LARGE_CONST
 /*Attribute to mark large constant arrays for example font's bitmaps*/
-#define LV_ATTRIBUTE_LARGE_CONST
+#define LV_ATTRIBUTE_LARGE_CONST 
 #endif    /* LV_ATTRIBUTE_LARGE_CONST */
 
 /*Compiler prefix for a big array declaration in RAM*/
-#define LV_ATTRIBUTE_LARGE_RAM_ARRAY
+#define LV_ATTRIBUTE_LARGE_RAM_ARRAY 
 
 /*Place performance critical functions into a faster memory (e.g RAM)*/
-#define LV_ATTRIBUTE_FAST_MEM
+#define LV_ATTRIBUTE_FAST_MEM 
 
 /*Prefix variables that are used in GPU accelerated operations,
  often these need to be placed in RAM sections that are DMA accessible*/
-#define LV_ATTRIBUTE_DMA
+#define LV_ATTRIBUTE_DMA 
 
 /*Export integer constant to binding. This macro is used with constants in the form of LV_<CONST> that
  *should also appear on LVGL binding API such as Micropython.*/
@@ -352,7 +352,7 @@
 /*Optionally declare custom fonts here.
  *You can use these fonts as default font too and they will be available globally.
  *E.g. #define LV_FONT_CUSTOM_DECLARE   LV_FONT_DECLARE(my_font_1) LV_FONT_DECLARE(my_font_2)*/
-#define LV_FONT_CUSTOM_DECLARE
+#define LV_FONT_CUSTOM_DECLARE 
 
 /*Always set a default font*/
 #define LV_FONT_DEFAULT &lv_font_montserrat_14
@@ -426,19 +426,19 @@
  *================*/
 
 /*Documentation of the widgets: https://docs.lvgl.io/latest/en/html/widgets/index.html*/
-#define LV_USE_ARC 0
+#define LV_USE_ARC 1
 
 #define LV_USE_BAR 1
 
 #define LV_USE_BTN 1
 
-#define LV_USE_BTNMATRIX 0
+#define LV_USE_BTNMATRIX 1
 
-#define LV_USE_CANVAS 0
+#define LV_USE_CANVAS 1
 
-#define LV_USE_CHECKBOX 0
+#define LV_USE_CHECKBOX 1
 
-#define LV_USE_DROPDOWN 0
+#define LV_USE_DROPDOWN 1
 
 #define LV_USE_IMG 1
 
@@ -462,12 +462,12 @@
 
 #define LV_USE_SWITCH 1
 
-#define LV_USE_TEXTAREA 0
+#define LV_USE_TEXTAREA 1
 #if LV_USE_TEXTAREA
 #define LV_TEXTAREA_DEF_PWD_SHOW_TIME 1500
 #endif    /* LV_USE_TEXTAREA */
 
-#define LV_USE_TABLE 0
+#define LV_USE_TABLE 1
 
 /*==================
  * EXTRA COMPONENTS
@@ -479,9 +479,9 @@
 
 #define LV_USE_ANALOGCLOCK 0
 
-#define LV_USE_ANIMIMG 0
+#define LV_USE_ANIMIMG 1
 
-#define LV_USE_CALENDAR 0
+#define LV_USE_CALENDAR 1
 #if LV_USE_CALENDAR
 #define LV_CALENDAR_WEEK_STARTS_MONDAY 0
 #if LV_CALENDAR_WEEK_STARTS_MONDAY == 0
@@ -492,47 +492,47 @@
 #define LV_USE_CALENDAR_HEADER_DROPDOWN 1
 #endif    /* LV_USE_CALENDAR */
 
-#define LV_USE_CAROUSEL 0
+#define LV_USE_CAROUSEL 1
 
-#define LV_USE_CHART 0
+#define LV_USE_CHART 1
 
-#define LV_USE_COLORWHEEL 0
+#define LV_USE_COLORWHEEL 1
 
-#define LV_USE_DCLOCK 0
+#define LV_USE_DCLOCK 1
 
 #define LV_USE_IMGBTN 1
 
 #define LV_USE_KEYBOARD 0
 
-#define LV_USE_LED 0
+#define LV_USE_LED 1
 
-#define LV_USE_LIST 0
+#define LV_USE_LIST 1
 
-#define LV_USE_MENU 0
+#define LV_USE_MENU 1
 
-#define LV_USE_METER 0
+#define LV_USE_METER 1
 
-#define LV_USE_MSGBOX 0
+#define LV_USE_MSGBOX 1
 
-#define LV_USE_RADIOBTN 0
+#define LV_USE_RADIOBTN 1
 
-#define LV_USE_SPAN 0
+#define LV_USE_SPAN 1
 #if LV_USE_SPAN
 /*A line text can contain maximum num of span descriptor */
 #define LV_SPAN_SNIPPET_STACK_SIZE 64
 #endif    /* LV_USE_SPAN */
 
-#define LV_USE_SPINBOX 0
+#define LV_USE_SPINBOX 1
 
-#define LV_USE_SPINNER 0
+#define LV_USE_SPINNER 1
 
-#define LV_USE_TABVIEW 0
+#define LV_USE_TABVIEW 1
 
 #define LV_USE_TILEVIEW 1
 
 #define LV_USE_VIDEO 0
 
-#define LV_USE_WIN 0
+#define LV_USE_WIN 1
 
 #define LV_USE_ZH_KEYBOARD 0
 #if LV_USE_ZH_KEYBOARD
@@ -645,7 +645,7 @@
 #define LV_USE_GIF 0
 
 /*QR code library*/
-#define LV_USE_QRCODE 0
+#define LV_USE_QRCODE 1
 
 /*FreeType library*/
 #define LV_USE_FREETYPE 0
@@ -713,7 +713,12 @@
 #define LV_IME_PINYIN_K9_CAND_TEXT_NUM 3
 #endif    /* LV_IME_PINYIN_USE_K9_MODE */
 #endif    /* LV_USE_IME_PINYIN */
+/*Enable the text progress bar*/
+#define LV_USE_TEXTPROGRESS 1
+/*Enable the barcode*/
+#define LV_USE_BARCODE 0
 
 #define LV_USE_GUIDER_SIMULATOR 1
+#include "lv_conf_ext.h"
 
 #endif

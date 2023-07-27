@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-2022 NXP
+ * Copyright 2019-2023 NXP
  * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
@@ -26,6 +26,12 @@
 
 #if LV_USE_GPU_NXP_PXP
 #include "draw/nxp/pxp/lv_draw_pxp_blend.h"
+#endif
+
+#if (DEMO_DISPLAY_CONTROLLER == DEMO_DISPLAY_CONTROLLER_LCDIFV2)
+#include "fsl_lcdifv2.h"
+#else
+#include "fsl_elcdif.h"
 #endif
 
 /*******************************************************************************
@@ -104,6 +110,14 @@ static void BOARD_ConfigMIPIPanelTouchIntPin(gt911_int_pin_mode_t mode);
 
 static void DEMO_WaitBufferSwitchOff(void);
 
+#if ((LV_COLOR_DEPTH == 8) || (LV_COLOR_DEPTH == 1))
+/*
+ * To support 8 color depth and 1 color depth with this board, color palette is
+ * used to map 256 color to 2^16 color.
+ */
+static void DEMO_SetLcdColorPalette(void);
+#endif
+
 /*******************************************************************************
  * Variables
  ******************************************************************************/
@@ -144,6 +158,53 @@ static int s_touchResolutionY;
  * Code
  ******************************************************************************/
 
+#if ((LV_COLOR_DEPTH == 8) || (LV_COLOR_DEPTH == 1))
+static void DEMO_SetLcdColorPalette(void)
+{
+    /*
+     * To support 8 color depth and 1 color depth with this board, color palette is
+     * used to map 256 color to 2^16 color.
+     *
+     * LVGL 1-bit color depth still uses 8-bit per pixel, so the palette size is the
+     * same with 8-bit color depth.
+     */
+    uint32_t palette[256];
+
+#if (LV_COLOR_DEPTH == 8)
+    lv_color_t color;
+    color.full = 0U;
+
+    /* RGB332 map to RGB888 */
+    for (int i = 0; i < 256U; i++)
+    {
+        palette[i] = ((uint32_t)color.ch.blue << 6U) | ((uint32_t)color.ch.green << 13U) | ((uint32_t)color.ch.red << 21U);
+        color.full++;
+    }
+
+#elif (LV_COLOR_DEPTH == 1)
+    for (int i = 0; i < 256U;)
+    {
+        /*
+         * Pixel map:
+         * 0bXXXXXXX1 -> 0xFFFFFF
+         * 0bXXXXXXX0 -> 0x000000
+         */
+        palette[i] = 0x000000U;
+        i++;
+        palette[i] = 0xFFFFFFU;
+        i++;
+    }
+#endif
+
+#if (DEMO_DISPLAY_CONTROLLER == DEMO_DISPLAY_CONTROLLER_ELCDIF)
+    ELCDIF_UpdateLut(LCDIF, kELCDIF_Lut0, 0, palette, 256);
+    ELCDIF_EnableLut(LCDIF, true);
+#else
+    LCDIFV2_SetLut(LCDIFV2, 0, palette, 256, false);
+#endif
+}
+#endif
+
 void lv_port_pre_init(void)
 {
 }
@@ -178,6 +239,10 @@ void lv_port_disp_init(void)
     {
         assert(0);
     }
+
+#if ((LV_COLOR_DEPTH == 8) || (LV_COLOR_DEPTH == 1))
+    DEMO_SetLcdColorPalette();
+#endif
 
     g_dc.ops->getLayerDefaultConfig(&g_dc, 0, &fbInfo);
     fbInfo.pixelFormat = DEMO_BUFFER_PIXEL_FORMAT;
@@ -342,8 +407,8 @@ static void DEMO_FlushDisplay(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv
         .y2 = DEMO_BUFFER_WIDTH - 1,
     };
 
-    lv_gpu_nxp_pxp_blit(((lv_color_t *)inactiveFrameBuffer), &dest_area, DEMO_BUFFER_WIDTH, color_p, area, LV_OPA_COVER,
-                        LV_DISP_ROT_270);
+    lv_gpu_nxp_pxp_blit(((lv_color_t *)inactiveFrameBuffer), &dest_area, DEMO_BUFFER_WIDTH, color_p, area, lv_area_get_width(area),
+                        LV_OPA_COVER, LV_DISP_ROT_270);
 
 #else /* Use CPU to rotate the panel. */
     for (uint32_t y = 0; y < LVGL_BUFFER_HEIGHT; y++)

@@ -19,9 +19,9 @@
 #endif
 
 #if LV_FS_RAWFS_XIP
-#if LV_FS_RAWFS_XIP_BASE_ADDR == 0xFFFFFFFF
-    #error "Base address for image binary (LV_FS_RAWFS_XIP_BASE_ADDR) must be valid"
-#endif
+    #if LV_FS_RAWFS_XIP_BASE_ADDR == 0xFFFFFFFF
+        #error "Base address for image binary (LV_FS_RAWFS_XIP_BASE_ADDR) must be valid"
+    #endif
 #endif
 
 /**********************
@@ -42,7 +42,7 @@ extern rawfs_file_t rawfs_files[];
 /**********************
  *  STATIC PROTOTYPES
  **********************/
-static lv_fs_res_t rawfs_file_find(const char *path, rawfs_file_t *file_p);
+static lv_fs_res_t rawfs_file_find(const char * path, rawfs_file_t * file_p);
 
 static void fs_init(void);
 
@@ -116,11 +116,12 @@ void lv_fs_rawfs_init(void)
  * @param file_p    pointer to a file_t variable. (opened with fs_open)
  * @return          LV_FS_RES_OK: no error or  any error from @lv_fs_res_t enum
  */
-static lv_fs_res_t rawfs_file_find(const char *path, rawfs_file_t *file_p) {
+static lv_fs_res_t rawfs_file_find(const char * path, rawfs_file_t * file_p)
+{
     lv_fs_res_t res = LV_FS_RES_FS_ERR;
     /*Find file*/
-    for (int i = 0; i < rawfs_file_count; i++) {
-        if (0 == strcmp(path, rawfs_files[i].name)) {
+    for(int i = 0; i < rawfs_file_count; i++) {
+        if(0 == strcmp(path, rawfs_files[i].name)) {
             *file_p = rawfs_files[i];
             res = LV_FS_RES_OK;
             break;
@@ -159,7 +160,7 @@ static void * fs_open(lv_fs_drv_t * drv, const char * path, lv_fs_mode_t mode)
     }
 
     if(res == LV_FS_RES_OK) {
-       f = &FIL;
+        f = &FIL;
     }
 
     return f;
@@ -193,7 +194,7 @@ static lv_fs_res_t fs_read(lv_fs_drv_t * drv, void * file_p, void * buf, uint32_
 {
     lv_fs_res_t res = LV_FS_RES_OK;
 
-    rawfs_file_t *p = (rawfs_file_t *)file_p;
+    rawfs_file_t * p = (rawfs_file_t *)file_p;
 #if LV_FS_RAWFS_XIP
     /*For XIP flash, copy directly*/
     lv_memcpy((uint8_t *)buf, (uint8_t *)(LV_FS_RAWFS_XIP_BASE_ADDR + p->base + p->offset), btr);
@@ -238,7 +239,7 @@ static lv_fs_res_t fs_seek(lv_fs_drv_t * drv, void * file_p, uint32_t pos, lv_fs
 {
     lv_fs_res_t res = LV_FS_RES_OK;
 
-    rawfs_file_t *p = (rawfs_file_t *)file_p;
+    rawfs_file_t * p = (rawfs_file_t *)file_p;
     if(whence == LV_FS_SEEK_SET) {
         p->offset = pos;
     }
@@ -247,7 +248,8 @@ static lv_fs_res_t fs_seek(lv_fs_drv_t * drv, void * file_p, uint32_t pos, lv_fs
     }
     else if(whence == LV_FS_SEEK_END) {
         p->offset = p->size + pos;
-    } else {
+    }
+    else {
         res = LV_FS_RES_NOT_IMP;
     }
 
@@ -265,7 +267,7 @@ static lv_fs_res_t fs_tell(lv_fs_drv_t * drv, void * file_p, uint32_t * pos_p)
 {
     lv_fs_res_t res = LV_FS_RES_OK;
 
-    rawfs_file_t *p = (rawfs_file_t *)file_p;
+    rawfs_file_t * p = (rawfs_file_t *)file_p;
     *pos_p = p->offset;
 
     return res;

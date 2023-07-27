@@ -665,7 +665,7 @@
                             
               <MiscControls>-fno-common -fdata-sections -ffreestanding -fno-builtin -mthumb</MiscControls>
                             
-              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, DEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS, MCUXPRESSO_SDK</Define>
+              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, DEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, MCUXPRESSO_SDK, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS</Define>
                             
               <Undefine/>
                             
@@ -737,7 +737,7 @@
                         
             <IncludeLibsPath/>
                         
-            <Misc>--remove --entry=Reset_Handler --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --predefine="-DXIP_BOOT_HEADER_DCD_ENABLE=0" --predefine="-DXIP_BOOT_HEADER_XMCD_ENABLE=1"
+            <Misc>--remove --entry=Reset_Handler --diag_suppress 6314 --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --predefine="-DXIP_BOOT_HEADER_DCD_ENABLE=0" --predefine="-DXIP_BOOT_HEADER_XMCD_ENABLE=1"
 --remove</Misc>
                         
             <LinkerInputFile/>
@@ -954,6 +954,11 @@
       <FileName>custom.mk</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\custom\custom.mk</FilePath>
+    </File>
+    <File>
+      <FileName>lv_conf_ext.h</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\custom\lv_conf_ext.h</FilePath>
     </File>
     <File>
       <FileName>ui_Aircon.c</FileName>
@@ -1401,6 +1406,11 @@
       <FilePath>..\..\generated\events_init.h</FilePath>
     </File>
     <File>
+      <FileName>fs_driver.py</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\fs_driver.py</FilePath>
+    </File>
+    <File>
       <FileName>generated.mk</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\generated.mk</FilePath>
@@ -1439,6 +1449,16 @@
       <FileName>setup_scr_ui_Oven.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\setup_scr_ui_Oven.c</FilePath>
+    </File>
+    <File>
+      <FileName>widgets_init.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\widgets_init.c</FilePath>
+    </File>
+    <File>
+      <FileName>widgets_init.h</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\widgets_init.h</FilePath>
     </File>
   </Files>
 </Group>
@@ -1586,39 +1606,39 @@
       <FilePath>..\..\generated\images\lottie_lf30_gbhpz7py.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_bg_1280x720.c</FileName>
+      <FileName>_aircon_bg_alpha_1280x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_bg_1280x720.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_bg_alpha_1280x720.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_cool_1_92x102.c</FileName>
+      <FileName>_aircon_cool_1_alpha_92x102.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_cool_1_92x102.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_cool_1_alpha_92x102.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_fan_1_98x98.c</FileName>
+      <FileName>_aircon_fan_1_alpha_98x98.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_fan_1_98x98.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_fan_1_alpha_98x98.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_menu_swing_01_298x39.c</FileName>
+      <FileName>_aircon_menu_swing_01_alpha_298x39.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_menu_swing_01_298x39.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_menu_swing_01_alpha_298x39.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_small_318x125.c</FileName>
+      <FileName>_aircon_small_alpha_318x125.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_small_318x125.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_small_alpha_318x125.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_swing_1_632x113.c</FileName>
+      <FileName>_aircon_swing_1_alpha_632x113.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_swing_1_632x113.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_swing_1_alpha_632x113.c</FilePath>
     </File>
     <File>
-      <FileName>_arrow_down_28x14.c</FileName>
+      <FileName>_arrow_down_alpha_28x14.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_arrow_down_28x14.c</FilePath>
+      <FilePath>..\..\generated\images\_arrow_down_alpha_28x14.c</FilePath>
     </File>
     <File>
       <FileName>_arrow_left_alpha_18x35.c</FileName>
@@ -1631,9 +1651,9 @@
       <FilePath>..\..\generated\images\_arrow_right_alpha_18x35.c</FilePath>
     </File>
     <File>
-      <FileName>_arrow_up_28x14.c</FileName>
+      <FileName>_arrow_up_alpha_28x14.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_arrow_up_28x14.c</FilePath>
+      <FilePath>..\..\generated\images\_arrow_up_alpha_28x14.c</FilePath>
     </File>
     <File>
       <FileName>_BTN_oven_alpha_134x51.c</FileName>
@@ -1641,184 +1661,519 @@
       <FilePath>..\..\generated\images\_BTN_oven_alpha_134x51.c</FilePath>
     </File>
     <File>
-      <FileName>_hood_bg_1280x720.c</FileName>
+      <FileName>_hood_bg_alpha_1280x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_hood_bg_1280x720.c</FilePath>
+      <FilePath>..\..\generated\images\_hood_bg_alpha_1280x720.c</FilePath>
     </File>
     <File>
-      <FileName>_hood_light_901x460.c</FileName>
+      <FileName>_hood_light_alpha_901x460.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_hood_light_901x460.c</FilePath>
+      <FilePath>..\..\generated\images\_hood_light_alpha_901x460.c</FilePath>
     </File>
     <File>
-      <FileName>_hood_menu_light_439x217.c</FileName>
+      <FileName>_hood_menu_light_alpha_439x217.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_hood_menu_light_439x217.c</FilePath>
+      <FilePath>..\..\generated\images\_hood_menu_light_alpha_439x217.c</FilePath>
     </File>
     <File>
-      <FileName>_hood_small_299x199.c</FileName>
+      <FileName>_hood_small_alpha_299x199.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_hood_small_299x199.c</FilePath>
+      <FilePath>..\..\generated\images\_hood_small_alpha_299x199.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_cool_27x31.c</FileName>
+      <FileName>_icn_cool_alpha_27x31.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_cool_27x31.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_cool_alpha_27x31.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_fan_low_31x27.c</FileName>
+      <FileName>_icn_fan_low_alpha_31x27.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_fan_low_31x27.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_fan_low_alpha_31x27.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_light_on_39x31.c</FileName>
+      <FileName>_icn_light_on_alpha_39x31.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_light_on_39x31.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_light_on_alpha_39x31.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_defrost_62x62.c</FileName>
+      <FileName>_icn_oven_defrost_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_defrost_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_defrost_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_fan_gril_62x62.c</FileName>
+      <FileName>_icn_oven_fan_gril_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_fan_gril_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_fan_gril_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_fan_lower_62x62.c</FileName>
+      <FileName>_icn_oven_fan_lower_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_fan_lower_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_fan_lower_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_fan_rear_62x62.c</FileName>
+      <FileName>_icn_oven_fan_rear_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_fan_rear_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_fan_rear_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_fan_upper_lower_62x62.c</FileName>
+      <FileName>_icn_oven_fan_upper_lower_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_fan_upper_lower_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_fan_upper_lower_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_gril_62x62.c</FileName>
+      <FileName>_icn_oven_gril_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_gril_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_gril_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_lower_62x62.c</FileName>
+      <FileName>_icn_oven_lower_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_lower_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_lower_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_upper_62x62.c</FileName>
+      <FileName>_icn_oven_upper_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_upper_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_upper_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_upper_lower_62x62.c</FileName>
+      <FileName>_icn_oven_upper_lower_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_upper_lower_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_upper_lower_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_weather_1_56x52.c</FileName>
+      <FileName>_icn_weather_1_alpha_56x52.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_weather_1_56x52.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_weather_1_alpha_56x52.c</FilePath>
     </File>
     <File>
-      <FileName>_menu_bg_1280x720.c</FileName>
+      <FileName>_menu_bg_alpha_1280x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_menu_bg_1280x720.c</FilePath>
+      <FilePath>..\..\generated\images\_menu_bg_alpha_1280x720.c</FilePath>
     </File>
     <File>
-      <FileName>_nxp_75x27.c</FileName>
+      <FileName>_nxp_alpha_75x27.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_nxp_75x27.c</FilePath>
+      <FilePath>..\..\generated\images\_nxp_alpha_75x27.c</FilePath>
     </File>
     <File>
-      <FileName>_oven_bg_1280x720.c</FileName>
+      <FileName>_oven_bg_alpha_1280x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_oven_bg_1280x720.c</FilePath>
+      <FilePath>..\..\generated\images\_oven_bg_alpha_1280x720.c</FilePath>
     </File>
     <File>
-      <FileName>_oven_fan_light_1_120x119.c</FileName>
+      <FileName>_oven_fan_light_1_alpha_120x119.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_oven_fan_light_1_120x119.c</FilePath>
+      <FilePath>..\..\generated\images\_oven_fan_light_1_alpha_120x119.c</FilePath>
     </File>
     <File>
-      <FileName>_oven_light_704x720.c</FileName>
+      <FileName>_oven_light_alpha_704x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_oven_light_704x720.c</FilePath>
+      <FilePath>..\..\generated\images\_oven_light_alpha_704x720.c</FilePath>
     </File>
     <File>
-      <FileName>_oven_light_menu_257x269.c</FileName>
+      <FileName>_oven_light_menu_alpha_257x269.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_oven_light_menu_257x269.c</FilePath>
+      <FilePath>..\..\generated\images\_oven_light_menu_alpha_257x269.c</FilePath>
     </File>
     <File>
-      <FileName>_smog_1_110x472.c</FileName>
+      <FileName>_smog_1_alpha_110x472.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_smog_1_110x472.c</FilePath>
+      <FilePath>..\..\generated\images\_smog_1_alpha_110x472.c</FilePath>
     </File>
     <File>
-      <FileName>_smog_1_133x472.c</FileName>
+      <FileName>_smog_1_alpha_133x472.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_smog_1_133x472.c</FilePath>
+      <FilePath>..\..\generated\images\_smog_1_alpha_133x472.c</FilePath>
     </File>
     <File>
-      <FileName>_smog_2_110x630.c</FileName>
+      <FileName>_smog_2_alpha_110x630.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_smog_2_110x630.c</FilePath>
+      <FilePath>..\..\generated\images\_smog_2_alpha_110x630.c</FilePath>
     </File>
     <File>
-      <FileName>_smog_2_133x630.c</FileName>
+      <FileName>_smog_2_alpha_133x630.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_smog_2_133x630.c</FilePath>
+      <FilePath>..\..\generated\images\_smog_2_alpha_133x630.c</FilePath>
     </File>
     <File>
-      <FileName>_text_aircon_15x88.c</FileName>
+      <FileName>_text_aircon_alpha_15x88.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_text_aircon_15x88.c</FilePath>
+      <FilePath>..\..\generated\images\_text_aircon_alpha_15x88.c</FilePath>
     </File>
     <File>
-      <FileName>_text_fan_param_198x26.c</FileName>
+      <FileName>_text_fan_param_alpha_198x26.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_text_fan_param_198x26.c</FilePath>
+      <FilePath>..\..\generated\images\_text_fan_param_alpha_198x26.c</FilePath>
     </File>
     <File>
-      <FileName>_text_hood_15x68.c</FileName>
+      <FileName>_text_hood_alpha_15x68.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_text_hood_15x68.c</FilePath>
+      <FilePath>..\..\generated\images\_text_hood_alpha_15x68.c</FilePath>
     </File>
     <File>
-      <FileName>_text_oven_15x62.c</FileName>
+      <FileName>_text_oven_alpha_15x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_text_oven_15x62.c</FilePath>
+      <FilePath>..\..\generated\images\_text_oven_alpha_15x62.c</FilePath>
     </File>
     <File>
-      <FileName>_title_bg_2_783x128.c</FileName>
+      <FileName>_title_bg_2_alpha_783x128.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_title_bg_2_783x128.c</FilePath>
+      <FilePath>..\..\generated\images\_title_bg_2_alpha_783x128.c</FilePath>
     </File>
     <File>
-      <FileName>_title_bg_654x130.c</FileName>
+      <FileName>_title_bg_alpha_654x130.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_title_bg_654x130.c</FilePath>
+      <FilePath>..\..\generated\images\_title_bg_alpha_654x130.c</FilePath>
     </File>
     <File>
-      <FileName>_title_bg_799x130.c</FileName>
+      <FileName>_title_bg_alpha_799x130.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_title_bg_799x130.c</FilePath>
+      <FilePath>..\..\generated\images\_title_bg_alpha_799x130.c</FilePath>
     </File>
     <File>
-      <FileName>_wheel_bg_151x259.c</FileName>
+      <FileName>_wheel_bg_2_alpha_151x259.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_wheel_bg_151x259.c</FilePath>
+      <FilePath>..\..\generated\images\_wheel_bg_2_alpha_151x259.c</FilePath>
     </File>
     <File>
-      <FileName>_wheel_bg_2_151x259.c</FileName>
+      <FileName>_wheel_bg_alpha_151x259.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_wheel_bg_2_151x259.c</FilePath>
+      <FilePath>..\..\generated\images\_wheel_bg_alpha_151x259.c</FilePath>
+    </File>
+  </Files>
+</Group>
+<Group>
+  <GroupName>generated\MicroPython</GroupName>
+  <Files>
+    <File>
+      <FileName>aircon_bg_1280_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_bg_1280_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_cool_1_92_102.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_cool_1_92_102.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_fan_1_98_98.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_fan_1_98_98.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_menu_swing_01_298_39.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_menu_swing_01_298_39.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_small_318_125.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_small_318_125.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_swing_1_632_113.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_swing_1_632_113.png</FilePath>
+    </File>
+    <File>
+      <FileName>arrow_down_28_14.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\arrow_down_28_14.png</FilePath>
+    </File>
+    <File>
+      <FileName>arrow_left_18_35.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\arrow_left_18_35.png</FilePath>
+    </File>
+    <File>
+      <FileName>arrow_right_18_35.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\arrow_right_18_35.png</FilePath>
+    </File>
+    <File>
+      <FileName>arrow_up_28_14.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\arrow_up_28_14.png</FilePath>
+    </File>
+    <File>
+      <FileName>BTN_oven_134_51.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\BTN_oven_134_51.png</FilePath>
+    </File>
+    <File>
+      <FileName>hood_bg_1280_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\hood_bg_1280_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>hood_light_901_460.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\hood_light_901_460.png</FilePath>
+    </File>
+    <File>
+      <FileName>hood_menu_light_439_217.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\hood_menu_light_439_217.png</FilePath>
+    </File>
+    <File>
+      <FileName>hood_small_299_199.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\hood_small_299_199.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_cool_27_31.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_cool_27_31.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_fan_low_31_27.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_fan_low_31_27.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_light_on_39_31.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_light_on_39_31.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_defrost_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_defrost_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_fan_gril_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_fan_gril_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_fan_lower_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_fan_lower_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_fan_rear_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_fan_rear_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_fan_upper_lower_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_fan_upper_lower_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_gril_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_gril_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_lower_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_lower_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_upper_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_upper_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_upper_lower_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_upper_lower_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_weather_1_56_52.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_weather_1_56_52.png</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Alatsi_Regular_23.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Alatsi_Regular_23.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Alatsi_Regular_26.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Alatsi_Regular_26.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_12.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_12.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_120.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_120.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_15.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_15.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_18.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_18.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_19.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_19.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_20.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_20.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_21.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_21.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_22.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_22.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_26.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_26.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_40.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_40.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_45.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_45.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_80.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_80.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_montserratMedium_12.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_montserratMedium_12.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_montserratMedium_16.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_montserratMedium_16.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_montserratMedium_19.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_montserratMedium_19.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_simsun_12.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_simsun_12.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_simsun_16.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_simsun_16.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>menu_bg_1280_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\menu_bg_1280_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>nxp_75_27.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\nxp_75_27.png</FilePath>
+    </File>
+    <File>
+      <FileName>oven_bg_1280_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\oven_bg_1280_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>oven_fan_light_1_120_119.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\oven_fan_light_1_120_119.png</FilePath>
+    </File>
+    <File>
+      <FileName>oven_light_704_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\oven_light_704_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>oven_light_menu_257_269.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\oven_light_menu_257_269.png</FilePath>
+    </File>
+    <File>
+      <FileName>smog_1_110_472.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\smog_1_110_472.png</FilePath>
+    </File>
+    <File>
+      <FileName>smog_1_133_472.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\smog_1_133_472.png</FilePath>
+    </File>
+    <File>
+      <FileName>smog_2_110_630.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\smog_2_110_630.png</FilePath>
+    </File>
+    <File>
+      <FileName>smog_2_133_630.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\smog_2_133_630.png</FilePath>
+    </File>
+    <File>
+      <FileName>text_aircon_15_88.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\text_aircon_15_88.png</FilePath>
+    </File>
+    <File>
+      <FileName>text_fan_param_198_26.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\text_fan_param_198_26.png</FilePath>
+    </File>
+    <File>
+      <FileName>text_hood_15_68.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\text_hood_15_68.png</FilePath>
+    </File>
+    <File>
+      <FileName>text_oven_15_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\text_oven_15_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>title_bg_2_783_128.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\title_bg_2_783_128.png</FilePath>
+    </File>
+    <File>
+      <FileName>title_bg_654_130.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\title_bg_654_130.png</FilePath>
+    </File>
+    <File>
+      <FileName>title_bg_799_130.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\title_bg_799_130.png</FilePath>
+    </File>
+    <File>
+      <FileName>wheel_bg_151_259.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\wheel_bg_151_259.png</FilePath>
+    </File>
+    <File>
+      <FileName>wheel_bg_2_151_259.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\wheel_bg_2_151_259.png</FilePath>
     </File>
   </Files>
 </Group>
@@ -2668,21 +3023,6 @@
   </Files>
 </Group>
         <Group>
-          <GroupName>lvgl</GroupName>
-          <Files>
-            <File>
-              <FileName>ChangeLogKSDK.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/ChangeLogKSDK.txt</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <IncludeInBuild>0</IncludeInBuild>
-                </CommonProperty>
-              </FileOption>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>lvgl/lvgl</GroupName>
           <Files>
             <File>
@@ -3003,23 +3343,18 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>lvgl/lvgl/src/draw/nxp</GroupName>
-          <Files>
-            <File>
-              <FileName>lv_gpu_nxp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/lv_gpu_nxp.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_gpu_nxp.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/lv_gpu_nxp.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>lvgl/lvgl/src/draw/nxp/pxp</GroupName>
           <Files>
+            <File>
+              <FileName>lv_draw_pxp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_pxp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.h</FilePath>
+            </File>
             <File>
               <FileName>lv_draw_pxp_blend.c</FileName>
               <FileType>1</FileType>
@@ -3055,6 +3390,16 @@
         <Group>
           <GroupName>lvgl/lvgl/src/draw/nxp/vglite</GroupName>
           <Files>
+            <File>
+              <FileName>lv_draw_vglite.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_vglite.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite.h</FilePath>
+            </File>
             <File>
               <FileName>lv_draw_vglite_arc.c</FileName>
               <FileType>1</FileType>
@@ -3096,14 +3441,24 @@
               <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.h</FilePath>
             </File>
             <File>
-              <FileName>lv_gpu_nxp_vglite.c</FileName>
+              <FileName>lv_vglite_buf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.c</FilePath>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c</FilePath>
             </File>
             <File>
-              <FileName>lv_gpu_nxp_vglite.h</FileName>
+              <FileName>lv_vglite_buf.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.h</FilePath>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_buf.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_vglite_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_vglite_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_utils.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3154,6 +3509,21 @@
               <FileName>lv_draw_sdl_label.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_label.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_layer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_layer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_layer.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_line.c</FilePath>
             </File>
             <File>
               <FileName>lv_draw_sdl_mask.c</FileName>
@@ -3368,6 +3738,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl/src/extra/libs/barcode</GroupName>
+          <Files>
+            <File>
+              <FileName>code128.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/code128.c</FilePath>
+            </File>
+            <File>
+              <FileName>code128.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/code128.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_barcode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/lv_barcode.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_barcode.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/lv_barcode.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>lvgl/lvgl/src/extra/libs/bmp</GroupName>
           <Files>
             <File>
@@ -3429,11 +3824,6 @@
               <FileName>lv_fs_rawfs.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_fs_rawfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.h</FilePath>
             </File>
             <File>
               <FileName>lv_fs_stdio.c</FileName>
@@ -3601,9 +3991,19 @@
           <GroupName>lvgl/lvgl/src/extra/others/fragment</GroupName>
           <Files>
             <File>
+              <FileName>lv_fragment.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_fragment.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fragment_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment_manager.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3641,6 +4041,11 @@
           <GroupName>lvgl/lvgl/src/extra/others/imgfont</GroupName>
           <Files>
             <File>
+              <FileName>lv_imgfont.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_imgfont.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.h</FilePath>
@@ -3675,6 +4080,11 @@
         <Group>
           <GroupName>lvgl/lvgl/src/extra/others/msg</GroupName>
           <Files>
+            <File>
+              <FileName>lv_msg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/msg/lv_msg.c</FilePath>
+            </File>
             <File>
               <FileName>lv_msg.h</FileName>
               <FileType>5</FileType>
@@ -4079,6 +4489,21 @@
               <FileName>lv_tabview.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/widgets/tabview/lv_tabview.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/widgets/textprogress</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_textprogress.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/textprogress/lv_textprogress.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_textprogress.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/textprogress/lv_textprogress.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -4768,6 +5193,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl_sdk</GroupName>
+          <Files>
+            <File>
+              <FileName>ChangeLogKSDK.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl_sdk/ChangeLogKSDK.txt</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <IncludeInBuild>0</IncludeInBuild>
+                </CommonProperty>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>source</GroupName>
           <Files>
             <File>
@@ -5074,6 +5514,16 @@
               <FileName>vg_lite.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/vglite/VGLite/vg_lite.c</FilePath>
+            </File>
+            <File>
+              <FileName>vg_lite_flat.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/vglite/VGLite/vg_lite_flat.c</FilePath>
+            </File>
+            <File>
+              <FileName>vg_lite_flat.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/vglite/VGLite/vg_lite_flat.h</FilePath>
             </File>
             <File>
               <FileName>vg_lite_image.c</FileName>
@@ -5898,7 +6348,7 @@
                             
               <MiscControls>-fno-common -fdata-sections -ffreestanding -fno-builtin -mthumb</MiscControls>
                             
-              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, NDEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS, MCUXPRESSO_SDK</Define>
+              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, NDEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, MCUXPRESSO_SDK, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS</Define>
                             
               <Undefine/>
                             
@@ -5970,7 +6420,7 @@
                         
             <IncludeLibsPath/>
                         
-            <Misc>--remove --entry=Reset_Handler --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --predefine="-DXIP_BOOT_HEADER_DCD_ENABLE=0" --predefine="-DXIP_BOOT_HEADER_XMCD_ENABLE=1"
+            <Misc>--remove --entry=Reset_Handler --diag_suppress 6314 --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --predefine="-DXIP_BOOT_HEADER_DCD_ENABLE=0" --predefine="-DXIP_BOOT_HEADER_XMCD_ENABLE=1"
 --remove</Misc>
                         
             <LinkerInputFile/>
@@ -6187,6 +6637,11 @@
       <FileName>custom.mk</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\custom\custom.mk</FilePath>
+    </File>
+    <File>
+      <FileName>lv_conf_ext.h</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\custom\lv_conf_ext.h</FilePath>
     </File>
     <File>
       <FileName>ui_Aircon.c</FileName>
@@ -6634,6 +7089,11 @@
       <FilePath>..\..\generated\events_init.h</FilePath>
     </File>
     <File>
+      <FileName>fs_driver.py</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\fs_driver.py</FilePath>
+    </File>
+    <File>
       <FileName>generated.mk</FileName>
       <FileType>5</FileType>
       <FilePath>..\..\generated\generated.mk</FilePath>
@@ -6672,6 +7132,16 @@
       <FileName>setup_scr_ui_Oven.c</FileName>
       <FileType>1</FileType>
       <FilePath>..\..\generated\setup_scr_ui_Oven.c</FilePath>
+    </File>
+    <File>
+      <FileName>widgets_init.c</FileName>
+      <FileType>1</FileType>
+      <FilePath>..\..\generated\widgets_init.c</FilePath>
+    </File>
+    <File>
+      <FileName>widgets_init.h</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\widgets_init.h</FilePath>
     </File>
   </Files>
 </Group>
@@ -6819,39 +7289,39 @@
       <FilePath>..\..\generated\images\lottie_lf30_gbhpz7py.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_bg_1280x720.c</FileName>
+      <FileName>_aircon_bg_alpha_1280x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_bg_1280x720.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_bg_alpha_1280x720.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_cool_1_92x102.c</FileName>
+      <FileName>_aircon_cool_1_alpha_92x102.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_cool_1_92x102.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_cool_1_alpha_92x102.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_fan_1_98x98.c</FileName>
+      <FileName>_aircon_fan_1_alpha_98x98.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_fan_1_98x98.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_fan_1_alpha_98x98.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_menu_swing_01_298x39.c</FileName>
+      <FileName>_aircon_menu_swing_01_alpha_298x39.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_menu_swing_01_298x39.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_menu_swing_01_alpha_298x39.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_small_318x125.c</FileName>
+      <FileName>_aircon_small_alpha_318x125.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_small_318x125.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_small_alpha_318x125.c</FilePath>
     </File>
     <File>
-      <FileName>_aircon_swing_1_632x113.c</FileName>
+      <FileName>_aircon_swing_1_alpha_632x113.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_aircon_swing_1_632x113.c</FilePath>
+      <FilePath>..\..\generated\images\_aircon_swing_1_alpha_632x113.c</FilePath>
     </File>
     <File>
-      <FileName>_arrow_down_28x14.c</FileName>
+      <FileName>_arrow_down_alpha_28x14.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_arrow_down_28x14.c</FilePath>
+      <FilePath>..\..\generated\images\_arrow_down_alpha_28x14.c</FilePath>
     </File>
     <File>
       <FileName>_arrow_left_alpha_18x35.c</FileName>
@@ -6864,9 +7334,9 @@
       <FilePath>..\..\generated\images\_arrow_right_alpha_18x35.c</FilePath>
     </File>
     <File>
-      <FileName>_arrow_up_28x14.c</FileName>
+      <FileName>_arrow_up_alpha_28x14.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_arrow_up_28x14.c</FilePath>
+      <FilePath>..\..\generated\images\_arrow_up_alpha_28x14.c</FilePath>
     </File>
     <File>
       <FileName>_BTN_oven_alpha_134x51.c</FileName>
@@ -6874,184 +7344,519 @@
       <FilePath>..\..\generated\images\_BTN_oven_alpha_134x51.c</FilePath>
     </File>
     <File>
-      <FileName>_hood_bg_1280x720.c</FileName>
+      <FileName>_hood_bg_alpha_1280x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_hood_bg_1280x720.c</FilePath>
+      <FilePath>..\..\generated\images\_hood_bg_alpha_1280x720.c</FilePath>
     </File>
     <File>
-      <FileName>_hood_light_901x460.c</FileName>
+      <FileName>_hood_light_alpha_901x460.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_hood_light_901x460.c</FilePath>
+      <FilePath>..\..\generated\images\_hood_light_alpha_901x460.c</FilePath>
     </File>
     <File>
-      <FileName>_hood_menu_light_439x217.c</FileName>
+      <FileName>_hood_menu_light_alpha_439x217.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_hood_menu_light_439x217.c</FilePath>
+      <FilePath>..\..\generated\images\_hood_menu_light_alpha_439x217.c</FilePath>
     </File>
     <File>
-      <FileName>_hood_small_299x199.c</FileName>
+      <FileName>_hood_small_alpha_299x199.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_hood_small_299x199.c</FilePath>
+      <FilePath>..\..\generated\images\_hood_small_alpha_299x199.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_cool_27x31.c</FileName>
+      <FileName>_icn_cool_alpha_27x31.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_cool_27x31.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_cool_alpha_27x31.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_fan_low_31x27.c</FileName>
+      <FileName>_icn_fan_low_alpha_31x27.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_fan_low_31x27.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_fan_low_alpha_31x27.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_light_on_39x31.c</FileName>
+      <FileName>_icn_light_on_alpha_39x31.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_light_on_39x31.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_light_on_alpha_39x31.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_defrost_62x62.c</FileName>
+      <FileName>_icn_oven_defrost_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_defrost_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_defrost_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_fan_gril_62x62.c</FileName>
+      <FileName>_icn_oven_fan_gril_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_fan_gril_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_fan_gril_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_fan_lower_62x62.c</FileName>
+      <FileName>_icn_oven_fan_lower_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_fan_lower_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_fan_lower_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_fan_rear_62x62.c</FileName>
+      <FileName>_icn_oven_fan_rear_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_fan_rear_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_fan_rear_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_fan_upper_lower_62x62.c</FileName>
+      <FileName>_icn_oven_fan_upper_lower_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_fan_upper_lower_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_fan_upper_lower_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_gril_62x62.c</FileName>
+      <FileName>_icn_oven_gril_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_gril_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_gril_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_lower_62x62.c</FileName>
+      <FileName>_icn_oven_lower_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_lower_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_lower_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_upper_62x62.c</FileName>
+      <FileName>_icn_oven_upper_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_upper_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_upper_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_oven_upper_lower_62x62.c</FileName>
+      <FileName>_icn_oven_upper_lower_alpha_62x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_oven_upper_lower_62x62.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_oven_upper_lower_alpha_62x62.c</FilePath>
     </File>
     <File>
-      <FileName>_icn_weather_1_56x52.c</FileName>
+      <FileName>_icn_weather_1_alpha_56x52.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_icn_weather_1_56x52.c</FilePath>
+      <FilePath>..\..\generated\images\_icn_weather_1_alpha_56x52.c</FilePath>
     </File>
     <File>
-      <FileName>_menu_bg_1280x720.c</FileName>
+      <FileName>_menu_bg_alpha_1280x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_menu_bg_1280x720.c</FilePath>
+      <FilePath>..\..\generated\images\_menu_bg_alpha_1280x720.c</FilePath>
     </File>
     <File>
-      <FileName>_nxp_75x27.c</FileName>
+      <FileName>_nxp_alpha_75x27.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_nxp_75x27.c</FilePath>
+      <FilePath>..\..\generated\images\_nxp_alpha_75x27.c</FilePath>
     </File>
     <File>
-      <FileName>_oven_bg_1280x720.c</FileName>
+      <FileName>_oven_bg_alpha_1280x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_oven_bg_1280x720.c</FilePath>
+      <FilePath>..\..\generated\images\_oven_bg_alpha_1280x720.c</FilePath>
     </File>
     <File>
-      <FileName>_oven_fan_light_1_120x119.c</FileName>
+      <FileName>_oven_fan_light_1_alpha_120x119.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_oven_fan_light_1_120x119.c</FilePath>
+      <FilePath>..\..\generated\images\_oven_fan_light_1_alpha_120x119.c</FilePath>
     </File>
     <File>
-      <FileName>_oven_light_704x720.c</FileName>
+      <FileName>_oven_light_alpha_704x720.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_oven_light_704x720.c</FilePath>
+      <FilePath>..\..\generated\images\_oven_light_alpha_704x720.c</FilePath>
     </File>
     <File>
-      <FileName>_oven_light_menu_257x269.c</FileName>
+      <FileName>_oven_light_menu_alpha_257x269.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_oven_light_menu_257x269.c</FilePath>
+      <FilePath>..\..\generated\images\_oven_light_menu_alpha_257x269.c</FilePath>
     </File>
     <File>
-      <FileName>_smog_1_110x472.c</FileName>
+      <FileName>_smog_1_alpha_110x472.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_smog_1_110x472.c</FilePath>
+      <FilePath>..\..\generated\images\_smog_1_alpha_110x472.c</FilePath>
     </File>
     <File>
-      <FileName>_smog_1_133x472.c</FileName>
+      <FileName>_smog_1_alpha_133x472.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_smog_1_133x472.c</FilePath>
+      <FilePath>..\..\generated\images\_smog_1_alpha_133x472.c</FilePath>
     </File>
     <File>
-      <FileName>_smog_2_110x630.c</FileName>
+      <FileName>_smog_2_alpha_110x630.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_smog_2_110x630.c</FilePath>
+      <FilePath>..\..\generated\images\_smog_2_alpha_110x630.c</FilePath>
     </File>
     <File>
-      <FileName>_smog_2_133x630.c</FileName>
+      <FileName>_smog_2_alpha_133x630.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_smog_2_133x630.c</FilePath>
+      <FilePath>..\..\generated\images\_smog_2_alpha_133x630.c</FilePath>
     </File>
     <File>
-      <FileName>_text_aircon_15x88.c</FileName>
+      <FileName>_text_aircon_alpha_15x88.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_text_aircon_15x88.c</FilePath>
+      <FilePath>..\..\generated\images\_text_aircon_alpha_15x88.c</FilePath>
     </File>
     <File>
-      <FileName>_text_fan_param_198x26.c</FileName>
+      <FileName>_text_fan_param_alpha_198x26.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_text_fan_param_198x26.c</FilePath>
+      <FilePath>..\..\generated\images\_text_fan_param_alpha_198x26.c</FilePath>
     </File>
     <File>
-      <FileName>_text_hood_15x68.c</FileName>
+      <FileName>_text_hood_alpha_15x68.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_text_hood_15x68.c</FilePath>
+      <FilePath>..\..\generated\images\_text_hood_alpha_15x68.c</FilePath>
     </File>
     <File>
-      <FileName>_text_oven_15x62.c</FileName>
+      <FileName>_text_oven_alpha_15x62.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_text_oven_15x62.c</FilePath>
+      <FilePath>..\..\generated\images\_text_oven_alpha_15x62.c</FilePath>
     </File>
     <File>
-      <FileName>_title_bg_2_783x128.c</FileName>
+      <FileName>_title_bg_2_alpha_783x128.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_title_bg_2_783x128.c</FilePath>
+      <FilePath>..\..\generated\images\_title_bg_2_alpha_783x128.c</FilePath>
     </File>
     <File>
-      <FileName>_title_bg_654x130.c</FileName>
+      <FileName>_title_bg_alpha_654x130.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_title_bg_654x130.c</FilePath>
+      <FilePath>..\..\generated\images\_title_bg_alpha_654x130.c</FilePath>
     </File>
     <File>
-      <FileName>_title_bg_799x130.c</FileName>
+      <FileName>_title_bg_alpha_799x130.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_title_bg_799x130.c</FilePath>
+      <FilePath>..\..\generated\images\_title_bg_alpha_799x130.c</FilePath>
     </File>
     <File>
-      <FileName>_wheel_bg_151x259.c</FileName>
+      <FileName>_wheel_bg_2_alpha_151x259.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_wheel_bg_151x259.c</FilePath>
+      <FilePath>..\..\generated\images\_wheel_bg_2_alpha_151x259.c</FilePath>
     </File>
     <File>
-      <FileName>_wheel_bg_2_151x259.c</FileName>
+      <FileName>_wheel_bg_alpha_151x259.c</FileName>
       <FileType>1</FileType>
-      <FilePath>..\..\generated\images\_wheel_bg_2_151x259.c</FilePath>
+      <FilePath>..\..\generated\images\_wheel_bg_alpha_151x259.c</FilePath>
+    </File>
+  </Files>
+</Group>
+<Group>
+  <GroupName>generated\MicroPython</GroupName>
+  <Files>
+    <File>
+      <FileName>aircon_bg_1280_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_bg_1280_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_cool_1_92_102.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_cool_1_92_102.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_fan_1_98_98.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_fan_1_98_98.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_menu_swing_01_298_39.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_menu_swing_01_298_39.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_small_318_125.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_small_318_125.png</FilePath>
+    </File>
+    <File>
+      <FileName>aircon_swing_1_632_113.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\aircon_swing_1_632_113.png</FilePath>
+    </File>
+    <File>
+      <FileName>arrow_down_28_14.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\arrow_down_28_14.png</FilePath>
+    </File>
+    <File>
+      <FileName>arrow_left_18_35.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\arrow_left_18_35.png</FilePath>
+    </File>
+    <File>
+      <FileName>arrow_right_18_35.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\arrow_right_18_35.png</FilePath>
+    </File>
+    <File>
+      <FileName>arrow_up_28_14.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\arrow_up_28_14.png</FilePath>
+    </File>
+    <File>
+      <FileName>BTN_oven_134_51.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\BTN_oven_134_51.png</FilePath>
+    </File>
+    <File>
+      <FileName>hood_bg_1280_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\hood_bg_1280_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>hood_light_901_460.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\hood_light_901_460.png</FilePath>
+    </File>
+    <File>
+      <FileName>hood_menu_light_439_217.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\hood_menu_light_439_217.png</FilePath>
+    </File>
+    <File>
+      <FileName>hood_small_299_199.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\hood_small_299_199.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_cool_27_31.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_cool_27_31.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_fan_low_31_27.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_fan_low_31_27.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_light_on_39_31.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_light_on_39_31.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_defrost_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_defrost_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_fan_gril_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_fan_gril_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_fan_lower_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_fan_lower_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_fan_rear_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_fan_rear_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_fan_upper_lower_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_fan_upper_lower_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_gril_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_gril_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_lower_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_lower_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_upper_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_upper_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_oven_upper_lower_62_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_oven_upper_lower_62_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>icn_weather_1_56_52.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\icn_weather_1_56_52.png</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Alatsi_Regular_23.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Alatsi_Regular_23.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Alatsi_Regular_26.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Alatsi_Regular_26.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_12.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_12.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_120.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_120.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_15.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_15.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_18.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_18.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_19.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_19.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_20.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_20.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_21.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_21.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_22.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_22.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_26.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_26.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_40.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_40.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_45.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_45.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_Antonio_Regular_80.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_Antonio_Regular_80.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_montserratMedium_12.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_montserratMedium_12.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_montserratMedium_16.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_montserratMedium_16.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_montserratMedium_19.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_montserratMedium_19.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_simsun_12.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_simsun_12.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>lv_font_simsun_16.fnt</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\lv_font_simsun_16.fnt</FilePath>
+    </File>
+    <File>
+      <FileName>menu_bg_1280_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\menu_bg_1280_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>nxp_75_27.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\nxp_75_27.png</FilePath>
+    </File>
+    <File>
+      <FileName>oven_bg_1280_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\oven_bg_1280_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>oven_fan_light_1_120_119.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\oven_fan_light_1_120_119.png</FilePath>
+    </File>
+    <File>
+      <FileName>oven_light_704_720.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\oven_light_704_720.png</FilePath>
+    </File>
+    <File>
+      <FileName>oven_light_menu_257_269.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\oven_light_menu_257_269.png</FilePath>
+    </File>
+    <File>
+      <FileName>smog_1_110_472.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\smog_1_110_472.png</FilePath>
+    </File>
+    <File>
+      <FileName>smog_1_133_472.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\smog_1_133_472.png</FilePath>
+    </File>
+    <File>
+      <FileName>smog_2_110_630.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\smog_2_110_630.png</FilePath>
+    </File>
+    <File>
+      <FileName>smog_2_133_630.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\smog_2_133_630.png</FilePath>
+    </File>
+    <File>
+      <FileName>text_aircon_15_88.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\text_aircon_15_88.png</FilePath>
+    </File>
+    <File>
+      <FileName>text_fan_param_198_26.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\text_fan_param_198_26.png</FilePath>
+    </File>
+    <File>
+      <FileName>text_hood_15_68.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\text_hood_15_68.png</FilePath>
+    </File>
+    <File>
+      <FileName>text_oven_15_62.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\text_oven_15_62.png</FilePath>
+    </File>
+    <File>
+      <FileName>title_bg_2_783_128.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\title_bg_2_783_128.png</FilePath>
+    </File>
+    <File>
+      <FileName>title_bg_654_130.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\title_bg_654_130.png</FilePath>
+    </File>
+    <File>
+      <FileName>title_bg_799_130.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\title_bg_799_130.png</FilePath>
+    </File>
+    <File>
+      <FileName>wheel_bg_151_259.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\wheel_bg_151_259.png</FilePath>
+    </File>
+    <File>
+      <FileName>wheel_bg_2_151_259.png</FileName>
+      <FileType>5</FileType>
+      <FilePath>..\..\generated\MicroPython\wheel_bg_2_151_259.png</FilePath>
     </File>
   </Files>
 </Group>
@@ -7901,21 +8706,6 @@
   </Files>
 </Group>
         <Group>
-          <GroupName>lvgl</GroupName>
-          <Files>
-            <File>
-              <FileName>ChangeLogKSDK.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/ChangeLogKSDK.txt</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <IncludeInBuild>0</IncludeInBuild>
-                </CommonProperty>
-              </FileOption>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>lvgl/lvgl</GroupName>
           <Files>
             <File>
@@ -8236,23 +9026,18 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>lvgl/lvgl/src/draw/nxp</GroupName>
-          <Files>
-            <File>
-              <FileName>lv_gpu_nxp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/lv_gpu_nxp.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_gpu_nxp.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/lv_gpu_nxp.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>lvgl/lvgl/src/draw/nxp/pxp</GroupName>
           <Files>
+            <File>
+              <FileName>lv_draw_pxp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_pxp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.h</FilePath>
+            </File>
             <File>
               <FileName>lv_draw_pxp_blend.c</FileName>
               <FileType>1</FileType>
@@ -8288,6 +9073,16 @@
         <Group>
           <GroupName>lvgl/lvgl/src/draw/nxp/vglite</GroupName>
           <Files>
+            <File>
+              <FileName>lv_draw_vglite.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_vglite.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite.h</FilePath>
+            </File>
             <File>
               <FileName>lv_draw_vglite_arc.c</FileName>
               <FileType>1</FileType>
@@ -8329,14 +9124,24 @@
               <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.h</FilePath>
             </File>
             <File>
-              <FileName>lv_gpu_nxp_vglite.c</FileName>
+              <FileName>lv_vglite_buf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.c</FilePath>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c</FilePath>
             </File>
             <File>
-              <FileName>lv_gpu_nxp_vglite.h</FileName>
+              <FileName>lv_vglite_buf.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.h</FilePath>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_buf.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_vglite_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_vglite_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_utils.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -8387,6 +9192,21 @@
               <FileName>lv_draw_sdl_label.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_label.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_layer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_layer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_layer.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_line.c</FilePath>
             </File>
             <File>
               <FileName>lv_draw_sdl_mask.c</FileName>
@@ -8601,6 +9421,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl/src/extra/libs/barcode</GroupName>
+          <Files>
+            <File>
+              <FileName>code128.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/code128.c</FilePath>
+            </File>
+            <File>
+              <FileName>code128.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/code128.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_barcode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/lv_barcode.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_barcode.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/lv_barcode.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>lvgl/lvgl/src/extra/libs/bmp</GroupName>
           <Files>
             <File>
@@ -8662,11 +9507,6 @@
               <FileName>lv_fs_rawfs.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_fs_rawfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.h</FilePath>
             </File>
             <File>
               <FileName>lv_fs_stdio.c</FileName>
@@ -8834,9 +9674,19 @@
           <GroupName>lvgl/lvgl/src/extra/others/fragment</GroupName>
           <Files>
             <File>
+              <FileName>lv_fragment.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_fragment.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fragment_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment_manager.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -8874,6 +9724,11 @@
           <GroupName>lvgl/lvgl/src/extra/others/imgfont</GroupName>
           <Files>
             <File>
+              <FileName>lv_imgfont.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_imgfont.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.h</FilePath>
@@ -8908,6 +9763,11 @@
         <Group>
           <GroupName>lvgl/lvgl/src/extra/others/msg</GroupName>
           <Files>
+            <File>
+              <FileName>lv_msg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/msg/lv_msg.c</FilePath>
+            </File>
             <File>
               <FileName>lv_msg.h</FileName>
               <FileType>5</FileType>
@@ -9312,6 +10172,21 @@
               <FileName>lv_tabview.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/widgets/tabview/lv_tabview.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/widgets/textprogress</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_textprogress.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/textprogress/lv_textprogress.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_textprogress.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/textprogress/lv_textprogress.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -10001,6 +10876,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl_sdk</GroupName>
+          <Files>
+            <File>
+              <FileName>ChangeLogKSDK.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl_sdk/ChangeLogKSDK.txt</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <IncludeInBuild>0</IncludeInBuild>
+                </CommonProperty>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>source</GroupName>
           <Files>
             <File>
@@ -10307,6 +11197,16 @@
               <FileName>vg_lite.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/vglite/VGLite/vg_lite.c</FilePath>
+            </File>
+            <File>
+              <FileName>vg_lite_flat.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/vglite/VGLite/vg_lite_flat.c</FilePath>
+            </File>
+            <File>
+              <FileName>vg_lite_flat.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/vglite/VGLite/vg_lite_flat.h</FilePath>
             </File>
             <File>
               <FileName>vg_lite_image.c</FileName>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
     
-  <fileVersion>3</fileVersion>
+  <fileVersion>4</fileVersion>
     
   <configuration>
         
@@ -23,7 +23,7 @@
             
       <data>
                 
-        <version>35</version>
+        <version>36</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -197,7 +197,7 @@
                     
           <name>GBECoreSlave</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -231,7 +231,7 @@
                     
           <name>CoreVariant</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -277,7 +277,7 @@
                     
           <name>GFPUCoreSlave2</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -435,7 +435,7 @@
             
       <data>
                 
-        <version>37</version>
+        <version>38</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -465,6 +465,8 @@
                     
           <state>FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1</state>
                     
+          <state>MCUXPRESSO_SDK</state>
+                    
           <state>SDK_I2C_BASED_COMPONENT_USED=1</state>
                     
           <state>VG_COMMAND_CALL=1</state>
@@ -474,8 +476,6 @@
           <state>SERIAL_PORT_TYPE_UART=1</state>
                     
           <state>SDK_OS_FREE_RTOS</state>
-                    
-          <state>MCUXPRESSO_SDK</state>
                   
         </option>
                 
@@ -555,7 +555,7 @@
                     
           <name>CCDiagSuppress</name>
                     
-          <state>Pa089,Go029,Pe188,Pe111,Pe236,Pe546</state>
+          <state>Pa082,Pa050</state>
                   
         </option>
                 
@@ -637,7 +637,7 @@
                     
           <name>IExtraOptions</name>
                     
-          <state>--diag_suppress Pa082,Pa050</state>
+          <state>--diag_suppress Pa089,Go029,Pe188,Pe111,Pe236,Pe546</state>
                   
         </option>
                 
@@ -866,7 +866,7 @@
                     
           <name>IccLang</name>
                     
-          <state>0</state>
+          <state>2</state>
                   
         </option>
                 
@@ -1028,7 +1028,7 @@
             
       <data>
                 
-        <version>11</version>
+        <version>12</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -1438,7 +1438,7 @@
             
       <name>BUILDACTION</name>
             
-      <archiveVersion>1</archiveVersion>
+      <archiveVersion>2</archiveVersion>
             
       <data>
                 
@@ -2256,7 +2256,7 @@
             
       <data>
                 
-        <version>35</version>
+        <version>36</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -2430,7 +2430,7 @@
                     
           <name>GBECoreSlave</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -2464,7 +2464,7 @@
                     
           <name>CoreVariant</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -2510,7 +2510,7 @@
                     
           <name>GFPUCoreSlave2</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -2668,7 +2668,7 @@
             
       <data>
                 
-        <version>37</version>
+        <version>38</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -2698,6 +2698,8 @@
                     
           <state>FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1</state>
                     
+          <state>MCUXPRESSO_SDK</state>
+                    
           <state>SDK_I2C_BASED_COMPONENT_USED=1</state>
                     
           <state>VG_COMMAND_CALL=1</state>
@@ -2707,8 +2709,6 @@
           <state>SERIAL_PORT_TYPE_UART=1</state>
                     
           <state>SDK_OS_FREE_RTOS</state>
-                    
-          <state>MCUXPRESSO_SDK</state>
                   
         </option>
                 
@@ -2788,7 +2788,7 @@
                     
           <name>CCDiagSuppress</name>
                     
-          <state>Pa089,Go029,Pe188,Pe111,Pe236,Pe546</state>
+          <state>Pa082,Pa050</state>
                   
         </option>
                 
@@ -2870,7 +2870,7 @@
                     
           <name>IExtraOptions</name>
                     
-          <state>--diag_suppress Pa082,Pa050</state>
+          <state>--diag_suppress Pa089,Go029,Pe188,Pe111,Pe236,Pe546</state>
                   
         </option>
                 
@@ -3099,7 +3099,7 @@
                     
           <name>IccLang</name>
                     
-          <state>0</state>
+          <state>2</state>
                   
         </option>
                 
@@ -3261,7 +3261,7 @@
             
       <data>
                 
-        <version>11</version>
+        <version>12</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -3671,7 +3671,7 @@
             
       <name>BUILDACTION</name>
             
-      <archiveVersion>1</archiveVersion>
+      <archiveVersion>2</archiveVersion>
             
       <data>
                 
@@ -4833,13 +4833,6 @@
 %GUI_Generated_Code%
   <group>
     <name>lvgl</name>
-    <file>
-      <name>$PROJ_DIR$\..\Core\lvgl\ChangeLogKSDK.txt</name>
-      <excluded>
-        <configuration>flexspi_nor_sdram_debug</configuration>
-        <configuration>flexspi_nor_sdram_release</configuration>
-      </excluded>
-    </file>
     <group>
       <name>lvgl</name>
       <file>
@@ -5035,14 +5028,14 @@
           </file>
           <group>
             <name>nxp</name>
-            <file>
-              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\lv_gpu_nxp.c</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\lv_gpu_nxp.h</name>
-            </file>
             <group>
               <name>pxp</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\pxp\lv_draw_pxp.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\pxp\lv_draw_pxp.h</name>
+              </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\pxp\lv_draw_pxp_blend.c</name>
               </file>
@@ -5064,6 +5057,12 @@
             </group>
             <group>
               <name>vglite</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_draw_vglite.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_draw_vglite.h</name>
+              </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_draw_vglite_arc.c</name>
               </file>
@@ -5089,10 +5088,16 @@
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_draw_vglite_rect.h</name>
               </file>
               <file>
-                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_gpu_nxp_vglite.c</name>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_vglite_buf.c</name>
               </file>
               <file>
-                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_gpu_nxp_vglite.h</name>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_vglite_buf.h</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_vglite_utils.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_vglite_utils.h</name>
               </file>
             </group>
           </group>
@@ -5124,6 +5129,15 @@
             </file>
             <file>
               <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_label.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_layer.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_layer.h</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_line.c</name>
             </file>
             <file>
               <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_mask.c</name>
@@ -5258,6 +5272,21 @@
           <group>
             <name>libs</name>
             <group>
+              <name>barcode</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\barcode\code128.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\barcode\code128.h</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\barcode\lv_barcode.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\barcode\lv_barcode.h</name>
+              </file>
+            </group>
+            <group>
               <name>bmp</name>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\bmp\lv_bmp.c</name>
@@ -5294,9 +5323,6 @@
               </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\fsdrv\lv_fs_rawfs.c</name>
-              </file>
-              <file>
-                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\fsdrv\lv_fs_rawfs.h</name>
               </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\fsdrv\lv_fs_stdio.c</name>
@@ -5395,7 +5421,13 @@
             <group>
               <name>fragment</name>
               <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\fragment\lv_fragment.c</name>
+              </file>
+              <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\fragment\lv_fragment.h</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\fragment\lv_fragment_manager.c</name>
               </file>
             </group>
             <group>
@@ -5419,6 +5451,9 @@
             <group>
               <name>imgfont</name>
               <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\imgfont\lv_imgfont.c</name>
+              </file>
+              <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\imgfont\lv_imgfont.h</name>
               </file>
             </group>
@@ -5436,6 +5471,9 @@
             </group>
             <group>
               <name>msg</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\msg\lv_msg.c</name>
+              </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\msg\lv_msg.h</name>
               </file>
@@ -5678,6 +5716,15 @@
               </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\widgets\tabview\lv_tabview.h</name>
+              </file>
+            </group>
+            <group>
+              <name>textprogress</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\widgets\textprogress\lv_textprogress.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\widgets\textprogress\lv_textprogress.h</name>
               </file>
             </group>
             <group>
@@ -6092,6 +6139,16 @@
         </group>
       </group>
     </group>
+    <group>
+      <name>lvgl_sdk</name>
+      <file>
+        <name>$PROJ_DIR$\..\Core\lvgl\lvgl_sdk\ChangeLogKSDK.txt</name>
+        <excluded>
+          <configuration>flexspi_nor_sdram_debug</configuration>
+          <configuration>flexspi_nor_sdram_release</configuration>
+        </excluded>
+      </file>
+    </group>
   </group>
   <group>
     <name>MIMXRT1176</name>
@@ -6298,6 +6355,12 @@
       </group>
       <file>
         <name>$PROJ_DIR$\..\Core\vglite\VGLite\vg_lite.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Core\vglite\VGLite\vg_lite_flat.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Core\vglite\VGLite\vg_lite_flat.h</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Core\vglite\VGLite\vg_lite_image.c</name>

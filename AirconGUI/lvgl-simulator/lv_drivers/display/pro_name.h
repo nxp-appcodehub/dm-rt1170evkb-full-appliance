@@ -9,7 +9,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#define PRJ_NAME "Simulator"
+#define PRJ_NAME "Simulator (C/C++)"
 #ifdef __cplusplus
 } /* extern "C" */
 #endif

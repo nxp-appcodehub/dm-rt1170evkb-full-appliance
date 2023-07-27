@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
     
-  <fileVersion>3</fileVersion>
+  <fileVersion>4</fileVersion>
     
   <configuration>
         
@@ -23,7 +23,7 @@
             
       <data>
                 
-        <version>35</version>
+        <version>36</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -197,7 +197,7 @@
                     
           <name>GBECoreSlave</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -231,7 +231,7 @@
                     
           <name>CoreVariant</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -277,7 +277,7 @@
                     
           <name>GFPUCoreSlave2</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -435,7 +435,7 @@
             
       <data>
                 
-        <version>37</version>
+        <version>38</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -465,6 +465,8 @@
                     
           <state>FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1</state>
                     
+          <state>MCUXPRESSO_SDK</state>
+                    
           <state>SDK_I2C_BASED_COMPONENT_USED=1</state>
                     
           <state>VG_COMMAND_CALL=1</state>
@@ -474,8 +476,6 @@
           <state>SERIAL_PORT_TYPE_UART=1</state>
                     
           <state>SDK_OS_FREE_RTOS</state>
-                    
-          <state>MCUXPRESSO_SDK</state>
                   
         </option>
                 
@@ -555,7 +555,7 @@
                     
           <name>CCDiagSuppress</name>
                     
-          <state>Pa089,Go029,Pe188,Pe111,Pe236,Pe546</state>
+          <state>Pa082,Pa050</state>
                   
         </option>
                 
@@ -637,7 +637,7 @@
                     
           <name>IExtraOptions</name>
                     
-          <state>--diag_suppress Pa082,Pa050</state>
+          <state>--diag_suppress Pa089,Go029,Pe188,Pe111,Pe236,Pe546</state>
                   
         </option>
                 
@@ -866,7 +866,7 @@
                     
           <name>IccLang</name>
                     
-          <state>0</state>
+          <state>2</state>
                   
         </option>
                 
@@ -1028,7 +1028,7 @@
             
       <data>
                 
-        <version>11</version>
+        <version>12</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -1438,7 +1438,7 @@
             
       <name>BUILDACTION</name>
             
-      <archiveVersion>1</archiveVersion>
+      <archiveVersion>2</archiveVersion>
             
       <data>
                 
@@ -2256,7 +2256,7 @@
             
       <data>
                 
-        <version>35</version>
+        <version>36</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -2430,7 +2430,7 @@
                     
           <name>GBECoreSlave</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -2464,7 +2464,7 @@
                     
           <name>CoreVariant</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -2510,7 +2510,7 @@
                     
           <name>GFPUCoreSlave2</name>
                     
-          <version>32</version>
+          <version>33</version>
                     
           <state>41</state>
                   
@@ -2668,7 +2668,7 @@
             
       <data>
                 
-        <version>37</version>
+        <version>38</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -2698,6 +2698,8 @@
                     
           <state>FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1</state>
                     
+          <state>MCUXPRESSO_SDK</state>
+                    
           <state>SDK_I2C_BASED_COMPONENT_USED=1</state>
                     
           <state>VG_COMMAND_CALL=1</state>
@@ -2707,8 +2709,6 @@
           <state>SERIAL_PORT_TYPE_UART=1</state>
                     
           <state>SDK_OS_FREE_RTOS</state>
-                    
-          <state>MCUXPRESSO_SDK</state>
                   
         </option>
                 
@@ -2788,7 +2788,7 @@
                     
           <name>CCDiagSuppress</name>
                     
-          <state>Pa089,Go029,Pe188,Pe111,Pe236,Pe546</state>
+          <state>Pa082,Pa050</state>
                   
         </option>
                 
@@ -2870,7 +2870,7 @@
                     
           <name>IExtraOptions</name>
                     
-          <state>--diag_suppress Pa082,Pa050</state>
+          <state>--diag_suppress Pa089,Go029,Pe188,Pe111,Pe236,Pe546</state>
                   
         </option>
                 
@@ -3099,7 +3099,7 @@
                     
           <name>IccLang</name>
                     
-          <state>0</state>
+          <state>2</state>
                   
         </option>
                 
@@ -3261,7 +3261,7 @@
             
       <data>
                 
-        <version>11</version>
+        <version>12</version>
                 
         <wantNonLocal>1</wantNonLocal>
                 
@@ -3671,7 +3671,7 @@
             
       <name>BUILDACTION</name>
             
-      <archiveVersion>1</archiveVersion>
+      <archiveVersion>2</archiveVersion>
             
       <data>
                 
@@ -4592,6 +4592,9 @@
     <name>$PROJ_DIR$\..\..\custom\custom.mk</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\..\..\custom\lv_conf_ext.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\..\..\custom\ui_Aircon.c</name>
   </file>
   <file>
@@ -4874,6 +4877,9 @@
     <name>$PROJ_DIR$\..\..\generated\events_init.h</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\..\..\generated\fs_driver.py</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\..\..\generated\generated.mk</name>
   </file>
   <group>
@@ -4972,25 +4978,25 @@
       <name>$PROJ_DIR$\..\..\generated\images\lottie_lf30_gbhpz7py.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_aircon_bg_1280x720.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_aircon_bg_alpha_1280x720.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_aircon_cool_1_92x102.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_aircon_cool_1_alpha_92x102.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_aircon_fan_1_98x98.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_aircon_fan_1_alpha_98x98.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_aircon_menu_swing_01_298x39.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_aircon_menu_swing_01_alpha_298x39.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_aircon_small_318x125.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_aircon_small_alpha_318x125.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_aircon_swing_1_632x113.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_aircon_swing_1_alpha_632x113.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_arrow_down_28x14.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_arrow_down_alpha_28x14.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_arrow_left_alpha_18x35.c</name>
@@ -4999,118 +5005,319 @@
       <name>$PROJ_DIR$\..\..\generated\images\_arrow_right_alpha_18x35.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_arrow_up_28x14.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_arrow_up_alpha_28x14.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_BTN_oven_alpha_134x51.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_hood_bg_1280x720.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_hood_bg_alpha_1280x720.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_hood_light_901x460.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_hood_light_alpha_901x460.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_hood_menu_light_439x217.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_hood_menu_light_alpha_439x217.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_hood_small_299x199.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_hood_small_alpha_299x199.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_cool_27x31.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_cool_alpha_27x31.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_fan_low_31x27.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_fan_low_alpha_31x27.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_light_on_39x31.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_light_on_alpha_39x31.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_defrost_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_defrost_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_fan_gril_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_fan_gril_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_fan_lower_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_fan_lower_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_fan_rear_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_fan_rear_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_fan_upper_lower_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_fan_upper_lower_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_gril_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_gril_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_lower_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_lower_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_upper_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_upper_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_upper_lower_62x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_oven_upper_lower_alpha_62x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_icn_weather_1_56x52.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_icn_weather_1_alpha_56x52.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_menu_bg_1280x720.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_menu_bg_alpha_1280x720.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_nxp_75x27.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_nxp_alpha_75x27.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_oven_bg_1280x720.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_oven_bg_alpha_1280x720.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_oven_fan_light_1_120x119.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_oven_fan_light_1_alpha_120x119.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_oven_light_704x720.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_oven_light_alpha_704x720.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_oven_light_menu_257x269.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_oven_light_menu_alpha_257x269.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_smog_1_110x472.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_smog_1_alpha_110x472.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_smog_1_133x472.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_smog_1_alpha_133x472.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_smog_2_110x630.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_smog_2_alpha_110x630.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_smog_2_133x630.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_smog_2_alpha_133x630.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_text_aircon_15x88.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_text_aircon_alpha_15x88.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_text_fan_param_198x26.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_text_fan_param_alpha_198x26.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_text_hood_15x68.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_text_hood_alpha_15x68.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_text_oven_15x62.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_text_oven_alpha_15x62.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_title_bg_2_783x128.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_title_bg_2_alpha_783x128.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_title_bg_654x130.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_title_bg_alpha_654x130.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_title_bg_799x130.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_title_bg_alpha_799x130.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_wheel_bg_151x259.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_wheel_bg_2_alpha_151x259.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_wheel_bg_2_151x259.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_wheel_bg_alpha_151x259.c</name>
+    </file>
+  </group>
+  <group>
+    <name>MicroPython</name>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\aircon_bg_1280_720.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\aircon_cool_1_92_102.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\aircon_fan_1_98_98.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\aircon_menu_swing_01_298_39.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\aircon_small_318_125.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\aircon_swing_1_632_113.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\arrow_down_28_14.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\arrow_left_18_35.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\arrow_right_18_35.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\arrow_up_28_14.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\BTN_oven_134_51.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\hood_bg_1280_720.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\hood_light_901_460.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\hood_menu_light_439_217.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\hood_small_299_199.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_cool_27_31.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_fan_low_31_27.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_light_on_39_31.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_defrost_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_fan_gril_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_fan_lower_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_fan_rear_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_fan_upper_lower_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_gril_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_lower_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_upper_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_oven_upper_lower_62_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\icn_weather_1_56_52.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Alatsi_Regular_23.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Alatsi_Regular_26.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_12.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_120.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_15.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_18.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_19.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_20.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_21.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_22.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_26.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_40.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_45.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Antonio_Regular_80.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_montserratMedium_12.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_montserratMedium_16.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_montserratMedium_19.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_simsun_12.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_simsun_16.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\menu_bg_1280_720.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\nxp_75_27.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\oven_bg_1280_720.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\oven_fan_light_1_120_119.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\oven_light_704_720.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\oven_light_menu_257_269.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\smog_1_110_472.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\smog_1_133_472.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\smog_2_110_630.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\smog_2_133_630.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\text_aircon_15_88.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\text_fan_param_198_26.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\text_hood_15_68.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\text_oven_15_62.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\title_bg_2_783_128.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\title_bg_654_130.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\title_bg_799_130.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\wheel_bg_151_259.png</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\wheel_bg_2_151_259.png</name>
     </file>
   </group>
   <group>
@@ -5632,16 +5839,15 @@
   <file>
     <name>$PROJ_DIR$\..\..\generated\setup_scr_ui_Oven.c</name>
   </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\generated\widgets_init.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\generated\widgets_init.h</name>
+  </file>
 </group>
   <group>
     <name>lvgl</name>
-    <file>
-      <name>$PROJ_DIR$\..\Core\lvgl\ChangeLogKSDK.txt</name>
-      <excluded>
-        <configuration>flexspi_nor_sdram_debug</configuration>
-        <configuration>flexspi_nor_sdram_release</configuration>
-      </excluded>
-    </file>
     <group>
       <name>lvgl</name>
       <file>
@@ -5837,14 +6043,14 @@
           </file>
           <group>
             <name>nxp</name>
-            <file>
-              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\lv_gpu_nxp.c</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\lv_gpu_nxp.h</name>
-            </file>
             <group>
               <name>pxp</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\pxp\lv_draw_pxp.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\pxp\lv_draw_pxp.h</name>
+              </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\pxp\lv_draw_pxp_blend.c</name>
               </file>
@@ -5866,6 +6072,12 @@
             </group>
             <group>
               <name>vglite</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_draw_vglite.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_draw_vglite.h</name>
+              </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_draw_vglite_arc.c</name>
               </file>
@@ -5891,10 +6103,16 @@
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_draw_vglite_rect.h</name>
               </file>
               <file>
-                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_gpu_nxp_vglite.c</name>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_vglite_buf.c</name>
               </file>
               <file>
-                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_gpu_nxp_vglite.h</name>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_vglite_buf.h</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_vglite_utils.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\nxp\vglite\lv_vglite_utils.h</name>
               </file>
             </group>
           </group>
@@ -5926,6 +6144,15 @@
             </file>
             <file>
               <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_label.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_layer.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_layer.h</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_line.c</name>
             </file>
             <file>
               <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\draw\sdl\lv_draw_sdl_mask.c</name>
@@ -6060,6 +6287,21 @@
           <group>
             <name>libs</name>
             <group>
+              <name>barcode</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\barcode\code128.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\barcode\code128.h</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\barcode\lv_barcode.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\barcode\lv_barcode.h</name>
+              </file>
+            </group>
+            <group>
               <name>bmp</name>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\bmp\lv_bmp.c</name>
@@ -6096,9 +6338,6 @@
               </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\fsdrv\lv_fs_rawfs.c</name>
-              </file>
-              <file>
-                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\fsdrv\lv_fs_rawfs.h</name>
               </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\libs\fsdrv\lv_fs_stdio.c</name>
@@ -6197,7 +6436,13 @@
             <group>
               <name>fragment</name>
               <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\fragment\lv_fragment.c</name>
+              </file>
+              <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\fragment\lv_fragment.h</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\fragment\lv_fragment_manager.c</name>
               </file>
             </group>
             <group>
@@ -6221,6 +6466,9 @@
             <group>
               <name>imgfont</name>
               <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\imgfont\lv_imgfont.c</name>
+              </file>
+              <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\imgfont\lv_imgfont.h</name>
               </file>
             </group>
@@ -6238,6 +6486,9 @@
             </group>
             <group>
               <name>msg</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\msg\lv_msg.c</name>
+              </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\others\msg\lv_msg.h</name>
               </file>
@@ -6480,6 +6731,15 @@
               </file>
               <file>
                 <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\widgets\tabview\lv_tabview.h</name>
+              </file>
+            </group>
+            <group>
+              <name>textprogress</name>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\widgets\textprogress\lv_textprogress.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Core\lvgl\lvgl\src\extra\widgets\textprogress\lv_textprogress.h</name>
               </file>
             </group>
             <group>
@@ -6894,6 +7154,16 @@
         </group>
       </group>
     </group>
+    <group>
+      <name>lvgl_sdk</name>
+      <file>
+        <name>$PROJ_DIR$\..\Core\lvgl\lvgl_sdk\ChangeLogKSDK.txt</name>
+        <excluded>
+          <configuration>flexspi_nor_sdram_debug</configuration>
+          <configuration>flexspi_nor_sdram_release</configuration>
+        </excluded>
+      </file>
+    </group>
   </group>
   <group>
     <name>MIMXRT1176</name>
@@ -7100,6 +7370,12 @@
       </group>
       <file>
         <name>$PROJ_DIR$\..\Core\vglite\VGLite\vg_lite.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Core\vglite\VGLite\vg_lite_flat.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Core\vglite\VGLite\vg_lite_flat.h</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Core\vglite\VGLite\vg_lite_image.c</name>

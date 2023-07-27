@@ -665,7 +665,7 @@
                             
               <MiscControls>-fno-common -fdata-sections -ffreestanding -fno-builtin -mthumb</MiscControls>
                             
-              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, DEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS, MCUXPRESSO_SDK</Define>
+              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, DEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, MCUXPRESSO_SDK, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS</Define>
                             
               <Undefine/>
                             
@@ -737,7 +737,7 @@
                         
             <IncludeLibsPath/>
                         
-            <Misc>--remove --entry=Reset_Handler --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --predefine="-DXIP_BOOT_HEADER_DCD_ENABLE=0" --predefine="-DXIP_BOOT_HEADER_XMCD_ENABLE=1"
+            <Misc>--remove --entry=Reset_Handler --diag_suppress 6314 --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --predefine="-DXIP_BOOT_HEADER_DCD_ENABLE=0" --predefine="-DXIP_BOOT_HEADER_XMCD_ENABLE=1"
 --remove</Misc>
                         
             <LinkerInputFile/>
@@ -1330,21 +1330,6 @@
         </Group>
 %GUI_Generated_Code%
         <Group>
-          <GroupName>lvgl</GroupName>
-          <Files>
-            <File>
-              <FileName>ChangeLogKSDK.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/ChangeLogKSDK.txt</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <IncludeInBuild>0</IncludeInBuild>
-                </CommonProperty>
-              </FileOption>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>lvgl/lvgl</GroupName>
           <Files>
             <File>
@@ -1665,23 +1650,18 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>lvgl/lvgl/src/draw/nxp</GroupName>
-          <Files>
-            <File>
-              <FileName>lv_gpu_nxp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/lv_gpu_nxp.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_gpu_nxp.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/lv_gpu_nxp.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>lvgl/lvgl/src/draw/nxp/pxp</GroupName>
           <Files>
+            <File>
+              <FileName>lv_draw_pxp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_pxp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.h</FilePath>
+            </File>
             <File>
               <FileName>lv_draw_pxp_blend.c</FileName>
               <FileType>1</FileType>
@@ -1717,6 +1697,16 @@
         <Group>
           <GroupName>lvgl/lvgl/src/draw/nxp/vglite</GroupName>
           <Files>
+            <File>
+              <FileName>lv_draw_vglite.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_vglite.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite.h</FilePath>
+            </File>
             <File>
               <FileName>lv_draw_vglite_arc.c</FileName>
               <FileType>1</FileType>
@@ -1758,14 +1748,24 @@
               <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.h</FilePath>
             </File>
             <File>
-              <FileName>lv_gpu_nxp_vglite.c</FileName>
+              <FileName>lv_vglite_buf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.c</FilePath>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c</FilePath>
             </File>
             <File>
-              <FileName>lv_gpu_nxp_vglite.h</FileName>
+              <FileName>lv_vglite_buf.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.h</FilePath>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_buf.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_vglite_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_vglite_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_utils.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1816,6 +1816,21 @@
               <FileName>lv_draw_sdl_label.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_label.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_layer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_layer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_layer.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_line.c</FilePath>
             </File>
             <File>
               <FileName>lv_draw_sdl_mask.c</FileName>
@@ -2030,6 +2045,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl/src/extra/libs/barcode</GroupName>
+          <Files>
+            <File>
+              <FileName>code128.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/code128.c</FilePath>
+            </File>
+            <File>
+              <FileName>code128.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/code128.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_barcode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/lv_barcode.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_barcode.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/lv_barcode.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>lvgl/lvgl/src/extra/libs/bmp</GroupName>
           <Files>
             <File>
@@ -2091,11 +2131,6 @@
               <FileName>lv_fs_rawfs.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_fs_rawfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.h</FilePath>
             </File>
             <File>
               <FileName>lv_fs_stdio.c</FileName>
@@ -2263,9 +2298,19 @@
           <GroupName>lvgl/lvgl/src/extra/others/fragment</GroupName>
           <Files>
             <File>
+              <FileName>lv_fragment.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_fragment.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fragment_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment_manager.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2303,6 +2348,11 @@
           <GroupName>lvgl/lvgl/src/extra/others/imgfont</GroupName>
           <Files>
             <File>
+              <FileName>lv_imgfont.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_imgfont.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.h</FilePath>
@@ -2337,6 +2387,11 @@
         <Group>
           <GroupName>lvgl/lvgl/src/extra/others/msg</GroupName>
           <Files>
+            <File>
+              <FileName>lv_msg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/msg/lv_msg.c</FilePath>
+            </File>
             <File>
               <FileName>lv_msg.h</FileName>
               <FileType>5</FileType>
@@ -2741,6 +2796,21 @@
               <FileName>lv_tabview.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/widgets/tabview/lv_tabview.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/widgets/textprogress</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_textprogress.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/textprogress/lv_textprogress.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_textprogress.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/textprogress/lv_textprogress.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3430,6 +3500,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl_sdk</GroupName>
+          <Files>
+            <File>
+              <FileName>ChangeLogKSDK.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl_sdk/ChangeLogKSDK.txt</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <IncludeInBuild>0</IncludeInBuild>
+                </CommonProperty>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>source</GroupName>
           <Files>
             <File>
@@ -3736,6 +3821,16 @@
               <FileName>vg_lite.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/vglite/VGLite/vg_lite.c</FilePath>
+            </File>
+            <File>
+              <FileName>vg_lite_flat.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/vglite/VGLite/vg_lite_flat.c</FilePath>
+            </File>
+            <File>
+              <FileName>vg_lite_flat.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/vglite/VGLite/vg_lite_flat.h</FilePath>
             </File>
             <File>
               <FileName>vg_lite_image.c</FileName>
@@ -4560,7 +4655,7 @@
                             
               <MiscControls>-fno-common -fdata-sections -ffreestanding -fno-builtin -mthumb</MiscControls>
                             
-              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, NDEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS, MCUXPRESSO_SDK</Define>
+              <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, XIP_BOOT_HEADER_DCD_ENABLE=0, XIP_BOOT_HEADER_XMCD_ENABLE=1, USE_SDRAM, DATA_SECTION_IS_CACHEABLE=1, NDEBUG, CPU_MIMXRT1176DVMAA_cm7, LV_CONF_INCLUDE_SIMPLE=1, FSL_SDK_DRIVER_QUICK_ACCESS_ENABLE=1, MCUXPRESSO_SDK, SDK_I2C_BASED_COMPONENT_USED=1, VG_COMMAND_CALL=1, VG_TARGET_FAST_CLEAR=0, SERIAL_PORT_TYPE_UART=1, SDK_OS_FREE_RTOS</Define>
                             
               <Undefine/>
                             
@@ -4632,7 +4727,7 @@
                         
             <IncludeLibsPath/>
                         
-            <Misc>--remove --entry=Reset_Handler --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --predefine="-DXIP_BOOT_HEADER_DCD_ENABLE=0" --predefine="-DXIP_BOOT_HEADER_XMCD_ENABLE=1"
+            <Misc>--remove --entry=Reset_Handler --diag_suppress 6314 --predefine="-DXIP_BOOT_HEADER_ENABLE=1" --predefine="-DXIP_BOOT_HEADER_DCD_ENABLE=0" --predefine="-DXIP_BOOT_HEADER_XMCD_ENABLE=1"
 --remove</Misc>
                         
             <LinkerInputFile/>
@@ -5225,21 +5320,6 @@
         </Group>
 %GUI_Generated_Code%
         <Group>
-          <GroupName>lvgl</GroupName>
-          <Files>
-            <File>
-              <FileName>ChangeLogKSDK.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/ChangeLogKSDK.txt</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <IncludeInBuild>0</IncludeInBuild>
-                </CommonProperty>
-              </FileOption>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>lvgl/lvgl</GroupName>
           <Files>
             <File>
@@ -5560,23 +5640,18 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>lvgl/lvgl/src/draw/nxp</GroupName>
-          <Files>
-            <File>
-              <FileName>lv_gpu_nxp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/lv_gpu_nxp.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_gpu_nxp.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/lv_gpu_nxp.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>lvgl/lvgl/src/draw/nxp/pxp</GroupName>
           <Files>
+            <File>
+              <FileName>lv_draw_pxp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_pxp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/pxp/lv_draw_pxp.h</FilePath>
+            </File>
             <File>
               <FileName>lv_draw_pxp_blend.c</FileName>
               <FileType>1</FileType>
@@ -5612,6 +5687,16 @@
         <Group>
           <GroupName>lvgl/lvgl/src/draw/nxp/vglite</GroupName>
           <Files>
+            <File>
+              <FileName>lv_draw_vglite.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_vglite.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite.h</FilePath>
+            </File>
             <File>
               <FileName>lv_draw_vglite_arc.c</FileName>
               <FileType>1</FileType>
@@ -5653,14 +5738,24 @@
               <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.h</FilePath>
             </File>
             <File>
-              <FileName>lv_gpu_nxp_vglite.c</FileName>
+              <FileName>lv_vglite_buf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.c</FilePath>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c</FilePath>
             </File>
             <File>
-              <FileName>lv_gpu_nxp_vglite.h</FileName>
+              <FileName>lv_vglite_buf.h</FileName>
               <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_gpu_nxp_vglite.h</FilePath>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_buf.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_vglite_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_vglite_utils.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/nxp/vglite/lv_vglite_utils.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -5711,6 +5806,21 @@
               <FileName>lv_draw_sdl_label.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_label.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_layer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_layer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_layer.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_draw_sdl_line.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/draw/sdl/lv_draw_sdl_line.c</FilePath>
             </File>
             <File>
               <FileName>lv_draw_sdl_mask.c</FileName>
@@ -5925,6 +6035,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl/src/extra/libs/barcode</GroupName>
+          <Files>
+            <File>
+              <FileName>code128.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/code128.c</FilePath>
+            </File>
+            <File>
+              <FileName>code128.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/code128.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_barcode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/lv_barcode.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_barcode.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/libs/barcode/lv_barcode.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>lvgl/lvgl/src/extra/libs/bmp</GroupName>
           <Files>
             <File>
@@ -5986,11 +6121,6 @@
               <FileName>lv_fs_rawfs.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_fs_rawfs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>../Core/lvgl/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.h</FilePath>
             </File>
             <File>
               <FileName>lv_fs_stdio.c</FileName>
@@ -6158,9 +6288,19 @@
           <GroupName>lvgl/lvgl/src/extra/others/fragment</GroupName>
           <Files>
             <File>
+              <FileName>lv_fragment.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_fragment.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment.h</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fragment_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/fragment/lv_fragment_manager.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -6198,6 +6338,11 @@
           <GroupName>lvgl/lvgl/src/extra/others/imgfont</GroupName>
           <Files>
             <File>
+              <FileName>lv_imgfont.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_imgfont.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/others/imgfont/lv_imgfont.h</FilePath>
@@ -6232,6 +6377,11 @@
         <Group>
           <GroupName>lvgl/lvgl/src/extra/others/msg</GroupName>
           <Files>
+            <File>
+              <FileName>lv_msg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/others/msg/lv_msg.c</FilePath>
+            </File>
             <File>
               <FileName>lv_msg.h</FileName>
               <FileType>5</FileType>
@@ -6636,6 +6786,21 @@
               <FileName>lv_tabview.h</FileName>
               <FileType>5</FileType>
               <FilePath>../Core/lvgl/lvgl/src/extra/widgets/tabview/lv_tabview.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lvgl/lvgl/src/extra/widgets/textprogress</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_textprogress.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/textprogress/lv_textprogress.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_textprogress.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl/src/extra/widgets/textprogress/lv_textprogress.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -7325,6 +7490,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>lvgl/lvgl_sdk</GroupName>
+          <Files>
+            <File>
+              <FileName>ChangeLogKSDK.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/lvgl/lvgl_sdk/ChangeLogKSDK.txt</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <IncludeInBuild>0</IncludeInBuild>
+                </CommonProperty>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>source</GroupName>
           <Files>
             <File>
@@ -7631,6 +7811,16 @@
               <FileName>vg_lite.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/vglite/VGLite/vg_lite.c</FilePath>
+            </File>
+            <File>
+              <FileName>vg_lite_flat.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/vglite/VGLite/vg_lite_flat.c</FilePath>
+            </File>
+            <File>
+              <FileName>vg_lite_flat.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>../Core/vglite/VGLite/vg_lite_flat.h</FilePath>
             </File>
             <File>
               <FileName>vg_lite_image.c</FileName>

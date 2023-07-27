@@ -1,11 +1,15 @@
 /*
  * Copyright 2023 NXP
- * SPDX-License-Identifier: MIT
+ * NXP Confidential and Proprietary. This software is owned or controlled by NXP and may only be used strictly in
+ * accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
+ * activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
+ * comply with and are bound by, such license terms.  If you do not agree to be bound by the applicable license
+ * terms, then you may not retain, install, activate or otherwise use the software.
  */
 /*******************************************************************************
  * Size: 20 px
  * Bpp: 4
- * Opts: 
+ * Opts: --user-data-dir=C:\Users\nxf93737\AppData\Roaming\gui-guider --app-path=C:\nxp\GUI-Guider-2023.7.5-1.6.0-GA-RC1\resources\app.asar --no-sandbox --no-zygote --lang=en-US --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1687907094747307 --launch-time-ticks=2567794094426 --mojo-platform-channel-handle=2912 --field-trial-handle=1728,i,13921857437201535228,15312614755462468052,131072 --disable-features=SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand /prefetch:1
  ******************************************************************************/
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
@@ -2639,7 +2643,7 @@ lv_font_t lv_font_Antonio_Regular_20 = {
     .get_glyph_dsc = lv_font_get_glyph_dsc_fmt_txt,    /*Function pointer to get glyph's data*/
     .get_glyph_bitmap = lv_font_get_bitmap_fmt_txt,    /*Function pointer to get glyph's bitmap*/
     .line_height = 20,          /*The maximum line height required by the font  default: (f.src.ascent - f.src.descent)*/
-    .base_line = 3,             /*Baseline measured from the bottom of the line*/
+    .base_line = 0,                          /*Baseline measured from the bottom of the line*/
 #if !(LVGL_VERSION_MAJOR == 6 && LVGL_VERSION_MINOR == 0)
     .subpx = LV_FONT_SUBPX_NONE,
 #endif

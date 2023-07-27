@@ -26,7 +26,7 @@ uint32_t TimerHour = 1;
 int32_t TimerMin = 15;
 
 /*Declare Image for swing menu animation*/
-LV_IMG_DECLARE(_aircon_menu_swing_01_298x39);
+LV_IMG_DECLARE(_aircon_menu_swing_01_alpha_298x39);
 LV_IMG_DECLARE(_aircon_menu_swing_02_298x39);
 LV_IMG_DECLARE(_aircon_menu_swing_03_298x39);
 LV_IMG_DECLARE(_aircon_menu_swing_04_298x39);
@@ -44,13 +44,13 @@ LV_IMG_DECLARE(_aircon_menu_swing_15_298x39);
 LV_IMG_DECLARE(_aircon_menu_swing_16_298x39);
 LV_IMG_DECLARE(_aircon_menu_swing_17_298x39);
 
-static const lv_img_dsc_t * aircon_menu_swing[] = {&_aircon_menu_swing_01_298x39, &_aircon_menu_swing_02_298x39, &_aircon_menu_swing_03_298x39,
+static const lv_img_dsc_t * aircon_menu_swing[] = {&_aircon_menu_swing_01_alpha_298x39, &_aircon_menu_swing_02_298x39, &_aircon_menu_swing_03_298x39,
 		&_aircon_menu_swing_04_298x39, &_aircon_menu_swing_05_298x39, &_aircon_menu_swing_06_298x39, &_aircon_menu_swing_07_298x39, &_aircon_menu_swing_08_298x39,
 		&_aircon_menu_swing_09_298x39, &_aircon_menu_swing_10_298x39, &_aircon_menu_swing_11_298x39, &_aircon_menu_swing_12_298x39, &_aircon_menu_swing_13_298x39,
 		&_aircon_menu_swing_14_298x39, &_aircon_menu_swing_15_298x39, &_aircon_menu_swing_16_298x39, &_aircon_menu_swing_17_298x39};
 
 /*Declare Image for swing animation*/
-LV_IMG_DECLARE(_aircon_swing_1_632x113);
+LV_IMG_DECLARE(_aircon_swing_1_alpha_632x113);
 LV_IMG_DECLARE(_aircon_swing_2_632x113);
 LV_IMG_DECLARE(_aircon_swing_3_632x113);
 LV_IMG_DECLARE(_aircon_swing_4_632x113);
@@ -66,32 +66,32 @@ LV_IMG_DECLARE(_aircon_swing_13_632x113);
 LV_IMG_DECLARE(_aircon_swing_14_632x113);
 LV_IMG_DECLARE(_aircon_swing_15_632x113);
 
-static const lv_img_dsc_t * aircon_swing[] = {&_aircon_swing_1_632x113, &_aircon_swing_2_632x113, &_aircon_swing_3_632x113,
+static const lv_img_dsc_t * aircon_swing[] = {&_aircon_swing_1_alpha_632x113, &_aircon_swing_2_632x113, &_aircon_swing_3_632x113,
 		&_aircon_swing_4_632x113, &_aircon_swing_5_632x113, &_aircon_swing_6_632x113,
 		&_aircon_swing_7_632x113, &_aircon_swing_8_632x113, &_aircon_swing_9_632x113,
 		&_aircon_swing_10_632x113, &_aircon_swing_11_632x113, &_aircon_swing_12_632x113,
 		&_aircon_swing_13_632x113, &_aircon_swing_14_632x113, &_aircon_swing_15_632x113};
 
 /*Declare images for cool animation*/
-LV_IMG_DECLARE(_aircon_cool_1_92x102);
+LV_IMG_DECLARE(_aircon_cool_1_alpha_92x102);
 LV_IMG_DECLARE(_aircon_cool_2_92x102);
 LV_IMG_DECLARE(_aircon_cool_3_92x102);
 LV_IMG_DECLARE(_aircon_cool_4_92x102);
 LV_IMG_DECLARE(_aircon_cool_5_92x102);
 LV_IMG_DECLARE(_aircon_cool_6_92x102);
 
-static const lv_img_dsc_t * aircon_cool[] = {&_aircon_cool_1_92x102, &_aircon_cool_2_92x102, &_aircon_cool_3_92x102,
+static const lv_img_dsc_t * aircon_cool[] = {&_aircon_cool_1_alpha_92x102, &_aircon_cool_2_92x102, &_aircon_cool_3_92x102,
 		&_aircon_cool_4_92x102, &_aircon_cool_5_92x102, &_aircon_cool_6_92x102};
 
 /*Declare images for fan animation*/
-LV_IMG_DECLARE(_aircon_fan_1_98x98);
+LV_IMG_DECLARE(_aircon_fan_1_alpha_98x98);
 LV_IMG_DECLARE(_aircon_fan_2_98x98);
 LV_IMG_DECLARE(_aircon_fan_3_98x98);
 LV_IMG_DECLARE(_aircon_fan_4_98x98);
 LV_IMG_DECLARE(_aircon_fan_5_98x98);
 LV_IMG_DECLARE(_aircon_fan_6_98x98);
 
-static const lv_img_dsc_t * aircon_fan[] = {&_aircon_fan_1_98x98, &_aircon_fan_2_98x98, &_aircon_fan_3_98x98,
+static const lv_img_dsc_t * aircon_fan[] = {&_aircon_fan_1_alpha_98x98, &_aircon_fan_2_98x98, &_aircon_fan_3_98x98,
 		&_aircon_fan_4_98x98, &_aircon_fan_5_98x98, &_aircon_fan_6_98x98};
 
 /*Declare images for Fan state*/
@@ -109,7 +109,7 @@ LV_IMG_DECLARE(_icn_fan_27x31);
 void ui_aircon_init (void)
 {
 	setup_scr_ui_Aircon(&guider_ui);
-	//guider_ui.ui_Aircon_del = false;
+	guider_ui.ui_Aircon_del = false;
 
 	lv_obj_clear_flag(guider_ui.ui_Aircon_Cont, LV_OBJ_FLAG_SCROLLABLE);
 
@@ -211,14 +211,14 @@ void ui_aricon_set_fan_speed (AIRCON_Fan_Speed_T speed)
 	case kAIRCON_FanLow:
 		frame_time = 125;
 		lv_label_set_text(guider_ui.ui_Aircon_Label_FanState, "LOW");
-		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_low_31x27);
+		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_low_alpha_31x27);
 		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Fan_Text, "Low\n");
 
 		break;
 	case kAIRCON_FanMedium:
 		frame_time = 100;
 		lv_label_set_text(guider_ui.ui_Aircon_Label_FanState, "MEDIUM");
-		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_low_31x27);
+		lv_img_set_src(guider_ui.ui_Aircon_Img_FanSt, &_icn_fan_low_alpha_31x27);
 		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Fan_Text, "Medium\n");
 		break;
 	case kAIRCON_FanHigh:
@@ -239,7 +239,7 @@ void ui_aircon_set_mode (AIRCON_Mode_T mode)
 	{
 	case kAIRCON_ModeCool:
 		lv_label_set_text(guider_ui.ui_Aircon_Label_On, "ON");
-		lv_img_set_src(guider_ui.ui_Aircon_Img_Comp, &_icn_cool_27x31);
+		lv_img_set_src(guider_ui.ui_Aircon_Img_Comp, &_icn_cool_alpha_27x31);
 		lv_obj_fade_in(guider_ui.ui_Aircon_Img_Cool, FADE_ANIM_TIME, 0);
 		lv_label_set_text(guider_ui.ui_Home_ui_Label_Aircon_Mode_Text, "Cool\n");
 		break;

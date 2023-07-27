@@ -873,7 +873,7 @@ void DSI_WriteApbTxPayloadExt(
         payloadSizeLocal += 1U;
     }
 
-    assert(payloadSizeLocal <= (uint16_t)FSL_DSI_TX_MAX_PAYLOAD_BYTE);
+    assert(payloadSizeLocal <= FSL_DSI_TX_MAX_PAYLOAD_BYTE);
 
     /* The first 4-byte. */
     if (sendDscCmd)

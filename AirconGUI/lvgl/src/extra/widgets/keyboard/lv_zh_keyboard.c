@@ -30,6 +30,7 @@
  *  STATIC PROTOTYPES
  **********************/
 static void lv_zh_keyboard_constructor(const lv_obj_class_t * class_p, lv_obj_t * obj);
+static void lv_zh_keyboard_destructor(const lv_obj_class_t * class_p, lv_obj_t * obj);
 static void lv_zh_keyboard_update_map(lv_obj_t * obj, uint8_t input_type);
 static void lv_zh_keyboard_update_ctrl_map(lv_obj_t * obj, uint8_t input_type);
 static void init_selection_box(lv_obj_t * parent);
@@ -43,6 +44,7 @@ static void show_chinese(char * text_uft8);
 
 const lv_obj_class_t lv_zh_keyboard_class = {
     .constructor_cb = lv_zh_keyboard_constructor,
+    .destructor_cb = lv_zh_keyboard_destructor,
     .width_def = LV_PCT(100),
     .height_def = LV_PCT(50),
     .instance_size = sizeof(lv_zh_keyboard_t),
@@ -189,8 +191,10 @@ static zh_input_struct * zh_input_obj = NULL;
 lv_obj_t * lv_zh_keyboard_create(lv_obj_t * parent, const lv_font_t * zh_font)
 {
     LV_LOG_INFO("begin");
-    if(zh_input_obj)
+    if(zh_input_obj) {
         return NULL;
+    }
+
     else {
         zh_input_obj = lv_mem_alloc(sizeof(zh_input_struct));
         if(zh_input_obj == NULL)
@@ -608,11 +612,11 @@ static void show_chinese(char * chineseText)
 static void init_selection_box(lv_obj_t * parent)
 {
     lv_obj_update_layout(parent);
+    lv_obj_set_style_bg_opa(parent, LV_OPA_COVER, 0);
     zh_input_obj->obj_selection_box = lv_obj_create(parent);
     lv_obj_align(zh_input_obj->obj_selection_box, LV_ALIGN_TOP_MID, 0, 0);
     lv_obj_set_width(zh_input_obj->obj_selection_box, lv_obj_get_width(parent));
     lv_obj_set_style_bg_color(zh_input_obj->obj_selection_box, lv_color_hex(0xf7f7f7), 0);
-    lv_obj_set_style_bg_opa(zh_input_obj->obj_selection_box, LV_OPA_80, 0);
     lv_obj_set_style_pad_all(zh_input_obj->obj_selection_box, 5, 0);
     lv_obj_set_style_pad_top(zh_input_obj->obj_selection_box, 12, 0);
     lv_obj_clear_flag(zh_input_obj->obj_selection_box, LV_OBJ_FLAG_SCROLLABLE);
@@ -624,7 +628,6 @@ static void init_selection_box(lv_obj_t * parent)
     lv_obj_set_size(zh_input_obj->pinyin_label, lv_obj_get_width(zh_input_obj->obj_selection_box), 20);
     lv_obj_set_style_text_font(zh_input_obj->pinyin_label, &lv_font_montserrat_12, 0);
     lv_obj_set_style_text_color(zh_input_obj->pinyin_label, lv_color_hex(0x262626), 0);
-    lv_obj_set_style_bg_opa(zh_input_obj->pinyin_label, LV_OPA_TRANSP, 0);
 
     lv_obj_t * ext_btn = lv_btn_create(zh_input_obj->obj_selection_box);
     lv_obj_remove_style_all(ext_btn);
@@ -733,6 +736,16 @@ static void lv_zh_keyboard_update_ctrl_map(lv_obj_t * obj, uint8_t input_type)
         lv_btnmatrix_set_ctrl_map(obj, ctrl_map);
         lv_mem_free(ctrl_map);
     }
+}
+
+static void lv_zh_keyboard_destructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
+{
+    LV_UNUSED(class_p);
+    lv_obj_clear_flag(obj, LV_OBJ_FLAG_CLICK_FOCUSABLE);
+    lv_zh_keyboard_t * keyboard = (lv_zh_keyboard_t *)obj;
+    keyboard->ta = NULL;
+    /* when the screen deleted will set the zh_input_obj value to NULL*/
+    zh_input_obj = NULL;
 }
 
 #endif /*LV_USE_ZH_KEYBOARD*/

@@ -23,8 +23,9 @@ bool ui_hood_light_state = kHOOD_lightOff;
 void ui_hood_init (void)
 {
 	setup_scr_ui_Hood(&guider_ui);
-	//guider_ui.ui_Hood_del = false;
+	guider_ui.ui_Hood_del = false;
 
+	lv_obj_clear_flag(guider_ui.ui_Hood, LV_OBJ_FLAG_SCROLLABLE);
 	ui_hood_set_light(kHOOD_lightOff);
 	ui_hood_set_fan_speed (kHOOD_FanLow);
 	lv_obj_set_style_opa(guider_ui.ui_Hood_Lottie_Mic, LV_OPA_TRANSP, 0);

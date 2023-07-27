@@ -119,7 +119,7 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1668992930074</id>
+			<id>1689054054210</id>
 			<name></name>
 			<type>22</type>
 			<matcher>
@@ -128,7 +128,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1668992930078</id>
+			<id>1689054054212</id>
 			<name></name>
 			<type>22</type>
 			<matcher>
@@ -137,7 +137,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1668992930082</id>
+			<id>1689054054214</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -146,7 +146,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1668992930085</id>
+			<id>1689054054217</id>
 			<name></name>
 			<type>22</type>
 			<matcher>
@@ -155,21 +155,30 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1668992930097</id>
-			<name></name>
-			<type>22</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-fsl_memcpy.S</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1668992930100</id>
+			<id>1689054054219</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-mPythonImages</arguments>
+				<arguments>1.0-name-matches-false-false-MicroPython</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1689054054221</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-template</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1689054054224</id>
+			<name></name>
+			<type>22</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-fsl_syscall_stub.c</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

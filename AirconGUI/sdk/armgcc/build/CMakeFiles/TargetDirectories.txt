@@ -1,3 +1,0 @@
-C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/sdk/armgcc/build/CMakeFiles/lvgl_guider_cm7.elf.dir
-C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/sdk/armgcc/build/CMakeFiles/edit_cache.dir
-C:/Users/nxf93737/Documents/MCUXpressoIDE_11.7.0_9198/Range/range_hood/AirconGUI/sdk/armgcc/build/CMakeFiles/rebuild_cache.dir

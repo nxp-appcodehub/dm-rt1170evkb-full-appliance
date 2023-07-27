@@ -623,7 +623,6 @@ static void style_init(void)
     lv_style_set_outline_color(&styles->outline_disabled, lv_palette_main(LV_PALETTE_GREY));
     lv_style_set_outline_width(&styles->outline_disabled, OUTLINE_WIDTH);
     lv_style_set_outline_opa(&styles->outline_disabled, LV_OPA_50);
-    // lv_style_t outline_focus, outline_disabled;
 #endif
 
 #if LV_USE_MSGBOX

@@ -1,10 +1,5 @@
 // SPDX-License-Identifier: MIT
-// Copyright 2020-2021 NXP
-
-/**
- * @file main
- *
- */
+// Copyright 2020-2023 NXP
 
 /*********************
  *      INCLUDES
@@ -20,8 +15,8 @@
 #include "lv_drivers/indev/mousewheel.h"
 #include "lv_drivers/indev/keyboard.h"
 #include "gui_guider.h"
-#include "events_init.h"
 #include "custom.h"
+#include "widgets_init.h"
 
 
 /*********************
@@ -65,15 +60,16 @@ int main(int argc, char ** argv)
     hal_init();
 
     /*Create a GUI-Guider app */
-	setup_ui(&guider_ui);
-    events_init(&guider_ui);
-    custom_init(&guider_ui);
+    setup_ui(&guider_ui);
+	custom_init(&guider_ui);
 
     while(1) {
         /* Periodically call the lv_task handler.
          * It could be done in a timer interrupt or an OS task too.*/
         lv_task_handler();
+#if LV_USE_VIDEO
         video_play(&guider_ui);
+#endif
         usleep(5 * 1000);
     }
 
@@ -98,7 +94,7 @@ static void hal_init(void)
     lv_disp_draw_buf_init(&disp_buf1, buf1_1, NULL, 480 * 10);
 
     /*Create a display*/
-    lv_disp_drv_t disp_drv;
+    static lv_disp_drv_t disp_drv;
     lv_disp_drv_init(&disp_drv);            /*Basic initialization*/
     disp_drv.draw_buf = &disp_buf1;
     disp_drv.flush_cb = monitor_flush;
@@ -109,7 +105,7 @@ static void hal_init(void)
     /* Add the mouse as input device
      * Use the 'mouse' driver which reads the PC's mouse*/
     mouse_init();
-    lv_indev_drv_t indev_drv;
+    static lv_indev_drv_t indev_drv;
     lv_indev_drv_init(&indev_drv);          /*Basic initialization*/
     indev_drv.type = LV_INDEV_TYPE_POINTER;
     indev_drv.read_cb = mouse_read;         /*This function will be called periodically (by the library) to get the mouse position and state*/

@@ -1,12 +1,9 @@
 # SPDX-License-Identifier: MIT
-# Copyright 2020-2021 NXP
-#
-# Makefile
-#
+# Copyright 2020-2023 NXP
 
 makefile_name := $(abspath $(lastword $(MAKEFILE_LIST)))
 makefile_path := $(strip $(patsubst %/,% , $(dir $(makefile_name))))
-libfile_path := $(makefile_path)/../lib/x86
+libfile_path := $(makefile_path)/../lib/native
 
 CC := gcc
 PRJ_DIR := $(makefile_path)/..
@@ -51,7 +48,6 @@ CFLAGS += -DLV_CONF_INCLUDE_SIMPLE=1
 -include $(SIMULATOR_DIR)/lv_drivers/lv_drivers.mk
 -include $(PRJ_DIR)/generated/generated.mk
 -include $(PRJ_DIR)/custom/custom.mk
--include $(PRJ_DIR)/add-assets/add-assets.mk
 
 CSRCS += main.c
 DEPPATH += --dep-path $(makefile_path)/

@@ -20,21 +20,21 @@ LV_IMG_DECLARE(_oven_door_05_704x720);
 LV_IMG_DECLARE(_oven_door_06_704x720);
 LV_IMG_DECLARE(_oven_door_07_704x720);
 LV_IMG_DECLARE(_oven_door_08_704x720);
-LV_IMG_DECLARE(_oven_fan_light_1_120x119);
+LV_IMG_DECLARE(_oven_fan_light_1_alpha_120x119);
 LV_IMG_DECLARE(_oven_fan_light_2_120x119);
 LV_IMG_DECLARE(_oven_fan_light_3_120x119);
 LV_IMG_DECLARE(_oven_fan_light_4_120x119);
 LV_IMG_DECLARE(_oven_menu_door_9_257x269);
 LV_IMG_DECLARE(_oven_light_menu_257x269);
 
-static const lv_img_dsc_t * oven_door[] = {&_oven_light_704x720, /*&_oven_door_01_704x720,*/ &_oven_door_02_704x720, /*&_oven_door_03_704x720,*/ &_oven_door_04_704x720,
+static const lv_img_dsc_t * oven_door[] = {&_oven_light_alpha_704x720, /*&_oven_door_01_704x720,*/ &_oven_door_02_704x720, /*&_oven_door_03_704x720,*/ &_oven_door_04_704x720,
 		/*&_oven_door_05_704x720,*/ &_oven_door_06_704x720, &_oven_door_07_704x720, &_oven_door_08_704x720};
 
-static const lv_img_dsc_t * oven_fan[] = {&_oven_fan_light_1_120x119, &_oven_fan_light_2_120x119, &_oven_fan_light_3_120x119,
+static const lv_img_dsc_t * oven_fan[] = {&_oven_fan_light_1_alpha_120x119, &_oven_fan_light_2_120x119, &_oven_fan_light_3_120x119,
 		&_oven_fan_light_4_120x119};
 
-static const lv_img_dsc_t * oven_mode_menu[] = {&_icn_oven_fan_rear_62x62, &_icn_oven_upper_lower_62x62, &_icn_oven_fan_upper_lower_62x62,
-		&_icn_oven_fan_lower_62x62, &_icn_oven_gril_62x62, &_icn_oven_fan_gril_62x62, &_icn_oven_upper_62x62, &_icn_oven_lower_62x62, &_icn_oven_defrost_62x62};
+static const lv_img_dsc_t * oven_mode_menu[] = {&_icn_oven_fan_rear_alpha_62x62, &_icn_oven_upper_lower_alpha_62x62, &_icn_oven_fan_upper_lower_alpha_62x62,
+		&_icn_oven_fan_lower_alpha_62x62, &_icn_oven_gril_alpha_62x62, &_icn_oven_fan_gril_alpha_62x62, &_icn_oven_upper_alpha_62x62, &_icn_oven_lower_alpha_62x62, &_icn_oven_defrost_alpha_62x62};
 
 static const lv_img_dsc_t * oven_mode_text_menu[] = {"Fan Forced\n Rear Element", "Upper & Lower\n Elements\n Convection",
 		"Fan Forced\n Upper & Lower\n Convection", "Fan Forced\n Lower Element\n Convection", "Grill", "Fan Forced\n Grill",
