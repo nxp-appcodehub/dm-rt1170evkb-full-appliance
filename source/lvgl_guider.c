@@ -19,20 +19,7 @@
 #include "custom.h"
 #include "fsl_soc_src.h"
 
-#if VIT_ENABLED
-#include "vit_proc.h"
-#include "vit_proc.h"
-#endif
 
-#if VIT_DEVICE_AIRCON
-#include "ui_Aircon.h"
-#endif
-#if VIT_DEVICE_OVEN
-#include "ui_Oven.h"
-#endif
-#if VIT_DEVICE_HOOD
-#include "ui_Hood.h"
-#endif
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -48,17 +35,7 @@ lv_ui guider_ui;
  *                              = 24 * (32 + 77/100)  / 2
  *                              = 393.24MHZ
  */
-#if VIT_ENABLED
-const clock_audio_pll_config_t audioPllConfig = {
-		.loopDivider = 32,  /* PLL loop divider. Valid range for DIV_SELECT divider value: 27~54. */
-		.postDivider = 1,   /* Divider after the PLL, should only be 0, 1, 2, 3, 4, 5 */
-		.numerator   = 77,  /* 30 bit numerator of fractional loop divider. */
-		.denominator = 100, /* 30 bit denominator of fractional loop divider */
-};
 
-EventGroupHandle_t GPH_Process = NULL;
-extern PL_UINT16 cmd_id;
-#endif
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -71,55 +48,7 @@ static void print_cb(const char *buf)
 }
 #endif
 
-#if VIT_ENABLED
-static void Graphics_Process (void *pvParameters)
-{
-    vTaskSetApplicationTaskTag( NULL, ( void * ) 2 );
 
-	EventBits_t event_bits;
-
-	for(;;)
-	{
-		event_bits = xEventGroupWaitBits(GPH_Process, VIT_WW_DETECT | VIT_CMD_DETECT, pdTRUE, pdFALSE, portMAX_DELAY);
-
-		if((event_bits & VIT_WW_DETECT) == VIT_WW_DETECT)
-		{
-            GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 1U);
-#if VIT_DEVICE_AIRCON
-			lv_obj_set_style_opa(guider_ui.ui_Aircon_Lottie_Mic, LV_OPA_100, 0);
-#endif
-
-#if VIT_DEVICE_OVEN
-			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_100, 0);
-#endif
-
-#if VIT_DEVICE_HOOD
-			lv_obj_set_style_opa(guider_ui.ui_Hood_Lottie_Mic, LV_OPA_100, 0);
-#endif
-
-
-
-
-		}
-
-		if((event_bits & VIT_CMD_DETECT) == VIT_CMD_DETECT)
-		{
-           GPIO_PinWrite(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, 0U);
-#if VIT_DEVICE_AIRCON
-			ui_aircon_process_command(cmd_id);
-#endif
-#if VIT_DEVICE_OVEN
-			ui_oven_process_command(cmd_id);
-			lv_obj_set_style_opa(guider_ui.ui_Oven_Lottie_Mic, LV_OPA_TRANSP, 0);
-#endif
-#if VIT_DEVICE_HOOD
-			ui_hood_process_command(cmd_id);
-			lv_obj_set_style_opa(guider_ui.ui_Hood_Lottie_Mic, LV_OPA_TRANSP, 0);
-#endif
-		}
-	}
-}
-#endif
 
 static void AppTask(void *param)
 {
@@ -173,9 +102,6 @@ int main(void)
 	SRC_AssertSliceSoftwareReset(SRC, kSRC_DisplaySlice);
 
 	BOARD_InitLpuartPins();
-#if VIT_ENABLED
-	BOARD_InitMicPins();
-#endif
 	BOARD_InitMipiPanelPins();
 	BOARD_MIPIPanelTouch_I2C_Init();
 	BOARD_InitTestPins();
@@ -184,13 +110,7 @@ int main(void)
 
 	D0_On();	D1_On();	D2_On();	D3_On();	D4_On();	D5_On();
 	D0_Off();	D1_Off();	D2_Off();	D3_Off();	D4_Off();	D5_Off();
-#if VIT_ENABLED
-	CLOCK_InitAudioPll(&audioPllConfig);
 
-	/* 24.576m mic root clock */
-	CLOCK_SetRootClockMux(kCLOCK_Root_Mic, 6);
-	CLOCK_SetRootClockDiv(kCLOCK_Root_Mic, 16);
-#endif
     /* Display support */
     if (DEMO_PANEL == DEMO_PANEL_RK055AHD091)
     {
@@ -210,25 +130,7 @@ int main(void)
     /* Init output LED GPIO. */
     GPIO_PinInit(BOARD_USER_LED_GPIO, BOARD_USER_LED_GPIO_PIN, &led_config);
 
-#if VIT_ENABLED
-	GPH_Process = xEventGroupCreate();
 
-	if (xTaskCreate(VIT_Task, "VIT_Task", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 4, NULL) !=
-			pdPASS)
-	{
-		PRINTF("\r\nFailed to create VIT task\r\n");
-		while (1)
-			;
-	}
-
-	if (xTaskCreate(Graphics_Process, "Graphics_Process", configMINIMAL_STACK_SIZE + 400, NULL, configMAX_PRIORITIES - 5, NULL) !=
-			pdPASS)
-	{
-		PRINTF("\r\nFailed to create application task\r\n");
-		while (1)
-			;
-	}
-#endif
 
 	if (xTaskCreate(AppTask, "lvgl", configMINIMAL_STACK_SIZE + 1024, NULL, configMAX_PRIORITIES - 6, NULL) !=
 			pdPASS)

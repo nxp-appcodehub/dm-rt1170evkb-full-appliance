@@ -112,7 +112,7 @@ void ui_aircon_init (void)
 	guider_ui.ui_Aircon_del = false;
 
 	lv_obj_clear_flag(guider_ui.ui_Aircon_Cont, LV_OBJ_FLAG_SCROLLABLE);
-
+	lv_obj_set_style_opa(guider_ui.ui_Aircon_Lottie_Mic, LV_OPA_TRANSP, 0);
 	lv_obj_set_style_radius(guider_ui.ui_Aircon_Slider_Fan, 10, LV_PART_MAIN | LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(guider_ui.ui_Aircon_Slider_Fan, 10, LV_PART_INDICATOR | LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(guider_ui.ui_Aircon_Slider_Fan, 10, LV_PART_KNOB | LV_STATE_DEFAULT);
