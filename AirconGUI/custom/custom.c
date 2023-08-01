@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// Copyright 2020 NXP
+// Copyright 2023 NXP
 
 /**
  * @file custom.c
@@ -38,7 +38,7 @@
 
 void custom_init(lv_ui *ui)
 {
-
+	guider_ui.ui_Home_del = false;
 	ui_aircon_init();
 	ui_oven_init();
 	ui_hood_init();

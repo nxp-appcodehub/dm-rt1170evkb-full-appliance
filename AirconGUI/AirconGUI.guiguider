@@ -675,9 +675,9 @@
 										"flag": ""
 									},
 									"customer_code": {
-										"ische": false,
+										"ische": true,
 										"inc_c": "",
-										"code_c": "",
+										"code_c": "guider_ui.ui_Oven_del = false;",
 										"inc_py": "",
 										"code_py": ""
 									},
@@ -939,9 +939,9 @@
 										"flag": ""
 									},
 									"customer_code": {
-										"ische": false,
+										"ische": true,
 										"inc_c": "",
-										"code_c": "",
+										"code_c": "guider_ui.ui_Aircon_del = false;",
 										"inc_py": "",
 										"code_py": ""
 									},
@@ -1275,9 +1275,9 @@
 										"flag": ""
 									},
 									"customer_code": {
-										"ische": false,
+										"ische": true,
 										"inc_c": "",
-										"code_c": "",
+										"code_c": "guider_ui.ui_Hood_del = false;",
 										"inc_py": "",
 										"code_py": ""
 									},
@@ -4570,9 +4570,9 @@
 										"flag": ""
 									},
 									"customer_code": {
-										"ische": false,
+										"ische": true,
 										"inc_c": "",
-										"code_c": "",
+										"code_c": "guider_ui.ui_Home_del = false;",
 										"inc_py": "",
 										"code_py": ""
 									},
@@ -6268,9 +6268,9 @@
 										"flag": ""
 									},
 									"customer_code": {
-										"ische": false,
+										"ische": true,
 										"inc_c": "",
-										"code_c": "",
+										"code_c": "guider_ui.ui_Home_del = false;",
 										"inc_py": "",
 										"code_py": ""
 									},
@@ -10681,9 +10681,9 @@
 										"flag": ""
 									},
 									"customer_code": {
-										"ische": false,
+										"ische": true,
 										"inc_c": "",
-										"code_c": "",
+										"code_c": "guider_ui.ui_Home_del = false;",
 										"inc_py": "",
 										"code_py": ""
 									},
@@ -18004,6 +18004,17 @@
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
 									"is_del": false
+								},
+								{
+									"src": "ui_Home_ui_Btn_Hood",
+									"trigger": "released",
+									"dst": "ui_Hood",
+									"dst_type": "scr",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "guider_ui.ui_Hood_del = false;",
+									"inc_py": "",
+									"code_py": ""
 								}
 							]
 						},
@@ -18272,6 +18283,17 @@
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
 									"is_del": false
+								},
+								{
+									"src": "ui_Home_ui_Btn_Aircon",
+									"trigger": "released",
+									"dst": "ui_Aircon",
+									"dst_type": "scr",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "guider_ui.ui_Aircon_del = false;",
+									"inc_py": "",
+									"code_py": ""
 								}
 							]
 						},
@@ -18452,6 +18474,17 @@
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
 									"is_del": false
+								},
+								{
+									"src": "ui_Home_ui_Btn_Oven",
+									"trigger": "released",
+									"dst": "ui_Oven",
+									"dst_type": "scr",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "guider_ui.ui_Oven_del = false;",
+									"inc_py": "",
+									"code_py": ""
 								}
 							]
 						},
@@ -20340,6 +20373,17 @@
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
 									"is_del": false
+								},
+								{
+									"src": "ui_Hood_ui_Btn_Back1",
+									"trigger": "released",
+									"dst": "ui_Home",
+									"dst_type": "scr",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "guider_ui.ui_Home_del = false;",
+									"inc_py": "",
+									"code_py": ""
 								}
 							]
 						},
@@ -24338,6 +24382,17 @@
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
 									"is_del": false
+								},
+								{
+									"src": "ui_Aircon_ui_Btn_Back2",
+									"trigger": "released",
+									"dst": "ui_Home",
+									"dst_type": "scr",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "guider_ui.ui_Home_del = false;",
+									"inc_py": "",
+									"code_py": ""
 								}
 							]
 						},
@@ -28563,6 +28618,17 @@
 									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 									"is_clean": false,
 									"is_del": false
+								},
+								{
+									"src": "ui_Oven_ui_Btn_Back3",
+									"trigger": "released",
+									"dst": "ui_Home",
+									"dst_type": "scr",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "guider_ui.ui_Home_del = false;",
+									"inc_py": "",
+									"code_py": ""
 								}
 							]
 						},

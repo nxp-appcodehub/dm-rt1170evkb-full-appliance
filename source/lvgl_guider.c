@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 NXP
+ * Copyright 2023 NXP
  * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
@@ -65,9 +65,11 @@ static void AppTask(void *param)
 
 	s_lvgl_initialized = true;
 
+
 	setup_ui(&guider_ui);
 	events_init(&guider_ui);
 	custom_init(&guider_ui);
+
 
 	for (;;)
 	{

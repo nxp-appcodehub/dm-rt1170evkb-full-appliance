@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// Copyright 2020 NXP
+// Copyright 2023 NXP
 
 /*
  * custom.h

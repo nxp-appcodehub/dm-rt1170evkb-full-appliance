@@ -1,3 +1,10 @@
+/*
+ * Copyright 2023 NXP
+ * All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /**
  * @file lv_conf.h
  * Configuration file for v8.2.0

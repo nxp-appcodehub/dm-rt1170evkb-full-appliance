@@ -34,5 +34,4 @@ void setup_ui(lv_ui *ui)
   init_scr_del_flag(ui);
   setup_scr_ui_Home(ui);
   lv_scr_load(ui->ui_Home);
-	ui->ui_Home_del = false;
 }
