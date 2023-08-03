@@ -3,7 +3,7 @@ Overview
 
 This project is used to work with LittleVGL GUI Guider. The GUI Guider generated
 code is placed in the folder "generated". The example generated code shows a
-button in the panel.
+full appliance demo.
 
 Toolchain supported
 ===================
