@@ -79,5 +79,5 @@ Questions regarding the content/correctness of this example can be entered as Is
 ## 7. Release Notes<a name="step7"></a>
 | Version | Description / Update                           | Date                        |
 |:-------:|------------------------------------------------|----------------------------:|
-| 1.0     | Initial release on Application Code HUb        |  August 3<sup>rd</sup> 2023 |
+| 1.0     | Initial release on Application Code HUb        |  August 31<sup>rd</sup> 2023 |
 
