@@ -1,4 +1,4 @@
-<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="dm-rt1170-full-appliance" type="demo" format="projectfile" name="RT1170 Full Appliance">
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="dm-rt1170evkb-full-appliance" type="demo" format="projectfile" name="RT1170EVKB Full Appliance">
     <display_title>
         Full Appliance Demo
     </display_title>
