@@ -604,6 +604,7 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h" */
 /*Tileview (dependencies: lv_page) */
 #define LV_USE_TILEVIEW     1
 
+
 /*Window (dependencies: lv_cont, lv_btn, lv_label, lv_img, lv_page)*/
 #define LV_USE_WIN 1
 

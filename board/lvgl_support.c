@@ -378,7 +378,7 @@ static void DEMO_FlushDisplay(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv
     };
 
     lv_gpu_nxp_pxp_blit(((lv_color_t *)inactiveFrameBuffer), &dest_area, DEMO_BUFFER_WIDTH, color_p, area, DEMO_BUFFER_HEIGHT ,LV_OPA_COVER,
-                        LV_DISP_ROT_270);
+                            LV_DISP_ROT_270);
 
 
 

@@ -48,6 +48,7 @@ CFLAGS += -DLV_CONF_INCLUDE_SIMPLE=1
 -include $(SIMULATOR_DIR)/lv_drivers/lv_drivers.mk
 -include $(PRJ_DIR)/generated/generated.mk
 -include $(PRJ_DIR)/custom/custom.mk
+-include $(PRJ_DIR)/add-assets/add-assets.mk
 
 CSRCS += main.c
 DEPPATH += --dep-path $(makefile_path)/

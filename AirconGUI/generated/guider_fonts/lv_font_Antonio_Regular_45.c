@@ -9,7 +9,7 @@
 /*******************************************************************************
  * Size: 45 px
  * Bpp: 4
- * Opts: --user-data-dir=C:\Users\nxf93737\AppData\Roaming\gui-guider --app-path=C:\nxp\GUI-Guider-2023.7.5-1.6.0-GA-RC1\resources\app.asar --no-sandbox --no-zygote --lang=en-US --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1687907079840101 --launch-time-ticks=2996300470885 --mojo-platform-channel-handle=3016 --field-trial-handle=1752,i,18139544144959165155,3536556115575250374,131072 --disable-features=SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand /prefetch:1
+ * Opts: --user-data-dir=C:\Users\nxf93737\AppData\Roaming\gui-guider --app-path=C:\nxp\GUI-Guider-1.6.0-GA\resources\app.asar --no-sandbox --no-zygote --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1694641259196880 --launch-time-ticks=65405335877 --mojo-platform-channel-handle=2996 --field-trial-handle=1656,i,14846615951696934183,6345769327167826956,131072 --disable-features=SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand /prefetch:1
  ******************************************************************************/
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
