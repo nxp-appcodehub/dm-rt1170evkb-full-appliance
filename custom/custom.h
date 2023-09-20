@@ -1,16 +1,24 @@
+// SPDX-License-Identifier: MIT
+// Copyright 2023 NXP
+
 /*
- * Copyright 2020 NXP
- * All rights reserved.
+ * custom.h
  *
- * SPDX-License-Identifier: BSD-3-Clause
+ *  Created on: July 29, 2020
+ *      Author: nxf53801
  */
 
-#ifndef _CUSTOM_H_
-#define _CUSTOM_H_
+#ifndef __CUSTOM_H_
+#define __CUSTOM_H_
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include "gui_guider.h"
 
-/* User code. */
 void custom_init(lv_ui *ui);
 
+#ifdef __cplusplus
+}
 #endif
+#endif /* EVENT_CB_H_ */

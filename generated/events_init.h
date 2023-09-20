@@ -1,23 +1,29 @@
 /*
- * Copyright 2020 NXP
- * All rights reserved.
- *
- * SPDX-License-Identifier: BSD-3-Clause
- */
+* Copyright 2023 NXP
+* NXP Confidential and Proprietary. This software is owned or controlled by NXP and may only be used strictly in
+* accordance with the applicable license terms. By expressly accepting such terms or by downloading, installing,
+* activating and/or otherwise using the software, you are agreeing that you have read, and that you agree to
+* comply with and are bound by, such license terms.  If you do not agree to be bound by the applicable license
+* terms, then you may not retain, install, activate or otherwise use the software.
+*/
+
 
 #ifndef EVENTS_INIT_H_
 #define EVENTS_INIT_H_
-
-#include "gui_guider.h"
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+#include "gui_guider.h"
+
 void events_init(lv_ui *ui);
+
+void events_init_ui_Home(lv_ui *ui);
+void events_init_ui_Hood(lv_ui *ui);
+void events_init_ui_Aircon(lv_ui *ui);
+void events_init_ui_Oven(lv_ui *ui);
 
 #ifdef __cplusplus
 }
 #endif
-
-#endif
+#endif /* EVENT_CB_H_ */
