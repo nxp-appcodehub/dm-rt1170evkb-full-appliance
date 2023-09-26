@@ -1,69 +1,13 @@
-Release Name: MCUXpresso Software Development Kit (SDK)
-Release Version: 2.13.1
-Package License: LA_OPT_NXP_Software_License.txt v48 July 2023 - Additional Distribution License granted, license in Section 2.3 applies
-           
+Release Name: 		   RT1170EVKB Full Appliance Demo
+Release Version: 	   1.0
+Package License: 	   LA_OPT_NXP_Software_License v49 September 2023 - Additional Distribution License granted, license in Section 2.3 applies
+License in File: 	   Licence.txt
+Description: 	           This is a demo with a central dashboard and 3 appliances (aircon, range hood and oven), the application can switch between appliances
+Release location: 	   https://github.com/nxp-appcodehub/rt1170evkb_full_appliance_demo
+Origin: 		   NXP (BSD-3-clause)
+			   CMSIS (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/releases/tag/5.8.0      
+			   vglite (MIT) -  https://github.com/linebender/kurbo  
+			   lvgl (MIT) - https://github.com/lvgl/lvgl
+           		   rlottie (MIT) - https://github.com/Samsung/rlottie   
+			   FreeRTOS(MIT) - https://github.com/FreeRTOS
 
-cmsis                      Name: CMSIS                                       
-                           Version: 5.8.0                                    
-                           Outgoing License: Apache License 2.0              
-                           License File: CMSIS/LICENSE.txt                   
-                           Format: source code                               
-                           Description: Vendor-independent hardware          
-                           abstraction layer for microcontrollers that are   
-                           based on Arm Cortex processors, distributed by    
-                           ARM. cores                                        
-                           Location: CMSIS/                                  
-                           Origin: ARM (Apache-2.0) -                        
-                           https://github.com/ARM-software/CMSIS_5/releases/t
-                           ag/5.8.0                                          
-
-SDK_Components             Name: SDK components and board peripheral drivers 
-                           Version: NA                                       
-                           Outgoing License: BSD-3-Clause                    
-                           License File: COPYING-BSD-3                       
-                           Format: source code                               
-                           Description: SDK components and board peripheral  
-                           drivers, for example, flash and codec drivers.    
-                           Location: components/                             
-                           Origin: NXP (BSD-3-Clause), ITE (BSD-3-Clause)      
-
-
-vglite                     Name: vglite                                      
-                           Version: 3.0.15_rev7                              
-                           Outgoing License: MIT                             
-                           License File: vglite/LICENSE.txt       
-                           Format: source code                               
-                           Description: VeriSilicon's platform independent   
-                           VGLite Graphics library                           
-                           Location: vglite                       
-                           Origin: VeriSilicon (MIT), Raph Levien, Nicolas   
-                           Silva (Apache-2.0)                                
-                           Url: http://www.verisilicon.com/,                 
-                           https://github.com/linebender/kurbo               
-
-
-
-lvgl                       Name: LVGL                                        
-                           Version: 8.3.2                                    
-                           Outgoing License: MIT                             
-                           License File: lvgl/lvgl/LICENCE.txt    
-                           Format: source code                               
-                           Description: Light and Versatile Graphics Library 
-                           (LVGL)                                            
-                           Location: lvgl/lvgl                         
-                           Origin: Gabor Kiss-Vamosi                         
-                           Url: https://github.com/lvgl/lvgl                 
-
-         
-
-rlottie                    Name: rlottie                                        
-                           Version: NA
-                           Outgoing License: MIT                             
-                           License File: rlottie/COPYING  
-                           Format: Library .a                               
-                           Description: library for rendering vector based animations and art in realtime                                            
-                           Location: rlottie                         
-                           Origin: Samsung                         
-                           Url: https://github.com/Samsung/rlottie              
-
- 
