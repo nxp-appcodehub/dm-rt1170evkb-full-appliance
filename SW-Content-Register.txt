@@ -2,12 +2,12 @@ Release Name: 		   RT1170EVKB Full Appliance Demo
 Release Version: 	   1.0
 Package License: 	   LA_OPT_NXP_Software_License v49 September 2023 - Additional Distribution License granted, license in Section 2.3 applies
 License in File: 	   Licence.txt
-Description: 	           This is a demo with a central dashboard and 3 appliances (aircon, range hood and oven), the application can switch between appliances
+Description: 		   This is a demo with a central dashboard and 3 appliances (aircon, range hood and oven), the application can switch between appliances
 Release location: 	   https://github.com/nxp-appcodehub/rt1170evkb_full_appliance_demo
-Origin: 		   NXP (BSD-3-clause)
-			   CMSIS (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/releases/tag/5.8.0      
-			   vglite (MIT) -  https://github.com/linebender/kurbo  
-			   lvgl (MIT) - https://github.com/lvgl/lvgl
-           		   rlottie (MIT) - https://github.com/Samsung/rlottie   
-			   FreeRTOS(MIT) - https://github.com/FreeRTOS
+Origin: 			   NXP (BSD-3-clause)
+					   CMSIS (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/releases/tag/5.8.0      
+					   vglite (MIT) -  https://github.com/linebender/kurbo  
+					   lvgl (MIT) - https://github.com/lvgl/lvgl
+					   rlottie (MIT) - https://github.com/Samsung/rlottie   
+					   FreeRTOS(MIT) - https://github.com/FreeRTOS
 
