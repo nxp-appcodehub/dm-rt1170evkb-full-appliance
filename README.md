@@ -54,6 +54,7 @@ When the demo runs correctly, we will see the following interfaces.
 If you have any questions or feedback on this code please contact NXP support or post on our community at https://community.nxp.com/. You can find forums here for different aspects of this code example, including GUI Guider, MCUXpresso tools and device families.
 
 
+
 #### Project Metadata
 <!----- Boards ----->
 [![Board badge](https://img.shields.io/badge/Board-EVK&ndash;MIMXRT1064-blue)](https://github.com/search?q=org%3Anxp-appcodehub+EVK-MIMXRT1064+in%3Areadme&type=Repositories)
