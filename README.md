@@ -23,18 +23,24 @@ This code has been implemented using [MCUXpresso IDE](https://nxp.com/mcuxpresso
 
 
 ## 2. Hardware<a name="step2"></a>
-1. i.MX RT1170-EVKB
-2. RK055HDMIPI4M 5.5" LCD Panel
-3. Power Adapter
+- Purchase supported board:
+    - [MIMXRT1170-EVKB](https://www.nxp.com/part/MIMXRT1170-EVKB#/)
+    
+- Purchase supported display: 
+    - [RK055HDMIPI4MA0](https://www.nxp.com/part/RK055HDMIPI4MA0#/)
+
+- Power Adapter
 
 ## 3. Setup<a name="step3"></a>
 
 ### 3.1 Step 1
-Connect the LCD panel to connector J48 of i.MX RT1170-EVKB board.
+Import the project into MCUXpresso IDE by following the following sections of the "MCUXpresso IDE - User Guide" found in the documentation section of the [MCUXpresso IDE page](https://www.nxp.com/design/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE):
 ### 3.2 Step 2
-Open the MCUXpresso project
+Connect the LCD panel to connector J48 of i.MX RT1170-EVKB board.
 ### 3.3 Step 3
-Download the built project to the board and run the example.
+Open the MCUXpresso project
+### 3.4 Step 4
+Download the built project (in release mode instead debug mode) to the board and run the example.
 
 ## 4. Results<a name="step4"></a>
 
@@ -54,9 +60,10 @@ When the demo runs correctly, we will see the following interfaces.
 If you have any questions or feedback on this code please contact NXP support or post on our community at https://community.nxp.com/. You can find forums here for different aspects of this code example, including GUI Guider, MCUXpresso tools and device families.
 
 
+
 #### Project Metadata
 <!----- Boards ----->
-[![Board badge](https://img.shields.io/badge/Board-EVK&ndash;MIMXRT1064-blue)](https://github.com/search?q=org%3Anxp-appcodehub+EVK-MIMXRT1064+in%3Areadme&type=Repositories)
+[![Board badge](https://img.shields.io/badge/Board-MIMXRT1170&ndash;EVK-blue)](https://github.com/search?q=org%3Anxp-appcodehub+MIMXRT1170-EVK+in%3Areadme&type=Repositories)
 
 <!----- Categories ----->
 [![Category badge](https://img.shields.io/badge/Category-GRAPHICS-yellowgreen)](https://github.com/search?q=org%3Anxp-appcodehub+graphics+in%3Areadme&type=Repositories)
