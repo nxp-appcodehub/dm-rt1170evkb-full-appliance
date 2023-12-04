@@ -2,7 +2,7 @@
 [<img src="https://mcuxpresso.nxp.com/static/icon/nxp-logo-color.svg" width="100"/>](https://www.nxp.com)
 
 ## Full Appliance Demo
-This is a Full Appliance Demo with LVGL on MIMXRT1170-EVKB with RK055HDMIPI4M 5.5" LCD panel. This Demo shows three appliances, an Oven, an Aircon and a Hood (each appliance has its own animations and can switch bettwen screens), it also has a central dashboard with the status of all appliances.
+This is a Full Appliance Demo with LVGL on MIMXRT1170-EVKB with RK055HDMIPI4M 5.5" LCD panel. This Demo shows three appliances, an Oven, an Aircon and a Hood (each appliance has its own animations and can switch between screens), it also has a central dashboard with the status of all appliances.
 
 #### Boards: MIMXRT1170-EVKB
 #### Categories: Graphics
@@ -34,7 +34,7 @@ This code has been implemented using [MCUXpresso IDE](https://nxp.com/mcuxpresso
 ## 3. Setup<a name="step3"></a>
 
 ### 3.1 Step 1
-Import the project into MCUXpresso IDE by following the following sections of the "MCUXpresso IDE - User Guide" found in the documentation section of the [MCUXpresso IDE page](https://www.nxp.com/design/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE):
+Import the project into MCUXpresso IDE by following the noted sections of the "MCUXpresso IDE - User Guide" found in the documentation section of the [MCUXpresso IDE page](https://www.nxp.com/design/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE):
 ### 3.2 Step 2
 Connect the LCD panel to connector J48 of i.MX RT1170-EVKB board.
 ### 3.3 Step 3
