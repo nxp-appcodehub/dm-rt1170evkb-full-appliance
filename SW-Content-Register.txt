@@ -11,4 +11,12 @@ Origin: 			   NXP (BSD-3-clause)
 					   lvgl (MIT) - https://github.com/lvgl/lvgl
 					   rlottie (MIT) - https://github.com/Samsung/rlottie   
 					   FreeRTOS(MIT) - https://github.com/FreeRTOS
+					   
+					   
+Package name: 		   libLogos.a
+Release version:	   1.0
+Outgoing License:	   LA_OPT_Online Code Hosting NXP_Software_License - v1.2 October 2023
+License File:		   License.txt
+Origin:				   NXP (Proprietary)
+
 

@@ -40,6 +40,13 @@ Connect the LCD panel to connector J48 of i.MX RT1170-EVKB board.
 ### 3.3 Step 3
 Open the MCUXpresso project
 ### 3.4 Step 4
+Open display_support.h file located at board folder and select:
+
+DEMO_PANEL_RK055AHD091 for old display
+
+DEMO_PANEL_RK055MHD091 for new display
+
+### 3.5 Step 5
 Download the built project (in release mode instead debug mode) to the board and run the example.
 
 ## 4. Results<a name="step4"></a>

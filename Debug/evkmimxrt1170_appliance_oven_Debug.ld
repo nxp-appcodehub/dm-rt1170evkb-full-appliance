@@ -1,12 +1,11 @@
 /*
  * GENERATED FILE - DO NOT EDIT
- * Copyright (c) 2008-2013 Code Red Technologies Ltd,
- * Copyright 2015, 2018-2019 NXP
- * (c) NXP Semiconductors 2013-2023
+ * Copyright 2008-2013 Code Red Technologies Ltd,
+ * Copyright 2013-2024 NXP
  * Generated linker script file for MIMXRT1176xxxxx
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.7.1 [Build 9221] [2023-03-28] on Dec 4, 2023, 10:39:41 AM
+ * MCUXpresso IDE v11.9.0 [Build 2144] [2024-01-05] on Sep 5, 2024, 2:19:34 PM
  */
 
 INCLUDE "evkmimxrt1170_appliance_oven_Debug_library.ld"
@@ -316,7 +315,7 @@ SECTIONS
     } > BOARD_SDRAM AT>BOARD_FLASH
 
     /* BSS section for NCACHE_REGION */
-    .bss_RAM2 : ALIGN(4)
+    .bss_RAM2 (NOLOAD) : ALIGN(4)
     {
        PROVIDE(__start_bss_RAM2 = .) ;
        PROVIDE(__start_bss_NCACHE_REGION = .) ;
@@ -331,7 +330,7 @@ SECTIONS
     } > NCACHE_REGION AT> NCACHE_REGION
 
     /* BSS section for SRAM_DTC_cm7 */
-    .bss_RAM3 : ALIGN(4)
+    .bss_RAM3 (NOLOAD) : ALIGN(4)
     {
        PROVIDE(__start_bss_RAM3 = .) ;
        PROVIDE(__start_bss_SRAM_DTC_cm7 = .) ;
@@ -345,7 +344,7 @@ SECTIONS
     } > SRAM_DTC_cm7 AT> SRAM_DTC_cm7
 
     /* BSS section for SRAM_ITC_cm7 */
-    .bss_RAM4 : ALIGN(4)
+    .bss_RAM4 (NOLOAD) : ALIGN(4)
     {
        PROVIDE(__start_bss_RAM4 = .) ;
        PROVIDE(__start_bss_SRAM_ITC_cm7 = .) ;
@@ -359,7 +358,7 @@ SECTIONS
     } > SRAM_ITC_cm7 AT> SRAM_ITC_cm7
 
     /* BSS section for SRAM_OC1 */
-    .bss_RAM5 : ALIGN(4)
+    .bss_RAM5 (NOLOAD) : ALIGN(4)
     {
        PROVIDE(__start_bss_RAM5 = .) ;
        PROVIDE(__start_bss_SRAM_OC1 = .) ;
@@ -373,7 +372,7 @@ SECTIONS
     } > SRAM_OC1 AT> SRAM_OC1
 
     /* BSS section for SRAM_OC2 */
-    .bss_RAM6 : ALIGN(4)
+    .bss_RAM6 (NOLOAD) : ALIGN(4)
     {
        PROVIDE(__start_bss_RAM6 = .) ;
        PROVIDE(__start_bss_SRAM_OC2 = .) ;
@@ -387,7 +386,7 @@ SECTIONS
     } > SRAM_OC2 AT> SRAM_OC2
 
     /* BSS section for SRAM_OC_ECC1 */
-    .bss_RAM7 : ALIGN(4)
+    .bss_RAM7 (NOLOAD) : ALIGN(4)
     {
        PROVIDE(__start_bss_RAM7 = .) ;
        PROVIDE(__start_bss_SRAM_OC_ECC1 = .) ;
@@ -401,7 +400,7 @@ SECTIONS
     } > SRAM_OC_ECC1 AT> SRAM_OC_ECC1
 
     /* BSS section for SRAM_OC_ECC2 */
-    .bss_RAM8 : ALIGN(4)
+    .bss_RAM8 (NOLOAD) : ALIGN(4)
     {
        PROVIDE(__start_bss_RAM8 = .) ;
        PROVIDE(__start_bss_SRAM_OC_ECC2 = .) ;
@@ -415,7 +414,7 @@ SECTIONS
     } > SRAM_OC_ECC2 AT> SRAM_OC_ECC2
 
     /* MAIN BSS SECTION */
-    .bss : ALIGN(4)
+    .bss (NOLOAD) : ALIGN(4)
     {
         _bss = .;
         PROVIDE(__start_bss_RAM = .) ;

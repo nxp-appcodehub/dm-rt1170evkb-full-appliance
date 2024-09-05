@@ -1,0 +1,7 @@
+ExitOnError 1
+r
+h
+loadfile "C:\Users\nxf93737\OneDrive - NXP\Documents\repos\full_appliance_1170\rt1170-graphics-voice-ui\Release\evkmimxrt1170_appliance_oven.hex"
+qc
+
+qc

@@ -51,3 +51,5 @@ settings/
 *_debug.bin
 **/xtensa/Makefile
 GUI_AppWizard/FileList.txt
+/Release/
+/Debug/
