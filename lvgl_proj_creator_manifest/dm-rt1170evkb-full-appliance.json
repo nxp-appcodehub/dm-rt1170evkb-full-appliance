@@ -1,0 +1,60 @@
+{
+    "name": "Full Appliance Demo with LVGL on MIMXRT1170-EVKB",
+    "maintainer": "NXP",
+    "hostOperatingsystem": [
+        "Windows",
+        "Linux",
+        "MacOS"
+    ],
+    "environment": [
+        "make",
+        "cmake",
+        "Linux"
+    ],
+    "hardware": {
+        "chipVendor": "NXP",
+        "manufacturer": "NXP",
+        "specs": {
+            "MCU": "i.MX RT1176xxA",
+            "RAM": "256 MB SRAM",
+            "Flash": "16 MB",
+            "GPU": "PXP",
+            "Resolution": "800x480",
+            "Display Size": "5.5\u201d",
+            "Interface": "MIPI DSI",
+            "Color Depth": "24-bit",
+            "Technology": "LCD",
+            "DPI": "128 px/inch",
+            "Touch Pad": "Capacitive"
+        }
+    },
+    "description": "This is a Full Appliance Demo with LVGL on MIMXRT1170-EVKB with RK055HDMIPI4M 5.5\" LCD panel. This Demo shows three appliances, an Oven, an Aircon and a Hood (each appliance has its own animations and can switch between screens), it also has a central dashboard with the status of all appliances.",
+    "shortDescription": "Full Appliance Demo with LVGL on MIMXRT1170-EVKB expresso project with LVGL support",
+    "urlToClone": "https://github.com/nxp-appcodehub/dm-rt1170evkb-full-appliance",
+    "logos": [
+        "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/nxp/logo.svg"
+    ],
+    "image": "https://raw.githubusercontent.com/nxp-appcodehub/dm-rt1170evkb-full-appliance/doc/images/oven.jpeg",
+    "branches": [
+        "release/v8.1",
+        "release/v9.2",
+        "release/v9.3"
+    ],
+    "settings": [
+        {
+            "type": "dropdown",
+            "label": "Show performance monitor",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "1",
+                    "default": "true"
+                },
+                {
+                    "name": "No",
+                    "value": "0"
+                }
+            ]
+        }
+    ]
+}
